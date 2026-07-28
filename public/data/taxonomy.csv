@@ -28,14 +28,17 @@ publisher,OpenAI,OpenAI,Official OpenAI documentation and resources,10,true
 publisher,Agent Skills,Agent Skills,Open Agent Skills standard documentation,20,true
 publisher,Anthropic,Anthropic,Official Anthropic and Claude resources,30,true
 publisher,Replit,Replit,Official Replit documentation,40,true
-publisher,Microsoft Research,Microsoft Research,Microsoft research projects and source code,50,true
-publisher,LangChain,LangChain,Official LangChain research and engineering resources,60,true
-publisher,Obra,Obra,The Superpowers project and related resources,70,true
-publisher,HKUDS,HKUDS,University and community research repositories,80,true
-publisher,Skills.rest,Skills.rest,A third-party skills directory,90,true
-publisher,EliteAI.tools,EliteAI.tools,A third-party skills directory,100,true
-publisher,Community,Community,Community-contributed resources requiring independent review,110,true
-publisher,YouTube,YouTube,Videos awaiting or carrying source review,120,true
+publisher,NVIDIA,NVIDIA,Official NVIDIA documentation and open-source resources,50,true
+publisher,Cisco AI Defense,Cisco AI Defense,Security tooling and guidance from Cisco AI Defense,60,true
+publisher,Resource Library,Resource Library,Original guides published by this resource library,70,true
+publisher,Microsoft Research,Microsoft Research,Microsoft research projects and source code,80,true
+publisher,LangChain,LangChain,Official LangChain research and engineering resources,90,true
+publisher,Obra,Obra,The Superpowers project and related resources,100,true
+publisher,HKUDS,HKUDS,University and community research repositories,110,true
+publisher,Skills.rest,Skills.rest,A third-party skills directory,120,true
+publisher,EliteAI.tools,EliteAI.tools,A third-party skills directory,130,true
+publisher,Community,Community,Community-contributed resources requiring independent review,140,true
+publisher,YouTube,YouTube,Videos awaiting or carrying source review,150,true
 level,start-here,Start here,Best entry points for newcomers,10,true
 level,practical,Practical,Applied guidance with modest prior knowledge,20,true
 level,advanced,Advanced,Research architecture or platform-specific implementation,30,true

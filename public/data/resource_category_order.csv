@@ -27,6 +27,9 @@ skills-rest,intent,manage,30
 elite-ai-tools,intent,manage,40
 openspace,intent,manage,50
 academic-research-skills,intent,assess-risk,10
+nvidia-scan-agent-skills,intent,assess-risk,20
+cisco-skill-scanner,intent,assess-risk,30
+when-not-to-use-a-skill,intent,assess-risk,40
 anthropic-use-skills,topic,management-optimization,10
 claude-code-skills,topic,management-optimization,20
 skillopt-project,topic,management-optimization,30

@@ -70,6 +70,9 @@ for (const resource of resources) {
   if (!["published", "draft", "needs_review"].includes(resource.status)) {
     errors.push(`${resource.id}: invalid status "${resource.status}".`);
   }
+  if (!["true", "false"].includes(resource.exclude.toLowerCase())) {
+    errors.push(`${resource.id}: exclude must be "true" or "false".`);
+  }
   if (resource.status === "published") {
     for (const field of ["title", "url", "summary", "publisher", "resource_type", "level"]) {
       if (!resource[field]) errors.push(`${resource.id}: missing ${field}.`);
@@ -77,8 +80,12 @@ for (const resource of resources) {
   }
   if (resource.url) {
     try {
-      const url = new URL(resource.url);
-      if (!["http:", "https:"].includes(url.protocol)) throw new Error();
+      if (resource.url.startsWith("/")) {
+        if (resource.url.startsWith("//")) throw new Error();
+      } else {
+        const url = new URL(resource.url);
+        if (!["http:", "https:"].includes(url.protocol)) throw new Error();
+      }
     } catch {
       errors.push(`${resource.id}: invalid URL "${resource.url}".`);
     }

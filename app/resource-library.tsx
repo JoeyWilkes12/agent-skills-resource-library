@@ -21,6 +21,7 @@ type Resource = {
   rating: number | null;
   featured: boolean;
   status: string;
+  exclude: boolean;
   intents: string[];
   topics: string[];
   tags: string[];
@@ -248,6 +249,7 @@ export function ResourceLibrary() {
             rating: record.rating ? Number(record.rating) : null,
             featured: record.featured.toLowerCase() === "true",
             status: record.status,
+            exclude: record.exclude.toLowerCase() === "true",
             intents: pipeList(record.intents),
             topics: pipeList(record.topics),
             tags: pipeList(record.tags),
@@ -302,7 +304,10 @@ export function ResourceLibrary() {
   }, [query, selections, urlStateReady]);
 
   const published = useMemo(
-    () => resources.filter((resource) => resource.status === "published"),
+    () =>
+      resources.filter(
+        (resource) => resource.status === "published" && !resource.exclude,
+      ),
     [resources],
   );
 
@@ -676,6 +681,10 @@ function ResourceCard({
   featured?: boolean;
   sequence?: number;
 }) {
+  const isInternal = resource.url.startsWith("/");
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const resourceUrl = isInternal ? `${basePath}${resource.url}` : resource.url;
+
   return (
     <details
       className={`resource-card publisher-${resource.publisher
@@ -724,13 +733,17 @@ function ResourceCard({
       <div className="card-action">
         <a
           className="resource-link"
-          href={resource.url}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`See ${resource.title} (opens in a new tab)`}
+          href={resourceUrl}
+          target={isInternal ? undefined : "_blank"}
+          rel={isInternal ? undefined : "noreferrer"}
+          aria-label={
+            isInternal
+              ? `Read ${resource.title}`
+              : `See ${resource.title} (opens in a new tab)`
+          }
         >
-          <span>See Resource</span>
-          <span aria-hidden="true">↗</span>
+          <span>{isInternal ? "Read Guide" : "See Resource"}</span>
+          <span aria-hidden="true">{isInternal ? "→" : "↗"}</span>
         </a>
       </div>
     </details>

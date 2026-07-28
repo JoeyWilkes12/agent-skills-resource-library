@@ -820,6 +820,191 @@ footer p:first-child {
   font-weight: 800;
 }
 
+.guide-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, transparent 0 7.5%, rgba(7, 27, 51, 0.05) 7.5% 7.6%, transparent 7.6%),
+    var(--paper);
+}
+
+.guide-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  padding: 0 4vw;
+  color: var(--white);
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.guide-article {
+  width: min(100% - 40px, 1080px);
+  margin: 0 auto;
+  padding: 78px 0 96px;
+}
+
+.guide-hero {
+  max-width: 920px;
+  padding: 52px;
+  color: var(--white);
+  background: var(--ink);
+  border-bottom: 8px solid var(--coral);
+}
+
+.guide-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.guide-deck {
+  max-width: 760px;
+  margin: 30px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.62;
+}
+
+.guide-meta {
+  margin: 28px 0 0;
+  color: var(--mint);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-section {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 0 0 auto;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-section-number {
+  margin: 7px 0 0;
+  color: var(--mint-dark);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.guide-section h2 {
+  margin: 0 0 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 520;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.guide-section p,
+.guide-checklist {
+  color: #3f4e5c;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.guide-section p {
+  margin: 0 0 20px;
+}
+
+.guide-label {
+  color: var(--mint-dark) !important;
+  font-size: 0.72rem !important;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.guide-principle {
+  margin-top: 22px;
+}
+
+.guide-callout {
+  margin: 32px 0;
+  padding: 24px 26px;
+  background: var(--white);
+  border-left: 5px solid var(--coral);
+}
+
+.guide-callout strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-callout p {
+  margin: 0;
+}
+
+.guide-checklist {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-checklist li {
+  padding: 18px 20px;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid var(--line);
+}
+
+.guide-final {
+  color: var(--ink) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem) !important;
+  letter-spacing: -0.035em;
+  line-height: 1.15 !important;
+}
+
+.guide-sources {
+  max-width: 844px;
+  margin: 58px 0 0 auto;
+  padding: 30px;
+  background: var(--mint);
+}
+
+.guide-sources h2 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: 550;
+}
+
+.guide-sources ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.guide-sources a {
+  text-underline-offset: 4px;
+}
+
+.guide-back {
+  display: block;
+  width: min(100%, 844px);
+  margin: 42px 0 0 auto;
+  font-weight: 800;
+  text-underline-offset: 5px;
+}
+
 @media (max-width: 1120px) {
   .featured-grid,
   .resource-grid {
@@ -898,6 +1083,34 @@ footer p:first-child {
   footer {
     flex-direction: column;
   }
+
+  .guide-header {
+    padding: 0 20px;
+  }
+
+  .guide-article {
+    padding-top: 30px;
+  }
+
+  .guide-hero {
+    padding: 38px 28px;
+  }
+
+  .guide-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-left: 0;
+    padding: 48px 4px;
+  }
+
+  .guide-section-number {
+    margin-top: 0;
+  }
+
+  .guide-sources {
+    margin-top: 42px;
+  }
+
 }
 
 @media (max-width: 540px) {

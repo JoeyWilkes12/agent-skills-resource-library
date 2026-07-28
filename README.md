@@ -18,8 +18,13 @@ The site uses three CSV files as its content source:
   within a filter category.
 
 Multi-value fields in `resources.csv` use `|` as a separator. Published rows
-appear on the site; `draft` and `needs_review` rows stay in the CSV without
+appear on the site unless `exclude` is `true`. Use `exclude` as a simple
+visibility toggle when a resource should remain in the catalog data but not
+appear as a tile. `draft` and `needs_review` rows also stay in the CSV without
 being shown.
+
+Resources can point to either an external `https://` URL or a local site path
+such as `/guides/when-not-to-use-a-skill`. Local guides open in the same tab.
 
 Run `npm run test:data` after editing a CSV. It checks IDs, URLs, ratings,
 taxonomy references, and category ordering.
