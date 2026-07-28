@@ -5,6 +5,9 @@ applying, managing, and evaluating agent skills. The visual structure is a
 search-first asset library: featured starting points, faceted filters, and
 resource tiles rather than a document full of links.
 
+Selecting a tile expands its full description in place. The separate
+**See Resource ↗** control opens the publisher's page in a new tab.
+
 ## Edit the library
 
 The site uses three CSV files as its content source:

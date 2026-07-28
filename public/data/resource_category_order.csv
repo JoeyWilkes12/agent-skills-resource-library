@@ -3,9 +3,11 @@ agent-skills-overview,intent,understand,10
 anthropic-what-are-skills,intent,understand,20
 openai-skills-concepts,intent,understand,30
 agent-skills-course,intent,understand,40
+openai-record-replay,intent,create,5
 openai-build-skills,intent,create,10
 agent-skills-specification,intent,create,20
 anthropic-skill-authoring,intent,create,30
+claude-cowork-record-skill,intent,create,35
 replit-agent-skills,intent,create,40
 troubleshoot-validate-structure,intent,troubleshoot,10
 troubleshoot-triggering,intent,troubleshoot,20

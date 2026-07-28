@@ -506,6 +506,20 @@ a {
     border-color 180ms ease;
 }
 
+.card-summary {
+  display: flex;
+  min-width: 0;
+  min-height: inherit;
+  flex: 1;
+  flex-direction: column;
+  cursor: pointer;
+  list-style: none;
+}
+
+.card-summary::-webkit-details-marker {
+  display: none;
+}
+
 .resource-card:hover {
   z-index: 2;
   border-color: rgba(7, 27, 51, 0.42);
@@ -513,10 +527,10 @@ a {
   transform: translateY(-5px);
 }
 
-.resource-card:focus-visible,
 .hero-action:focus-visible,
 .header-link:focus-visible,
 .wordmark:focus-visible,
+.resource-link:focus-visible,
 button:focus-visible,
 input:focus-visible,
 summary:focus-visible {
@@ -589,11 +603,20 @@ summary:focus-visible {
   letter-spacing: 0.12em;
 }
 
-.card-arrow {
+.card-expand-icon {
   position: relative;
   z-index: 2;
   margin-left: auto;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.card-expand-icon::before {
+  content: "+";
+}
+
+.resource-card[open] .card-expand-icon::before {
+  content: "−";
 }
 
 .card-content {
@@ -632,7 +655,7 @@ summary:focus-visible {
   line-height: 1.12;
 }
 
-.resource-card p {
+.card-description {
   display: -webkit-box;
   margin: 14px 0 22px;
   overflow: hidden;
@@ -643,12 +666,25 @@ summary:focus-visible {
   -webkit-line-clamp: 4;
 }
 
+.resource-card[open] .card-description {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
 .card-footer {
   display: flex;
   align-items: end;
   justify-content: space-between;
   gap: 12px;
   margin-top: auto;
+}
+
+.card-end {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-items: end;
 }
 
 .card-tags {
@@ -670,6 +706,51 @@ summary:focus-visible {
   color: #8a5b00;
   font-size: 0.75rem;
   font-weight: 850;
+}
+
+.card-expand-copy {
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.03em;
+}
+
+.when-open {
+  display: none;
+}
+
+.resource-card[open] .when-closed {
+  display: none;
+}
+
+.resource-card[open] .when-open {
+  display: inline;
+}
+
+.card-action {
+  padding: 0 22px 22px;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 15px;
+  color: var(--white);
+  background: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.resource-link:hover {
+  color: var(--ink);
+  background: var(--mint);
 }
 
 .library-message {

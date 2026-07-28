@@ -480,7 +480,9 @@ export function ResourceLibrary() {
             <p className="eyebrow eyebrow-dark">New to agent skills?</p>
             <h2 id="featured-heading">Start here</h2>
           </div>
-          <p>Four foundations before you explore the full catalog.</p>
+          <p>
+            Four high-value starting points before you explore the full catalog.
+          </p>
         </div>
         <div className="featured-grid">
           {featured.map((resource, index) => (
@@ -675,45 +677,62 @@ function ResourceCard({
   sequence?: number;
 }) {
   return (
-    <a
+    <details
       className={`resource-card publisher-${resource.publisher
         .toLowerCase()
         .replaceAll(/[^a-z0-9]+/g, "-")}${featured ? " is-featured" : ""}`}
-      href={resource.url}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={`${resource.title}, ${resource.resourceType} from ${resource.publisher} (opens in a new tab)`}
     >
-      <div className="card-visual">
-        {sequence && <span className="card-sequence">0{sequence}</span>}
-        <span className="source-mark">{sourceMark(resource)}</span>
-        <span className="card-arrow" aria-hidden="true">
-          ↗
-        </span>
-      </div>
-      <div className="card-content">
-        <div className="card-kicker">
-          <span>{resource.resourceType}</span>
-          <span>{resource.publisher}</span>
+      <summary
+        className="card-summary"
+        aria-label={`Toggle details for ${resource.title}, ${resource.resourceType} from ${resource.publisher}`}
+      >
+        <div className="card-visual">
+          {sequence && <span className="card-sequence">0{sequence}</span>}
+          <span className="source-mark">{sourceMark(resource)}</span>
+          <span className="card-expand-icon" aria-hidden="true" />
         </div>
-        <h3>{resource.title}</h3>
-        <p>{resource.summary}</p>
-        <div className="card-footer">
-          <div className="card-tags" aria-label="Resource tags">
-            {resource.tags.slice(0, 2).map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
+        <div className="card-content">
+          <div className="card-kicker">
+            <span>{resource.resourceType}</span>
+            <span>{resource.publisher}</span>
           </div>
-          {siteConfig.showRatings && resource.rating !== null && (
-            <span
-              className="rating"
-              aria-label={`Rating ${resource.rating.toFixed(1)} out of 5`}
-            >
-              ★ {resource.rating.toFixed(1)}
-            </span>
-          )}
+          <h3>{resource.title}</h3>
+          <p className="card-description">{resource.summary}</p>
+          <div className="card-footer">
+            <div className="card-tags" aria-label="Resource tags">
+              {resource.tags.slice(0, 2).map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+            <div className="card-end">
+              {siteConfig.showRatings && resource.rating !== null && (
+                <span
+                  className="rating"
+                  aria-label={`Rating ${resource.rating.toFixed(1)} out of 5`}
+                >
+                  ★ {resource.rating.toFixed(1)}
+                </span>
+              )}
+              <span className="card-expand-copy" aria-hidden="true">
+                <span className="when-closed">Explore details</span>
+                <span className="when-open">Close details</span>
+              </span>
+            </div>
+          </div>
         </div>
+      </summary>
+      <div className="card-action">
+        <a
+          className="resource-link"
+          href={resource.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`See ${resource.title} (opens in a new tab)`}
+        >
+          <span>See Resource</span>
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
-    </a>
+    </details>
   );
 }
