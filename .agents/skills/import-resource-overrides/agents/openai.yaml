@@ -1,0 +1,4 @@
+interface:
+  display_name: "Import Resource Overrides"
+  short_description: "Validate and apply the latest resource CSV"
+  default_prompt: "Use $import-resource-overrides to preview and apply the latest timestamped resource CSV override."

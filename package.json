@@ -11,8 +11,10 @@
     "build:pages": "GITHUB_PAGES=true next build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "data:duplicates": "node scripts/sync-duplicate-urls.mjs",
-    "test": "npm run test:data && npm run build && npm run test:links",
+    "resources:override": "node .agents/skills/import-resource-overrides/scripts/import-resource-overrides.mjs",
+    "test": "npm run test:data && npm run test:overrides && npm run build && npm run test:links",
     "test:data": "node scripts/validate-data.mjs",
+    "test:overrides": "node --test tests/import-resource-overrides.test.mjs",
     "test:links": "node --test tests/rendered-html.test.mjs tests/link-integrity.test.mjs",
     "test:links:external": "CHECK_EXTERNAL_LINKS=true npm run test:links",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
