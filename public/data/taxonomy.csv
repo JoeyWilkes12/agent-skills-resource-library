@@ -1,0 +1,41 @@
+dimension,value,label,description,display_order,enabled
+intent,understand,Understand skills,Learn what skills are and how they differ from prompts and tools,10,true
+intent,create,Create a skill,Design and author a reusable skill,20,true
+intent,execute,Execute code,Use scripts and deterministic tools from a skill,30,true
+intent,troubleshoot,Troubleshoot a skill,Diagnose activation loading conflicts and runtime failures,40,true
+intent,evaluate,Evaluate skills,Measure activation and outcome quality,50,true
+intent,apply,Apply skills,Explore real workflows and implementations,60,true
+intent,manage,Manage skills,Discover distribute prioritize and optimize skill libraries,70,true
+intent,assess-risk,Assess risk,Review provenance permissions dependencies and data handling,80,true
+topic,fundamentals,Fundamentals,Definitions architecture and the open standard,10,true
+topic,prompt-engineering,Prompt engineering,Descriptions instructions examples and workflow boundaries,20,true
+topic,code-automation,Code & automation,Scripts dependencies tools and deterministic execution,30,true
+topic,self-service-analytics,Self-service analytics,Skills for governed data discovery and analysis,40,true
+topic,intelligent-document-processing,Document processing,Skills and tools for intelligent document processing,50,true
+topic,evaluation-verification,Evaluation & verification,Evals benchmarks feedback loops and measurable checks,60,true
+topic,management-optimization,Management & optimization,Discovery distribution precedence and skill improvement,70,true
+topic,security-trust,Security & trust,Third-party risk permissions provenance and safe adoption,80,true
+resource_type,Documentation,Documentation,Primary product or standards documentation,10,true
+resource_type,Guide,Guide,A focused practical troubleshooting or implementation guide,20,true
+resource_type,Course,Course,A structured learning experience,30,true
+resource_type,Article,Article,An explanatory article or case study,40,true
+resource_type,Video,Video,A recorded talk demonstration or discussion,50,true
+resource_type,Tool,Tool,Software for creating managing or evaluating skills,60,true
+resource_type,GitHub,GitHub repository,Source code or an open repository,70,true
+resource_type,Directory,Directory,A searchable third-party skill catalog,80,true
+resource_type,Conversation,Conversation,A shared discussion that is not primary evidence,90,true
+publisher,OpenAI,OpenAI,Official OpenAI documentation and resources,10,true
+publisher,Agent Skills,Agent Skills,Open Agent Skills standard documentation,20,true
+publisher,Anthropic,Anthropic,Official Anthropic and Claude resources,30,true
+publisher,Replit,Replit,Official Replit documentation,40,true
+publisher,Microsoft Research,Microsoft Research,Microsoft research projects and source code,50,true
+publisher,LangChain,LangChain,Official LangChain research and engineering resources,60,true
+publisher,Obra,Obra,The Superpowers project and related resources,70,true
+publisher,HKUDS,HKUDS,University and community research repositories,80,true
+publisher,Skills.rest,Skills.rest,A third-party skills directory,90,true
+publisher,EliteAI.tools,EliteAI.tools,A third-party skills directory,100,true
+publisher,Community,Community,Community-contributed resources requiring independent review,110,true
+publisher,YouTube,YouTube,Videos awaiting or carrying source review,120,true
+level,start-here,Start here,Best entry points for newcomers,10,true
+level,practical,Practical,Applied guidance with modest prior knowledge,20,true
+level,advanced,Advanced,Research architecture or platform-specific implementation,30,true
