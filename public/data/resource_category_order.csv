@@ -26,10 +26,11 @@ skillopt-project,intent,manage,20
 skills-rest,intent,manage,30
 elite-ai-tools,intent,manage,40
 openspace,intent,manage,50
-academic-research-skills,intent,assess-risk,10
-nvidia-scan-agent-skills,intent,assess-risk,20
-cisco-skill-scanner,intent,assess-risk,30
-when-not-to-use-a-skill,intent,assess-risk,40
+nvidia-scan-agent-skills,intent,assess-risk,10
+cisco-skill-scanner,intent,assess-risk,20
+when-not-to-use-a-skill,intent,assess-risk,30
+nvidia-scan-agent-skills,topic,security-trust,10
+cisco-skill-scanner,topic,security-trust,20
 anthropic-use-skills,topic,management-optimization,10
 claude-code-skills,topic,management-optimization,20
 skillopt-project,topic,management-optimization,30

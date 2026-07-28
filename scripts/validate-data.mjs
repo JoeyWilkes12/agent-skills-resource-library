@@ -119,6 +119,32 @@ for (const resource of resources) {
   }
 }
 
+const securityTrustResources = resources
+  .filter(
+    (resource) =>
+      resource.status === "published" &&
+      resource.exclude.toLowerCase() !== "true" &&
+      list(resource.topics).includes("security-trust"),
+  )
+  .sort((left, right) => left.id.localeCompare(right.id));
+const expectedSecurityTrustIds = [
+  "cisco-skill-scanner",
+  "nvidia-scan-agent-skills",
+];
+if (
+  securityTrustResources.map((resource) => resource.id).join("|") !==
+  expectedSecurityTrustIds.join("|")
+) {
+  errors.push(
+    `Security & Trust must contain exactly: ${expectedSecurityTrustIds.join(", ")}.`,
+  );
+}
+for (const resource of securityTrustResources) {
+  if (resource.rating !== "5.0") {
+    errors.push(`${resource.id}: Security & Trust scanner rating must be 5.0.`);
+  }
+}
+
 const orderKeys = new Set();
 for (const order of orders) {
   if (!resourceIds.has(order.resource_id)) {
@@ -137,6 +163,24 @@ for (const order of orders) {
     errors.push(`Duplicate category position "${key}".`);
   }
   orderKeys.add(key);
+}
+
+for (const [resourceId, displayOrder] of [
+  ["nvidia-scan-agent-skills", "10"],
+  ["cisco-skill-scanner", "20"],
+]) {
+  const hasSecurityTrustOrder = orders.some(
+    (order) =>
+      order.resource_id === resourceId &&
+      order.dimension === "topic" &&
+      order.category_value === "security-trust" &&
+      order.display_order === displayOrder,
+  );
+  if (!hasSecurityTrustOrder) {
+    errors.push(
+      `${resourceId}: expected Security & Trust display order ${displayOrder}.`,
+    );
+  }
 }
 
 if (errors.length > 0) {
