@@ -212,11 +212,7 @@ function projectRecords(source, sourceName) {
     );
     output.id = id;
     output.rating = normalizeRating(record.rating, id);
-    output.featured = normalizeBoolean(
-      record.featured_JW?.trim() ? record.featured_JW : canonicalFeatured,
-      "featured",
-      id,
-    );
+    output.featured = canonicalFeatured;
     output.exclude = normalizeBoolean(record.exclude, "exclude", id);
     output.duplicate_url = "false";
     return output;

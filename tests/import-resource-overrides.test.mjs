@@ -32,7 +32,7 @@ function resource(overrides = {}) {
   };
 }
 
-test("selects the newest compatible export and applies helper overrides", async () => {
+test("selects the newest export and ignores helper columns", async () => {
   const root = await mkdtemp(path.join(tmpdir(), "resource-overrides-"));
   const sourceDirectory = path.join(root, "manual");
   const targetPath = path.join(root, "public", "data", "resources.csv");
@@ -47,13 +47,23 @@ test("selects the newest compatible export and applies helper overrides", async 
   await writeFile(
     path.join(sourceDirectory, "resources - 2026-07-28_10-00-00.csv"),
     stringifyCsv(helperHeaders, [
-      resource({ rating: "3", featured_JW: "FALSE", "JW Notes": "" }),
+      resource({
+        rating: "3",
+        featured: "false",
+        featured_JW: "TRUE",
+        "JW Notes": "",
+      }),
     ]),
   );
   await writeFile(
     path.join(sourceDirectory, "resources - 2026-07-28_11-00-00.csv"),
     stringifyCsv(helperHeaders, [
-      resource({ rating: "5", featured_JW: "TRUE", "JW Notes": "reviewed" }),
+      resource({
+        rating: "5",
+        featured: "true",
+        featured_JW: "FALSE",
+        "JW Notes": "reviewed",
+      }),
     ]),
   );
 

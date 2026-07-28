@@ -41,8 +41,8 @@ Use the bundled importer from the repository root. Keep preview and apply as sep
 - Search `../manual data overrides for resource library` by default.
 - Select the newest schema-compatible CSV using the terminal timestamp suffix `YYYY-MM-DD_HH-MM-SS.csv`.
 - Require the source resource IDs to match the target IDs exactly; this workflow is for overrides, not additions or deletions.
-- Treat `featured_JW` as an optional manual override of `featured` when its cell is non-empty.
-- Omit `JW Notes` and `featured_JW` from the published CSV.
+- Use the canonical `featured` column as the only source of featured-tile state.
+- Ignore and omit `JW Notes` and `featured_JW` from the published CSV.
 - Normalize booleans to lowercase and ratings to one decimal place.
 - Recompute `duplicate_url` from normalized hyperlinks rather than trusting the uploaded flag.
 - Keep the canonical column order from `public/data/resources.csv`.
