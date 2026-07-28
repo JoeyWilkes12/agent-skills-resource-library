@@ -21,13 +21,16 @@ Multi-value fields in `resources.csv` use `|` as a separator. Published rows
 appear on the site unless `exclude` is `true`. Use `exclude` as a simple
 visibility toggle when a resource should remain in the catalog data but not
 appear as a tile. `draft` and `needs_review` rows also stay in the CSV without
-being shown.
+being shown. The final `duplicate_url` column records whether the same
+hyperlink appears more than once; it is editorial metadata and does not affect
+the interface. Run `npm run data:duplicates` after adding or changing links to
+refresh those flags.
 
 Resources can point to either an external `https://` URL or a local site path
 such as `/guides/when-not-to-use-a-skill`. Local guides open in the same tab.
 
-Run `npm run test:data` after editing a CSV. It checks IDs, URLs, ratings,
-taxonomy references, and category ordering.
+Run `npm run test:data` after editing a CSV. It checks IDs, URLs, duplicate-link
+flags, ratings, taxonomy references, and category ordering.
 
 ## Ratings and ordering
 
@@ -55,8 +58,13 @@ Useful checks:
 ```bash
 npm run test:data
 npm test
+npm run test:links:external
 npm run build:pages
 ```
+
+The default link regression checks every authored hyperlink, local route, and
+in-page anchor. The external variant also requests every published third-party
+URL and is best run when network access is available.
 
 ## Publish with GitHub Pages
 

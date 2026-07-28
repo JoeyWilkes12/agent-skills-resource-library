@@ -45,6 +45,13 @@ function list(value) {
   return value.split("|").map((item) => item.trim()).filter(Boolean);
 }
 
+function normalizeUrl(value) {
+  if (value.startsWith("/")) {
+    return new URL(value, "https://library.local").href;
+  }
+  return new URL(value).href;
+}
+
 const [resourceText, taxonomyText, orderText] = await Promise.all([
   readFile(new URL("../public/data/resources.csv", import.meta.url), "utf8"),
   readFile(new URL("../public/data/taxonomy.csv", import.meta.url), "utf8"),
@@ -58,6 +65,17 @@ const resources = records(resourceText);
 const taxonomy = records(taxonomyText);
 const orders = records(orderText);
 const errors = [];
+const urlCounts = new Map();
+
+for (const resource of resources) {
+  if (!resource.url) continue;
+  try {
+    const normalized = normalizeUrl(resource.url);
+    urlCounts.set(normalized, (urlCounts.get(normalized) ?? 0) + 1);
+  } catch {
+    // The row-level URL validation below reports the actionable error.
+  }
+}
 
 const resourceIds = new Set();
 for (const resource of resources) {
@@ -72,6 +90,9 @@ for (const resource of resources) {
   }
   if (!["true", "false"].includes(resource.exclude.toLowerCase())) {
     errors.push(`${resource.id}: exclude must be "true" or "false".`);
+  }
+  if (!["true", "false"].includes(resource.duplicate_url.toLowerCase())) {
+    errors.push(`${resource.id}: duplicate_url must be "true" or "false".`);
   }
   if (resource.status === "published") {
     for (const field of ["title", "url", "summary", "publisher", "resource_type", "level"]) {
@@ -88,6 +109,19 @@ for (const resource of resources) {
       }
     } catch {
       errors.push(`${resource.id}: invalid URL "${resource.url}".`);
+    }
+  }
+  if (resource.url) {
+    try {
+      const expectedDuplicate =
+        (urlCounts.get(normalizeUrl(resource.url)) ?? 0) > 1;
+      if ((resource.duplicate_url.toLowerCase() === "true") !== expectedDuplicate) {
+        errors.push(
+          `${resource.id}: duplicate_url must be "${expectedDuplicate}" for "${resource.url}".`,
+        );
+      }
+    } catch {
+      // The URL validation above reports malformed values.
     }
   }
   if (resource.rating) {

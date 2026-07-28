@@ -51,8 +51,10 @@ test("server-renders the resource library shell", async () => {
   const html = await response.text();
   assert.match(html, /<title>Agent Skills Resource Library<\/title>/i);
   assert.match(html, /Find the right guidance for agent skills\./);
-  assert.match(html, /Searchable resource catalog/);
-  assert.match(html, /Troubleshoot/);
+  assert.match(html, /Skills library/);
+  assert.match(html, /aria-label="Filter resources"/);
+  assert.match(html, /troubleshoot/i);
+  assert.doesNotMatch(html, /Explore the library/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { siteConfig } from "./site-config";
 
 type Dimension =
@@ -212,6 +212,9 @@ export function ResourceLibrary() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [urlStateReady, setUrlStateReady] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const filterShellRef = useRef<HTMLDivElement>(null);
+  const filterTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const initial = parseInitialSelections();
@@ -302,6 +305,32 @@ export function ResourceLibrary() {
     }`;
     window.history.replaceState(null, "", nextUrl);
   }, [query, selections, urlStateReady]);
+
+  useEffect(() => {
+    if (!filterOpen) return;
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setFilterOpen(false);
+      filterTriggerRef.current?.focus();
+    }
+
+    function closeOnOutsideClick(event: PointerEvent) {
+      if (
+        event.target instanceof Node &&
+        !filterShellRef.current?.contains(event.target)
+      ) {
+        setFilterOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+    };
+  }, [filterOpen]);
 
   const published = useMemo(
     () =>
@@ -449,40 +478,21 @@ export function ResourceLibrary() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
-          <p className="eyebrow">A practical field guide</p>
           <h1>Find the right guidance for agent skills.</h1>
           <p className="hero-intro">
             Learn what skills are, build reliable workflows, troubleshoot what
             breaks, and evaluate whether they actually improve results.
           </p>
-          <a className="hero-action" href="#library">
-            Explore the library <span aria-hidden="true">↓</span>
-          </a>
         </div>
-        <div className="hero-index" aria-label="Library themes">
-          <div>
-            <span>01</span>
-            <strong>Learn</strong>
-          </div>
-          <div>
-            <span>02</span>
-            <strong>Build</strong>
-          </div>
-          <div>
-            <span>03</span>
-            <strong>Troubleshoot</strong>
-          </div>
-          <div>
-            <span>04</span>
-            <strong>Evaluate</strong>
-          </div>
+        <div className="hero-artifact" aria-hidden="true">
+          <span>SKILL</span>
+          <strong>.md</strong>
         </div>
       </section>
 
       <section className="featured-section" aria-labelledby="featured-heading">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">New to agent skills?</p>
             <h2 id="featured-heading">Start here</h2>
           </div>
           <p>
@@ -504,7 +514,6 @@ export function ResourceLibrary() {
       <section className="library-section" id="library" aria-labelledby="library-heading">
         <div className="library-heading-row">
           <div>
-            <p className="eyebrow eyebrow-dark">Searchable resource catalog</p>
             <h2 id="library-heading">Skills library</h2>
           </div>
           <p>
@@ -515,25 +524,136 @@ export function ResourceLibrary() {
 
         <div className="search-panel">
           <label htmlFor="resource-search">Search the library</label>
-          <div className="search-field-wrap">
-            <span aria-hidden="true">⌕</span>
-            <input
-              id="resource-search"
-              type="search"
-              value={query}
-              onChange={(event) => updateQuery(event.target.value)}
-              placeholder="Search skills, tools, use cases, or questions…"
-            />
-            {query && (
+          <div className="search-controls">
+            <div className="search-field-wrap">
+              <span aria-hidden="true">⌕</span>
+              <input
+                id="resource-search"
+                type="search"
+                value={query}
+                onChange={(event) => updateQuery(event.target.value)}
+                placeholder="Search skills, tools, use cases, or questions…"
+              />
+              {query && (
+                <button
+                  className="search-clear"
+                  type="button"
+                  onClick={() => updateQuery("")}
+                  aria-label="Clear search"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <div className="filter-shell" ref={filterShellRef}>
               <button
-                className="search-clear"
+                ref={filterTriggerRef}
+                className="filter-trigger"
                 type="button"
-                onClick={() => updateQuery("")}
-                aria-label="Clear search"
+                onClick={() => setFilterOpen((current) => !current)}
+                aria-expanded={filterOpen}
+                aria-controls="resource-filter-panel"
+                aria-label={`Filter resources${
+                  activeChips.length > 0
+                    ? `, ${activeChips.length} active`
+                    : ""
+                }`}
               >
-                Clear
+                <span className="filter-icon" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                {activeChips.length > 0 && (
+                  <span className="filter-count" aria-hidden="true">
+                    {activeChips.length}
+                  </span>
+                )}
               </button>
-            )}
+              {filterOpen && (
+                <aside
+                  className="filter-panel"
+                  id="resource-filter-panel"
+                  aria-label="Resource filters"
+                >
+                  <div className="filters-title-row">
+                    <div>
+                      <h3>Filter resources</h3>
+                      <p>Narrow the catalog by what you need.</p>
+                    </div>
+                    <button
+                      className="filter-close"
+                      type="button"
+                      onClick={() => {
+                        setFilterOpen(false);
+                        filterTriggerRef.current?.focus();
+                      }}
+                      aria-label="Close filters"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div className="filter-groups">
+                    {DIMENSIONS.map((dimension) => (
+                      <details
+                        className="filter-group"
+                        key={dimension}
+                        open={dimension === "intent" || dimension === "topic"}
+                      >
+                        <summary>{DIMENSION_TITLES[dimension]}</summary>
+                        <div className="filter-options">
+                          {optionsByDimension[dimension]?.map((option) => {
+                            const count = optionCount(dimension, option.value);
+                            return (
+                              <label
+                                className={
+                                  count === 0
+                                    ? "filter-option is-empty"
+                                    : "filter-option"
+                                }
+                                key={option.value}
+                                title={option.description}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={selections[dimension].includes(
+                                    option.value,
+                                  )}
+                                  disabled={
+                                    count === 0 &&
+                                    !selections[dimension].includes(option.value)
+                                  }
+                                  onChange={() =>
+                                    toggleSelection(dimension, option.value)
+                                  }
+                                />
+                                <span>{option.label}</span>
+                                <small>{count}</small>
+                              </label>
+                            );
+                          })}
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                  <div className="filter-panel-footer">
+                    <button type="button" onClick={clearFilters}>
+                      Reset filters
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFilterOpen(false);
+                        filterTriggerRef.current?.focus();
+                      }}
+                    >
+                      Show {filtered.length}{" "}
+                      {filtered.length === 1 ? "resource" : "resources"}
+                    </button>
+                  </div>
+                </aside>
+              )}
+            </div>
           </div>
         </div>
 
@@ -556,108 +676,60 @@ export function ResourceLibrary() {
           </div>
         )}
 
-        <div className="catalog-layout">
-          <aside className="filters" aria-label="Resource filters">
-            <div className="filters-title-row">
-              <h3>Filter resources</h3>
-              {activeChips.length > 0 && (
-                <button type="button" onClick={clearFilters}>
-                  Reset
-                </button>
-              )}
-            </div>
-            {DIMENSIONS.map((dimension) => (
-              <details
-                className="filter-group"
-                key={dimension}
-                open={dimension === "intent" || dimension === "topic"}
-              >
-                <summary>{DIMENSION_TITLES[dimension]}</summary>
-                <div className="filter-options">
-                  {optionsByDimension[dimension]?.map((option) => {
-                    const count = optionCount(dimension, option.value);
-                    return (
-                      <label
-                        className={count === 0 ? "filter-option is-empty" : "filter-option"}
-                        key={option.value}
-                        title={option.description}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selections[dimension].includes(option.value)}
-                          disabled={
-                            count === 0 &&
-                            !selections[dimension].includes(option.value)
-                          }
-                          onChange={() =>
-                            toggleSelection(dimension, option.value)
-                          }
-                        />
-                        <span>{option.label}</span>
-                        <small>{count}</small>
-                      </label>
-                    );
-                  })}
-                </div>
-              </details>
-            ))}
-          </aside>
-
-          <div className="results">
-            <div className="results-meta" aria-live="polite">
-              <p>
-                <strong>{filtered.length}</strong>{" "}
-                {filtered.length === 1 ? "resource" : "resources"}
-              </p>
-              <span>Curated order · rating highest first</span>
-            </div>
-
-            {loading && (
-              <div className="library-message" role="status">
-                Loading the resource library…
-              </div>
-            )}
-            {error && (
-              <div className="library-message is-error" role="alert">
-                <strong>Something went wrong.</strong>
-                <span>{error} Refresh the page to try again.</span>
-              </div>
-            )}
-            {!loading && !error && filtered.length === 0 && (
-              <div className="library-message">
-                <strong>No resources match that combination yet.</strong>
-                <span>Try a broader search or clear one of your filters.</span>
-                <button type="button" onClick={clearFilters}>
-                  Reset the library
-                </button>
-              </div>
-            )}
-
-            <div className="resource-grid">
-              {filtered.slice(0, visibleCount).map((resource) => (
-                <ResourceCard key={resource.id} resource={resource} />
-              ))}
-            </div>
-
-            {visibleCount < filtered.length && (
-              <button
-                className="show-more"
-                type="button"
-                onClick={() =>
-                  setVisibleCount((count) => count + siteConfig.resultIncrement)
-                }
-              >
-                Show more resources
-                <span>
-                  {Math.min(
-                    siteConfig.resultIncrement,
-                    filtered.length - visibleCount,
-                  )}{" "}
-                  more
-                </span>
-              </button>
-            )}
+        <div className="results">
+          <div className="results-meta" aria-live="polite">
+            <p>
+              <strong>{filtered.length}</strong>{" "}
+              {filtered.length === 1 ? "resource" : "resources"}
+            </p>
+            <span>Curated order · rating highest first</span>
           </div>
+
+          {loading && (
+            <div className="library-message" role="status">
+              Loading the resource library…
+            </div>
+          )}
+          {error && (
+            <div className="library-message is-error" role="alert">
+              <strong>Something went wrong.</strong>
+              <span>{error} Refresh the page to try again.</span>
+            </div>
+          )}
+          {!loading && !error && filtered.length === 0 && (
+            <div className="library-message">
+              <strong>No resources match that combination yet.</strong>
+              <span>Try a broader search or clear one of your filters.</span>
+              <button type="button" onClick={clearFilters}>
+                Reset the library
+              </button>
+            </div>
+          )}
+
+          <div className="resource-grid">
+            {filtered.slice(0, visibleCount).map((resource) => (
+              <ResourceCard key={resource.id} resource={resource} />
+            ))}
+          </div>
+
+          {visibleCount < filtered.length && (
+            <button
+              className="show-more"
+              type="button"
+              onClick={() =>
+                setVisibleCount((count) => count + siteConfig.resultIncrement)
+              }
+            >
+              Show more resources
+              <span>
+                {Math.min(
+                  siteConfig.resultIncrement,
+                  filtered.length - visibleCount,
+                )}{" "}
+                more
+              </span>
+            </button>
+          )}
         </div>
       </section>
 
