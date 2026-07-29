@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { featuredIntro } from "./featured-copy";
 import { siteConfig } from "./site-config";
 
 type Dimension =
@@ -348,8 +349,7 @@ export function ResourceLibrary() {
           (left, right) =>
             (right.rating ?? -1) - (left.rating ?? -1) ||
             left.title.localeCompare(right.title),
-        )
-        .slice(0, 4),
+        ),
     [published],
   );
 
@@ -495,9 +495,7 @@ export function ResourceLibrary() {
           <div>
             <h2 id="featured-heading">Start here</h2>
           </div>
-          <p>
-            Four high-value starting points before you explore the full catalog.
-          </p>
+          <p>{featuredIntro(featured.length)}</p>
         </div>
         <div className="featured-grid">
           {featured.map((resource, index) => (
