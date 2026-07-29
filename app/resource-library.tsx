@@ -478,7 +478,7 @@ export function ResourceLibrary() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
-          <h1>Find the right guidance for agent skills.</h1>
+          <h1>Find the right guidance for AI agent skills.</h1>
           <p className="hero-intro">
             Learn what skills are, build reliable workflows, troubleshoot what
             breaks, and evaluate whether they actually improve results.
