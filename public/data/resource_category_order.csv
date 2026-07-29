@@ -31,6 +31,7 @@ cisco-skill-scanner,intent,assess-risk,20
 when-not-to-use-a-skill,intent,assess-risk,30
 nvidia-scan-agent-skills,topic,security-trust,10
 cisco-skill-scanner,topic,security-trust,20
+sage-agent-security,topic,security-trust,30
 anthropic-use-skills,topic,management-optimization,10
 claude-code-skills,topic,management-optimization,20
 skillopt-project,topic,management-optimization,30

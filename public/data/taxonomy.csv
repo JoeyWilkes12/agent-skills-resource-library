@@ -39,6 +39,10 @@ publisher,Skills.rest,Skills.rest,A third-party skills directory,120,true
 publisher,EliteAI.tools,EliteAI.tools,A third-party skills directory,130,true
 publisher,Community,Community,Community-contributed resources requiring independent review,140,true
 publisher,YouTube,YouTube,Videos awaiting or carrying source review,150,true
+publisher,Microsoft,Microsoft,Official Microsoft product and developer resources,160,true
+publisher,Vercel Labs,Vercel Labs,Open-source developer tooling from Vercel Labs,170,true
+publisher,Gen Digital,Gen Digital,AI security tooling from Gen Digital,180,true
+publisher,Hamel Husain,Hamel Husain,Independent AI engineering and evaluation resources,190,true
 level,start-here,Start here,Best entry points for newcomers,10,true
 level,practical,Practical,Applied guidance with modest prior knowledge,20,true
 level,advanced,Advanced,Research architecture or platform-specific implementation,30,true

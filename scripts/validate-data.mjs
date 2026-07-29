@@ -164,6 +164,7 @@ const securityTrustResources = resources
 const expectedSecurityTrustIds = [
   "cisco-skill-scanner",
   "nvidia-scan-agent-skills",
+  "sage-agent-security",
 ];
 if (
   securityTrustResources.map((resource) => resource.id).join("|") !==
@@ -202,6 +203,7 @@ for (const order of orders) {
 for (const [resourceId, displayOrder] of [
   ["nvidia-scan-agent-skills", "10"],
   ["cisco-skill-scanner", "20"],
+  ["sage-agent-security", "30"],
 ]) {
   const hasSecurityTrustOrder = orders.some(
     (order) =>
