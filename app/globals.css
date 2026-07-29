@@ -146,12 +146,47 @@ a {
   text-wrap: balance;
 }
 
+.hero-title-accent {
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .hero-intro {
   max-width: 680px;
   margin: 34px 0 0;
   color: #ccd4dc;
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
   line-height: 1.6;
+}
+
+.hero-download-link {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 50px;
+  margin-top: 30px;
+  padding: 13px 17px;
+  color: var(--ink);
+  background: var(--mint);
+  border: 1px solid var(--mint);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-download-link:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hero-download-link span {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .hero-artifact {
@@ -647,6 +682,7 @@ a {
 
 .header-link:focus-visible,
 .wordmark:focus-visible,
+.hero-download-link:focus-visible,
 .resource-link:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1151,6 +1187,10 @@ footer p:first-child {
 
   .hero h1 {
     font-size: clamp(3.35rem, 14vw, 5.2rem);
+  }
+
+  .hero-download-link {
+    margin-top: 26px;
   }
 
   .hero-artifact {

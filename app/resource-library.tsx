@@ -63,6 +63,8 @@ const EMPTY_SELECTIONS: Selections = {
   level: [],
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const DIMENSION_TITLES: Record<Dimension, string> = {
   intent: "I want to…",
   topic: "Topic",
@@ -225,7 +227,6 @@ export function ResourceLibrary() {
       setUrlStateReady(true);
     });
 
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
     Promise.all([
       fetch(`${basePath}/data/resources.csv`).then((response) => {
         if (!response.ok) throw new Error("Resources could not be loaded.");
@@ -478,11 +479,20 @@ export function ResourceLibrary() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
-          <h1>Find the right guidance for AI agent skills.</h1>
+          <h1>
+            Find the right guidance for <span className="hero-title-accent">AI agent skills</span>.
+          </h1>
           <p className="hero-intro">
             Learn what skills are, build reliable workflows, troubleshoot what
             breaks, and evaluate whether they actually improve results.
           </p>
+          <a
+            className="hero-download-link"
+            href={`${basePath}/data/resources.csv`}
+            download="agent-skills-resource-library.csv"
+          >
+            Download all resources (CSV) <span aria-hidden="true">↓</span>
+          </a>
         </div>
         <div className="hero-artifact" aria-hidden="true">
           <span>SKILL</span>

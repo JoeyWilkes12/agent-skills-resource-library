@@ -114,6 +114,16 @@ test("every authored hyperlink is valid and every local destination renders", as
     if (url.origin !== "http://localhost") continue;
 
     const pathname = url.pathname || "/";
+    if (pathname.startsWith("/data/")) {
+      assert.doesNotMatch(pathname, /\.\./, `${href} must stay in public data`);
+      const asset = await readFile(
+        new URL(`../public${pathname}`, import.meta.url),
+        "utf8",
+      );
+      assert.ok(asset.length > 0, `${href} must contain downloadable content`);
+      continue;
+    }
+
     let html = pages.get(pathname);
     if (!html) {
       const response = await render(worker, pathname);
