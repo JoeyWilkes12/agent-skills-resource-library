@@ -161,22 +161,24 @@ const securityTrustResources = resources
       list(resource.topics).includes("security-trust"),
   )
   .sort((left, right) => left.id.localeCompare(right.id));
-const expectedSecurityTrustIds = [
+const requiredSecurityTrustIds = [
   "cisco-skill-scanner",
   "nvidia-scan-agent-skills",
   "sage-agent-security",
 ];
-if (
-  securityTrustResources.map((resource) => resource.id).join("|") !==
-  expectedSecurityTrustIds.join("|")
-) {
-  errors.push(
-    `Security & Trust must contain exactly: ${expectedSecurityTrustIds.join(", ")}.`,
-  );
+const securityTrustIds = new Set(
+  securityTrustResources.map((resource) => resource.id),
+);
+for (const requiredId of requiredSecurityTrustIds) {
+  if (!securityTrustIds.has(requiredId)) {
+    errors.push(`Security & Trust must contain "${requiredId}".`);
+  }
 }
-for (const resource of securityTrustResources) {
+for (const resource of securityTrustResources.filter((resource) =>
+  requiredSecurityTrustIds.includes(resource.id),
+)) {
   if (resource.rating !== "5.0") {
-    errors.push(`${resource.id}: Security & Trust scanner rating must be 5.0.`);
+    errors.push(`${resource.id}: core security scanner rating must be 5.0.`);
   }
 }
 

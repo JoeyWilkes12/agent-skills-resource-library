@@ -43,6 +43,7 @@ publisher,Microsoft,Microsoft,Official Microsoft product and developer resources
 publisher,Vercel Labs,Vercel Labs,Open-source developer tooling from Vercel Labs,170,true
 publisher,Gen Digital,Gen Digital,AI security tooling from Gen Digital,180,true
 publisher,Hamel Husain,Hamel Husain,Independent AI engineering and evaluation resources,190,true
+publisher,ClawHub,ClawHub,OpenClaw's public skill and plugin registry,200,true
 level,start-here,Start here,Best entry points for newcomers,10,true
 level,practical,Practical,Applied guidance with modest prior knowledge,20,true
 level,advanced,Advanced,Research architecture or platform-specific implementation,30,true

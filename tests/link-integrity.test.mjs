@@ -91,7 +91,11 @@ test("every authored hyperlink is valid and every local destination renders", as
   const worker = await loadWorker();
   const pages = new Map();
 
-  for (const pathname of ["/", "/guides/when-not-to-use-a-skill"]) {
+  for (const pathname of [
+    "/",
+    "/guides/when-not-to-use-a-skill",
+    "/guides/so-you-found-a-skill-checklist",
+  ]) {
     const response = await render(worker, pathname);
     assert.equal(response.status, 200, `${pathname} must render successfully`);
     pages.set(pathname, await response.text());
@@ -123,6 +127,15 @@ test("every authored hyperlink is valid and every local destination renders", as
       assert.ok(asset.length > 0, `${href} must contain downloadable content`);
       continue;
     }
+    if (pathname.startsWith("/guides/") && pathname.endsWith(".md")) {
+      assert.doesNotMatch(pathname, /\.\./, `${href} must stay in public guides`);
+      const asset = await readFile(
+        new URL(`../public${pathname}`, import.meta.url),
+        "utf8",
+      );
+      assert.match(asset, /^#\s+\S/m, `${href} must contain a Markdown heading`);
+      continue;
+    }
 
     let html = pages.get(pathname);
     if (!html) {
@@ -145,8 +158,13 @@ test(
   { skip: process.env.CHECK_EXTERNAL_LINKS !== "true" },
   async () => {
     const worker = await loadWorker();
-    const guideResponse = await render(worker, "/guides/when-not-to-use-a-skill");
-    const guideHtml = await guideResponse.text();
+    const guideResponses = await Promise.all([
+      render(worker, "/guides/when-not-to-use-a-skill"),
+      render(worker, "/guides/so-you-found-a-skill-checklist"),
+    ]);
+    const guideHtml = (
+      await Promise.all(guideResponses.map((response) => response.text()))
+    ).join("\n");
     const hrefs = [
       ...resources.map((resource) => resource.url),
       ...hrefsFromHtml(guideHtml),

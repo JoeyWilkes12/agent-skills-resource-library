@@ -1034,6 +1034,29 @@ footer p:first-child {
   text-transform: uppercase;
 }
 
+.guide-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.guide-hero-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 10px 16px;
+  color: var(--ink);
+  background: var(--mint);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.guide-hero-actions a:hover {
+  background: var(--white);
+}
+
 .guide-section {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);

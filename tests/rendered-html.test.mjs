@@ -69,3 +69,14 @@ test("server-renders the internal when-not-to-use-a-skill guide", async () => {
   assert.match(html, /Agent-assisted requests/);
   assert.match(html, /Primary documentation is often the safer shortcut/);
 });
+
+test("server-renders the pre-install confidence checklist", async () => {
+  const response = await renderPath("/guides/so-you-found-a-skill-checklist");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /So you found a skill/);
+  assert.match(html, /Will it update automatically/);
+  assert.match(html, /Download the Markdown checklist/);
+  assert.match(html, /so-you-found-a-skill_checklist\.md/);
+});
