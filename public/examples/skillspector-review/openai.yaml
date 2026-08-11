@@ -1,0 +1,6 @@
+interface:
+  display_name: "SkillSpector Review"
+  short_description: "Pre-install security scans for agent skills"
+  default_prompt: "Use $skillspector-review to scan this GitHub repository before I review or install it."
+policy:
+  allow_implicit_invocation: true

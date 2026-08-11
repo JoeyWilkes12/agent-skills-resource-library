@@ -1,4 +1,5 @@
 resource_id,dimension,category_value,display_order
+skillspector-skill-demo,intent,understand,5
 agent-skills-overview,intent,understand,10
 anthropic-what-are-skills,intent,understand,20
 openai-skills-concepts,intent,understand,30
@@ -28,11 +29,15 @@ skills-rest,intent,manage,40
 elite-ai-tools,intent,manage,50
 openspace,intent,manage,60
 so-you-found-a-skill-checklist,intent,assess-risk,5
+skillspector-enterprise-training,intent,assess-risk,7
+skillspector-skill-demo,intent,assess-risk,8
 nvidia-scan-agent-skills,intent,assess-risk,10
 cisco-skill-scanner,intent,assess-risk,20
 when-not-to-use-a-skill,intent,assess-risk,30
 clawhub,intent,assess-risk,40
 so-you-found-a-skill-checklist,topic,security-trust,5
+skillspector-enterprise-training,topic,security-trust,7
+skillspector-skill-demo,topic,security-trust,8
 nvidia-scan-agent-skills,topic,security-trust,10
 cisco-skill-scanner,topic,security-trust,20
 sage-agent-security,topic,security-trust,30
