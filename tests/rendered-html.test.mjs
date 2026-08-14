@@ -80,3 +80,14 @@ test("server-renders the pre-install confidence checklist", async () => {
   assert.match(html, /Download the Markdown checklist/);
   assert.match(html, /so-you-found-a-skill_checklist\.md/);
 });
+
+test("server-renders the independent Microsoft SkillOpt snapshot", async () => {
+  const response = await renderPath("/guides/microsoft-skillopt-third-party-snapshot");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /SkillOpt: a developer snapshot/);
+  assert.match(html, /Pilot-capable, not ready for unattended self-evolution/);
+  assert.match(html, /526\.7M/);
+  assert.match(html, /independent Resource Library assessment/i);
+});

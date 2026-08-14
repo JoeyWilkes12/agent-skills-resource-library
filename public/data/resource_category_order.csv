@@ -19,11 +19,13 @@ anthropic-how-we-use-skills,intent,apply,10
 anthropic-self-service-analytics,intent,apply,20
 anthropic-verification-loops,intent,apply,30
 skillopt-project,intent,evaluate,10
+skillopt-third-party-snapshot,intent,evaluate,15
 anthropic-how-we-use-skills,intent,evaluate,20
 langchain-eval-engineering,intent,evaluate,30
 superpowers-evaluation-dialogue,intent,evaluate,40
 claude-code-skills,intent,manage,10
 skillopt-project,intent,manage,20
+skillopt-third-party-snapshot,intent,manage,25
 clawhub,intent,manage,30
 skills-rest,intent,manage,40
 elite-ai-tools,intent,manage,50
@@ -45,3 +47,4 @@ clawhub,topic,security-trust,40
 anthropic-use-skills,topic,management-optimization,10
 claude-code-skills,topic,management-optimization,20
 skillopt-project,topic,management-optimization,30
+skillopt-third-party-snapshot,topic,management-optimization,35
