@@ -471,9 +471,14 @@ export function ResourceLibrary() {
           </span>
           <span>Agent Skills Library</span>
         </a>
-        <a className="header-link" href="#library">
-          Browse resources
-        </a>
+        <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href="#library">
+            Browse resources
+          </a>
+          <a className="header-link" href={`${basePath}/about`}>
+            About
+          </a>
+        </nav>
       </header>
 
       <section className="hero" id="top">

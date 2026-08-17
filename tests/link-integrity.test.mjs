@@ -93,6 +93,7 @@ test("every authored hyperlink is valid and every local destination renders", as
 
   for (const pathname of [
     "/",
+    "/about",
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",
     "/guides/microsoft-skillopt-third-party-snapshot",
@@ -161,6 +162,7 @@ test(
     const worker = await loadWorker();
     const guideResponses = await Promise.all([
       render(worker, "/guides/when-not-to-use-a-skill"),
+      render(worker, "/about"),
       render(worker, "/guides/so-you-found-a-skill-checklist"),
       render(worker, "/guides/microsoft-skillopt-third-party-snapshot"),
     ]);

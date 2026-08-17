@@ -60,6 +60,16 @@ test("server-renders the resource library shell", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });
 
+test("server-renders the About page and its QR code", async () => {
+  const response = await renderPath("/about");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /About the library/);
+  assert.match(html, /Take the library with you/);
+  assert.match(html, /qr\/agent-skills-resource-library\.svg/);
+});
+
 test("server-renders the internal when-not-to-use-a-skill guide", async () => {
   const response = await renderPath("/guides/when-not-to-use-a-skill");
   assert.equal(response.status, 200);
