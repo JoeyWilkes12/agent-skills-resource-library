@@ -26,6 +26,7 @@ resource_type,Directory,Directory,A searchable third-party skill catalog,80,true
 resource_type,Conversation,Conversation,A shared discussion that is not primary evidence,90,true
 publisher,OpenAI,OpenAI,Official OpenAI documentation and resources,10,true
 publisher,Agent Skills,Agent Skills,Open Agent Skills standard documentation,20,true
+publisher,Agent Plugins,Agent Plugins,Open Agent Plugins standard documentation,25,true
 publisher,Anthropic,Anthropic,Official Anthropic and Claude resources,30,true
 publisher,Replit,Replit,Official Replit documentation,40,true
 publisher,NVIDIA,NVIDIA,Official NVIDIA documentation and open-source resources,50,true
