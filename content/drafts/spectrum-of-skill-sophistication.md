@@ -1,0 +1,60 @@
+---
+title: Spectrum of skill sophistication
+type: Guide
+status: Draft for local review
+---
+
+# Spectrum of skill sophistication
+
+![Illustration of agentic AI skill development as a tightrope: a fast first draft on one side, production-grade reliability on the other, with discovery, prompt, model, runtime, and language variability under the rope.](../../public/guides/spectrum-of-skill-sophistication.jpeg)
+
+*A skill can be quick to draft. Making it dependable is a different job.*
+
+Agentic AI skills live on a spectrum. A skill creator can turn a useful idea into a first draft quickly, and a small demo may already save someone time. That speed matters. It is also only the beginning when the skill must work for other people, on other models, in a changing runtime.
+
+## Contents
+
+- [A first draft is a sketch](#a-first-draft-is-a-sketch)
+- [The baton changes hands](#the-baton-changes-hands)
+- [The tightrope appears at runtime](#the-tightrope-appears-at-runtime)
+- [Rigor should match the promise](#rigor-should-match-the-promise)
+- [The practical goal](#the-practical-goal)
+
+## A first draft is a sketch
+
+At the simple end, a skill is a focused set of instructions. It may guide an agent through a recurring task with no code, a narrow scope, and a person reviewing every result. In that setting, evaluation can be direct: does a reviewer find the result more useful than their usual approach?
+
+That is a good place to start. The mistake is treating a successful demo as proof that the skill will behave the same way once it is shared, reused, or trusted with a consequential task.
+
+## The baton changes hands
+
+The relay-race analogy explains why. The skill is the baton, but it passes through several hands: the person who writes it, the discovery mechanism that must find it, the model that decides whether to use it, the runtime that supplies tools and state, and the next person who describes the task in different language.
+
+Each handoff creates a chance for drift. A skill can be well written but never selected. It can be selected but interpreted differently by another model or provider. It can work without memory and behave differently once prior state, tools, or a longer task history enter the run.
+
+## The tightrope appears at runtime
+
+The tightrope is the trade between speed and rigor. Prompt instructions allow more than one defensible interpretation, so prompt-only skills naturally have variable outputs. Natural-language requests add another layer: two people can ask for the same outcome with different words, incomplete context, or different assumptions.
+
+Those variations do not make skills a bad idea. They define the engineering work. The more dynamic the system becomes, the more closely the skill needs to be watched. A missed activation, an unexpected tool result, or an unobserved change in a model can turn a helpful shortcut into an unreliable workflow.
+
+## Rigor should match the promise
+
+Computer science and data science are not separate from skill development at the high end. They provide the disciplines that make a shared or automated skill easier to reproduce, inspect, and improve.
+
+| If the skill is expected to… | It needs evidence such as… |
+| --- | --- |
+| Assist a person in a narrow, low-stakes task | Clear instructions and human review of representative results |
+| Work for many requests or users | Tests for discovery and activation, plus examples that vary the wording and context |
+| Run code, use tools, or retain state | Compatible runtimes, pinned versions, lockfiles, repeatable tests, logs, and a recovery path |
+| Behave consistently across models or providers | Cross-model evaluations, traced failures, and an explicit decision about acceptable variation |
+
+For code, a dependency list alone does not guarantee a repeatable environment. Pinning versions and keeping a lockfile records the dependency graph that was tested. A `requirements.txt` file can still be appropriate, but it needs an intentional versioning and installation policy rather than an assumption that a later `pip install` will recreate the same run.
+
+For language, evaluation can start with human feedback and grow from there. Keep examples of requests that worked, requests that failed, alternate phrasings, expected skill selection, tool calls, and outcomes. That turns unstructured input into something a team can examine instead of a collection of anecdotes.
+
+## The practical goal
+
+The level of rigor should match the skill's promise. Keep a contained, human-reviewed skill light. Add stronger evaluation, observability, reproducibility, and maintenance when it must survive new users, new language, different models, and a changing runtime.
+
+A reliable skill can turn good judgment into a workflow that others can reuse and trust with more weight.

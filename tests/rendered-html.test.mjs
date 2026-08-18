@@ -80,6 +80,18 @@ test("server-renders the internal when-not-to-use-a-skill guide", async () => {
   assert.match(html, /Primary documentation is often the safer shortcut/);
 });
 
+test("server-renders the Markdown-powered skill sophistication guide", async () => {
+  const response = await renderPath("/guides/spectrum-of-skill-sophistication");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Spectrum of skill sophistication/);
+  assert.match(html, /A first draft is a sketch/);
+  assert.match(html, /Rigor should match the promise/);
+  assert.match(html, /guides\/spectrum-of-skill-sophistication\.jpeg/);
+  assert.match(html, /id="the-baton-changes-hands"/);
+});
+
 test("server-renders the pre-install confidence checklist", async () => {
   const response = await renderPath("/guides/so-you-found-a-skill-checklist");
   assert.equal(response.status, 200);
