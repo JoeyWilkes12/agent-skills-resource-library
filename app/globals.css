@@ -1204,25 +1204,39 @@ footer p:first-child {
 }
 
 .spectrum-guide {
-  padding-top: 52px;
+  --spectrum-feature-width: min(100%, 900px);
+  --spectrum-figure-bleed: clamp(0px, 4vw, 52px);
+  padding-top: clamp(52px, 8vh, 96px);
+}
+
+.spectrum-feature {
+  width: var(--spectrum-feature-width);
+  margin-inline: auto;
 }
 
 .spectrum-hero {
-  max-width: 960px;
+  max-width: none;
+  padding: clamp(42px, 5vw, 58px) clamp(30px, 6vw, 60px) clamp(88px, 10vw, 116px);
   border-bottom-color: #8e9cff;
 }
 
 .spectrum-hero h1 {
-  max-width: 870px;
+  max-width: none;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  letter-spacing: -0.058em;
+  line-height: 0.92;
+  text-wrap: balance;
 }
 
 .spectrum-visual {
-  max-width: 1040px;
-  margin: -10px 0 52px auto;
-  padding: 10px 10px 15px;
+  position: relative;
+  z-index: 1;
+  width: calc(100% + (var(--spectrum-figure-bleed) * 2));
+  margin: clamp(-64px, -6vw, -42px) calc(var(--spectrum-figure-bleed) * -1) clamp(64px, 8vw, 96px);
+  padding: 12px 12px 18px;
   background: var(--white);
   border: 1px solid var(--line);
-  box-shadow: 16px 16px 0 rgba(174, 231, 206, 0.78);
+  box-shadow: 0 24px 48px -22px rgba(7, 27, 51, 0.28);
 }
 
 .spectrum-image {
@@ -1232,7 +1246,7 @@ footer p:first-child {
 }
 
 .spectrum-visual figcaption {
-  margin: 13px 5px 0;
+  margin: 16px 6px 0;
   color: #465769;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
@@ -1240,8 +1254,8 @@ footer p:first-child {
 }
 
 .spectrum-reading {
-  width: min(100%, 850px);
-  margin-left: auto;
+  width: min(100%, 68ch);
+  margin-inline: auto;
 }
 
 .spectrum-intro,
@@ -1257,8 +1271,12 @@ footer p:first-child {
   line-height: 1.72;
 }
 
+.spectrum-intro p:last-child {
+  margin-bottom: 0;
+}
+
 .spectrum-contents {
-  margin: 42px 0 12px;
+  margin: clamp(52px, 7vw, 80px) 0 12px;
   padding: 22px 24px 24px;
   background: var(--mint);
   border-left: 6px solid var(--ink);
@@ -1962,6 +1980,12 @@ footer p:first-child {
   }
 }
 
+@media (max-width: 900px) {
+  .spectrum-guide {
+    --spectrum-figure-bleed: 0px;
+  }
+}
+
 @media (max-width: 780px) {
   .site-header {
     padding: 0 20px;
@@ -2068,6 +2092,10 @@ footer p:first-child {
     padding: 38px 28px;
   }
 
+  .spectrum-hero {
+    padding: 42px 30px 82px;
+  }
+
   .guide-section {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -2138,6 +2166,20 @@ footer p:first-child {
 }
 
 @media (max-width: 540px) {
+  .spectrum-guide {
+    padding-top: 32px;
+  }
+
+  .spectrum-hero {
+    padding: 36px 24px 42px;
+  }
+
+  .spectrum-visual {
+    margin-top: 24px;
+    margin-bottom: 56px;
+    padding: 8px 8px 14px;
+  }
+
   .header-link {
     display: none;
   }

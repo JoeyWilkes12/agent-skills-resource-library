@@ -44,17 +44,19 @@ export default function SpectrumOfSkillSophistication() {
       </header>
 
       <article className="guide-article spectrum-guide">
-        <header className="guide-hero spectrum-hero">
-          <p className="eyebrow">Guide · Skill engineering</p>
-          <h1>{guide.title}</h1>
-        </header>
+        <div className="spectrum-feature">
+          <header className="guide-hero spectrum-hero">
+            <p className="eyebrow">Guide · Skill engineering</p>
+            <h1>{guide.title}</h1>
+          </header>
 
-        {primaryImage?.type === "image" ? (
-          <figure className="spectrum-visual">
-            <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={[primaryImage]} />
-            {guide.deck ? <figcaption>{guide.deck}</figcaption> : null}
-          </figure>
-        ) : null}
+          {primaryImage?.type === "image" ? (
+            <figure className="spectrum-visual">
+              <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={[primaryImage]} />
+              {guide.deck ? <figcaption>{guide.deck}</figcaption> : null}
+            </figure>
+          ) : null}
+        </div>
 
         <div className="spectrum-reading">
           <div className="spectrum-intro">
