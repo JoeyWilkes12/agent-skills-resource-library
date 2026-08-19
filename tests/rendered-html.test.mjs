@@ -92,6 +92,16 @@ test("server-renders the Markdown-powered skill sophistication guide", async () 
   assert.match(html, /id="the-baton-changes-hands"/);
 });
 
+test("server-renders the Guides index and its Spectrum entry", async () => {
+  const response = await renderPath("/guides");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Guides for building skills that hold up/);
+  assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
+  assert.match(html, /Spectrum of skill sophistication/);
+});
+
 test("server-renders the pre-install confidence checklist", async () => {
   const response = await renderPath("/guides/so-you-found-a-skill-checklist");
   assert.equal(response.status, 200);

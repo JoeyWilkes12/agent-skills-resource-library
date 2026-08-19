@@ -94,6 +94,7 @@ test("every authored hyperlink is valid and every local destination renders", as
   for (const pathname of [
     "/",
     "/about",
+    "/guides",
     "/guides/spectrum-of-skill-sophistication",
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",

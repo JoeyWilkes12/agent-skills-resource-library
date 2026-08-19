@@ -166,7 +166,7 @@ function inlineContent(text: string, anchorPrefix = ""): ReactNode[] {
   });
 }
 
-function publicAssetUrl(source: string, basePath: string) {
+export function publicAssetUrl(source: string, basePath: string) {
   const normalized = source.replace(/\\/g, "/");
   const publicMarker = "/public/";
   const markerIndex = normalized.lastIndexOf(publicMarker);

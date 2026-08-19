@@ -472,6 +472,9 @@ export function ResourceLibrary() {
           <span>Agent Skills Library</span>
         </a>
         <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href={`${basePath}/guides`}>
+            Guides
+          </a>
           <a className="header-link" href="#library">
             Browse resources
           </a>
@@ -503,6 +506,19 @@ export function ResourceLibrary() {
           <span>SKILL</span>
           <strong>.md</strong>
         </div>
+      </section>
+
+      <section className="guides-promo" aria-labelledby="guides-promo-heading">
+        <div>
+          <h2 id="guides-promo-heading">Go deeper with original guides.</h2>
+          <p>
+            The library collects useful resources. Guides are where we unpack
+            the judgment, trade-offs, and engineering work behind them.
+          </p>
+        </div>
+        <a className="guides-promo-link" href={`${basePath}/guides`}>
+          Explore guides <span aria-hidden="true">→</span>
+        </a>
       </section>
 
       <section className="featured-section" aria-labelledby="featured-heading">
