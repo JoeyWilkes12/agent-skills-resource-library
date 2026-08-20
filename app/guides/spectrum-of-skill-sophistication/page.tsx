@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import guideSource from "../generated/spectrum-of-skill-sophistication";
+import { GuideReadingLayout } from "../guide-reading-layout";
 import { GuideBlocks, parseMarkdownGuide } from "../markdown-guide";
-import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const guidePath = `${basePath}/guides/spectrum-of-skill-sophistication`;
@@ -62,31 +62,33 @@ export default function SpectrumOfSkillSophistication() {
             </figure>
           ) : null}
 
-          <GuideTableOfContents
-            className="spectrum-contents"
-            items={articleSections.map((section) => ({
-              id: section.id,
-              label: section.heading,
-            }))}
-          />
         </div>
 
-        <div className="spectrum-reading">
-          <div className="spectrum-intro">
-            <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={introBlocks} />
+        <GuideReadingLayout
+          className="spectrum-reading-layout"
+          contents={articleSections.map((section) => ({
+            id: section.id,
+            label: section.heading,
+          }))}
+          path={guidePath}
+        >
+          <div className="spectrum-reading">
+            <div className="spectrum-intro">
+              <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={introBlocks} />
+            </div>
+
+            {articleSections.map((section) => (
+              <section className="spectrum-section" id={section.id} key={section.id}>
+                <h2>{section.heading}</h2>
+                <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={section.blocks} />
+              </section>
+            ))}
           </div>
 
-          {articleSections.map((section) => (
-            <section className="spectrum-section" id={section.id} key={section.id}>
-              <h2>{section.heading}</h2>
-              <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={section.blocks} />
-            </section>
-          ))}
-        </div>
-
-        <a className="guide-back" href={`${basePath}/#library`}>
-          ← Back to the resource library
-        </a>
+          <a className="guide-back" href={`${basePath}/#library`}>
+            ← Back to the resource library
+          </a>
+        </GuideReadingLayout>
       </article>
     </main>
   );

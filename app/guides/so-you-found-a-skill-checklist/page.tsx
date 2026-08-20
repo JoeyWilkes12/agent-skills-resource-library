@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuideTableOfContents } from "../table-of-contents";
+import { GuideReadingLayout } from "../guide-reading-layout";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const contents = [
@@ -103,7 +103,10 @@ export default function SkillConfidenceChecklist() {
           <p className="guide-meta">Last reviewed July 29, 2026</p>
         </div>
 
-        <GuideTableOfContents items={contents} />
+        <GuideReadingLayout
+          contents={contents}
+          path={`${basePath}/guides/so-you-found-a-skill-checklist`}
+        >
 
         <section className="guide-section guide-principle" id="treat-the-candidate-as-untrusted">
           <p className="guide-section-number">01</p>
@@ -252,6 +255,7 @@ export default function SkillConfidenceChecklist() {
         <a className="guide-back" href={`${basePath}/#library`}>
           ← Back to the resource library
         </a>
+        </GuideReadingLayout>
       </article>
     </main>
   );

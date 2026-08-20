@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuideTableOfContents } from "../table-of-contents";
+import { GuideReadingLayout } from "../guide-reading-layout";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const contents = [
@@ -55,7 +55,10 @@ export default function SkillSpectorSkillDemo() {
           <p className="guide-meta">Demonstration artifact · Updated August 11, 2026</p>
         </div>
 
-        <GuideTableOfContents items={contents} />
+        <GuideReadingLayout
+          contents={contents}
+          path={`${basePath}/guides/skillspector-skill-demo`}
+        >
 
         <section className="guide-section guide-principle" id="reusable-operating-procedure">
           <p className="guide-section-number">01</p>
@@ -247,6 +250,7 @@ interface:
         <a className="guide-back" href={`${basePath}/#library`}>
           ← Back to the resource library
         </a>
+        </GuideReadingLayout>
       </article>
     </main>
   );

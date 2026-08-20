@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuideTableOfContents } from "../table-of-contents";
+import { GuideReadingLayout } from "../guide-reading-layout";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const contents = [
@@ -49,7 +49,10 @@ export default function WhenNotToUseASkill() {
           <p className="guide-meta">Last reviewed July 28, 2026</p>
         </div>
 
-        <GuideTableOfContents items={contents} />
+        <GuideReadingLayout
+          contents={contents}
+          path={`${basePath}/guides/when-not-to-use-a-skill`}
+        >
 
         <section className="guide-section guide-principle" id="trust-boundary">
           <p className="guide-section-number">01</p>
@@ -225,6 +228,7 @@ export default function WhenNotToUseASkill() {
         <a className="guide-back" href={`${basePath}/#library`}>
           ← Back to the resource library
         </a>
+        </GuideReadingLayout>
       </article>
     </main>
   );

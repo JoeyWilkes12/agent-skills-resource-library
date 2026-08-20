@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuideTableOfContents } from "../table-of-contents";
+import { GuideReadingLayout } from "../guide-reading-layout";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const contents = [
@@ -77,7 +77,10 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </p>
         </div>
 
-        <GuideTableOfContents items={contents} />
+        <GuideReadingLayout
+          contents={contents}
+          path={`${basePath}/guides/microsoft-skillopt-third-party-snapshot`}
+        >
 
         <section className="guide-section guide-principle" id="bottom-line">
           <p className="guide-section-number">01</p>
@@ -500,6 +503,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
         <a className="guide-back" href={`${basePath}/#library`}>
           ← Back to the resource library
         </a>
+        </GuideReadingLayout>
       </article>
     </main>
   );
