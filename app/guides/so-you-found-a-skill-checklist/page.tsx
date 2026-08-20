@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import checklist from "../../../content/guides/so-you-found-a-skill-checklist.json";
 import { GuideReadingLayout } from "../guide-reading-layout";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -8,6 +9,7 @@ const contents = [
   { id: "security-and-reliability-gates", label: "Pass security and reliability gates" },
   { id: "automatic-updates", label: "Will it update automatically?" },
   { id: "evidence-backed-decision", label: "Make an evidence-backed decision" },
+  { id: "use-the-checklist", label: "Use the checklist" },
   { id: "primary-references", label: "Primary references" },
 ];
 
@@ -63,6 +65,10 @@ const confidenceGates = [
   "Independent scans and human review are resolved for the exact approved version.",
 ];
 
+const checklistItemCount =
+  checklist.safetyItems.length +
+  checklist.sections.reduce((total, section) => total + section.items.length, 0);
+
 export default function SkillConfidenceChecklist() {
   return (
     <main className="guide-page">
@@ -85,7 +91,6 @@ export default function SkillConfidenceChecklist() {
 
       <article className="guide-article">
         <div className="guide-hero">
-          <p className="eyebrow">Security · Pre-install checklist</p>
           <h1>So you found a skill.</h1>
           <p className="guide-deck">
             Before you install it, build confidence from independent evidence:
@@ -93,14 +98,20 @@ export default function SkillConfidenceChecklist() {
             signals, reliability, and the path future updates will take.
           </p>
           <div className="guide-hero-actions">
+            <a href={`${basePath}/guides/so-you-found-a-skill-checklist#use-the-checklist`}>
+              Read the checklist ↓
+            </a>
             <a
+              className="guide-hero-download"
               href={`${basePath}/guides/so-you-found-a-skill_checklist.md`}
               download="so-you-found-a-skill_checklist.md"
             >
-              Download the Markdown checklist ↓
+              Download Markdown ↓
             </a>
           </div>
-          <p className="guide-meta">Last reviewed July 29, 2026</p>
+          <p className="guide-meta">
+            Security · Pre-install checklist · Last reviewed {checklist.lastReviewedLabel}
+          </p>
         </div>
 
         <GuideReadingLayout
@@ -182,16 +193,17 @@ export default function SkillConfidenceChecklist() {
               <strong>Classify the result</strong>
               <p>
                 Automatic, command-triggered, pinned/locked, untracked/manual,
-                dynamic at runtime, or unknown. Treat unknown as automatic until
-                you can prove otherwise.
+                dynamic at runtime, or unresolved. Do not install while the
+                update path is unresolved.
               </p>
             </div>
             <p>
-              Current OpenClaw and ClawHub documentation describes explicit
-              update commands and an origin record that lets later updates
-              resolve through ClawHub. ClawHub also supports pinning. That is
+              Current OpenClaw documentation uses an explicit <code>openclaw
+              skills update --all</code> command for registry-managed skills
+              and records their origin for later updates. Git and local skills
+              are refreshed by reinstalling them. That package layer is
               command-triggered unless a person, agent, startup hook, CI
-              workflow, or scheduler runs the update command automatically.
+              workflow, or scheduler runs the command automatically.
             </p>
             <p>
               Before every update, diff the complete old and new packages,
@@ -218,37 +230,115 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
+        <section
+          className="guide-checklist-preview"
+          id="use-the-checklist"
+          aria-labelledby="checklist-preview-heading"
+        >
+          <div className="guide-checklist-preview-header">
+            <div>
+              <h2 id="checklist-preview-heading">Use the checklist</h2>
+              <p>
+                The guide explains why. This shorter working checklist keeps the
+                decisions and stop conditions you need while reviewing a real
+                skill.
+              </p>
+            </div>
+            <p className="guide-checklist-count">{checklistItemCount} checks</p>
+          </div>
+
+          <div className="guide-checklist-safety">
+            <h3>Safety rule</h3>
+            <ul>
+              {checklist.safetyItems.map((item, index) => (
+                <li key={item}>
+                  <label>
+                    <input type="checkbox" aria-label={`Safety check ${index + 1}`} />
+                    <span>{item}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ol className="guide-working-checklist">
+            {checklist.sections.map((section, sectionIndex) => (
+              <li id={section.id} key={section.id}>
+                <div className="guide-working-checklist-heading">
+                  <span aria-hidden="true">
+                    {String(sectionIndex + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3>{section.title}</h3>
+                    <p>{section.intro}</p>
+                  </div>
+                </div>
+                <ul>
+                  {section.items.map((item, itemIndex) => (
+                    <li key={item}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          aria-label={`${section.title}, check ${itemIndex + 1}`}
+                        />
+                        <span>{item}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+
+          <div className="guide-high-risk-note">
+            <h3>Raise the bar for high-risk access</h3>
+            <p>{checklist.highRiskNote}</p>
+          </div>
+
+          <div className="guide-decision-outcomes">
+            <h3>Choose one outcome</h3>
+            <dl>
+              {checklist.outcomes.map((outcome) => (
+                <div key={outcome.title}>
+                  <dt>{outcome.title}</dt>
+                  <dd>{outcome.body}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <details className="guide-evidence-record">
+            <summary>Copy the evidence record</summary>
+            <pre>
+              <code>{checklist.evidenceFields.join("\n")}</code>
+            </pre>
+          </details>
+
+          <div className="guide-checklist-download">
+            <div>
+              <h3>Take it with you</h3>
+              <p>
+                Download the same checklist as Markdown for an agent, repository,
+                review ticket, or notes app.
+              </p>
+            </div>
+            <a
+              href={`${basePath}/guides/so-you-found-a-skill_checklist.md`}
+              download="so-you-found-a-skill_checklist.md"
+            >
+              Download the Markdown checklist ↓
+            </a>
+          </div>
+        </section>
+
         <section className="guide-sources" id="primary-references" aria-labelledby="guide-sources-heading">
           <h2 id="guide-sources-heading">Primary references</h2>
           <ul>
-            <li>
-              <a href="https://agentskills.io/specification">
-                Agent Skills specification and validation
-              </a>
-            </li>
-            <li>
-              <a href="https://docs.openclaw.ai/tools/skills">
-                OpenClaw: installation, verification, updates, and security
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/openclaw/clawhub/blob/main/docs/quickstart.md">
-                ClawHub quickstart
-              </a>
-            </li>
-            <li>
-              <a href="https://docs.nvidia.com/skills/scanning-agent-skills">
-                NVIDIA: Scan Agent Skills Before Installation
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/cisco-ai-defense/skill-scanner">
-                Cisco AI Defense: Skill Scanner
-              </a>
-            </li>
-            <li>
-              <a href="https://osv.dev/">OSV vulnerability database</a>
-            </li>
+            {checklist.references.map((reference) => (
+              <li key={reference.href}>
+                <a href={reference.href}>{reference.label}</a>
+              </li>
+            ))}
           </ul>
         </section>
 

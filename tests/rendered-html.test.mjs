@@ -118,6 +118,11 @@ test("server-renders the pre-install confidence checklist", async () => {
   assert.match(html, /Will it update automatically/);
   assert.match(html, /Download the Markdown checklist/);
   assert.match(html, /so-you-found-a-skill_checklist\.md/);
+  assert.match(html, /id="use-the-checklist"/);
+  assert.match(html, /32(?:<!-- -->)? checks/);
+  assert.match(html, /Capture the exact candidate/);
+  assert.match(html, /Copy the evidence record/);
+  assert.match(html, /Last reviewed (?:<!-- -->)?August 19, 2026/);
 });
 
 test("server-renders the independent Microsoft SkillOpt snapshot", async () => {

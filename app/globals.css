@@ -1314,6 +1314,18 @@ footer p:first-child {
   background: var(--white);
 }
 
+.guide-hero-actions .guide-hero-download {
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+}
+
+.guide-hero-actions .guide-hero-download:hover {
+  color: var(--ink);
+  background: var(--white);
+  border-color: var(--white);
+}
+
 .guide-contents {
   max-width: 900px;
   margin: 0;
@@ -1514,6 +1526,287 @@ footer p:first-child {
   margin: 42px 0 0 auto;
   font-weight: 800;
   text-underline-offset: 5px;
+}
+
+.guide-checklist-preview {
+  max-width: 900px;
+  margin: 22px 0 0 auto;
+  padding: clamp(56px, 8vw, 88px) 0 0;
+  scroll-margin-block-start: 1rem;
+}
+
+.guide-checklist-preview-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.guide-checklist-preview-header h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 520;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.guide-checklist-preview-header > div > p {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  color: #3f4e5c;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.guide-checklist-count {
+  margin: 0;
+  color: var(--mint-dark);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.guide-checklist-safety {
+  margin-top: 34px;
+  padding: 28px 32px;
+  color: var(--white);
+  background: var(--ink);
+}
+
+.guide-checklist-safety h3,
+.guide-working-checklist h3,
+.guide-high-risk-note h3,
+.guide-decision-outcomes h3,
+.guide-checklist-download h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+
+.guide-checklist-safety h3 {
+  margin-bottom: 10px;
+  color: var(--mint);
+  font-size: 1.45rem;
+}
+
+.guide-checklist-safety ul,
+.guide-working-checklist,
+.guide-working-checklist ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-checklist-safety li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.guide-checklist-safety label,
+.guide-working-checklist label {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  min-height: 48px;
+  align-items: start;
+  padding: 13px 0;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.guide-checklist-safety input,
+.guide-working-checklist input {
+  width: 20px;
+  height: 20px;
+  margin: 3px 0 0;
+  accent-color: var(--coral);
+}
+
+.guide-checklist-safety input:focus-visible,
+.guide-working-checklist input:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.guide-checklist-safety input:checked + span,
+.guide-working-checklist input:checked + span {
+  opacity: 0.62;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.guide-working-checklist > li {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-block-start: 1rem;
+}
+
+.guide-working-checklist-heading {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.guide-working-checklist-heading > span {
+  padding-top: 6px;
+  color: var(--mint-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.guide-working-checklist h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.55rem);
+  line-height: 1.05;
+}
+
+.guide-working-checklist-heading p {
+  max-width: 62ch;
+  margin: 10px 0 0;
+  color: #536271;
+  line-height: 1.6;
+}
+
+.guide-working-checklist ul {
+  margin-left: 58px;
+  border-top: 1px solid var(--line);
+}
+
+.guide-working-checklist ul > li {
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-working-checklist ul > li:last-child {
+  border-bottom: 0;
+}
+
+.guide-high-risk-note {
+  margin-top: 44px;
+  padding: 28px 30px;
+  background: color-mix(in srgb, var(--coral) 12%, var(--white));
+  border-top: 5px solid var(--coral);
+}
+
+.guide-high-risk-note h3,
+.guide-decision-outcomes h3,
+.guide-checklist-download h3 {
+  font-size: 1.55rem;
+}
+
+.guide-high-risk-note p,
+.guide-checklist-download p {
+  max-width: 66ch;
+  margin: 12px 0 0;
+  color: #3f4e5c;
+  line-height: 1.65;
+}
+
+.guide-decision-outcomes {
+  margin-top: 50px;
+}
+
+.guide-decision-outcomes dl {
+  margin: 20px 0 0;
+  border-top: 2px solid var(--ink);
+}
+
+.guide-decision-outcomes dl > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.3fr) minmax(0, 0.7fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-decision-outcomes dt {
+  font-weight: 850;
+}
+
+.guide-decision-outcomes dd {
+  margin: 0;
+  color: #3f4e5c;
+  line-height: 1.6;
+}
+
+.guide-evidence-record {
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-evidence-record summary {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.guide-evidence-record summary::after {
+  content: "+";
+  color: var(--mint-dark);
+  font-size: 1.4rem;
+}
+
+.guide-evidence-record[open] summary::after {
+  content: "−";
+}
+
+.guide-evidence-record summary:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+
+.guide-evidence-record pre {
+  margin: 0 0 22px;
+  padding: 24px;
+  overflow-x: auto;
+  color: var(--white);
+  background: var(--ink);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  white-space: pre;
+}
+
+.guide-evidence-record code {
+  font: inherit;
+}
+
+.guide-checklist-download {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 30px;
+  align-items: center;
+  margin-top: 48px;
+  padding: 30px;
+  background: var(--mint);
+}
+
+.guide-checklist-download a {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  padding: 12px 16px;
+  color: var(--white);
+  background: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.guide-checklist-download a:hover,
+.guide-checklist-download a:focus-visible {
+  background: var(--ink-soft);
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
 }
 
 .skill-demo-hero {
@@ -2315,6 +2608,7 @@ footer p:first-child {
   }
 
   .guide-reading-content .guide-section,
+  .guide-reading-content .guide-checklist-preview,
   .guide-reading-content .guide-sources,
   .guide-reading-content .guide-back {
     max-width: none;
@@ -2579,6 +2873,29 @@ footer p:first-child {
 
   .guide-section-number {
     margin-top: 0;
+  }
+
+  .guide-checklist-preview {
+    margin-left: 0;
+  }
+
+  .guide-checklist-preview-header,
+  .guide-checklist-download {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .guide-checklist-safety {
+    padding: 24px;
+  }
+
+  .guide-working-checklist ul {
+    margin-left: 0;
+  }
+
+  .guide-decision-outcomes dl > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .guide-sources {
