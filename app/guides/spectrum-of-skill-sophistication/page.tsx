@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import guideSource from "../generated/spectrum-of-skill-sophistication";
 import { GuideBlocks, parseMarkdownGuide } from "../markdown-guide";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const guidePath = `${basePath}/guides/spectrum-of-skill-sophistication`;
 const guide = parseMarkdownGuide(guideSource);
-const contents = guide.sections.find((section) => section.id === "contents");
 const articleSections = guide.sections.filter((section) => section.id !== "contents");
 const primaryImage = guide.intro.find((block) => block.type === "image");
 const introBlocks = guide.intro.filter((block) => block.type !== "image");
@@ -61,19 +61,20 @@ export default function SpectrumOfSkillSophistication() {
               {guide.deck ? <figcaption>{guide.deck}</figcaption> : null}
             </figure>
           ) : null}
+
+          <GuideTableOfContents
+            className="spectrum-contents"
+            items={articleSections.map((section) => ({
+              id: section.id,
+              label: section.heading,
+            }))}
+          />
         </div>
 
         <div className="spectrum-reading">
           <div className="spectrum-intro">
             <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={introBlocks} />
           </div>
-
-          {contents ? (
-            <nav className="spectrum-contents" id="contents" aria-labelledby="contents-heading">
-              <p id="contents-heading">On this page</p>
-              <GuideBlocks anchorPrefix={guidePath} basePath={basePath} blocks={contents.blocks} />
-            </nav>
-          ) : null}
 
           {articleSections.map((section) => (
             <section className="spectrum-section" id={section.id} key={section.id}>

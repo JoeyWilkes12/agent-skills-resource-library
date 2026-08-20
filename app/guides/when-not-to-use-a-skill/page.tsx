@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const contents = [
+  { id: "trust-boundary", label: "Start with the trust boundary" },
+  { id: "data-movement-and-cloud-api-access", label: "Data movement and cloud API access" },
+  { id: "primary-documentation", label: "Primary documentation is often the safer shortcut" },
+  { id: "quick-decision-test", label: "A quick decision test" },
+  { id: "scan-then-judge", label: "Scan, then still make a judgment" },
+  { id: "sources-and-further-reading", label: "Sources and further reading" },
+];
 
 export const metadata: Metadata = {
   title: "When not to use a skill | Agent Skills Resource Library",
@@ -40,7 +49,9 @@ export default function WhenNotToUseASkill() {
           <p className="guide-meta">Last reviewed July 28, 2026</p>
         </div>
 
-        <section className="guide-section guide-principle">
+        <GuideTableOfContents items={contents} />
+
+        <section className="guide-section guide-principle" id="trust-boundary">
           <p className="guide-section-number">01</p>
           <div>
             <h2>Start with the trust boundary</h2>
@@ -59,7 +70,7 @@ export default function WhenNotToUseASkill() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="data-movement-and-cloud-api-access">
           <p className="guide-section-number">02</p>
           <div>
             <p className="guide-label">Case one</p>
@@ -97,7 +108,7 @@ export default function WhenNotToUseASkill() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="primary-documentation">
           <p className="guide-section-number">03</p>
           <div>
             <p className="guide-label">Case two</p>
@@ -129,7 +140,7 @@ export default function WhenNotToUseASkill() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="quick-decision-test">
           <p className="guide-section-number">04</p>
           <div>
             <h2>A quick decision test</h2>
@@ -164,7 +175,7 @@ export default function WhenNotToUseASkill() {
           </div>
         </section>
 
-        <section className="guide-section guide-conclusion">
+        <section className="guide-section guide-conclusion" id="scan-then-judge">
           <p className="guide-section-number">05</p>
           <div>
             <h2>Scan, then still make a judgment</h2>
@@ -181,7 +192,11 @@ export default function WhenNotToUseASkill() {
           </div>
         </section>
 
-        <section className="guide-sources" aria-labelledby="guide-sources-heading">
+        <section
+          className="guide-sources"
+          id="sources-and-further-reading"
+          aria-labelledby="guide-sources-heading"
+        >
           <h2 id="guide-sources-heading">Sources and further reading</h2>
           <ul>
             <li>

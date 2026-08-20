@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const contents = [
+  { id: "reusable-operating-procedure", label: "A skill is a reusable operating procedure" },
+  { id: "discoverable-frontmatter", label: "Frontmatter makes the workflow discoverable" },
+  { id: "ordered-instructions", label: "Instructions turn policy into ordered behavior" },
+  { id: "implicit-activation", label: "Implicit activation makes the precaution proactive" },
+  { id: "safety-boundaries", label: "Safety boundaries belong inside the skill" },
+  { id: "skill-authoring-checklist", label: "Use this example as a skill-authoring checklist" },
+  { id: "continue-learning", label: "Continue learning" },
+];
 
 export const metadata: Metadata = {
   title: "What an agent skill looks like: SkillSpector Review | Agent Skills Resource Library",
@@ -45,7 +55,9 @@ export default function SkillSpectorSkillDemo() {
           <p className="guide-meta">Demonstration artifact · Updated August 11, 2026</p>
         </div>
 
-        <section className="guide-section guide-principle">
+        <GuideTableOfContents items={contents} />
+
+        <section className="guide-section guide-principle" id="reusable-operating-procedure">
           <p className="guide-section-number">01</p>
           <div>
             <h2>A skill is a reusable operating procedure</h2>
@@ -77,7 +89,7 @@ export default function SkillSpectorSkillDemo() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="discoverable-frontmatter">
           <p className="guide-section-number">02</p>
           <div>
             <h2>Frontmatter makes the workflow discoverable</h2>
@@ -108,7 +120,7 @@ description: Proactively scan untrusted AI-agent skills and
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="ordered-instructions">
           <p className="guide-section-number">03</p>
           <div>
             <h2>Instructions turn policy into ordered behavior</h2>
@@ -129,7 +141,7 @@ description: Proactively scan untrusted AI-agent skills and
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="implicit-activation">
           <p className="guide-section-number">04</p>
           <div>
             <h2>Implicit activation makes the precaution proactive</h2>
@@ -171,7 +183,7 @@ interface:
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="safety-boundaries">
           <p className="guide-section-number">05</p>
           <div>
             <h2>Safety boundaries belong inside the skill</h2>
@@ -202,7 +214,7 @@ interface:
           </div>
         </section>
 
-        <section className="guide-section guide-conclusion">
+        <section className="guide-section guide-conclusion" id="skill-authoring-checklist">
           <p className="guide-section-number">06</p>
           <div>
             <h2>Use this example as a skill-authoring checklist</h2>
@@ -222,7 +234,7 @@ interface:
           </div>
         </section>
 
-        <section className="guide-sources" aria-labelledby="demo-sources-heading">
+        <section className="guide-sources" id="continue-learning" aria-labelledby="demo-sources-heading">
           <h2 id="demo-sources-heading">Continue learning</h2>
           <ul>
             <li><a href="https://agentskills.io/specification">Agent Skills specification</a></li>

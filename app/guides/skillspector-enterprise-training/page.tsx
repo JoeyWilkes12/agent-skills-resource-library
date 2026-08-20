@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const contents = [
+  { id: "early-gate", label: "The role: an early gate, not a safety certificate" },
+  { id: "decision-path", label: "Use a three-stage decision path" },
+  { id: "preliminary-pass", label: "What the preliminary pass does well" },
+  { id: "llm-assessment", label: "What an additional LLM can assess" },
+  { id: "runbook", label: "Run the exact artifact in two passes" },
+  { id: "read-completeness", label: "Read completeness before the score" },
+  { id: "interpret-score", label: "Interpret the score as triage" },
+  { id: "enterprise-decision", label: "Make the enterprise decision explicit" },
+  { id: "presentation-and-training-sources", label: "Presentation and training sources" },
+];
 
 export const metadata: Metadata = {
   title: "NVIDIA SkillSpector enterprise training guide | Agent Skills Resource Library",
@@ -45,7 +57,9 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </p>
         </div>
 
-        <section className="guide-section guide-principle">
+        <GuideTableOfContents items={contents} />
+
+        <section className="guide-section guide-principle" id="early-gate">
           <p className="guide-section-number">01</p>
           <div>
             <h2>The role: an early gate, not a safety certificate</h2>
@@ -85,7 +99,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="decision-path">
           <p className="guide-section-number">02</p>
           <div>
             <h2>Use a three-stage decision path</h2>
@@ -118,7 +132,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="preliminary-pass">
           <p className="guide-section-number">03</p>
           <div>
             <h2>What the preliminary pass does well</h2>
@@ -145,7 +159,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="llm-assessment">
           <p className="guide-section-number">04</p>
           <div>
             <h2>What an additional LLM can assess</h2>
@@ -218,7 +232,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="read-completeness">
           <p className="guide-section-number">06</p>
           <div>
             <h2>Read completeness before the score</h2>
@@ -246,7 +260,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="interpret-score">
           <p className="guide-section-number">07</p>
           <div>
             <h2>Interpret the score as triage</h2>
@@ -264,7 +278,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-section guide-conclusion">
+        <section className="guide-section guide-conclusion" id="enterprise-decision">
           <p className="guide-section-number">08</p>
           <div>
             <h2>Make the enterprise decision explicit</h2>
@@ -282,7 +296,11 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           </div>
         </section>
 
-        <section className="guide-sources" aria-labelledby="guide-sources-heading">
+        <section
+          className="guide-sources"
+          id="presentation-and-training-sources"
+          aria-labelledby="guide-sources-heading"
+        >
           <h2 id="guide-sources-heading">Presentation and training sources</h2>
           <ul>
             <li><a href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</a></li>

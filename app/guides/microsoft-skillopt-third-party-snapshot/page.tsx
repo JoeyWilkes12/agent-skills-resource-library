@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const contents = [
+  { id: "bottom-line", label: "Pilot-capable, not ready for unattended self-evolution" },
+  { id: "how-it-works", label: "A skill definition becomes trainable text" },
+  { id: "developer-experience", label: "The package is easy; the evaluator is the project" },
+  { id: "maturity", label: "Strong research velocity, limited operational history" },
+  { id: "total-cost", label: "The license is free. The search loop is not." },
+  { id: "fit-for-agentic-self-service", label: "The local foundation is useful, but the evaluation layer is missing" },
+  { id: "security-boundary", label: "Freeze the authority boundary; optimize only the procedure" },
+  { id: "adoption-decision", label: "Promote only measured value beyond cheaper edits" },
+  { id: "primary-sources-and-review-notes", label: "Primary sources and review notes" },
+];
 
 const title =
   "Microsoft SkillOpt: third-party developer snapshot | Agent Skills Resource Library";
@@ -65,7 +77,9 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </p>
         </div>
 
-        <section className="guide-section guide-principle">
+        <GuideTableOfContents items={contents} />
+
+        <section className="guide-section guide-principle" id="bottom-line">
           <p className="guide-section-number">01</p>
           <div>
             <p className="guide-label">Bottom line</p>
@@ -96,7 +110,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="how-it-works">
           <p className="guide-section-number">02</p>
           <div>
             <p className="guide-label">How it works</p>
@@ -136,7 +150,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="developer-experience">
           <p className="guide-section-number">03</p>
           <div>
             <p className="guide-label">Developer experience</p>
@@ -203,7 +217,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="maturity">
           <p className="guide-section-number">04</p>
           <div>
             <p className="guide-label">Maturity</p>
@@ -255,7 +269,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="total-cost">
           <p className="guide-section-number">05</p>
           <div>
             <p className="guide-label">Total cost</p>
@@ -315,7 +329,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="fit-for-agentic-self-service">
           <p className="guide-section-number">06</p>
           <div>
             <p className="guide-label">Fit with this library</p>
@@ -380,7 +394,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="security-boundary">
           <p className="guide-section-number">07</p>
           <div>
             <p className="guide-label">Pilot design</p>
@@ -423,7 +437,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-section guide-conclusion">
+        <section className="guide-section guide-conclusion" id="adoption-decision">
           <p className="guide-section-number">08</p>
           <div>
             <p className="guide-label">Decision rule</p>
@@ -442,7 +456,11 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           </div>
         </section>
 
-        <section className="guide-sources" aria-labelledby="skillopt-sources-heading">
+        <section
+          className="guide-sources"
+          id="primary-sources-and-review-notes"
+          aria-labelledby="skillopt-sources-heading"
+        >
           <h2 id="skillopt-sources-heading">Primary sources and review notes</h2>
           <ul>
             <li>

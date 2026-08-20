@@ -1301,6 +1301,62 @@ footer p:first-child {
   background: var(--white);
 }
 
+.guide-contents {
+  max-width: 900px;
+  margin: 22px 0 0 auto;
+  padding: 26px 30px 30px;
+  background: var(--mint);
+  border-left: 6px solid var(--ink);
+}
+
+.guide-contents-heading {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guide-contents-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-contents-list a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px;
+  min-height: 100%;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.34);
+  font-size: 0.91rem;
+  font-weight: 760;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.guide-contents-list a:hover,
+.guide-contents-list a:focus-visible {
+  background: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.guide-contents-number {
+  color: var(--mint-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+}
+
 .guide-section {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
@@ -1515,18 +1571,6 @@ footer p:first-child {
 
 .spectrum-contents {
   margin: clamp(52px, 7vw, 80px) 0 12px;
-  padding: 22px 24px 24px;
-  background: var(--mint);
-  border-left: 6px solid var(--ink);
-}
-
-.spectrum-contents > p {
-  margin: 0 0 14px;
-  color: var(--ink);
-  font-size: 0.74rem;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .spectrum-list {
@@ -2349,6 +2393,15 @@ footer p:first-child {
 
   .guide-hero {
     padding: 38px 28px;
+  }
+
+  .guide-contents {
+    margin-left: 0;
+    padding: 22px;
+  }
+
+  .guide-contents-list {
+    grid-template-columns: 1fr;
   }
 
   .spectrum-hero {

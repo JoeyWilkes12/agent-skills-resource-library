@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
+import { GuideTableOfContents } from "../table-of-contents";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const contents = [
+  { id: "treat-the-candidate-as-untrusted", label: "Treat the candidate as untrusted" },
+  { id: "check-these-sources", label: "Check these sources, in order" },
+  { id: "security-and-reliability-gates", label: "Pass security and reliability gates" },
+  { id: "automatic-updates", label: "Will it update automatically?" },
+  { id: "evidence-backed-decision", label: "Make an evidence-backed decision" },
+  { id: "primary-references", label: "Primary references" },
+];
 
 export const metadata: Metadata = {
   title: "So you found a skill: pre-install checklist | Agent Skills Resource Library",
@@ -94,7 +103,9 @@ export default function SkillConfidenceChecklist() {
           <p className="guide-meta">Last reviewed July 29, 2026</p>
         </div>
 
-        <section className="guide-section guide-principle">
+        <GuideTableOfContents items={contents} />
+
+        <section className="guide-section guide-principle" id="treat-the-candidate-as-untrusted">
           <p className="guide-section-number">01</p>
           <div>
             <h2>Treat the candidate as untrusted</h2>
@@ -118,7 +129,7 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="check-these-sources">
           <p className="guide-section-number">02</p>
           <div>
             <h2>Check these sources, in order</h2>
@@ -132,7 +143,7 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="security-and-reliability-gates">
           <p className="guide-section-number">03</p>
           <div>
             <h2>Pass security and reliability gates</h2>
@@ -148,7 +159,7 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
-        <section className="guide-section">
+        <section className="guide-section" id="automatic-updates">
           <p className="guide-section-number">04</p>
           <div>
             <h2>Will it update automatically?</h2>
@@ -187,7 +198,7 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
-        <section className="guide-section guide-conclusion">
+        <section className="guide-section guide-conclusion" id="evidence-backed-decision">
           <p className="guide-section-number">05</p>
           <div>
             <h2>Make an evidence-backed decision</h2>
@@ -204,7 +215,7 @@ export default function SkillConfidenceChecklist() {
           </div>
         </section>
 
-        <section className="guide-sources" aria-labelledby="guide-sources-heading">
+        <section className="guide-sources" id="primary-references" aria-labelledby="guide-sources-heading">
           <h2 id="guide-sources-heading">Primary references</h2>
           <ul>
             <li>
