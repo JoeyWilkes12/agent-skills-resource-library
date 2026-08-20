@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { SiteHeader } from "../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const libraryUrl =
@@ -14,25 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="about-page">
-      <header className="guide-header">
-        <a className="wordmark" href={`${basePath}/`} aria-label="Back to the library">
-          <span className="wordmark-mark" aria-hidden="true">
-            AS
-          </span>
-          <span>Agent Skills Library</span>
-        </a>
-        <nav className="header-nav" aria-label="Primary navigation">
-          <a className="header-link" href={`${basePath}/#library`}>
-            Links
-          </a>
-          <a className="header-link" href={`${basePath}/guides`}>
-            Guides
-          </a>
-          <a className="header-link" href={`${basePath}/about`} aria-current="page">
-            About
-          </a>
-        </nav>
-      </header>
+      <SiteHeader currentSection="about" />
 
       <article className="about-article">
         <section className="about-hero" aria-labelledby="about-heading">

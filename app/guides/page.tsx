@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteHeader } from "../site-header";
 import spectrumGuideSource from "./generated/spectrum-of-skill-sophistication";
 import { parseMarkdownGuide, publicAssetUrl } from "./markdown-guide";
 
@@ -71,25 +72,7 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   return (
     <main className="guide-page guides-index-page">
-      <header className="guide-header">
-        <a className="wordmark" href={`${basePath}/`} aria-label="Back to the library">
-          <span className="wordmark-mark" aria-hidden="true">
-            AS
-          </span>
-          <span>Agent Skills Library</span>
-        </a>
-        <nav className="header-nav" aria-label="Primary navigation">
-          <a className="header-link" href={`${basePath}/#library`}>
-            Links
-          </a>
-          <a className="header-link" href={`${basePath}/guides`} aria-current="page">
-            Guides
-          </a>
-          <a className="header-link" href={`${basePath}/about`}>
-            About
-          </a>
-        </nav>
-      </header>
+      <SiteHeader currentSection="guides" />
 
       <article className="guides-index-article">
         <section className="guides-index-hero" aria-labelledby="guides-heading">

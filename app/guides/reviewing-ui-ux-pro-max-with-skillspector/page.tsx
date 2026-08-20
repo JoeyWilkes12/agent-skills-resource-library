@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -62,22 +63,7 @@ export const metadata: Metadata = {
 export default function ReviewingUiUxProMaxWithSkillspector() {
   return (
     <main className="guide-page">
-      <header className="guide-header">
-        <a className="wordmark" href={`${basePath}/`} aria-label="Back to the library">
-          <span className="wordmark-mark" aria-hidden="true">
-            AS
-          </span>
-          <span>Agent Skills Library</span>
-        </a>
-        <nav className="header-nav" aria-label="Primary navigation">
-          <a className="header-link" href={`${basePath}/#library`}>
-            Links
-          </a>
-          <a className="header-link" href={`${basePath}/guides`}>
-            Guides
-          </a>
-        </nav>
-      </header>
+      <SiteHeader currentSection="guides" />
 
       <article className="guide-article">
         <div className="guide-hero">

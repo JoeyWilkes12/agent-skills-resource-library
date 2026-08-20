@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { featuredIntro } from "./featured-copy";
 import { siteConfig } from "./site-config";
+import { SiteHeader } from "./site-header";
 
 type Dimension =
   | "intent"
@@ -468,25 +469,12 @@ export function ResourceLibrary() {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Agent Skills Resource Library">
-          <span className="wordmark-mark" aria-hidden="true">
-            AS
-          </span>
-          <span>Agent Skills Library</span>
-        </a>
-        <nav className="header-nav" aria-label="Primary navigation">
-          <a className="header-link" href="#library">
-            Links
-          </a>
-          <a className="header-link" href={`${basePath}/guides`}>
-            Guides
-          </a>
-          <a className="header-link" href={`${basePath}/about`}>
-            About
-          </a>
-        </nav>
-      </header>
+      <SiteHeader
+        variant="site"
+        homeHref="#top"
+        homeLabel="Agent Skills Resource Library"
+        linksHref="#library"
+      />
 
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />

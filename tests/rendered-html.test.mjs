@@ -52,7 +52,12 @@ test("server-renders the resource library shell", async () => {
   assert.match(html, /<title>Agent Skills Resource Library<\/title>/i);
   assert.match(html, /Find the right guidance for(?:<!-- -->|\s|&nbsp;)+.*AI agent skills.*\./);
   assert.match(html, /Skills library/);
-  assert.match(html, /href="#library">Links<\/a><a[^>]+href="\/guides">Guides<\/a>/);
+  assert.match(html, /<div class="header-menu">/);
+  assert.match(html, /aria-label="Open primary navigation"/);
+  assert.match(
+    html,
+    /href="#library">Links<\/a><a[^>]+href="\/guides">Guides<\/a><a[^>]+href="\/about">About<\/a>/,
+  );
   assert.match(html, /href="\/data\/resources\.csv"/);
   assert.match(html, /Download all resources \(CSV\)/);
   assert.match(html, /aria-label="Filter resources"/);
