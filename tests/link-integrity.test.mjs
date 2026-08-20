@@ -95,6 +95,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/",
     "/about",
     "/guides",
+    "/guides/writing-without-the-ai-sheen",
     "/guides/spectrum-of-skill-sophistication",
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",
@@ -164,6 +165,7 @@ test(
     const worker = await loadWorker();
     const guideResponses = await Promise.all([
       render(worker, "/guides/when-not-to-use-a-skill"),
+      render(worker, "/guides/writing-without-the-ai-sheen"),
       render(worker, "/about"),
       render(worker, "/guides/spectrum-of-skill-sophistication"),
       render(worker, "/guides/so-you-found-a-skill-checklist"),

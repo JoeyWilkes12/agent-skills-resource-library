@@ -102,11 +102,24 @@ test("server-renders the Guides index and its Spectrum entry", async () => {
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
   assert.match(html, /More guides from the library/);
+  assert.match(html, /href="\/guides\/writing-without-the-ai-sheen"/);
   assert.match(html, /href="\/guides\/when-not-to-use-a-skill"/);
   assert.match(html, /href="\/guides\/so-you-found-a-skill-checklist"/);
   assert.match(html, /href="\/guides\/skillspector-enterprise-training"/);
   assert.match(html, /href="\/guides\/skillspector-skill-demo"/);
   assert.match(html, /href="\/guides\/microsoft-skillopt-third-party-snapshot"/);
+});
+
+test("server-renders the writing authenticity guide and review disclosures", async () => {
+  const response = await renderPath("/guides/writing-without-the-ai-sheen");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Writing without the AI sheen/);
+  assert.match(html, /Four skills, reviewed before installation/);
+  assert.match(html, /Avoid AI Writing(?:<!-- -->)?\s*:\s*static evidence and human read/);
+  assert.match(html, /Humanizer Skill by Aboudjem/);
+  assert.match(html, /None installed/);
 });
 
 test("server-renders the pre-install confidence checklist", async () => {

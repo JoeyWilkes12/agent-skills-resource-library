@@ -7,6 +7,12 @@ const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
 const libraryGuides = [
   {
+    href: "/guides/writing-without-the-ai-sheen",
+    title: "Writing without the AI sheen",
+    summary:
+      "A practical authenticity-first editing workflow, with static safety evidence for four community writing skills.",
+  },
+  {
     href: "/guides/when-not-to-use-a-skill",
     title: "When not to use a skill",
     summary:
