@@ -4,6 +4,7 @@ agent-skills-overview,intent,understand,10
 anthropic-what-are-skills,intent,understand,20
 openai-skills-concepts,intent,understand,30
 agent-skills-course,intent,understand,40
+oreilly-skills-context-window,intent,understand,45
 openai-record-replay,intent,create,5
 openai-build-skills,intent,create,10
 agent-skills-specification,intent,create,20
