@@ -25,6 +25,12 @@ const libraryGuides = [
       "A practical guide to screening an agent skill before installation and turning scanner output into a defensible human decision.",
   },
   {
+    href: "/guides/reviewing-ui-ux-pro-max-with-skillspector",
+    title: "Reviewing UI/UX Pro Max with NVIDIA SkillSpector",
+    summary:
+      "A case study in reviewing a skill bundle with static analysis, OWASP prompt-injection triage, and a scoped semantic second opinion before installation.",
+  },
+  {
     href: "/guides/skillspector-skill-demo",
     title: "What an agent skill looks like: SkillSpector Review",
     summary:
