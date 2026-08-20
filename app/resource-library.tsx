@@ -65,6 +65,10 @@ const EMPTY_SELECTIONS: Selections = {
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+const CARD_COVER_IMAGES: Record<string, string> = {
+  "oreilly-skills-context-window": "/images/skills-for-ai-agents-cover.jpg",
+};
+
 const DIMENSION_TITLES: Record<Dimension, string> = {
   intent: "I want to…",
   topic: "Topic",
@@ -764,6 +768,7 @@ function ResourceCard({
   const isInternal = resource.url.startsWith("/");
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const resourceUrl = isInternal ? `${basePath}${resource.url}` : resource.url;
+  const coverImage = CARD_COVER_IMAGES[resource.id];
 
   return (
     <details
@@ -775,9 +780,18 @@ function ResourceCard({
         className="card-summary"
         aria-label={`Toggle details for ${resource.title}, ${resource.resourceType} from ${resource.publisher}`}
       >
-        <div className="card-visual">
+        <div className={`card-visual${coverImage ? " has-cover" : ""}`}>
           {sequence && <span className="card-sequence">0{sequence}</span>}
-          <span className="source-mark">{sourceMark(resource)}</span>
+          {coverImage ? (
+            <img
+              className="card-cover"
+              src={`${basePath}${coverImage}`}
+              alt=""
+              decoding="async"
+            />
+          ) : (
+            <span className="source-mark">{sourceMark(resource)}</span>
+          )}
           <span className="card-expand-icon" aria-hidden="true" />
         </div>
         <div className="card-content">
