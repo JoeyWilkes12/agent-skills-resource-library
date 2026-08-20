@@ -87,13 +87,32 @@ test("server-renders the Markdown-powered skill sophistication guide", async () 
 
   const html = await response.text();
   assert.match(html, /Spectrum of skill sophistication/);
-  assert.match(html, /A first draft is a sketch/);
+  assert.match(html, /A quick win is a beginning/);
   assert.match(html, /Rigor should match the promise/);
   assert.match(html, /guides\/spectrum-of-skill-sophistication\.jpeg/);
-  assert.match(html, /id="the-baton-changes-hands"/);
+  assert.match(html, /id="professional-use-creates-more-handoffs"/);
 });
 
-test("server-renders the Guides index and its Spectrum entry", async () => {
+test("server-renders the new agentic performance guides", async () => {
+  const performanceResponse = await renderPath("/guides/skills-in-the-agentic-performance-system");
+  assert.equal(performanceResponse.status, 200);
+  const performanceHtml = await performanceResponse.text();
+  assert.match(performanceHtml, /Skills in the agentic performance system/);
+  assert.match(performanceHtml, /The seven levers of agentic performance/);
+  assert.match(performanceHtml, /Discover → select → load → execute → verify/);
+
+  const sourceLibraryResponse = await renderPath("/guides/agentic-performance-source-library");
+  assert.equal(sourceLibraryResponse.status, 200);
+  const sourceLibraryHtml = await sourceLibraryResponse.text();
+  assert.match(sourceLibraryHtml, /Agentic performance source library/);
+  assert.match(sourceLibraryHtml, /A twelve-resource starting shelf/);
+  assert.match(sourceLibraryHtml, /Agentic AI Foundation and the Linux Foundation/);
+  assert.match(sourceLibraryHtml, /class="guide-resource-link"/);
+  assert.match(sourceLibraryHtml, /guide-resource-link-icon/);
+  assert.match(sourceLibraryHtml, /target="_blank"/);
+});
+
+test("server-renders the Guides index and its published entries", async () => {
   const response = await renderPath("/guides");
   assert.equal(response.status, 200);
 
@@ -102,6 +121,8 @@ test("server-renders the Guides index and its Spectrum entry", async () => {
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
   assert.match(html, /More guides from the library/);
+  assert.match(html, /href="\/guides\/skills-in-the-agentic-performance-system"/);
+  assert.match(html, /href="\/guides\/agentic-performance-source-library"/);
   assert.match(html, /href="\/guides\/writing-without-the-ai-sheen"/);
   assert.match(html, /href="\/guides\/when-not-to-use-a-skill"/);
   assert.match(html, /href="\/guides\/so-you-found-a-skill-checklist"/);

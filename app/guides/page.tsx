@@ -7,6 +7,18 @@ const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
 const libraryGuides = [
   {
+    href: "/guides/skills-in-the-agentic-performance-system",
+    title: "Skills in the agentic performance system",
+    summary:
+      "A seven-lever framework for seeing Skills alongside models, data, tools, harnesses, software, evaluation, and trust.",
+  },
+  {
+    href: "/guides/agentic-performance-source-library",
+    title: "Agentic performance source library",
+    summary:
+      "An annotated, source-labeled reading map spanning AAIF, major providers, research papers, and O'Reilly Radar.",
+  },
+  {
     href: "/guides/writing-without-the-ai-sheen",
     title: "Writing without the AI sheen",
     summary:
