@@ -64,9 +64,14 @@ export default function SkillConfidenceChecklist() {
           </span>
           <span>Agent Skills Library</span>
         </a>
-        <a className="header-link" href={`${basePath}/#library`}>
-          Browse resources
-        </a>
+        <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href={`${basePath}/#library`}>
+            Links
+          </a>
+          <a className="header-link" href={`${basePath}/guides`}>
+            Guides
+          </a>
+        </nav>
       </header>
 
       <article className="guide-article">
@@ -240,4 +245,3 @@ export default function SkillConfidenceChecklist() {
     </main>
   );
 }
-

@@ -52,6 +52,7 @@ test("server-renders the resource library shell", async () => {
   assert.match(html, /<title>Agent Skills Resource Library<\/title>/i);
   assert.match(html, /Find the right guidance for(?:<!-- -->|\s|&nbsp;)+.*AI agent skills.*\./);
   assert.match(html, /Skills library/);
+  assert.match(html, /href="#library">Links<\/a><a[^>]+href="\/guides">Guides<\/a>/);
   assert.match(html, /href="\/data\/resources\.csv"/);
   assert.match(html, /Download all resources \(CSV\)/);
   assert.match(html, /aria-label="Filter resources"/);
@@ -100,6 +101,12 @@ test("server-renders the Guides index and its Spectrum entry", async () => {
   assert.match(html, /Guides for building skills that hold up/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
+  assert.match(html, /More guides from the library/);
+  assert.match(html, /href="\/guides\/when-not-to-use-a-skill"/);
+  assert.match(html, /href="\/guides\/so-you-found-a-skill-checklist"/);
+  assert.match(html, /href="\/guides\/skillspector-enterprise-training"/);
+  assert.match(html, /href="\/guides\/skillspector-skill-demo"/);
+  assert.match(html, /href="\/guides\/microsoft-skillopt-third-party-snapshot"/);
 });
 
 test("server-renders the pre-install confidence checklist", async () => {

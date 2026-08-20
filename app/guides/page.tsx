@@ -5,6 +5,38 @@ import { parseMarkdownGuide, publicAssetUrl } from "./markdown-guide";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
+const libraryGuides = [
+  {
+    href: "/guides/when-not-to-use-a-skill",
+    title: "When not to use a skill",
+    summary:
+      "A decision guide for choosing primary documentation or a governed internal workflow instead of a third-party agent skill.",
+  },
+  {
+    href: "/guides/so-you-found-a-skill-checklist",
+    title: "So you found a skill: pre-install confidence checklist",
+    summary:
+      "A source-backed checklist for reviewing a skill's provenance, behavior, dependencies, permissions, reliability, and update path before installation.",
+  },
+  {
+    href: "/guides/skillspector-enterprise-training",
+    title: "NVIDIA SkillSpector enterprise training guide",
+    summary:
+      "A practical guide to screening an agent skill before installation and turning scanner output into a defensible human decision.",
+  },
+  {
+    href: "/guides/skillspector-skill-demo",
+    title: "What an agent skill looks like: SkillSpector Review",
+    summary:
+      "An annotated walkthrough of a real Codex skill that turns a security policy into a discoverable, reusable workflow.",
+  },
+  {
+    href: "/guides/microsoft-skillopt-third-party-snapshot",
+    title: "Microsoft SkillOpt: third-party developer snapshot",
+    summary:
+      "An independent developer review of SkillOpt's maturity, operating costs, security boundaries, and fit for governed self-service skills.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Guides | Agent Skills Resource Library",
@@ -23,11 +55,11 @@ export default function GuidesPage() {
           <span>Agent Skills Library</span>
         </a>
         <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href={`${basePath}/#library`}>
+            Links
+          </a>
           <a className="header-link" href={`${basePath}/guides`} aria-current="page">
             Guides
-          </a>
-          <a className="header-link" href={`${basePath}/#library`}>
-            Browse resources
           </a>
           <a className="header-link" href={`${basePath}/about`}>
             About
@@ -39,8 +71,8 @@ export default function GuidesPage() {
         <section className="guides-index-hero" aria-labelledby="guides-heading">
           <h1 id="guides-heading">Guides for building skills that hold up.</h1>
           <p>
-            Original write-ups from the library on the decisions, trade-offs,
-            and engineering work behind dependable agent skills.
+            Guides and editorial write-ups from the library on the decisions,
+            trade-offs, and engineering work behind dependable agent skills.
           </p>
         </section>
 
@@ -66,6 +98,29 @@ export default function GuidesPage() {
               </span>
             </div>
           </a>
+        </section>
+
+        <section className="guides-list" aria-labelledby="more-guides-heading">
+          <div className="guides-list-header">
+            <h2 id="more-guides-heading">More guides from the library</h2>
+            <p>
+              Practical reading for deciding whether to use, install, review,
+              or improve an agent skill.
+            </p>
+          </div>
+          <ul>
+            {libraryGuides.map((guide) => (
+              <li key={guide.href}>
+                <a href={`${basePath}${guide.href}`}>
+                  <div>
+                    <h3>{guide.title}</h3>
+                    <p>{guide.summary}</p>
+                  </div>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       </article>
 

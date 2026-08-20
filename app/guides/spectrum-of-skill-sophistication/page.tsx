@@ -39,11 +39,11 @@ export default function SpectrumOfSkillSophistication() {
           <span>Agent Skills Library</span>
         </a>
         <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href={`${basePath}/#library`}>
+            Links
+          </a>
           <a className="header-link" href={`${basePath}/guides`}>
             Guides
-          </a>
-          <a className="header-link" href={`${basePath}/#library`}>
-            Browse resources
           </a>
         </nav>
       </header>

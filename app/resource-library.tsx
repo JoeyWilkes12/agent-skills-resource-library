@@ -472,11 +472,11 @@ export function ResourceLibrary() {
           <span>Agent Skills Library</span>
         </a>
         <nav className="header-nav" aria-label="Primary navigation">
+          <a className="header-link" href="#library">
+            Links
+          </a>
           <a className="header-link" href={`${basePath}/guides`}>
             Guides
-          </a>
-          <a className="header-link" href="#library">
-            Browse resources
           </a>
           <a className="header-link" href={`${basePath}/about`}>
             About

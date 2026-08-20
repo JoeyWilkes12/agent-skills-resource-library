@@ -23,7 +23,10 @@ export default function AboutPage() {
         </a>
         <nav className="header-nav" aria-label="Primary navigation">
           <a className="header-link" href={`${basePath}/#library`}>
-            Browse resources
+            Links
+          </a>
+          <a className="header-link" href={`${basePath}/guides`}>
+            Guides
           </a>
           <a className="header-link" href={`${basePath}/about`} aria-current="page">
             About
