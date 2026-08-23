@@ -14,7 +14,7 @@ A model does not perform professional work by itself. Neither does a Skill.
 
 The outcome comes from a configured system: a task given to a particular model, operating under instructions, with selected context, data, tools, permissions, software, runtime behavior, and human oversight. Change any one of those conditions and the result can change.
 
-This suggests a useful expansion of the [Spectrum of skill sophistication](https://agent-skills-resource-library.yoshirex12.chatgpt.site/guides/spectrum-of-skill-sophistication):
+This suggests a useful expansion of the [Spectrum of skill sophistication](./spectrum-of-skill-sophistication):
 
 > **A professional outcome is a property of the whole agentic system, not a property of the model or Skill alone.**
 
