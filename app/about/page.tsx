@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteHeader } from "../site-header";
+import changelog from "./generated/changelog.json";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const libraryUrl =
   "https://joeywilkes12.github.io/agent-skills-resource-library/.";
+const repositoryUrl =
+  "https://github.com/JoeyWilkes12/agent-skills-resource-library";
+
+function formatDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
+function changelogHref(href?: string) {
+  if (!href) return undefined;
+  return href.startsWith("/") ? `${basePath}${href}` : href;
+}
 
 export const metadata: Metadata = {
   title: "About | Agent Skills Resource Library",
@@ -99,6 +116,89 @@ export default function AboutPage() {
               point for informed work, not a replacement for verifying a
               third-party skill before installing or running it.
             </p>
+          </div>
+        </section>
+
+        <section
+          className="about-section about-changelog"
+          aria-labelledby="changelog-heading"
+        >
+          <div className="changelog-intro">
+            <h2 id="changelog-heading">Changelog</h2>
+            <p>
+              A date-by-date record of what has changed, generated from the
+              project&apos;s Git history. Every resource added to the CSV gets its
+              own entry—even when that row is the entire update.
+            </p>
+            <p className="changelog-format-note">
+              Organized by change type using the{" "}
+              <a href="https://keepachangelog.com/en/1.1.0/">
+                Keep a Changelog 1.1.0
+              </a>{" "}
+              format. Dates stand in for releases because this project does not
+              use version tags.
+            </p>
+          </div>
+
+          <div className="changelog-releases">
+            {changelog.releases.map((release, index) => {
+              const changeCount = release.sections.reduce(
+                (total, section) => total + section.items.length,
+                0,
+              );
+
+              return (
+                <details
+                  className="changelog-release"
+                  key={release.date}
+                  open={index < 2}
+                >
+                  <summary>
+                    <time dateTime={release.date}>{formatDate(release.date)}</time>
+                    <span>
+                      {changeCount} {changeCount === 1 ? "change" : "changes"}
+                    </span>
+                  </summary>
+
+                  <div className="changelog-release-body">
+                    {release.sections.map((section) => (
+                      <section
+                        className="changelog-group"
+                        key={section.type}
+                        aria-labelledby={`${release.date}-${section.type.toLowerCase()}`}
+                      >
+                        <h3 id={`${release.date}-${section.type.toLowerCase()}`}>
+                          {section.type}
+                        </h3>
+                        <ul>
+                          {section.items.map((item) => {
+                            const href = changelogHref(
+                              "href" in item ? item.href : undefined,
+                            );
+                            const itemKey =
+                              "resourceId" in item ? item.resourceId : item.text;
+                            return (
+                              <li key={`${item.commit}-${itemKey}`}>
+                                <span>
+                                  {href ? <a href={href}>{item.text}</a> : item.text}
+                                </span>
+                                <a
+                                  className="changelog-commit"
+                                  href={`${repositoryUrl}/commit/${item.commit}`}
+                                  aria-label={`View commit ${item.commit.slice(0, 7)} on GitHub`}
+                                >
+                                  {item.commit.slice(0, 7)}
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </section>
+                    ))}
+                  </div>
+                </details>
+              );
+            })}
           </div>
         </section>
       </article>

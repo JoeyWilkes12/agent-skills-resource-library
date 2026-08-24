@@ -2833,6 +2833,142 @@ footer p:first-child {
   line-height: 1.6;
 }
 
+.about-changelog {
+  max-width: 1080px;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.changelog-intro > p:not(.changelog-format-note) {
+  max-width: 760px;
+  margin: 0;
+  color: #3f4e5c;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.changelog-format-note {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #5b6874;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.changelog-format-note a {
+  color: var(--mint-dark);
+  font-weight: 780;
+  text-underline-offset: 4px;
+}
+
+.changelog-releases {
+  margin-top: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.changelog-release {
+  border-top: 1px solid var(--line);
+}
+
+.changelog-release > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 23px 0;
+  cursor: pointer;
+}
+
+.changelog-release > summary time {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 550;
+  letter-spacing: -0.035em;
+}
+
+.changelog-release > summary span {
+  color: #64717c;
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.changelog-release[open] > summary {
+  padding-bottom: 18px;
+}
+
+.changelog-release-body {
+  padding: 0 0 28px;
+}
+
+.changelog-group {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(7, 27, 51, 0.09);
+}
+
+.changelog-group h3 {
+  margin: 3px 0 0;
+  color: var(--mint-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.changelog-group ul {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.changelog-group li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: baseline;
+  padding: 10px 0;
+  color: #344554;
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.changelog-group li + li {
+  border-top: 1px solid rgba(7, 27, 51, 0.07);
+}
+
+.changelog-group li > span > a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration-color: rgba(28, 121, 94, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.changelog-commit {
+  color: #6a747d;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
+  text-decoration: none;
+}
+
+.changelog-commit:hover,
+.changelog-group li > span > a:hover {
+  color: var(--mint-dark);
+}
+
+.changelog-release > summary:focus-visible,
+.changelog-format-note a:focus-visible,
+.changelog-group a:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
 @media (min-width: 1180px) {
   .guide-article {
     width: min(100% - 64px, 1280px);
@@ -3212,9 +3348,28 @@ footer p:first-child {
     padding: 48px 4px;
   }
 
+  .changelog-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .changelog-group h3 {
+    margin-top: 0;
+  }
+
 }
 
 @media (max-width: 540px) {
+  .changelog-release > summary {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .changelog-group li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   .spectrum-guide {
     padding-top: 32px;
   }

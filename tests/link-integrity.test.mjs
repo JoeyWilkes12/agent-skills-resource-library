@@ -43,27 +43,18 @@ function records(input) {
   );
 }
 
-async function loadWorker() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("links", `${process.pid}-${Date.now()}-${Math.random()}`);
-  return (await import(workerUrl.href)).default;
-}
-
-async function render(worker, pathname) {
-  return worker.fetch(
-    new Request(`http://localhost${pathname}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+async function render(_worker, pathname) {
+  const relativePath = pathname === "/" ? "../out/index.html" : `../out${pathname}/index.html`;
+  try {
+    const html = await readFile(new URL(relativePath, import.meta.url), "utf8");
+    return new Response(html, {
+      status: 200,
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
+  } catch (error) {
+    if (error?.code === "ENOENT") return new Response("Not found", { status: 404 });
+    throw error;
+  }
 }
 
 function hrefsFromHtml(html) {
@@ -88,7 +79,7 @@ const resources = records(resourceText).filter(
 );
 
 test("every authored hyperlink is valid and every local destination renders", async () => {
-  const worker = await loadWorker();
+  const worker = null;
   const pages = new Map();
 
   for (const pathname of [
@@ -162,7 +153,7 @@ test(
   "published external hyperlinks respond",
   { skip: process.env.CHECK_EXTERNAL_LINKS !== "true" },
   async () => {
-    const worker = await loadWorker();
+    const worker = null;
     const guideResponses = await Promise.all([
       render(worker, "/guides/when-not-to-use-a-skill"),
       render(worker, "/guides/writing-without-the-ai-sheen"),

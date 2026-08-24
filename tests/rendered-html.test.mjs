@@ -1,46 +1,23 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+async function renderPath(pathname) {
+  const relativePath = pathname === "/" ? "../out/index.html" : `../out${pathname}/index.html`;
+  try {
+    const html = await readFile(new URL(relativePath, import.meta.url), "utf8");
+    return new Response(html, {
+      status: 200,
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
+  } catch (error) {
+    if (error?.code === "ENOENT") return new Response("Not found", { status: 404 });
+    throw error;
+  }
 }
 
-async function renderPath(pathname) {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${pathname}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request(`http://localhost${pathname}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+async function render() {
+  return renderPath("/");
 }
 
 test("server-renders the resource library shell", async () => {
@@ -74,6 +51,10 @@ test("server-renders the About page and its QR code", async () => {
   assert.match(html, /About the library/);
   assert.match(html, /Take the library with you/);
   assert.match(html, /qr\/agent-skills-resource-library\.svg/);
+  assert.match(html, /<h2 id="changelog-heading">Changelog<\/h2>/);
+  assert.match(html, /Every resource added to the CSV gets its own entry/);
+  assert.match(html, /“Aura skills” resource/);
+  assert.match(html, /Keep a Changelog 1\.1\.0/);
 });
 
 test("server-renders the internal when-not-to-use-a-skill guide", async () => {

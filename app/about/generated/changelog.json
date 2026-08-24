@@ -1,0 +1,603 @@
+{
+  "generatedFrom": "e57dec5a216faa1a1037ffa01cacfa31baf0a835",
+  "releases": [
+    {
+      "date": "2026-08-23",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Aura skills” resource.",
+              "href": "https://www.aura.build/skills",
+              "resourceId": "aura-skills",
+              "commit": "3887e98930fc2aab9f4001878011666a4eccfd77"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Limit Start here to three resources.",
+              "commit": "e57dec5a216faa1a1037ffa01cacfa31baf0a835"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“AIsa Skills” resource.",
+              "href": "https://aisa.one/skills",
+              "resourceId": "aisa-skills",
+              "commit": "3f4a3eb590881bf037d017b0d81e873c8da1aedb"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skills in the agentic performance system” resource.",
+              "href": "/guides/skills-in-the-agentic-performance-system",
+              "resourceId": "skills-in-the-agentic-performance-system",
+              "commit": "69ccdc760a32241ce755d697a033cc141acb6715"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agentic performance source library” resource.",
+              "href": "/guides/agentic-performance-source-library",
+              "resourceId": "agentic-performance-source-library",
+              "commit": "69ccdc760a32241ce755d697a033cc141acb6715"
+            },
+            {
+              "kind": "resource",
+              "text": "“The Complete Guide to Building Skills for Claude” resource.",
+              "href": "https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf",
+              "resourceId": "anthropic-complete-guide-building-skills",
+              "commit": "4269fa5fff37d46a0db0059eda3efc2e72638b1e"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skills for AI Agents: Designing for the Context Window” resource.",
+              "href": "https://learning.oreilly.com/library/view/-/0642572327590/ch02.html",
+              "resourceId": "oreilly-skills-context-window",
+              "commit": "4269fa5fff37d46a0db0059eda3efc2e72638b1e"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added the responsive navigation menu.",
+              "commit": "8a7ecea79ef9d44a87a03e74239bfb95c2c0fe86"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Avoid AI Writing” resource.",
+              "href": "https://github.com/conorbronsdon/avoid-ai-writing",
+              "resourceId": "avoid-ai-writing",
+              "commit": "bafa1bbdf85084211a5e3517e30968b8740cdc5f"
+            },
+            {
+              "kind": "resource",
+              "text": "“Humanizer” resource.",
+              "href": "https://github.com/blader/humanizer",
+              "resourceId": "blader-humanizer",
+              "commit": "bafa1bbdf85084211a5e3517e30968b8740cdc5f"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Refined skill sophistication guide layout.",
+              "commit": "0facd3505a861a5e05907c567947d7b954063d38"
+            },
+            {
+              "kind": "project",
+              "text": "Added discoverable guides index.",
+              "commit": "df6a3b57bfaad45bc11901886f4803a625fb8e02"
+            },
+            {
+              "kind": "project",
+              "text": "Expanded guides index navigation.",
+              "commit": "bc47b6e25673e29783f715195c44ca8dfd57edb6"
+            },
+            {
+              "kind": "project",
+              "text": "Added guide navigation tables of contents.",
+              "commit": "0c5454fde251439e413e7210b396a4c9dcf77b2d"
+            },
+            {
+              "kind": "project",
+              "text": "Displayed complete spectrum guide artwork.",
+              "commit": "3b9c25a6c19c9d9160e75960345311d4af8b65c9"
+            },
+            {
+              "kind": "project",
+              "text": "Added sticky guide contents rail.",
+              "commit": "707f1c757710a4204466d5dfcc45ffceb8307808"
+            },
+            {
+              "kind": "project",
+              "text": "Added readable pre-install checklist.",
+              "commit": "bd905611c8fc185c1de4a6b24a82df8245c36108"
+            }
+          ]
+        },
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added UI UX Pro Max security review guide.",
+              "commit": "5f105ca5440235a347b5572c0c5eb5aa2dd65bd7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added skill sophistication guide.",
+              "commit": "20460a183f07631c5b63157605b9e51ca8d055c1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Agent Plugins” resource.",
+              "href": "https://agent-plugins.org/",
+              "resourceId": "agent-plugins",
+              "commit": "3a167d4521ea241f3dfc3ac078737281dcdbed4f"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added the About page with a QR code for quick access.",
+              "commit": "13c921ed416fb3c754239ca3e1865ec7d388e219"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Microsoft SkillOpt: third-party developer snapshot” resource.",
+              "href": "/guides/microsoft-skillopt-third-party-snapshot",
+              "resourceId": "skillopt-third-party-snapshot",
+              "commit": "f468a6fc1c029679d65633402eb876f63eb79e72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“NVIDIA SkillSpector enterprise training guide” resource.",
+              "href": "/guides/skillspector-enterprise-training",
+              "resourceId": "skillspector-enterprise-training",
+              "commit": "003212440c01bd7f46c1896307019b84effdff51"
+            },
+            {
+              "kind": "resource",
+              "text": "“What an agent skill looks like: SkillSpector Review” resource.",
+              "href": "/guides/skillspector-skill-demo",
+              "resourceId": "skillspector-skill-demo",
+              "commit": "003212440c01bd7f46c1896307019b84effdff51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Evals Skills for Coding Agents” resource.",
+              "href": "https://hamel.dev/blog/posts/evals-skills/",
+              "resourceId": "hamel-evals-skills",
+              "commit": "9e418e730054177cac6634f2fc6b72700b78522e"
+            },
+            {
+              "kind": "resource",
+              "text": "“skills: open agent skills CLI” resource.",
+              "href": "https://github.com/vercel-labs/skills",
+              "resourceId": "vercel-skills-cli",
+              "commit": "9e418e730054177cac6634f2fc6b72700b78522e"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent Skills for Python Is Now Released” resource.",
+              "href": "https://devblogs.microsoft.com/agent-framework/agent-skills-for-python-is-now-released/",
+              "resourceId": "agent-framework-python-skills",
+              "commit": "9e418e730054177cac6634f2fc6b72700b78522e"
+            },
+            {
+              "kind": "resource",
+              "text": "“Sage agent security layer” resource.",
+              "href": "https://ai.gendigital.com/sage",
+              "resourceId": "sage-agent-security",
+              "commit": "9e418e730054177cac6634f2fc6b72700b78522e"
+            },
+            {
+              "kind": "resource",
+              "text": "“ClawHub skill and plugin registry” resource.",
+              "href": "https://clawhub.ai/",
+              "resourceId": "clawhub",
+              "commit": "f26d50b084b62f943b2263868913a871cf50935e"
+            },
+            {
+              "kind": "resource",
+              "text": "“So you found a skill: pre-install confidence checklist” resource.",
+              "href": "/guides/so-you-found-a-skill-checklist",
+              "resourceId": "so-you-found-a-skill-checklist",
+              "commit": "f26d50b084b62f943b2263868913a871cf50935e"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added downloadable resource catalog.",
+              "commit": "b1e86083ae271cc5f70b89b76a7d82c7f1eca592"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Agent Skills overview” resource.",
+              "href": "https://agentskills.io/home",
+              "resourceId": "agent-skills-overview",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent Skills specification” resource.",
+              "href": "https://agentskills.io/specification",
+              "resourceId": "agent-skills-specification",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Build skills for ChatGPT and Codex” resource.",
+              "href": "https://developers.openai.com/plugins/build/skills",
+              "resourceId": "openai-build-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“What are skills?” resource.",
+              "href": "https://support.claude.com/en/articles/12512176-what-are-skills",
+              "resourceId": "anthropic-what-are-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skills as the workflow layer of a plugin” resource.",
+              "href": "https://developers.openai.com/plugins/concepts/skills",
+              "resourceId": "openai-skills-concepts",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Validate the skill before debugging behavior” resource.",
+              "href": "https://agentskills.io/specification#validation",
+              "resourceId": "troubleshoot-validate-structure",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Fix a skill that will not trigger” resource.",
+              "href": "https://agentskills.io/skill-creation/optimizing-descriptions",
+              "resourceId": "troubleshoot-triggering",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Use and troubleshoot skills in Claude” resource.",
+              "href": "https://support.claude.com/en/articles/12512180-use-skills-in-claude",
+              "resourceId": "anthropic-use-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Diagnose a skill that does not load” resource.",
+              "href": "https://support.claude.com/en/articles/12512180-use-skills-in-claude#troubleshooting",
+              "resourceId": "troubleshoot-loading",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Create and manage skills in Claude Code” resource.",
+              "href": "https://code.claude.com/docs/en/skills",
+              "resourceId": "claude-code-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Resolve the wrong skill or a naming conflict” resource.",
+              "href": "https://code.claude.com/docs/en/skills#where-skills-live",
+              "resourceId": "troubleshoot-precedence",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent Skills authoring best practices” resource.",
+              "href": "https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices",
+              "resourceId": "anthropic-skill-authoring",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Debug a skill script or runtime failure” resource.",
+              "href": "https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices#runtime-environment",
+              "resourceId": "troubleshoot-runtime",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Introduction to Agent Skills” resource.",
+              "href": "https://anthropic.skilljar.com/introduction-to-agent-skills",
+              "resourceId": "agent-skills-course",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent Skills in Replit” resource.",
+              "href": "https://docs.replit.com/replitai/skills",
+              "resourceId": "replit-agent-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Lessons from building Claude Code: How we use skills” resource.",
+              "href": "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills",
+              "resourceId": "anthropic-how-we-use-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Building verification loops with skills” resource.",
+              "href": "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
+              "resourceId": "anthropic-verification-loops",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“How Anthropic enables self-service data analytics with Claude” resource.",
+              "href": "https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude",
+              "resourceId": "anthropic-self-service-analytics",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“SkillOpt: self-evolving agent skills” resource.",
+              "href": "https://microsoft.github.io/SkillOpt/",
+              "resourceId": "skillopt-project",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“SkillOpt source repository” resource.",
+              "href": "https://github.com/microsoft/SkillOpt",
+              "resourceId": "skillopt-github",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Towards automating eval engineering” resource.",
+              "href": "https://www.langchain.com/blog/towards-automating-eval-engineering",
+              "resourceId": "langchain-eval-engineering",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Superpowers agentic skills framework” resource.",
+              "href": "https://github.com/obra/superpowers",
+              "resourceId": "obra-superpowers",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“OpenSpace skill management layer” resource.",
+              "href": "https://github.com/HKUDS/OpenSpace",
+              "resourceId": "openspace",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skills.rest explorer” resource.",
+              "href": "https://skills.rest/explore",
+              "resourceId": "skills-rest",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“EliteAI.tools agent skills directory” resource.",
+              "href": "https://eliteai.tools/agent-skills",
+              "resourceId": "elite-ai-tools",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Academic research skills repository” resource.",
+              "href": "https://github.com/imbad0202/academic-research-skills",
+              "resourceId": "academic-research-skills",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“How good is Superpowers? Evaluation discussion” resource.",
+              "href": "https://chatgpt.com/share/6a4eb190-86ac-83e8-a559-42ded97f6828",
+              "resourceId": "superpowers-evaluation-dialogue",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Theo on skills executing code” resource.",
+              "href": "https://youtube.com/shorts/SLkZXrOQFSQ?is=DmNSC13sgsJa_k_S",
+              "resourceId": "theo-skills-code-video",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent skills video resource” resource.",
+              "href": "https://youtu.be/FDxW2bfBOWE?is=qoyiEOeuqqSZLUk4",
+              "resourceId": "skills-video-long",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Agent skills short video” resource.",
+              "href": "https://youtube.com/shorts/jjze-8Wia38?is=WM3F5fhuKgArF8QC",
+              "resourceId": "skills-video-short",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Shared Gemini resource” resource.",
+              "href": "https://share.gemini.google/OVDYGH4SOMNr",
+              "resourceId": "gemini-skills-share",
+              "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3"
+            },
+            {
+              "kind": "resource",
+              "text": "“Record a skill in Codex” resource.",
+              "href": "https://learn.chatgpt.com/docs/extend/record-and-replay",
+              "resourceId": "openai-record-replay",
+              "commit": "97b9c3fcf6bae52b6dbc3b95b3942ef1010af940"
+            },
+            {
+              "kind": "resource",
+              "text": "“Record a workflow as a skill in Claude Cowork” resource.",
+              "href": "https://x.com/claudeai/status/2079595988998554047?s=46",
+              "resourceId": "claude-cowork-record-skill",
+              "commit": "97b9c3fcf6bae52b6dbc3b95b3942ef1010af940"
+            },
+            {
+              "kind": "resource",
+              "text": "“Scan agent skills before installation” resource.",
+              "href": "https://docs.nvidia.com/skills/scanning-agent-skills",
+              "resourceId": "nvidia-scan-agent-skills",
+              "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5"
+            },
+            {
+              "kind": "resource",
+              "text": "“Cisco Skill Scanner” resource.",
+              "href": "https://github.com/cisco-ai-defense/skill-scanner",
+              "resourceId": "cisco-skill-scanner",
+              "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5"
+            },
+            {
+              "kind": "resource",
+              "text": "“When not to use a skill” resource.",
+              "href": "/guides/when-not-to-use-a-skill",
+              "resourceId": "when-not-to-use-a-skill",
+              "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Refined responsive resource library.",
+              "commit": "7eff2b4ebeb428180f51263293570d9daf035498"
+            },
+            {
+              "kind": "project",
+              "text": "Used canonical featured resource overrides.",
+              "commit": "fae646f73e76a8c83eea777e2ebbfcb42d847dee"
+            },
+            {
+              "kind": "project",
+              "text": "Made featured resource count dynamic.",
+              "commit": "b6041b120ab13bfa480bf67a1189783017f97d9b"
+            },
+            {
+              "kind": "project",
+              "text": "Clarified the site title.",
+              "commit": "0873acf9bc3172dab3ae4cd48d2da688816d4453"
+            }
+          ]
+        },
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Corrected Security and Trust resources.",
+              "commit": "9c84ecf3fdb3cabba7f7a1a181cdb9a0c145bb3d"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
