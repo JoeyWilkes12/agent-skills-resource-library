@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "9e57ed5801d44b9b9465514810746be8fcb58f0c",
+  "generatedFrom": "5c713cfb984bd29c4837337043ccfa5646913d9f",
   "releases": [
     {
       "date": "2026-08-23",
@@ -33,6 +33,11 @@
               "kind": "project",
               "text": "Added Anthropic verbatim guide.",
               "commit": "9e57ed5801d44b9b9465514810746be8fcb58f0c"
+            },
+            {
+              "kind": "project",
+              "text": "Fixed Anthropic guide source viewer.",
+              "commit": "5c713cfb984bd29c4837337043ccfa5646913d9f"
             }
           ]
         }
