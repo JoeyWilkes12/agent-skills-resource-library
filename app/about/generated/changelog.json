@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "e57dec5a216faa1a1037ffa01cacfa31baf0a835",
+  "generatedFrom": "9e57ed5801d44b9b9465514810746be8fcb58f0c",
   "releases": [
     {
       "date": "2026-08-23",
@@ -23,6 +23,16 @@
               "kind": "project",
               "text": "Limit Start here to three resources.",
               "commit": "e57dec5a216faa1a1037ffa01cacfa31baf0a835"
+            },
+            {
+              "kind": "project",
+              "text": "Added history-backed About changelog.",
+              "commit": "089637fd515b19afb08f7fe459b62d5fb588dce5"
+            },
+            {
+              "kind": "project",
+              "text": "Added Anthropic verbatim guide.",
+              "commit": "9e57ed5801d44b9b9465514810746be8fcb58f0c"
             }
           ]
         }
