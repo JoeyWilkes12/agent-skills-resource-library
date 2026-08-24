@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "d0716912c6ddcaa30b8612701a63fb1bca9f344f",
+  "generatedFrom": "8b29d4069e0be31d5c4921f21dacfb366933aaf9",
   "releases": [
     {
       "date": "2026-08-23",
@@ -43,6 +43,16 @@
               "kind": "project",
               "text": "Fixed Anthropic guide source viewer.",
               "commit": "5c0021ce50a8fa6c61a594928e575f93b8649f28"
+            },
+            {
+              "kind": "project",
+              "text": "Aligned About page theme and spacing.",
+              "commit": "20aba1c376ccf10594bb6e7a8acfe8eb8d556802"
+            },
+            {
+              "kind": "project",
+              "text": "Move Anthropic verbatim guide to end.",
+              "commit": "8b29d4069e0be31d5c4921f21dacfb366933aaf9"
             }
           ]
         }
