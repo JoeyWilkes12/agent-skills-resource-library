@@ -2770,8 +2770,13 @@ footer p:first-child {
   width: 100%;
 }
 
+.about-intro > .eyebrow,
+.about-qr-copy .eyebrow,
+.about-section .guide-label {
+  margin: 0 0 12px;
+}
+
 .about-qr-copy .eyebrow {
-  margin-bottom: 11px;
   color: var(--mint-dark);
 }
 
@@ -3118,6 +3123,34 @@ footer p:first-child {
 
 :root[data-theme="dark"] .guide-source-note {
   color: var(--theme-muted) !important;
+}
+
+:root[data-theme="dark"] .about-hero {
+  background: var(--theme-surface);
+}
+
+:root[data-theme="dark"] .about-intro {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    var(--theme-surface);
+}
+
+:root[data-theme="dark"] .about-qr-card {
+  color: var(--theme-text);
+  background: var(--theme-surface-soft);
+  border-left: 1px solid var(--line);
+}
+
+:root[data-theme="dark"] .about-qr-copy .eyebrow {
+  color: var(--theme-mint-text);
+}
+
+:root[data-theme="dark"] .about-qr-copy p:not(.eyebrow) {
+  color: var(--theme-muted);
+}
+
+:root[data-theme="dark"] .about-qr-link {
+  box-shadow: 10px 10px 0 var(--mint);
 }
 
 :root[data-theme="dark"] .eyebrow-dark,
