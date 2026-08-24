@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --ink: #071b33;
   --ink-soft: #16324f;
   --paper: #f6f1e8;
@@ -12,6 +13,18 @@
   --line: rgba(7, 27, 51, 0.16);
   --shadow: 0 18px 50px rgba(7, 27, 51, 0.1);
   --content-width: 1440px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #061624;
+  --line: rgba(211, 226, 237, 0.18);
+  --shadow: 0 20px 54px rgba(0, 0, 0, 0.3);
+  --theme-surface: #0e2639;
+  --theme-surface-soft: #153047;
+  --theme-text: #edf4f7;
+  --theme-muted: #b7c5cf;
+  --theme-mint-text: #9edfc6;
 }
 
 * {
@@ -73,6 +86,46 @@ a {
   border-radius: 50%;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.theme-toggle svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .header-menu {
@@ -817,6 +870,7 @@ a {
 }
 
 .header-menu-trigger:focus-visible,
+.theme-toggle:focus-visible,
 .header-menu-link:focus-visible,
 .wordmark:focus-visible,
 .hero-download-link:focus-visible,
@@ -2969,6 +3023,146 @@ footer p:first-child {
   outline-offset: 3px;
 }
 
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .header-menu-popover,
+:root[data-theme="dark"] .search-field-wrap input,
+:root[data-theme="dark"] .search-clear,
+:root[data-theme="dark"] .filter-panel,
+:root[data-theme="dark"] .filter-panel-footer button,
+:root[data-theme="dark"] .active-filters button,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .card-expand-copy,
+:root[data-theme="dark"] .guides-feature,
+:root[data-theme="dark"] .guides-list li > a,
+:root[data-theme="dark"] .spectrum-list a,
+:root[data-theme="dark"] .spectrum-section h2,
+:root[data-theme="dark"] .prose-guide-section h2,
+:root[data-theme="dark"] .prose-guide-section h3,
+:root[data-theme="dark"] .prose-guide-section strong,
+:root[data-theme="dark"] .prose-guide-intro strong,
+:root[data-theme="dark"] .guide-table td:first-child,
+:root[data-theme="dark"] .skill-workflow strong,
+:root[data-theme="dark"] .changelog-group li > span > a,
+:root[data-theme="dark"] .guide-contents.is-compact .guide-contents-toggle {
+  color: var(--theme-text);
+}
+
+:root[data-theme="dark"] .guide-final {
+  color: var(--theme-text) !important;
+}
+
+:root[data-theme="dark"] .header-menu-popover,
+:root[data-theme="dark"] .featured-section,
+:root[data-theme="dark"] .search-field-wrap,
+:root[data-theme="dark"] .filter-panel,
+:root[data-theme="dark"] .active-filters button,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .library-message,
+:root[data-theme="dark"] .guides-feature,
+:root[data-theme="dark"] .guide-callout,
+:root[data-theme="dark"] .spectrum-visual,
+:root[data-theme="dark"] .spectrum-table-wrap,
+:root[data-theme="dark"] .risk-bands > div,
+:root[data-theme="dark"] .guide-contents.is-compact,
+:root[data-theme="dark"] .guide-contents.is-compact .guide-contents-toggle {
+  background: var(--theme-surface);
+}
+
+:root[data-theme="dark"] .filter-panel-footer,
+:root[data-theme="dark"] .card-tags span,
+:root[data-theme="dark"] .guide-checklist li,
+:root[data-theme="dark"] .guide-table,
+:root[data-theme="dark"] .guide-high-risk-note {
+  background: var(--theme-surface-soft);
+}
+
+:root[data-theme="dark"] .section-heading > p,
+:root[data-theme="dark"] .library-heading-row > p,
+:root[data-theme="dark"] .search-field-wrap input::placeholder,
+:root[data-theme="dark"] .active-filters > span,
+:root[data-theme="dark"] .filter-option,
+:root[data-theme="dark"] .results-meta span,
+:root[data-theme="dark"] .card-kicker span:last-child,
+:root[data-theme="dark"] .card-description,
+:root[data-theme="dark"] .card-tags span,
+:root[data-theme="dark"] .library-message span,
+:root[data-theme="dark"] .guides-index-hero p,
+:root[data-theme="dark"] .guides-feature-copy > p,
+:root[data-theme="dark"] .guides-list-header p,
+:root[data-theme="dark"] .guides-list li p,
+:root[data-theme="dark"] .guide-section p,
+:root[data-theme="dark"] .guide-checklist,
+:root[data-theme="dark"] .guide-checklist-preview-header > div > p,
+:root[data-theme="dark"] .guide-working-checklist-heading p,
+:root[data-theme="dark"] .guide-high-risk-note p,
+:root[data-theme="dark"] .guide-checklist-download p,
+:root[data-theme="dark"] .guide-decision-outcomes dd,
+:root[data-theme="dark"] .spectrum-visual figcaption,
+:root[data-theme="dark"] .spectrum-intro,
+:root[data-theme="dark"] .spectrum-section,
+:root[data-theme="dark"] .spectrum-table,
+:root[data-theme="dark"] .prose-guide-hero > p:last-child,
+:root[data-theme="dark"] .prose-guide-reading,
+:root[data-theme="dark"] .training-comparison ul,
+:root[data-theme="dark"] .guide-table td,
+:root[data-theme="dark"] .skill-workflow span,
+:root[data-theme="dark"] .about-section > div > p:not(.guide-label),
+:root[data-theme="dark"] .about-principles p,
+:root[data-theme="dark"] .changelog-intro > p:not(.changelog-format-note),
+:root[data-theme="dark"] .changelog-format-note,
+:root[data-theme="dark"] .changelog-release > summary span,
+:root[data-theme="dark"] .changelog-group li,
+:root[data-theme="dark"] .changelog-commit {
+  color: var(--theme-muted);
+}
+
+:root[data-theme="dark"] .guide-source-note {
+  color: var(--theme-muted) !important;
+}
+
+:root[data-theme="dark"] .eyebrow-dark,
+:root[data-theme="dark"] .active-filters .clear-all,
+:root[data-theme="dark"] .card-kicker,
+:root[data-theme="dark"] .guide-section-number,
+:root[data-theme="dark"] .guide-label,
+:root[data-theme="dark"] .guide-checklist-count,
+:root[data-theme="dark"] .guide-working-checklist-heading > span,
+:root[data-theme="dark"] .guide-evidence-record summary::after,
+:root[data-theme="dark"] .prose-guide-hero,
+:root[data-theme="dark"] .training-pipeline span,
+:root[data-theme="dark"] .changelog-format-note a,
+:root[data-theme="dark"] .changelog-group h3,
+:root[data-theme="dark"] .changelog-commit:hover,
+:root[data-theme="dark"] .changelog-group li > span > a:hover,
+:root[data-theme="dark"] .guide-contents-toggle-status,
+:root[data-theme="dark"] .guides-list li > a:hover,
+:root[data-theme="dark"] .prose-guide .guide-resource-link,
+:root[data-theme="dark"] .prose-guide .guide-resource-link:hover {
+  color: var(--theme-mint-text);
+}
+
+:root[data-theme="dark"] .rating {
+  color: #f2cb71;
+}
+
+:root[data-theme="dark"] .guide-page {
+  background:
+    linear-gradient(90deg, transparent 0 7.5%, rgba(211, 226, 237, 0.06) 7.5% 7.6%, transparent 7.6%),
+    var(--paper);
+}
+
+:root[data-theme="dark"] .filter-panel,
+:root[data-theme="dark"] .guides-feature,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .spectrum-visual {
+  box-shadow: var(--shadow);
+}
+
+:root[data-theme="dark"] .changelog-group,
+:root[data-theme="dark"] .changelog-group li + li {
+  border-color: var(--line);
+}
+
 @media (min-width: 1180px) {
   .guide-article {
     width: min(100% - 64px, 1280px);
@@ -3435,6 +3629,12 @@ footer p:first-child {
 
   .risk-bands > div {
     min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .wordmark > span:last-child {
+    display: none;
   }
 }
 

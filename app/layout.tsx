@@ -3,6 +3,7 @@ import "./globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const themeScript = `try{const theme=localStorage.getItem("agent-skills-theme");if(theme==="dark"){document.documentElement.dataset.theme="dark";document.documentElement.style.colorScheme="dark"}}catch{}`;
 
 export const metadata: Metadata = {
   title: "Agent Skills Resource Library",
@@ -32,7 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );
