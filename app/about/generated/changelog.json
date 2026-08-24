@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "5c713cfb984bd29c4837337043ccfa5646913d9f",
+  "generatedFrom": "d0716912c6ddcaa30b8612701a63fb1bca9f344f",
   "releases": [
     {
       "date": "2026-08-23",
@@ -31,13 +31,18 @@
             },
             {
               "kind": "project",
+              "text": "Added persistent light and dark themes.",
+              "commit": "439db747c909c0d3d3b06d5fa5b043021d63bcdf"
+            },
+            {
+              "kind": "project",
               "text": "Added Anthropic verbatim guide.",
-              "commit": "9e57ed5801d44b9b9465514810746be8fcb58f0c"
+              "commit": "d8823625d4baa66dd3a826b5ae9ab58eb2578a95"
             },
             {
               "kind": "project",
               "text": "Fixed Anthropic guide source viewer.",
-              "commit": "5c713cfb984bd29c4837337043ccfa5646913d9f"
+              "commit": "5c0021ce50a8fa6c61a594928e575f93b8649f28"
             }
           ]
         }
