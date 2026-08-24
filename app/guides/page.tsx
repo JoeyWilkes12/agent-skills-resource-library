@@ -8,6 +8,12 @@ const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
 const libraryGuides = [
   {
+    href: "/guides/anthropics-complete-guide-for-building-skills-for-claude",
+    title: "Anthropic’s Complete Guide For Building Skills For Claude [VERBATIM]",
+    summary:
+      "Anthropic’s original 33-page guide, presented through the publisher-hosted PDF with clear source attribution and no editorial rewriting.",
+  },
+  {
     href: "/guides/skills-in-the-agentic-performance-system",
     title: "Skills in the agentic performance system",
     summary:

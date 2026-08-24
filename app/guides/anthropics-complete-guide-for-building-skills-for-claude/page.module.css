@@ -1,0 +1,43 @@
+.viewerHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.viewerHeader h2 {
+  margin-bottom: 0;
+}
+
+.viewerHeader a {
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-underline-offset: 4px;
+}
+
+.viewer {
+  display: block;
+  width: 100%;
+  min-height: 78vh;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.chapterList strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.chapterList span {
+  color: #66727d;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 700px) {
+  .viewer {
+    min-height: 70vh;
+  }
+}
