@@ -115,6 +115,28 @@ test("server-renders the Guides index and its published entries", async () => {
   assert.match(html, /href="\/guides\/skillspector-enterprise-training"/);
   assert.match(html, /href="\/guides\/skillspector-skill-demo"/);
   assert.match(html, /href="\/guides\/microsoft-skillopt-third-party-snapshot"/);
+  assert.match(
+    html,
+    /href="\/guides\/anthropics-complete-guide-for-building-skills-for-claude"/,
+  );
+  assert.match(html, /Anthropic’s Complete Guide For Building Skills For Claude \[VERBATIM\]/);
+});
+
+test("server-renders the attributed Anthropic verbatim guide", async () => {
+  const response = await renderPath(
+    "/guides/anthropics-complete-guide-for-building-skills-for-claude",
+  );
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Anthropic’s Complete Guide For Building Skills For Claude \[VERBATIM\]/);
+  assert.match(html, /Anthropic(?:&apos;|&#x27;|')s work, presented without edits/);
+  assert.match(html, /Original publisher-hosted PDF/);
+  assert.match(
+    html,
+    /https:\/\/resources\.anthropic\.com\/hubfs\/The-Complete-Guide-to-Building-Skill-for-Claude\.pdf/,
+  );
+  assert.match(html, /title="Anthropic’s Complete Guide to Building Skills for Claude PDF"/);
 });
 
 test("server-renders the writing authenticity guide and review disclosures", async () => {
