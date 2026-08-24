@@ -50,7 +50,7 @@ export default function AnthropicCompleteGuidePage() {
           </p>
           <div className="guide-hero-actions">
             <a href={sourceUrl} rel="noreferrer" target="_blank">
-              Read the original source <span aria-hidden="true">↗</span>
+              Read the original source{" "}<span aria-hidden="true">↗</span>
             </a>
           </div>
           <p className="guide-meta">
@@ -87,7 +87,7 @@ export default function AnthropicCompleteGuidePage() {
               <div className={styles.viewerHeader}>
                 <h2>Read the original guide</h2>
                 <a href={sourceUrl} rel="noreferrer" target="_blank">
-                  Open PDF in a new tab <span aria-hidden="true">↗</span>
+                  Open PDF in a new tab{" "}<span aria-hidden="true">↗</span>
                 </a>
               </div>
               <iframe
@@ -95,9 +95,7 @@ export default function AnthropicCompleteGuidePage() {
                 loading="lazy"
                 src={sourceUrl}
                 title="Anthropic’s Complete Guide to Building Skills for Claude PDF"
-              >
-                <a href={sourceUrl}>Open Anthropic&apos;s original PDF</a>
-              </iframe>
+              />
             </div>
           </section>
 
