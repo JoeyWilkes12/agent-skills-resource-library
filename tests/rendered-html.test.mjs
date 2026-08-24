@@ -120,6 +120,16 @@ test("server-renders the Guides index and its published entries", async () => {
     /href="\/guides\/anthropics-complete-guide-for-building-skills-for-claude"/,
   );
   assert.match(html, /Anthropic’s Complete Guide For Building Skills For Claude \[VERBATIM\]/);
+
+  const guidesList = html.match(/<section class="guides-list"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(guidesList, "expected the More guides list to render");
+  const listedGuideHrefs = [...guidesList.matchAll(/href="([^"]+)"/g)].map(
+    ([, href]) => href,
+  );
+  assert.equal(
+    listedGuideHrefs.at(-1),
+    "/guides/anthropics-complete-guide-for-building-skills-for-claude",
+  );
 });
 
 test("server-renders the attributed Anthropic verbatim guide", async () => {
