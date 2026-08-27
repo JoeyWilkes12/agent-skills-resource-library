@@ -8,6 +8,12 @@ const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
 const libraryGuides = [
   {
+    href: "/guides/enterprise-agent-skills-presenter-readiness",
+    title: "Enterprise training on skills for AI agents: presenter readiness questions",
+    summary:
+      "A presenter-facing question bank for preparing a clear, credible 20-minute enterprise introduction to agent skills.",
+  },
+  {
     href: "/guides/skills-in-the-agentic-performance-system",
     title: "Skills in the agentic performance system",
     summary:

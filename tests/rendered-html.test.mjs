@@ -98,6 +98,21 @@ test("server-renders the new agentic performance guides", async () => {
   assert.match(sourceLibraryHtml, /target="_blank"/);
 });
 
+test("server-renders the enterprise presenter-readiness guide", async () => {
+  const response = await renderPath(
+    "/guides/enterprise-agent-skills-presenter-readiness",
+  );
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Enterprise training on skills for AI agents/);
+  assert.match(html, /What a prepared answer should sound like/);
+  assert.match(html, /Twenty-minute presentation readiness check/);
+  assert.match(html, /Role-based pressure test/);
+  assert.match(html, /A skill can make a professional method reusable/);
+  assert.doesNotMatch(html, /setlocale|last_verified|status: Published/);
+});
+
 test("server-renders the Guides index and its published entries", async () => {
   const response = await renderPath("/guides");
   assert.equal(response.status, 200);
@@ -107,6 +122,7 @@ test("server-renders the Guides index and its published entries", async () => {
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
   assert.match(html, /More guides from the library/);
+  assert.match(html, /href="\/guides\/enterprise-agent-skills-presenter-readiness"/);
   assert.match(html, /href="\/guides\/skills-in-the-agentic-performance-system"/);
   assert.match(html, /href="\/guides\/agentic-performance-source-library"/);
   assert.match(html, /href="\/guides\/writing-without-the-ai-sheen"/);
