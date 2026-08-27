@@ -1,6 +1,23 @@
 {
-  "generatedFrom": "8b29d4069e0be31d5c4921f21dacfb366933aaf9",
+  "generatedFrom": "b1dd7595abf3dd8674f1644f46095dc3c1828074",
   "releases": [
+    {
+      "date": "2026-08-26",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Enterprise training on skills for AI agents: presenter readiness questions” resource.",
+              "href": "/guides/enterprise-agent-skills-presenter-readiness",
+              "resourceId": "enterprise-agent-skills-presenter-readiness",
+              "commit": "b1dd7595abf3dd8674f1644f46095dc3c1828074"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-23",
       "sections": [
