@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "b1dd7595abf3dd8674f1644f46095dc3c1828074",
+  "generatedFrom": "62150c15e055b01188870193c26d4c9c69ab23fe",
   "releases": [
+    {
+      "date": "2026-08-27",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Publish Obra Superpowers review guide.",
+              "commit": "62150c15e055b01188870193c26d4c9c69ab23fe"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-26",
       "sections": [
