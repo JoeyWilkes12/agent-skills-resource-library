@@ -88,14 +88,14 @@ export const metadata: Metadata = {
     title: "Obra Superpowers: 14 skills and a SkillSpector review",
     description:
       "The four-category map, per-skill JSON findings, and archived research behind the review.",
-    images: [`${basePath}/images/obra-superpowers-skills-overview.png`],
+    images: [`${basePath}/images/obra-superpowers-skills-overview-light.jpg`],
   },
   twitter: {
     card: "summary_large_image",
     title: "Obra Superpowers: 14 skills and a SkillSpector review",
     description:
       "The four-category map, per-skill JSON findings, and archived research behind the review.",
-    images: [`${basePath}/images/obra-superpowers-skills-overview.png`],
+    images: [`${basePath}/images/obra-superpowers-skills-overview-light.jpg`],
   },
 };
 
@@ -145,12 +145,22 @@ export default function ObraSuperpowersSkillSpectorReview() {
                 debugging, collaboration, and meta-work.
               </p>
               <figure className="spectrum-visual">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  alt="A four-panel map of the 14 Obra Superpowers skills grouped into Testing, Debugging, Collaboration, and Meta"
-                  className="spectrum-image"
-                  src={`${basePath}/images/obra-superpowers-skills-overview.png`}
-                />
+                <div className="superpowers-theme-image superpowers-theme-image-light">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    alt="A four-panel map of the 14 Obra Superpowers skills grouped into Testing, Debugging, Collaboration, and Meta"
+                    className="spectrum-image"
+                    src={`${basePath}/images/obra-superpowers-skills-overview-light.jpg`}
+                  />
+                </div>
+                <div className="superpowers-theme-image superpowers-theme-image-dark">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    alt="A four-panel map of the 14 Obra Superpowers skills grouped into Testing, Debugging, Collaboration, and Meta"
+                    className="spectrum-image"
+                    src={`${basePath}/images/obra-superpowers-skills-overview-dark.jpg`}
+                  />
+                </div>
                 <figcaption>
                   The 14-skill map. Collaboration is the largest category, with
                   nine skills spanning the development workflow.

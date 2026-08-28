@@ -2033,6 +2033,18 @@ footer p:first-child {
   height: auto;
 }
 
+.superpowers-theme-image-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .superpowers-theme-image-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .superpowers-theme-image-dark {
+  display: block;
+}
+
 .spectrum-visual figcaption {
   margin: 16px 6px 0;
   color: #465769;
