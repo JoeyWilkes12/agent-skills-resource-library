@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type CurrentSection = "guides" | "about";
 
@@ -17,6 +17,16 @@ const themeStorageKey = "agent-skills-theme";
 
 type Theme = "light" | "dark";
 type ThemePreference = Theme | "system";
+
+const themeOptions: Array<{
+  value: ThemePreference;
+  label: string;
+  description: string;
+}> = [
+  { value: "system", label: "System", description: "Match your device or browser" },
+  { value: "dark", label: "Dark", description: "Use the dark theme" },
+  { value: "light", label: "Light", description: "Use the light theme" },
+];
 
 function getStoredTheme(): Theme | null {
   try {
@@ -38,8 +48,9 @@ function applyTheme(nextTheme: Theme) {
 }
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
   const [preference, setPreference] = useState<ThemePreference>("system");
+  const [isOpen, setIsOpen] = useState(false);
+  const themeControlsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const systemPreference = window.matchMedia("(prefers-color-scheme: dark)");
@@ -52,7 +63,6 @@ function ThemeToggle() {
             : "light"
           : nextPreference;
       applyTheme(nextTheme);
-      setTheme(nextTheme);
       setPreference(nextPreference);
     }
 
@@ -71,81 +81,115 @@ function ThemeToggle() {
 
     syncFromStorage();
     window.addEventListener("storage", handleStorage);
-    systemPreference.addEventListener("change", handleSystemThemeChange);
+    const supportsEventListener = typeof systemPreference.addEventListener === "function";
+    if (supportsEventListener) {
+      systemPreference.addEventListener("change", handleSystemThemeChange);
+    } else {
+      systemPreference.addListener(handleSystemThemeChange);
+    }
 
     return () => {
       window.removeEventListener("storage", handleStorage);
-      systemPreference.removeEventListener("change", handleSystemThemeChange);
+      if (supportsEventListener) {
+        systemPreference.removeEventListener("change", handleSystemThemeChange);
+      } else {
+        systemPreference.removeListener(handleSystemThemeChange);
+      }
     };
   }, []);
 
-  function toggleTheme() {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handlePointerDown(event: PointerEvent) {
+      if (!themeControlsRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsOpen(false);
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
+  function chooseTheme(nextPreference: ThemePreference) {
+    const nextTheme = nextPreference === "system" ? getSystemTheme() : nextPreference;
 
     applyTheme(nextTheme);
-    setTheme(nextTheme);
-    setPreference(nextTheme);
+    setPreference(nextPreference);
+    setIsOpen(false);
 
     try {
-      window.localStorage.setItem(themeStorageKey, nextTheme);
+      if (nextPreference === "system") {
+        window.localStorage.removeItem(themeStorageKey);
+      } else {
+        window.localStorage.setItem(themeStorageKey, nextPreference);
+      }
     } catch {
       // The theme still works when storage is unavailable.
     }
   }
-
-  function useSystemTheme() {
-    const nextTheme = getSystemTheme();
-
-    applyTheme(nextTheme);
-    setTheme(nextTheme);
-    setPreference("system");
-
-    try {
-      window.localStorage.removeItem(themeStorageKey);
-    } catch {
-      // The theme still works when storage is unavailable.
-    }
-  }
-
-  const nextTheme = theme === "dark" ? "light" : "dark";
-  const themeName = theme === "dark" ? "Dark" : "Light";
-  const nextThemeName = nextTheme === "dark" ? "dark" : "light";
-  const themeAction =
-    preference === "system"
-      ? `Switch to ${nextThemeName} theme and override system preference`
-      : `Switch to ${nextThemeName} theme`;
 
   return (
-    <div className="theme-controls">
+    <div className="theme-controls" ref={themeControlsRef}>
       <button
         className="theme-toggle"
         type="button"
-        aria-label={`${themeName} theme. ${themeAction}.`}
-        aria-pressed={theme === "dark"}
-        title={`${themeAction}. Current: ${themeName} (${preference === "system" ? "system" : "manual override"}).`}
-        onClick={toggleTheme}
+        aria-label={isOpen ? "Close theme choices" : "Open theme choices"}
+        aria-controls="theme-preference-menu"
+        aria-expanded={isOpen}
+        aria-haspopup="menu"
+        title="Choose system, dark, or light theme"
+        onClick={() => setIsOpen((current) => !current)}
       >
-        {theme === "dark" ? (
+        <span className="theme-icon theme-icon-light" aria-hidden="true">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="3.5" />
             <path d="M12 2.25v2.1M12 19.65v2.1M4.4 4.4l1.48 1.48M18.12 18.12l1.48 1.48M2.25 12h2.1M19.65 12h2.1M4.4 19.6l1.48-1.48M18.12 5.88l1.48-1.48" />
           </svg>
-        ) : (
+        </span>
+        <span className="theme-icon theme-icon-dark" aria-hidden="true">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="M20.25 15.1A8.15 8.15 0 0 1 8.9 3.75 8.16 8.16 0 1 0 20.25 15.1Z" />
           </svg>
-        )}
+        </span>
       </button>
-      {preference !== "system" && (
-        <button
-          className="theme-system-reset"
-          type="button"
-          aria-label="Use system theme instead of manual override"
-          title="Use system theme"
-          onClick={useSystemTheme}
+      {isOpen && (
+        <div
+          className="theme-menu"
+          id="theme-preference-menu"
+          role="menu"
+          aria-label="Theme preference"
         >
-          System
-        </button>
+          <p className="theme-menu-heading">Theme preference</p>
+          {themeOptions.map((option) => (
+            <button
+              className="theme-menu-option"
+              key={option.value}
+              type="button"
+              role="menuitemradio"
+              aria-checked={preference === option.value}
+              onClick={() => chooseTheme(option.value)}
+            >
+              <span className="theme-option-copy">
+                <span className="theme-option-label">{option.label}</span>
+                <span className="theme-option-description">{option.description}</span>
+              </span>
+              {preference === option.value && (
+                <svg className="theme-option-check" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m5 12 4 4L19 6" />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );
