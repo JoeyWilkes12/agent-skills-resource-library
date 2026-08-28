@@ -88,14 +88,14 @@ export const metadata: Metadata = {
     title: "Obra Superpowers: 14 skills and a SkillSpector review",
     description:
       "The four-category map, per-skill JSON findings, and archived research behind the review.",
-    images: [`${basePath}/images/obra-superpowers-skills-overview-light.jpg`],
+    images: [`${basePath}/images/obra-superpowers-skills-overview-dark.jpg`],
   },
   twitter: {
     card: "summary_large_image",
     title: "Obra Superpowers: 14 skills and a SkillSpector review",
     description:
       "The four-category map, per-skill JSON findings, and archived research behind the review.",
-    images: [`${basePath}/images/obra-superpowers-skills-overview-light.jpg`],
+    images: [`${basePath}/images/obra-superpowers-skills-overview-dark.jpg`],
   },
 };
 
