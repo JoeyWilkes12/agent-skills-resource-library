@@ -94,6 +94,12 @@ a {
   gap: 8px;
 }
 
+.theme-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .theme-toggle {
   display: grid;
   width: 44px;
@@ -126,6 +132,29 @@ a {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
+}
+
+.theme-system-reset {
+  min-height: 36px;
+  padding: 0 10px;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.theme-system-reset:hover {
+  color: var(--ink);
+  background: var(--mint);
+  border-color: var(--mint);
 }
 
 .header-menu {
@@ -871,6 +900,7 @@ a {
 
 .header-menu-trigger:focus-visible,
 .theme-toggle:focus-visible,
+.theme-system-reset:focus-visible,
 .header-menu-link:focus-visible,
 .wordmark:focus-visible,
 .hero-download-link:focus-visible,
