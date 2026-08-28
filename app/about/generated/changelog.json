@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "43994aba88b4f3e66298db20deedcac1b50e85f3",
+  "generatedFrom": "efe9ac176f4335d79d74efc9bd808e64d95fdc44",
   "releases": [
     {
       "date": "2026-08-27",
@@ -31,6 +31,16 @@
               "kind": "project",
               "text": "Used dark Superpowers artwork for social previews.",
               "commit": "43994aba88b4f3e66298db20deedcac1b50e85f3"
+            },
+            {
+              "kind": "project",
+              "text": "Record dark social preview in changelog.",
+              "commit": "302703e713e5765087d48c1fb27fe6f344fa8cdf"
+            },
+            {
+              "kind": "project",
+              "text": "Respect system theme preferences in header.",
+              "commit": "efe9ac176f4335d79d74efc9bd808e64d95fdc44"
             }
           ]
         }
