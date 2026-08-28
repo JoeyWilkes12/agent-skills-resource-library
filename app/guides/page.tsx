@@ -56,6 +56,12 @@ const libraryGuides = [
       "A case study in reviewing a skill bundle with static analysis, OWASP prompt-injection triage, and a scoped semantic second opinion before installation.",
   },
   {
+    href: "/guides/obra-superpowers-skillspector-review",
+    title: "Obra Superpowers: 14 skills and a SkillSpector review",
+    summary:
+      "A commit-pinned map of Obra's 14-skill workflow, with per-skill static findings, JSON evidence, and the archived research thread that started the review.",
+  },
+  {
     href: "/guides/skillspector-skill-demo",
     title: "What an agent skill looks like: SkillSpector Review",
     summary:

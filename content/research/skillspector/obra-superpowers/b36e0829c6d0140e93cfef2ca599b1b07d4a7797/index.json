@@ -1,0 +1,178 @@
+{
+  "artifact": {
+    "name": "obra/superpowers",
+    "source_url": "https://github.com/obra/superpowers",
+    "commit": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+    "commit_resolution": "shallow clone of the default branch on 2026-08-27 America/Denver",
+    "skill_discovery": "skills/*/SKILL.md"
+  },
+  "scan": {
+    "scanner": "NVIDIA SkillSpector",
+    "scanner_version": "2.10.0",
+    "scanner_origin": "https://github.com/NVIDIA/SkillSpector.git",
+    "mode": "static-only",
+    "llm_requested": false,
+    "llm_available": false,
+    "meta_analysis_applied": false,
+    "scanned_at": "2026-08-28T03:36:00Z",
+    "scope": "Each directory under skills/ containing SKILL.md",
+    "reports_are_preliminary": true
+  },
+  "skill_count": 14,
+  "issue_count": 46,
+  "score_summary": {
+    "minimum": 0,
+    "maximum": 89,
+    "average": 24.5,
+    "high_or_critical": 3,
+    "medium": 3,
+    "low": 9
+  },
+  "skills": [
+    {
+      "name": "brainstorming",
+      "report": "static/brainstorming.json",
+      "score": 80,
+      "severity": "HIGH",
+      "recommendation": "DO_NOT_INSTALL",
+      "issues": 10,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "report": "static/dispatching-parallel-agents.json",
+      "score": 0,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 0,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "executing-plans",
+      "report": "static/executing-plans.json",
+      "score": 8,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 1,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "report": "static/finishing-a-development-branch.json",
+      "score": 17,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 1,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "receiving-code-review",
+      "report": "static/receiving-code-review.json",
+      "score": 0,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 0,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "requesting-code-review",
+      "report": "static/requesting-code-review.json",
+      "score": 7,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 1,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "subagent-driven-development",
+      "report": "static/subagent-driven-development.json",
+      "score": 23,
+      "severity": "MEDIUM",
+      "recommendation": "CAUTION",
+      "issues": 2,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "systematic-debugging",
+      "report": "static/systematic-debugging.json",
+      "score": 52,
+      "severity": "HIGH",
+      "recommendation": "DO_NOT_INSTALL",
+      "issues": 4,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "test-driven-development",
+      "report": "static/test-driven-development.json",
+      "score": 0,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 0,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "using-git-worktrees",
+      "report": "static/using-git-worktrees.json",
+      "score": 11,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 2,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "using-superpowers",
+      "report": "static/using-superpowers.json",
+      "score": 49,
+      "severity": "MEDIUM",
+      "recommendation": "CAUTION",
+      "issues": 4,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "verification-before-completion",
+      "report": "static/verification-before-completion.json",
+      "score": 7,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 1,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "writing-plans",
+      "report": "static/writing-plans.json",
+      "score": 0,
+      "severity": "LOW",
+      "recommendation": "CAUTION",
+      "issues": 0,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    },
+    {
+      "name": "writing-skills",
+      "report": "static/writing-skills.json",
+      "score": 89,
+      "severity": "CRITICAL",
+      "recommendation": "DO_NOT_INSTALL",
+      "issues": 20,
+      "analysis_status": "partial",
+      "coverage_percent": 100.0
+    }
+  ],
+  "owasp_regex_triage": "owasp-regex-triage.json",
+  "semantic_review": {
+    "status": "pending_user_choice",
+    "available_paths": ["local-codex", "openrouter-with-explicit-approval"]
+  }
+}

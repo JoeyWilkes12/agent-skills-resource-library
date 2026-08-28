@@ -1,0 +1,28 @@
+{
+  "method": "Case-insensitive high-signal regex triage from the skillspector-review workflow",
+  "scope": "The exact checked-out repository's skills/ directory",
+  "owasp_reference": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+  "patterns": {
+    "direct_injection": [
+      "ignore\\s+(all\\s+)?previous\\s+instructions?",
+      "you\\s+are\\s+now\\s+(in\\s+)?developer\\s+mode",
+      "system\\s+override",
+      "reveal\\s+prompt"
+    ],
+    "output_leakage": [
+      "SYSTEM\\s*[: ]\\s*You\\s+are",
+      "API[_\\s]KEY[:=]\\s*\\w+",
+      "instructions?[: ]\\s*\\d+\\."
+    ]
+  },
+  "matches": [],
+  "result": "No matches found",
+  "interpretation": "This narrow regex pass is a lead generator, not a security clearance.",
+  "manual_review_required": [
+    "indirect or remote instructions",
+    "encoded, obfuscated, Unicode, invisible-text, HTML/Markdown, typoglycemia, or multimodal instructions",
+    "persistent or multi-turn poisoning",
+    "system-prompt extraction, exfiltration, forged observations, or tool-parameter manipulation",
+    "untrusted model output flowing into commands, writes, HTML/SVG, package managers, network calls, or privileged tools"
+  ]
+}

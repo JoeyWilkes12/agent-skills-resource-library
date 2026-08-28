@@ -1,0 +1,907 @@
+{
+  "skill": {
+    "name": "subagent-driven-development",
+    "source": "skills/subagent-driven-development",
+    "scanned_at": "2026-08-28T03:35:22.698751+00:00"
+  },
+  "risk_assessment": {
+    "score": 23,
+    "severity": "MEDIUM",
+    "recommendation": "CAUTION",
+    "max_issue_severity": "HIGH"
+  },
+  "components": [
+    {
+      "path": "SKILL.md",
+      "type": "markdown",
+      "lines": 568,
+      "executable": false,
+      "size_bytes": 32339,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "implementer-prompt.md",
+      "type": "markdown",
+      "lines": 154,
+      "executable": false,
+      "size_bytes": 6335,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "re-review-prompt.md",
+      "type": "markdown",
+      "lines": 115,
+      "executable": false,
+      "size_bytes": 4756,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "scripts/review-package",
+      "type": "other",
+      "lines": 46,
+      "executable": true,
+      "size_bytes": 1469,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "scripts/sdd-workspace",
+      "type": "other",
+      "lines": 40,
+      "executable": true,
+      "size_bytes": 1586,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "scripts/task-brief",
+      "type": "other",
+      "lines": 41,
+      "executable": true,
+      "size_bytes": 1158,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "task-reviewer-prompt.md",
+      "type": "markdown",
+      "lines": 207,
+      "executable": false,
+      "size_bytes": 9021,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    }
+  ],
+  "structured_summaries": [],
+  "issues": [
+    {
+      "id": "TM1",
+      "finding_id": "finding-2ac2f8431909438ba1bbadeab22e2438",
+      "category": "Tool Misuse",
+      "pattern": "Tool Parameter Abuse",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "SKILL.md",
+        "start_line": 153,
+        "end_line": null
+      },
+      "finding": "git clean -fdx",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+      "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+      "code_snippet": "- The ledger is your recovery map: the commits it names exist in git even\n  when your context no longer remembers creating them. After compaction,\n  trust the ledger and `git log` over your own recollection.\n- `git clean -fdx` will destroy the workspace (it's git-ignored scratch); if\n  that happens, recover from `git log`.\n\nRead the plan once, note its context and Global Constraints, and create a",
+      "intent": null,
+      "tags": [
+        "Tool Misuse"
+      ],
+      "evidence": {},
+      "match_fingerprint": "efb9e433433f7feeafc94a70d7a4ebc72e8bc2a0ebf1ce213586ba7ff5744db8",
+      "occurrences": [
+        {
+          "file": "SKILL.md",
+          "start_line": 153,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "RA2",
+      "finding_id": "finding-fb9b3f02266248e59c37e51de749fd10",
+      "category": "Rogue Agent",
+      "pattern": "Session Persistence",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "SKILL.md",
+        "start_line": 511,
+        "end_line": null
+      },
+      "finding": "Create todos for all tasks]\n\nTask 1: Hook installation script\n\n[Run task-brief for Task 1; dispatch implementer with brief + report paths + context]\n\nImplementer: \"Before I begin - should the hook be ",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction.",
+      "remediation": "Remove any persistence mechanisms (cron jobs, startup scripts, state files). Skills should not maintain state across sessions without explicit user consent.",
+      "code_snippet": "[Setup: worktree verified]\n[Read plan file once: docs/superpowers/plans/feature-plan.md]\n[Resolve workspace: scripts/sdd-workspace docs/superpowers/plans/feature-plan.md — no ledger inside, fresh start]\n[Create todos for all tasks]\n\nTask 1: Hook installation script\n",
+      "intent": null,
+      "tags": [
+        "Rogue Agent"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2532c3f219cb3e5327652d7efaf8ba9e65e0a70ef94591181f5666cc19b435f8",
+      "occurrences": [
+        {
+          "file": "SKILL.md",
+          "start_line": 511,
+          "end_line": null
+        }
+      ]
+    }
+  ],
+  "suppressed_count": 0,
+  "suppressed": [],
+  "metadata": {
+    "has_executable_scripts": true,
+    "skillspector_version": "2.10.0",
+    "llm_requested": false,
+    "llm_available": false,
+    "meta_analysis_applied": false,
+    "inference_usage": [],
+    "filtering_mode": "heuristic"
+  },
+  "execution_successful": true,
+  "analysis_completeness": {
+    "total_components": 7,
+    "scanned_components": 7,
+    "coverage_percent": 100.0,
+    "is_complete": false,
+    "status": "partial",
+    "execution_successful": true,
+    "fully_inspected_files": 7,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "ledger_exceptions": [
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 128,
+        "end_line": 128,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 146,
+        "end_line": 146,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 401,
+        "end_line": 401,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 442,
+        "end_line": 442,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 509,
+        "end_line": 509,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 510,
+        "end_line": 510,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 523,
+        "end_line": 523,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 538,
+        "end_line": 538,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 539,
+        "end_line": 539,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 549,
+        "end_line": 549,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 552,
+        "end_line": 552,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 553,
+        "end_line": 553,
+        "fatal": false
+      },
+      {
+        "outcome": "partial",
+        "phase": "reference_resolution",
+        "reason_code": "reference_unresolved",
+        "message": "A local path-like reference could not be resolved unambiguously.",
+        "path": "SKILL.md",
+        "start_line": 556,
+        "end_line": 556,
+        "fatal": false
+      }
+    ],
+    "scope_exclusions": [],
+    "analyzer_statuses": [
+      {
+        "analyzer_id": "artifact_integrity",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "behavioral_ast",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "no_applicable_files",
+        "message": "No files matched this analyzer's applicability contract."
+      },
+      {
+        "analyzer_id": "behavioral_taint_tracking",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "no_applicable_files",
+        "message": "No files matched this analyzer's applicability contract."
+      },
+      {
+        "analyzer_id": "mcp_least_privilege",
+        "status": "completed",
+        "planned_work": 4,
+        "completed": 4,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "mcp_rug_pull",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "mcp_tool_poisoning",
+        "status": "completed",
+        "planned_work": 1,
+        "completed": 1,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "meta_analyzer",
+        "status": "disabled",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "disabled_by_configuration",
+        "message": "Analyzer was disabled by the requested configuration."
+      },
+      {
+        "analyzer_id": "static_patterns_agent_snooping",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_anti_refusal",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_data_exfiltration",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_deserialization",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_excessive_agency",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_harmful_content",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_memory_poisoning",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_output_handling",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_privilege_escalation",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_prompt_injection",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_rogue_agent",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_ssrf",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_supply_chain",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_system_prompt_leakage",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_tool_misuse",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_yara",
+        "status": "completed",
+        "planned_work": 7,
+        "completed": 7,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      }
+    ],
+    "references": [
+      {
+        "source_path": "SKILL.md",
+        "line": 67,
+        "column": 41,
+        "evidence": "\"Dispatch implementer subagent (./implementer-prompt.md)\" [shape=box];",
+        "target_path": "implementer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 71,
+        "column": 59,
+        "evidence": "\"Generate review package, dispatch task reviewer (./task-reviewer-prompt.md)\" [shape=box];",
+        "target_path": "task-reviewer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 76,
+        "column": 37,
+        "evidence": "\"Dispatch scoped re-review (./re-review-prompt.md)\" [shape=box];",
+        "target_path": "re-review-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 88,
+        "column": 36,
+        "evidence": "\"Dispatch final code reviewer (../requesting-code-review/code-reviewer.md)\" [shape=box];",
+        "target_path": null,
+        "status": "rejected",
+        "disposition": "out_of_scope"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 93,
+        "column": 102,
+        "evidence": "\"Setup: worktree, ledger check, read plan, pre-flight review\" -> \"Dispatch implementer subagent (./implementer-prompt.md)\";",
+        "target_path": "implementer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 94,
+        "column": 37,
+        "evidence": "\"Dispatch implementer subagent (./implementer-prompt.md)\" -> \"Implementer asks questions?\";",
+        "target_path": "implementer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 98,
+        "column": 113,
+        "evidence": "\"Implementer implements, tests, commits, self-reviews\" -> \"Generate review package, dispatch task reviewer (./task-reviewer-prompt.md)\";",
+        "target_path": "task-reviewer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 99,
+        "column": 55,
+        "evidence": "\"Generate review package, dispatch task reviewer (./task-reviewer-prompt.md)\" -> \"Spec ✅ and quality approved?\";",
+        "target_path": "task-reviewer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 105,
+        "column": 122,
+        "evidence": "\"Fix round R of 5: R≤3 resume implementer; R≥4 fresh implementer, more capable model\" -> \"Dispatch scoped re-review (./re-review-prompt.md)\";",
+        "target_path": "re-review-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 106,
+        "column": 33,
+        "evidence": "\"Dispatch scoped re-review (./re-review-prompt.md)\" -> \"All findings addressed?\";",
+        "target_path": "re-review-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 116,
+        "column": 61,
+        "evidence": "\"More tasks remain?\" -> \"Dispatch implementer subagent (./implementer-prompt.md)\" [label=\"yes\"];",
+        "target_path": "implementer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 117,
+        "column": 60,
+        "evidence": "\"More tasks remain?\" -> \"Dispatch final code reviewer (../requesting-code-review/code-reviewer.md)\" [label=\"no\"];",
+        "target_path": null,
+        "status": "rejected",
+        "disposition": "out_of_scope"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 118,
+        "column": 36,
+        "evidence": "\"Dispatch final code reviewer (../requesting-code-review/code-reviewer.md)\" -> \"Final findings? ONE fix dispatch, one scoped re-review, adjudicate residuals\";",
+        "target_path": null,
+        "status": "rejected",
+        "disposition": "out_of_scope"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 128,
+        "column": 33,
+        "evidence": "Never start implementation on a main/master branch without your human",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 137,
+        "column": 4,
+        "evidence": "`scripts/sdd-workspace PLAN_FILE` — it prints the plan's git-ignored",
+        "target_path": "scripts/sdd-workspace",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 146,
+        "column": 32,
+        "evidence": "ledger at the old flat path `.superpowers/sdd/progress.md` — is another",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 252,
+        "column": 4,
+        "evidence": "`scripts/task-brief PLAN_FILE N` — it extracts the task's full text to a",
+        "target_path": "scripts/task-brief",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 284,
+        "column": 35,
+        "evidence": "Template: [implementer-prompt.md](implementer-prompt.md)",
+        "target_path": "implementer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 290,
+        "column": 41,
+        "evidence": "**DONE:** Generate the review package (`scripts/review-package PLAN_FILE BASE HEAD`, from this skill's directory — it prints the unique file path it wrote; BASE",
+        "target_path": "scripts/review-package",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 317,
+        "column": 4,
+        "evidence": "`scripts/review-package PLAN_FILE BASE HEAD` and pass the reviewer the file path",
+        "target_path": "scripts/review-package",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 352,
+        "column": 37,
+        "evidence": "Template: [task-reviewer-prompt.md](task-reviewer-prompt.md)",
+        "target_path": "task-reviewer-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 396,
+        "column": 35,
+        "evidence": "**The re-review is scoped.** Run `scripts/review-package PLAN_FILE FIX_BASE HEAD`",
+        "target_path": "scripts/review-package",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 398,
+        "column": 23,
+        "evidence": "[re-review-prompt.md](re-review-prompt.md) with the findings list, the",
+        "target_path": "re-review-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 401,
+        "column": 16,
+        "evidence": "diff only. New Critical/Important breakage in the fix diff joins the open",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 442,
+        "column": 21,
+        "evidence": "the review has open Critical/Important issues that are neither fixed nor",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 448,
+        "column": 2,
+        "evidence": "`scripts/review-package PLAN_FILE MERGE_BASE HEAD` (MERGE_BASE = the commit the",
+        "target_path": "scripts/review-package",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 454,
+        "column": 20,
+        "evidence": "[code-reviewer.md](../requesting-code-review/code-reviewer.md). Point it at",
+        "target_path": null,
+        "status": "rejected",
+        "disposition": "out_of_scope"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 463,
+        "column": 3,
+        "evidence": "(`scripts/review-package PLAN_FILE FIX_BASE HEAD` over the fix range,",
+        "target_path": "scripts/review-package",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 464,
+        "column": 23,
+        "evidence": "[re-review-prompt.md](re-review-prompt.md)).",
+        "target_path": "re-review-prompt.md",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 509,
+        "column": 23,
+        "evidence": "[Read plan file once: docs/superpowers/plans/feature-plan.md]",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 510,
+        "column": 21,
+        "evidence": "[Resolve workspace: scripts/sdd-workspace docs/superpowers/plans/feature-plan.md — no ledger inside, fresh start]",
+        "target_path": "scripts/sdd-workspace",
+        "status": "resolved",
+        "disposition": "analyzed"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 510,
+        "column": 43,
+        "evidence": "[Resolve workspace: scripts/sdd-workspace docs/superpowers/plans/feature-plan.md — no ledger inside, fresh start]",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 523,
+        "column": 18,
+        "evidence": "- Added tests, 5/5 passing",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 538,
+        "column": 11,
+        "evidence": "- Added verify/repair modes",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 539,
+        "column": 5,
+        "evidence": "- 8/8 tests passing",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 549,
+        "column": 10,
+        "evidence": "Re-ran test/recovery.test.js — 10/10 passing. Fix report appended.",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 549,
+        "column": 34,
+        "evidence": "Re-ran test/recovery.test.js — 10/10 passing. Fix report appended.",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 552,
+        "column": 54,
+        "evidence": "Re-reviewer: Missing progress reporting — ADDRESSED (src/recovery.js:41).",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 553,
+        "column": 29,
+        "evidence": "Magic number — ADDRESSED (src/recovery.js:7). New breakage: none.",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      },
+      {
+        "source_path": "SKILL.md",
+        "line": 556,
+        "column": 28,
+        "evidence": "[Ledger: Task 2: fix round 1/5 (2 addressed, 0 open; commits d4e5f6a..b7c8d9e)]",
+        "target_path": null,
+        "status": "missing",
+        "disposition": "partial"
+      }
+    ],
+    "limitations": [],
+    "findings_before_filtering": 2,
+    "findings_after_filtering": 2
+  }
+}
