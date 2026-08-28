@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "efe9ac176f4335d79d74efc9bd808e64d95fdc44",
+  "generatedFrom": "94a2035419a6c16bcc0341fa53778c8d6d01dd6a",
   "releases": [
+    {
+      "date": "2026-08-28",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Combine theme choices into one header control.",
+              "commit": "94a2035419a6c16bcc0341fa53778c8d6d01dd6a"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-27",
       "sections": [
@@ -41,6 +56,11 @@
               "kind": "project",
               "text": "Respect system theme preferences in header.",
               "commit": "efe9ac176f4335d79d74efc9bd808e64d95fdc44"
+            },
+            {
+              "kind": "project",
+              "text": "Record system theme preference update.",
+              "commit": "20bc480fedfe4189774a9ac9faf50c961b1d79a8"
             }
           ]
         }
