@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "e9b6fe06c783411fb053146b6aa2b072caf9212f",
+  "generatedFrom": "43994aba88b4f3e66298db20deedcac1b50e85f3",
   "releases": [
     {
       "date": "2026-08-27",
@@ -21,6 +21,16 @@
               "kind": "project",
               "text": "Added theme-aware Superpowers artwork.",
               "commit": "e9b6fe06c783411fb053146b6aa2b072caf9212f"
+            },
+            {
+              "kind": "project",
+              "text": "Record theme-aware artwork in changelog.",
+              "commit": "159d364659478faf3fc896d7876224c7aa4b25c3"
+            },
+            {
+              "kind": "project",
+              "text": "Used dark Superpowers artwork for social previews.",
+              "commit": "43994aba88b4f3e66298db20deedcac1b50e85f3"
             }
           ]
         }
