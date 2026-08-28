@@ -480,7 +480,7 @@ export function ResourceLibrary() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
           <h1>
-            Find the right guidance for <span className="hero-title-accent">AI agent skills</span>.
+            Extensive guidance for <span className="hero-title-accent">AI agent skills</span>.
           </h1>
           <p className="hero-intro">
             Learn what skills are, build reliable workflows, troubleshoot what
