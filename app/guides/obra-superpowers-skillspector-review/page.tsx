@@ -136,7 +136,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
             <p className="guide-section-number">01</p>
             <div>
               <p className="guide-label">At a glance</p>
-              <h2>The library contains 14 skills—not 18.</h2>
+              <h2>14 skills as a framework for software development</h2>
               <p>
                 The repository’s <code>skills/</code> directory contains 14
                 subdirectories with a <code>SKILL.md</code>. The README’s
