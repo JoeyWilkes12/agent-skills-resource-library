@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "62150c15e055b01188870193c26d4c9c69ab23fe",
+  "generatedFrom": "e9b6fe06c783411fb053146b6aa2b072caf9212f",
   "releases": [
     {
       "date": "2026-08-27",
@@ -11,6 +11,16 @@
               "kind": "project",
               "text": "Publish Obra Superpowers review guide.",
               "commit": "62150c15e055b01188870193c26d4c9c69ab23fe"
+            },
+            {
+              "kind": "project",
+              "text": "Record Obra Superpowers guide in changelog.",
+              "commit": "b4683e1977118672345ee9b260ce10501ef45732"
+            },
+            {
+              "kind": "project",
+              "text": "Added theme-aware Superpowers artwork.",
+              "commit": "e9b6fe06c783411fb053146b6aa2b072caf9212f"
             }
           ]
         }
