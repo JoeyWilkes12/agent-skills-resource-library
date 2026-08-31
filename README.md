@@ -38,6 +38,9 @@ Ratings use a `0.0`–`5.0` scale and determine the default descending tile orde
 They are hidden from visitors by default. Set
 `NEXT_PUBLIC_SHOW_RATINGS=true` while building to display them.
 
+The About page's Google Drive media link is enabled by default. Set
+`NEXT_PUBLIC_SHOW_MEDIA_FOLDER=false` while building to hide it.
+
 When a visitor selects a category, entries in
 `resource_category_order.csv` take precedence. Unranked resources then fall
 back to rating and title.

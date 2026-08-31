@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteHeader } from "../site-header";
+import { siteConfig } from "../site-config";
 import changelog from "./generated/changelog.json";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -121,10 +122,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <p className="about-media-note">
-          Download additional content, including images and video, from the{" "}
-          <a href={mediaFolderUrl}>Google Drive folder</a>.
-        </p>
+        {siteConfig.showMediaFolder && (
+          <p className="about-media-note">
+            Download additional content, including images and video, from the{" "}
+            <a href={mediaFolderUrl}>Google Drive folder</a>.
+          </p>
+        )}
 
         <section
           className="about-section about-changelog"
