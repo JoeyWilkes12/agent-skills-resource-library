@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "4a7ed905ee325f4fc06d2802eb689363f85f53e3",
+  "generatedFrom": "1f92df822c247e8485782c3ac80115c002a9a059",
   "releases": [
     {
       "date": "2026-08-31",
@@ -11,6 +11,16 @@
               "kind": "project",
               "text": "Added Skills and plugins research guide.",
               "commit": "4a7ed905ee325f4fc06d2802eb689363f85f53e3"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Change Skills efficacy guide title.",
+              "commit": "1f92df822c247e8485782c3ac80115c002a9a059"
             }
           ]
         }
