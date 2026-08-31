@@ -8,6 +8,8 @@ const libraryUrl =
   "https://joeywilkes12.github.io/agent-skills-resource-library/.";
 const repositoryUrl =
   "https://github.com/JoeyWilkes12/agent-skills-resource-library";
+const mediaFolderUrl =
+  "https://drive.google.com/drive/folders/1aTT5d4Rg4o820jh26tI9qY8nLE4tHAyC?usp=sharing";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-US", {
@@ -118,6 +120,11 @@ export default function AboutPage() {
             </p>
           </div>
         </section>
+
+        <p className="about-media-note">
+          Download additional content, including images and video, from the{" "}
+          <a href={mediaFolderUrl}>Google Drive folder</a>.
+        </p>
 
         <section
           className="about-section about-changelog"
