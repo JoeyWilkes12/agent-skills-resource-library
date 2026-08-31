@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "1f92df822c247e8485782c3ac80115c002a9a059",
+  "generatedFrom": "7a3a93ef5b435274d370432ce79c0287f678b85e",
   "releases": [
     {
       "date": "2026-08-31",
@@ -21,6 +21,11 @@
               "kind": "project",
               "text": "Change Skills efficacy guide title.",
               "commit": "1f92df822c247e8485782c3ac80115c002a9a059"
+            },
+            {
+              "kind": "project",
+              "text": "Added Google Drive media folder to About page.",
+              "commit": "7a3a93ef5b435274d370432ce79c0287f678b85e"
             }
           ]
         }
