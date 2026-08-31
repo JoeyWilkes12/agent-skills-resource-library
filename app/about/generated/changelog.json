@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "7a3a93ef5b435274d370432ce79c0287f678b85e",
+  "generatedFrom": "46c1c4fa2bb8a5592ce49aff31e1439e1cb8dfb5",
   "releases": [
     {
       "date": "2026-08-31",
@@ -26,6 +26,11 @@
               "kind": "project",
               "text": "Added Google Drive media folder to About page.",
               "commit": "7a3a93ef5b435274d370432ce79c0287f678b85e"
+            },
+            {
+              "kind": "project",
+              "text": "Added feature flag for About media link.",
+              "commit": "46c1c4fa2bb8a5592ce49aff31e1439e1cb8dfb5"
             }
           ]
         }
