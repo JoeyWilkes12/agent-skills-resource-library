@@ -20,6 +20,10 @@ export function MarkdownGuidePage({
   path: string;
 }) {
   const articleSections = guide.sections.filter((section) => section.id !== "contents");
+  const deckLines = guide.deck
+    ?.split(/\\\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
 
   return (
     <main className="guide-page">
@@ -29,7 +33,11 @@ export function MarkdownGuidePage({
         <header className="guide-hero prose-guide-hero">
           <p className="eyebrow">{eyebrow}</p>
           <h1>{guide.title}</h1>
-          {guide.deck ? <p>{guide.deck}</p> : null}
+          {deckLines?.length ? (
+            <div className="prose-guide-deck">
+              {deckLines.map((line) => <p key={line}>{line}</p>)}
+            </div>
+          ) : null}
         </header>
 
         <GuideReadingLayout

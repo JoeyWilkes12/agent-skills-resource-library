@@ -72,7 +72,7 @@ function parseFrontmatter(source: string) {
 }
 
 function asDeck(text: string) {
-  const match = text.match(/^\*(.+)\*$/);
+  const match = text.match(/^\*([\s\S]+)\*$/);
   return match?.[1];
 }
 
@@ -194,7 +194,7 @@ export function parseMarkdownGuide(source: string): MarkdownGuide {
     }
     const text = paragraph.join(" ");
     if (sections.length === 0 && !deck) {
-      deck = asDeck(text);
+      deck = asDeck(paragraph.join("\n"));
       if (deck) continue;
     }
     activeBlocks.push({ type: "paragraph", text });

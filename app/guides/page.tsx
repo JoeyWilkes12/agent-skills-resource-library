@@ -9,7 +9,7 @@ const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image"
 const libraryGuides = [
   {
     href: "/guides/skills-plugins-impact",
-    title: "Skills, plugins, and coding-agent performance",
+    title: "Literature review of Skills Efficacy",
     summary:
       "A research synthesis on personalized Skills, task-matched guidance, retrieval, plugin packaging, cost, and security—with the full supporting notes.",
   },

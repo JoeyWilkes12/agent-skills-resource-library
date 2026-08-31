@@ -2266,13 +2266,21 @@ footer p:first-child {
   text-wrap: balance;
 }
 
-.prose-guide-hero > p:last-child {
+.prose-guide-deck {
   max-width: 720px;
   margin: 24px 0 0;
   color: rgba(255, 255, 255, 0.78);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   line-height: 1.5;
+}
+
+.prose-guide-deck p {
+  margin: 0;
+}
+
+.prose-guide-deck p + p {
+  margin-top: 0.35em;
 }
 
 .prose-guide-reading-layout {
@@ -3227,7 +3235,7 @@ footer p:first-child {
 :root[data-theme="dark"] .spectrum-intro,
 :root[data-theme="dark"] .spectrum-section,
 :root[data-theme="dark"] .spectrum-table,
-:root[data-theme="dark"] .prose-guide-hero > p:last-child,
+:root[data-theme="dark"] .prose-guide-deck,
 :root[data-theme="dark"] .prose-guide-reading,
 :root[data-theme="dark"] .training-comparison ul,
 :root[data-theme="dark"] .guide-table td,

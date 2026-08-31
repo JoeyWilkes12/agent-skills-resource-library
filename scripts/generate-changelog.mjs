@@ -153,7 +153,7 @@ function isVisitorFacing(files) {
 }
 
 function isMaintenanceSubject(subject) {
-  return /(?:deploy|deployment|generated changelog|github pages|workflow|regression test)/i.test(
+  return /(?:deploy|deployment|generat(?:e|ed) changelog|github pages|workflow|regression test)/i.test(
     subject,
   );
 }

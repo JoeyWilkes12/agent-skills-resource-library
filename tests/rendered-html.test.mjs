@@ -102,7 +102,9 @@ test("server-renders the Skills and plugins research guide with supporting HTML 
   const synthesisResponse = await renderPath("/guides/skills-plugins-impact");
   assert.equal(synthesisResponse.status, 200);
   const synthesisHtml = await synthesisResponse.text();
+  assert.match(synthesisHtml, /<h1>Literature review of Skills Efficacy<\/h1>/);
   assert.match(synthesisHtml, /Skills can help agents, but personalization and plugin packaging need separate proof/);
+  assert.match(synthesisHtml, /What the August 2026 personalized-Skills study actually found/);
   assert.match(synthesisHtml, /Personalized Skill/);
   assert.match(synthesisHtml, /Supporting research materials/);
   assert.match(

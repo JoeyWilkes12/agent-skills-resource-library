@@ -7,7 +7,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const path = `${basePath}/guides/skills-plugins-impact`;
 const guide = parseMarkdownGuide(guideSource);
 const description =
-  guide.deck ??
+  guide.deck?.replace(/\\\n/g, " ") ??
   "A research synthesis on personalized Skills, task-matched guidance, retrieval, plugin packaging, cost, and security.";
 
 export const metadata: Metadata = {

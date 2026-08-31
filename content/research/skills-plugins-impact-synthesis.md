@@ -1,6 +1,7 @@
-# Skills can help agents, but personalization and plugin packaging need separate proof
+# Literature review of Skills Efficacy
 
-*What the August 2026 personalized-Skills study actually found—and what the wider evidence says about Skills, tools, retrieval, and plugin packaging.*
+*Skills can help agents, but personalization and plugin packaging need separate proof\
+What the August 2026 personalized-Skills study actually found—and what the wider evidence says about Skills, tools, retrieval, and plugin packaging.*
 
 **Research synthesis — 31 August 2026**
 **Primary paper:** Shuyan Huang, Kai Du, and Andrew Lan, [“Do Personalized Skills Help Coding Agents? An Empirical Study of Developer Interaction Histories”](https://arxiv.org/abs/2608.10319), arXiv:2608.10319v2 (15 August 2026).
