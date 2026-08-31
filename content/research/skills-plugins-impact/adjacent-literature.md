@@ -1,6 +1,8 @@
 # Adjacent literature: skills, plugins, memory, and coding-agent adaptation
 
-_Research note prepared 2026-08-31. This is an adjacent-literature review, not the central review of the named personalized-skills paper._
+*A primary-source review connecting direct Skill benchmarks with procedural memory, retrieval, adaptation, and coding-agent research.*
+
+*Research note prepared 2026-08-31. This is an adjacent-literature review, not the central review of the named personalized-skills paper.*
 
 ## Scope and reading standard
 

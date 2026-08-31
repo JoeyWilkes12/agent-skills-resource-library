@@ -3,6 +3,22 @@ import { dirname, resolve } from "node:path";
 
 const markdownGuides = [
   {
+    source: "content/research/skills-plugins-impact-synthesis.md",
+    target: "app/guides/generated/skills-plugins-impact-synthesis.ts",
+  },
+  {
+    source: "content/research/skills-plugins-impact/personalized-skills-paper.md",
+    target: "app/guides/generated/personalized-skills-paper.ts",
+  },
+  {
+    source: "content/research/skills-plugins-impact/adjacent-literature.md",
+    target: "app/guides/generated/adjacent-literature.ts",
+  },
+  {
+    source: "content/research/skills-plugins-impact/ecosystem-evidence.md",
+    target: "app/guides/generated/ecosystem-evidence.ts",
+  },
+  {
     source: "content/guides/enterprise-agent-skills-presenter-readiness.md",
     target: "app/guides/generated/enterprise-agent-skills-presenter-readiness.ts",
   },

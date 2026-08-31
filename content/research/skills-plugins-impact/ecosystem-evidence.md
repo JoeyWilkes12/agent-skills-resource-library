@@ -1,5 +1,7 @@
 # Ecosystem evidence: Skills, plugins, tools, connectors, and MCP
 
+*Definitions, evidence, and evaluation standards for separating procedural guidance from tools, connectors, protocols, and plugin packaging.*
+
 **Research date:** 2026-08-31
 **Scope:** Evidence relevant to whether procedural Skills and packaged integrations improve AI-agent outcomes. Sources are linked to the paper, specification, or primary vendor documentation. Claims from preprints and vendors are labeled accordingly.
 

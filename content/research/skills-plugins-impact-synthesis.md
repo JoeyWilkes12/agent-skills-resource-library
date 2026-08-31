@@ -1,5 +1,7 @@
 # Skills can help agents, but personalization and plugin packaging need separate proof
 
+*What the August 2026 personalized-Skills study actually found—and what the wider evidence says about Skills, tools, retrieval, and plugin packaging.*
+
 **Research synthesis — 31 August 2026**
 **Primary paper:** Shuyan Huang, Kai Du, and Andrew Lan, [“Do Personalized Skills Help Coding Agents? An Empirical Study of Developer Interaction Histories”](https://arxiv.org/abs/2608.10319), arXiv:2608.10319v2 (15 August 2026).
 
@@ -224,8 +226,8 @@ For coding agents, the most evidence-aligned strategy is a shared procedural cor
 15. [Agent Plugins Specification 1.0.0](https://agent-plugins.org/specification), 2026.
 16. [Model Context Protocol Specification](https://modelcontextprotocol.io/specification/2025-11-25).
 
-### Supporting research notes
+## Supporting research materials
 
-- [Detailed focal-paper extraction](notes/personalized-skills-paper.md)
-- [Adjacent academic literature review](notes/adjacent-literature.md)
-- [Ecosystem, tool, plugin, and security evidence](notes/ecosystem-evidence.md)
+- [Detailed focal-paper extraction](/guides/skills-plugins-impact/personalized-skills-paper)
+- [Adjacent academic literature review](/guides/skills-plugins-impact/adjacent-literature)
+- [Ecosystem, tool, plugin, and security evidence](/guides/skills-plugins-impact/ecosystem-evidence)

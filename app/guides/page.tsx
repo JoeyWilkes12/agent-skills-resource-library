@@ -8,6 +8,12 @@ const spectrumGuide = parseMarkdownGuide(spectrumGuideSource);
 const spectrumImage = spectrumGuide.intro.find((block) => block.type === "image");
 const libraryGuides = [
   {
+    href: "/guides/skills-plugins-impact",
+    title: "Skills, plugins, and coding-agent performance",
+    summary:
+      "A research synthesis on personalized Skills, task-matched guidance, retrieval, plugin packaging, cost, and security—with the full supporting notes.",
+  },
+  {
     href: "/guides/enterprise-agent-skills-presenter-readiness",
     title: "Enterprise training on skills for AI agents: presenter readiness questions",
     summary:

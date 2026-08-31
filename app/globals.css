@@ -2269,7 +2269,7 @@ footer p:first-child {
 .prose-guide-hero > p:last-child {
   max-width: 720px;
   margin: 24px 0 0;
-  color: #4a5a67;
+  color: rgba(255, 255, 255, 0.78);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   line-height: 1.5;
@@ -2392,6 +2392,27 @@ footer p:first-child {
   color: var(--ink);
   background: rgba(174, 231, 206, 0.55);
   font-size: 0.9em;
+}
+
+.prose-guide-section .prose-guide-code,
+.prose-guide-intro .prose-guide-code {
+  margin: 28px 0;
+  padding: 22px 24px;
+  overflow-x: auto;
+  color: var(--white);
+  background: var(--ink);
+  border: 1px solid rgba(174, 231, 206, 0.38);
+  line-height: 1.65;
+  tab-size: 2;
+}
+
+.prose-guide-section .prose-guide-code code,
+.prose-guide-intro .prose-guide-code code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 0.84rem;
+  white-space: pre;
 }
 
 .guide-source-note {

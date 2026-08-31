@@ -27,7 +27,7 @@ test("server-renders the resource library shell", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Agent Skills Resource Library<\/title>/i);
-  assert.match(html, /Find the right guidance for(?:<!-- -->|\s|&nbsp;)+.*AI agent skills.*\./);
+  assert.match(html, /Extensive guidance for(?:<!-- -->|\s|&nbsp;)+.*AI agent skills.*\./);
   assert.match(html, /Skills library/);
   assert.match(html, /<div class="header-menu">/);
   assert.match(html, /aria-label="Open primary navigation"/);
@@ -98,6 +98,48 @@ test("server-renders the new agentic performance guides", async () => {
   assert.match(sourceLibraryHtml, /target="_blank"/);
 });
 
+test("server-renders the Skills and plugins research guide with supporting HTML notes", async () => {
+  const synthesisResponse = await renderPath("/guides/skills-plugins-impact");
+  assert.equal(synthesisResponse.status, 200);
+  const synthesisHtml = await synthesisResponse.text();
+  assert.match(synthesisHtml, /Skills can help agents, but personalization and plugin packaging need separate proof/);
+  assert.match(synthesisHtml, /Personalized Skill/);
+  assert.match(synthesisHtml, /Supporting research materials/);
+  assert.match(
+    synthesisHtml,
+    /href="\/guides\/skills-plugins-impact\/personalized-skills-paper"/,
+  );
+  assert.match(
+    synthesisHtml,
+    /href="\/guides\/skills-plugins-impact\/adjacent-literature"/,
+  );
+  assert.match(
+    synthesisHtml,
+    /href="\/guides\/skills-plugins-impact\/ecosystem-evidence"/,
+  );
+
+  const focalResponse = await renderPath(
+    "/guides/skills-plugins-impact/personalized-skills-paper",
+  );
+  assert.equal(focalResponse.status, 200);
+  const focalHtml = await focalResponse.text();
+  assert.match(focalHtml, /Source note: Do Personalized Skills Help Coding Agents/);
+  assert.match(focalHtml, /class="prose-guide-code"/);
+  assert.match(focalHtml, /Back to the research synthesis/);
+
+  const adjacentResponse = await renderPath(
+    "/guides/skills-plugins-impact/adjacent-literature",
+  );
+  assert.equal(adjacentResponse.status, 200);
+  assert.match(await adjacentResponse.text(), /Adjacent literature: skills, plugins, memory/);
+
+  const ecosystemResponse = await renderPath(
+    "/guides/skills-plugins-impact/ecosystem-evidence",
+  );
+  assert.equal(ecosystemResponse.status, 200);
+  assert.match(await ecosystemResponse.text(), /Ecosystem evidence: Skills, plugins, tools/);
+});
+
 test("server-renders the enterprise presenter-readiness guide", async () => {
   const response = await renderPath(
     "/guides/enterprise-agent-skills-presenter-readiness",
@@ -125,6 +167,7 @@ test("server-renders the Guides index and its published entries", async () => {
   assert.match(html, /href="\/guides\/enterprise-agent-skills-presenter-readiness"/);
   assert.match(html, /href="\/guides\/skills-in-the-agentic-performance-system"/);
   assert.match(html, /href="\/guides\/agentic-performance-source-library"/);
+  assert.match(html, /href="\/guides\/skills-plugins-impact"/);
   assert.match(html, /href="\/guides\/writing-without-the-ai-sheen"/);
   assert.match(html, /href="\/guides\/when-not-to-use-a-skill"/);
   assert.match(html, /href="\/guides\/so-you-found-a-skill-checklist"/);

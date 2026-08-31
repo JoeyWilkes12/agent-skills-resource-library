@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 type GuideBlock =
   | { type: "blockquote"; text: string }
+  | { type: "code"; language?: string; text: string }
   | { type: "heading"; id: string; level: 3; text: string }
   | { type: "image"; alt: string; source: string }
   | { type: "list"; items: string[] }
@@ -54,6 +55,7 @@ function isTableDivider(line: string) {
 function isBlockStart(line: string, nextLine?: string) {
   return (
     /^#{1,3}\s+/.test(line) ||
+    /^```/.test(line) ||
     /^!\[[^\]]*\]\([^)]+\)$/.test(line) ||
     /^-\s+/.test(line) ||
     /^\d+\.\s+/.test(line) ||
@@ -105,6 +107,25 @@ export function parseMarkdownGuide(source: string): MarkdownGuide {
     if (subheadingMatch) {
       const text = subheadingMatch[1];
       activeBlocks.push({ type: "heading", id: slugify(text), level: 3, text });
+      continue;
+    }
+
+    const codeFenceMatch = line.match(/^```([\w-]*)$/);
+    if (codeFenceMatch) {
+      const codeLines: string[] = [];
+      while (index + 1 < lines.length) {
+        if (lines[index + 1].trim() === "```") {
+          index += 1;
+          break;
+        }
+        index += 1;
+        codeLines.push(lines[index]);
+      }
+      activeBlocks.push({
+        type: "code",
+        language: codeFenceMatch[1] || undefined,
+        text: codeLines.join("\n"),
+      });
       continue;
     }
 
@@ -182,7 +203,12 @@ export function parseMarkdownGuide(source: string): MarkdownGuide {
   return { deck, intro, sections, title };
 }
 
-function inlineContent(text: string, anchorPrefix = "", highlightExternalLinks = false): ReactNode[] {
+function inlineContent(
+  text: string,
+  anchorPrefix = "",
+  basePath = "",
+  highlightExternalLinks = false,
+): ReactNode[] {
   const tokens = text.split(/(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g);
 
   return tokens.filter(Boolean).map((token, index) => {
@@ -192,7 +218,11 @@ function inlineContent(text: string, anchorPrefix = "", highlightExternalLinks =
 
     const link = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) {
-      const href = link[2].startsWith("#") ? `${anchorPrefix}${link[2]}` : link[2];
+      const href = link[2].startsWith("#")
+        ? `${anchorPrefix}${link[2]}`
+        : link[2].startsWith("/")
+          ? `${basePath}${link[2]}`
+          : link[2];
       const isExternal = /^https?:\/\//.test(href);
       return (
         <a
@@ -243,13 +273,21 @@ export function GuideBlocks({
     if (block.type === "heading") {
       return (
         <h3 id={block.id} key={`${block.id}-${index}`}>
-          {inlineContent(block.text, anchorPrefix, highlightExternalLinks)}
+          {inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}
         </h3>
       );
     }
 
     if (block.type === "blockquote") {
-      return <blockquote key={`blockquote-${index}`}>{inlineContent(block.text, anchorPrefix, highlightExternalLinks)}</blockquote>;
+      return <blockquote key={`blockquote-${index}`}>{inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}</blockquote>;
+    }
+
+    if (block.type === "code") {
+      return (
+        <pre className="prose-guide-code" key={`code-${index}`}>
+          <code data-language={block.language}>{block.text}</code>
+        </pre>
+      );
     }
 
     if (block.type === "image") {
@@ -269,7 +307,7 @@ export function GuideBlocks({
       return (
         <ul className="spectrum-list" key={`list-${index}`}>
           {block.items.map((item) => (
-            <li key={item}>{inlineContent(item, anchorPrefix, highlightExternalLinks)}</li>
+            <li key={item}>{inlineContent(item, anchorPrefix, basePath, highlightExternalLinks)}</li>
           ))}
         </ul>
       );
@@ -279,7 +317,7 @@ export function GuideBlocks({
       return (
         <ol className="spectrum-list spectrum-ordered-list" key={`ordered-list-${index}`} start={block.start}>
           {block.items.map((item) => (
-            <li key={item}>{inlineContent(item, anchorPrefix, highlightExternalLinks)}</li>
+            <li key={item}>{inlineContent(item, anchorPrefix, basePath, highlightExternalLinks)}</li>
           ))}
         </ol>
       );
@@ -292,7 +330,7 @@ export function GuideBlocks({
             <thead>
               <tr>
                 {block.headers.map((header) => (
-                  <th key={header}>{inlineContent(header, anchorPrefix, highlightExternalLinks)}</th>
+                  <th key={header}>{inlineContent(header, anchorPrefix, basePath, highlightExternalLinks)}</th>
                 ))}
               </tr>
             </thead>
@@ -301,7 +339,7 @@ export function GuideBlocks({
                 <tr key={`row-${rowIndex}`}>
                   {row.map((cell, cellIndex) => (
                     <td key={`cell-${rowIndex}-${cellIndex}`}>
-                      {inlineContent(cell, anchorPrefix, highlightExternalLinks)}
+                      {inlineContent(cell, anchorPrefix, basePath, highlightExternalLinks)}
                     </td>
                   ))}
                 </tr>
@@ -312,6 +350,6 @@ export function GuideBlocks({
       );
     }
 
-    return <p key={`paragraph-${index}`}>{inlineContent(block.text, anchorPrefix, highlightExternalLinks)}</p>;
+    return <p key={`paragraph-${index}`}>{inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}</p>;
   });
 }

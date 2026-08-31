@@ -5,11 +5,15 @@ import { SiteHeader } from "../site-header";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function MarkdownGuidePage({
+  backHref = "/guides",
+  backLabel = "Back to guides",
   eyebrow,
   guide,
   highlightExternalLinks = false,
   path,
 }: {
+  backHref?: string;
+  backLabel?: string;
   eyebrow: string;
   guide: MarkdownGuide;
   highlightExternalLinks?: boolean;
@@ -61,8 +65,8 @@ export function MarkdownGuidePage({
             ))}
           </div>
 
-          <a className="guide-back" href={`${basePath}/guides`}>
-            ← Back to guides
+          <a className="guide-back" href={`${basePath}${backHref}`}>
+            ← {backLabel}
           </a>
         </GuideReadingLayout>
       </article>

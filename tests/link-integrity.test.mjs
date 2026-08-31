@@ -92,6 +92,10 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",
     "/guides/microsoft-skillopt-third-party-snapshot",
+    "/guides/skills-plugins-impact",
+    "/guides/skills-plugins-impact/personalized-skills-paper",
+    "/guides/skills-plugins-impact/adjacent-literature",
+    "/guides/skills-plugins-impact/ecosystem-evidence",
   ]) {
     const response = await render(worker, pathname);
     assert.equal(response.status, 200, `${pathname} must render successfully`);

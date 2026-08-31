@@ -1,5 +1,7 @@
 # Source note: Do Personalized Skills Help Coding Agents?
 
+*A close, claim-by-claim reading of the focal August 2026 preprint, including its design, results, caveats, and open questions.*
+
 ## Source and bibliographic record
 
 **Paper:** Shuyan Huang, Kai Du, and Andrew Lan, “Do Personalized Skills Help Coding Agents? An Empirical Study of Developer Interaction Histories.” arXiv:2608.10319 [cs.SE, cs.AI], 15 pages, 10 figures. The arXiv record says it was submitted 10 August 2026 and revised to v2 on 15 August 2026; this is an arXiv preprint, not a peer-reviewed venue publication in the record consulted on 31 August 2026.
