@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "94a2035419a6c16bcc0341fa53778c8d6d01dd6a",
+  "generatedFrom": "4a7ed905ee325f4fc06d2802eb689363f85f53e3",
   "releases": [
+    {
+      "date": "2026-08-31",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added Skills and plugins research guide.",
+              "commit": "4a7ed905ee325f4fc06d2802eb689363f85f53e3"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-28",
       "sections": [
@@ -11,6 +26,21 @@
               "kind": "project",
               "text": "Combine theme choices into one header control.",
               "commit": "94a2035419a6c16bcc0341fa53778c8d6d01dd6a"
+            },
+            {
+              "kind": "project",
+              "text": "Record unified theme control in changelog.",
+              "commit": "ace7a045127afbc8a4d2b85ee3acc61de5c49c54"
+            },
+            {
+              "kind": "project",
+              "text": "update obra/superpowers guide language.",
+              "commit": "7984ee59702cf8ca70d87539a84f4d5f30dd0d9c"
+            },
+            {
+              "kind": "project",
+              "text": "Resource Library Title Change.",
+              "commit": "cb0bf313e4b9c5afe08f620b434af023be740d86"
             }
           ]
         }
