@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "5af1483126b5e17c8347438d4d49d336cad75ddb",
+  "generatedFrom": "86150632420eee7e400c2e36cefdd80fedf3e403",
   "releases": [
     {
       "date": "2026-09-01",
@@ -44,6 +44,11 @@
               "kind": "project",
               "text": "Added Matt Pocock skills review guide.",
               "commit": "5af1483126b5e17c8347438d4d49d336cad75ddb"
+            },
+            {
+              "kind": "project",
+              "text": "Link community sources in Matt Pocock guide.",
+              "commit": "86150632420eee7e400c2e36cefdd80fedf3e403"
             }
           ]
         }
