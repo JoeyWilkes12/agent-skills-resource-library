@@ -176,6 +176,7 @@ test("server-renders the Guides index and its published entries", async () => {
   assert.match(html, /href="\/guides\/skillspector-enterprise-training"/);
   assert.match(html, /href="\/guides\/skillspector-skill-demo"/);
   assert.match(html, /href="\/guides\/microsoft-skillopt-third-party-snapshot"/);
+  assert.match(html, /href="\/guides\/matt-pocock-skills-skillspector-review"/);
   assert.match(
     html,
     /href="\/guides\/anthropics-complete-guide-for-building-skills-for-claude"/,
@@ -191,6 +192,22 @@ test("server-renders the Guides index and its published entries", async () => {
     listedGuideHrefs.at(-1),
     "/guides/anthropics-complete-guide-for-building-skills-for-claude",
   );
+});
+
+test("server-renders the Matt Pocock skill-by-skill security review", async () => {
+  const response = await renderPath(
+    "/guides/matt-pocock-skills-skillspector-review",
+  );
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Matt Pocock’s Skills for Real Engineers: all 37 reviewed/);
+  assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills"/);
+  assert.match(html, /<strong>37<\/strong><span>separate scans<\/span>/);
+  assert.match(html, /All 18 engineering skills, individually reviewed/);
+  assert.match(html, /git-guardrails-claude-code/);
+  assert.match(html, /Matt Pocock versus Obra Superpowers/);
+  assert.match(html, /static scan plus local semantic review/);
 });
 
 test("server-renders the attributed Anthropic verbatim guide", async () => {

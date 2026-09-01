@@ -1726,6 +1726,56 @@ footer p:first-child {
   margin: 0;
 }
 
+.skill-review-list {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0 34px;
+}
+
+.skill-review-detail {
+  margin: 0;
+  padding: 20px 22px;
+  border-top-width: 3px;
+}
+
+.skill-review-detail summary {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.skill-review-detail summary code {
+  font-size: 0.94rem;
+}
+
+.skill-review-detail summary span {
+  color: var(--mint-dark);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.skill-review-detail[open] summary {
+  margin-bottom: 16px;
+}
+
+.skill-review-detail p + p {
+  margin-top: 12px;
+}
+
+.skill-review-detail p strong {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
 .guide-checklist {
   display: grid;
   gap: 16px;

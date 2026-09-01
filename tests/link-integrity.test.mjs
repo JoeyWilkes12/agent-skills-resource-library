@@ -92,6 +92,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",
     "/guides/microsoft-skillopt-third-party-snapshot",
+    "/guides/matt-pocock-skills-skillspector-review",
     "/guides/skills-plugins-impact",
     "/guides/skills-plugins-impact/personalized-skills-paper",
     "/guides/skills-plugins-impact/adjacent-literature",

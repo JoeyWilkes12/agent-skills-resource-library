@@ -68,6 +68,12 @@ const libraryGuides = [
       "A commit-pinned map of Obra's 14-skill workflow, with per-skill static findings, JSON evidence, and the archived research thread that started the review.",
   },
   {
+    href: "/guides/matt-pocock-skills-skillspector-review",
+    title: "Matt Pocock’s Skills for Real Engineers: all 37 reviewed",
+    summary:
+      "A commit-pinned, skill-by-skill review of Matt Pocock’s modular engineering collection, with SkillSpector evidence, community feedback, and a direct comparison to Obra Superpowers.",
+  },
+  {
     href: "/guides/skillspector-skill-demo",
     title: "What an agent skill looks like: SkillSpector Review",
     summary:
