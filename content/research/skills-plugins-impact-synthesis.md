@@ -14,11 +14,11 @@ The paper’s defensible claim is therefore narrow: **with sparse individual his
 
 The wider literature points to five conclusions:
 
-1. **Curated, task-matched Skills can help substantially.** SkillsBench v4 (14 June 2026) reports a pass-rate increase from 33.9% to 50.5% across 87 tasks and 18 model–harness configurations.
-2. **In SWE-Skills-Bench, coding gains were much smaller.** It reports an average +1.2 percentage-point gain across roughly 565 repository-grounded tasks; 39 of 49 Skills produced no improvement, while mismatched guidance sometimes reduced performance.
-3. **Selection is part of the treatment.** When agents must retrieve from 34,000 real-world Skills, gains erode toward no-Skill baselines; query-specific refinement can recover some performance.
-4. **Personalization needs repeated relevant evidence and probably a hybrid design.** A shared procedural base plus a small, explicit, editable personal layer is better supported than replacing shared practice with a wholly personal Skill.
-5. **A plugin is packaging, not an efficacy mechanism.** Agent Plugins 1.0 packages Skills and MCP servers. No reviewed study isolates plugin packaging itself as the cause of better outcomes. Benefits and risks come from the bundled instructions, tools, data access, routing, permissions, and host behavior.
+1. **Curated, task-matched Skills can help substantially.** SkillsBench v4 (14 June 2026) reports a pass-rate increase from 33.9% to 50.5% across 87 tasks and 18 model–harness configurations. [see here](https://arxiv.org/html/2602.12670v4)
+2. **In SWE-Skills-Bench, coding gains were much smaller.** It reports an average +1.2 percentage-point gain across roughly 565 repository-grounded tasks; 39 of 49 Skills produced no improvement, while mismatched guidance sometimes reduced performance. [see here](https://arxiv.org/html/2603.15401v1)
+3. **Selection is part of the treatment.** When agents must retrieve from 34,000 real-world Skills, gains erode toward no-Skill baselines; query-specific refinement can recover some performance. [see here](https://arxiv.org/html/2604.04323v1)
+4. **Personalization needs repeated relevant evidence and probably a hybrid design.** A shared procedural base plus a small, explicit, editable personal layer is better supported than replacing shared practice with a wholly personal Skill. [see here](https://arxiv.org/html/2608.10319v2#S4.SS1)
+5. **A plugin is packaging, not an efficacy mechanism.** Agent Plugins 1.0 packages Skills and MCP servers. No reviewed study isolates plugin packaging itself as the cause of better outcomes. Benefits and risks come from the bundled instructions, tools, data access, routing, permissions, and host behavior. [see here](https://agent-plugins.org/specification)
 
 ## What “Skill,” “tool,” and “plugin” mean
 
