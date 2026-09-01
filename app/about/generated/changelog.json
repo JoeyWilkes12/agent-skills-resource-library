@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "e8c0624cc69ca578bfc9be82a386abb2e2dc7aaa",
+  "generatedFrom": "5af1483126b5e17c8347438d4d49d336cad75ddb",
   "releases": [
     {
       "date": "2026-09-01",
@@ -27,6 +27,23 @@
               "href": "/guides/jetbrains-ponytail-code-benchmark",
               "resourceId": "jetbrains-ponytail-code-benchmark",
               "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skills for Real Engineers” resource.",
+              "href": "https://github.com/mattpocock/skills",
+              "resourceId": "mattpocock-skills",
+              "commit": "b402fece634957953adbbd0c0bc2333acf894b45"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added Matt Pocock skills review guide.",
+              "commit": "5af1483126b5e17c8347438d4d49d336cad75ddb"
             }
           ]
         }
