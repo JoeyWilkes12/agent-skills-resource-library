@@ -1329,6 +1329,190 @@ footer p:first-child {
   line-height: 1.7;
 }
 
+.guides-search {
+  margin-top: clamp(34px, 5vw, 58px);
+  padding: 20px 22px 18px;
+  background: rgba(255, 253, 248, 0.58);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--mint-dark);
+}
+
+.guides-search-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guides-search-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.guides-search-field {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.guides-search-field > span {
+  color: var(--mint-dark);
+  line-height: 1;
+}
+
+.guides-search-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.7;
+}
+
+.guides-search-field input {
+  width: 100%;
+  height: 54px;
+  min-width: 0;
+  padding: 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  font-size: 1.05rem;
+}
+
+.guides-search-field:focus-within {
+  border-color: var(--coral);
+}
+
+.guides-search-field input::placeholder {
+  color: #65717c;
+}
+
+.guides-search-clear,
+.guides-empty-clear {
+  min-width: 84px;
+  padding: 10px 16px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.guides-search-clear:hover:not(:disabled),
+.guides-empty-clear:hover {
+  color: var(--ink);
+  background: var(--mint);
+  border-color: var(--mint-dark);
+}
+
+.guides-search-clear:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.guides-search-hint {
+  max-width: 72ch;
+  margin: 11px 0 0;
+  color: #536271;
+  font-size: 0.79rem;
+  line-height: 1.45;
+}
+
+.guides-search-status {
+  margin: 7px 0 0;
+  color: var(--mint-dark);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.guides-list li .guides-found-inside,
+.guides-feature-copy > .guides-found-inside {
+  margin: 14px 0 0 !important;
+  color: var(--mint-dark) !important;
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.guides-found-inside span {
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.guides-empty {
+  margin-top: clamp(48px, 7vw, 88px);
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--coral);
+}
+
+.guides-empty-label {
+  margin: 0 0 12px;
+  color: var(--coral);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.guides-empty h2 {
+  max-width: 19ch;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.guides-empty > p:not(.guides-empty-label) {
+  max-width: 58ch;
+  margin: 20px 0 0;
+  color: #465769;
+  line-height: 1.65;
+}
+
+.guides-empty > p button {
+  min-height: 44px;
+  padding: 0 4px;
+  color: var(--mint-dark);
+  background: transparent;
+  border: 0;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.guides-empty-clear {
+  margin-top: 24px;
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.guides-list-only-featured {
+  margin: 0;
+  padding: 24px 8px;
+  color: #465769;
+  line-height: 1.6;
+}
+
 .guides-feature {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
@@ -3293,6 +3477,7 @@ footer p:first-child {
 :root[data-theme="dark"] .card-expand-copy,
 :root[data-theme="dark"] .guides-feature,
 :root[data-theme="dark"] .guides-list li > a,
+:root[data-theme="dark"] .guides-search-label,
 :root[data-theme="dark"] .spectrum-list a,
 :root[data-theme="dark"] .spectrum-section h2,
 :root[data-theme="dark"] .prose-guide-section h2,
@@ -3313,11 +3498,14 @@ footer p:first-child {
 :root[data-theme="dark"] .header-menu-popover,
 :root[data-theme="dark"] .featured-section,
 :root[data-theme="dark"] .search-field-wrap,
+:root[data-theme="dark"] .guides-search,
+:root[data-theme="dark"] .guides-search-field,
 :root[data-theme="dark"] .filter-panel,
 :root[data-theme="dark"] .active-filters button,
 :root[data-theme="dark"] .resource-card,
 :root[data-theme="dark"] .library-message,
 :root[data-theme="dark"] .guides-feature,
+:root[data-theme="dark"] .guides-empty,
 :root[data-theme="dark"] .guide-callout,
 :root[data-theme="dark"] .spectrum-visual,
 :root[data-theme="dark"] .spectrum-table-wrap,
@@ -3349,6 +3537,9 @@ footer p:first-child {
 :root[data-theme="dark"] .guides-feature-copy > p,
 :root[data-theme="dark"] .guides-list-header p,
 :root[data-theme="dark"] .guides-list li p,
+:root[data-theme="dark"] .guides-search-hint,
+:root[data-theme="dark"] .guides-empty > p:not(.guides-empty-label),
+:root[data-theme="dark"] .guides-list-only-featured,
 :root[data-theme="dark"] .guide-section p,
 :root[data-theme="dark"] .guide-checklist,
 :root[data-theme="dark"] .guide-checklist-preview-header > div > p,
@@ -3377,6 +3568,32 @@ footer p:first-child {
 
 :root[data-theme="dark"] .guide-source-note {
   color: var(--theme-muted) !important;
+}
+
+:root[data-theme="dark"] .guides-search-field input,
+:root[data-theme="dark"] .guides-search-clear,
+:root[data-theme="dark"] .guides-search-field > span {
+  color: var(--theme-text);
+}
+
+:root[data-theme="dark"] .guides-search-field input::placeholder {
+  color: var(--theme-muted);
+}
+
+:root[data-theme="dark"] .guides-search-status,
+:root[data-theme="dark"] .guides-found-inside,
+:root[data-theme="dark"] .guides-empty > p button {
+  color: var(--theme-mint-text) !important;
+}
+
+:root[data-theme="dark"] .guides-empty-label {
+  color: #ff9a85;
+}
+
+:root[data-theme="dark"] .guides-empty-clear {
+  color: var(--ink);
+  background: var(--theme-mint-text);
+  border-color: var(--theme-mint-text);
 }
 
 :root[data-theme="dark"] .about-hero {
@@ -3649,6 +3866,10 @@ footer p:first-child {
     margin-top: 26px;
   }
 
+  .guides-search {
+    padding: 18px;
+  }
+
   .hero-artifact {
     width: min(100%, 480px);
     min-height: 180px;
@@ -3911,6 +4132,20 @@ footer p:first-child {
     margin-right: -8px;
     margin-left: -8px;
     padding: 16px;
+  }
+
+  .guides-search {
+    margin-right: -8px;
+    margin-left: -8px;
+    padding: 16px;
+  }
+
+  .guides-search-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guides-search-clear {
+    min-height: 48px;
   }
 
   .search-field-wrap {
