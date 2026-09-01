@@ -1,6 +1,37 @@
 {
-  "generatedFrom": "a1ee68bb232de280cacd3d8c1879a3012acd83b0",
+  "generatedFrom": "f34e5ec339267596d37fbcb318bac8a1aecd5406",
   "releases": [
+    {
+      "date": "2026-09-01",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Does Speaking to AI Agents Like Cavemen Really Save 65% of Tokens?” resource.",
+              "href": "/guides/jetbrains-caveman-token-benchmark",
+              "resourceId": "jetbrains-caveman-token-benchmark",
+              "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406"
+            },
+            {
+              "kind": "resource",
+              "text": "“Does “rtk” Really Cut Agent Tokens by 60–90%?” resource.",
+              "href": "/guides/jetbrains-rtk-token-benchmark",
+              "resourceId": "jetbrains-rtk-token-benchmark",
+              "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406"
+            },
+            {
+              "kind": "resource",
+              "text": "“Ponytail Skill for Claude Code: Does It Really Cut Agent Code by 54%?” resource.",
+              "href": "/guides/jetbrains-ponytail-code-benchmark",
+              "resourceId": "jetbrains-ponytail-code-benchmark",
+              "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-31",
       "sections": [
