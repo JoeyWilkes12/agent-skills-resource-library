@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "46c1c4fa2bb8a5592ce49aff31e1439e1cb8dfb5",
+  "generatedFrom": "a1ee68bb232de280cacd3d8c1879a3012acd83b0",
   "releases": [
     {
       "date": "2026-08-31",
@@ -11,6 +11,11 @@
               "kind": "project",
               "text": "Added Skills and plugins research guide.",
               "commit": "4a7ed905ee325f4fc06d2802eb689363f85f53e3"
+            },
+            {
+              "kind": "project",
+              "text": "Added inline citations to Skills evidence summary.",
+              "commit": "a1ee68bb232de280cacd3d8c1879a3012acd83b0"
             }
           ]
         },
