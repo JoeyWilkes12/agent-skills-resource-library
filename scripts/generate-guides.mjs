@@ -34,6 +34,18 @@ const markdownGuides = [
     source: "content/research/agentic-performance-source-library.md",
     target: "app/guides/generated/agentic-performance-source-library.ts",
   },
+  {
+    source: "content/guides/jetbrains-caveman-token-benchmark.md",
+    target: "app/guides/generated/jetbrains-caveman-token-benchmark.ts",
+  },
+  {
+    source: "content/guides/jetbrains-rtk-token-benchmark.md",
+    target: "app/guides/generated/jetbrains-rtk-token-benchmark.ts",
+  },
+  {
+    source: "content/guides/jetbrains-ponytail-code-benchmark.md",
+    target: "app/guides/generated/jetbrains-ponytail-code-benchmark.ts",
+  },
 ];
 
 for (const guide of markdownGuides) {

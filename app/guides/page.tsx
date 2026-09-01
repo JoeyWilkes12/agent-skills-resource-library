@@ -80,6 +80,24 @@ const libraryGuides = [
       "An independent developer review of SkillOpt's maturity, operating costs, security boundaries, and fit for governed self-service skills.",
   },
   {
+    href: "/guides/jetbrains-caveman-token-benchmark",
+    title: "JetBrains tests Caveman: real token savings",
+    summary:
+      "A reading guide to JetBrains' paired benchmark of terse agent narration, where the advertised 65% saving became 8.5% on real coding-agent work.",
+  },
+  {
+    href: "/guides/jetbrains-rtk-token-benchmark",
+    title: "JetBrains tests rtk: compression versus the bill",
+    summary:
+      "A reading guide to JetBrains' rtk trial and its warning that a tool's token counter can rise while the measured agent bill does too.",
+  },
+  {
+    href: "/guides/jetbrains-ponytail-code-benchmark",
+    title: "JetBrains tests Ponytail: measured minimal code",
+    summary:
+      "A reading guide to JetBrains' Ponytail benchmark, where minimal-code guidance cut emitted code and cost most on over-built tasks.",
+  },
+  {
     href: "/guides/anthropics-complete-guide-for-building-skills-for-claude",
     title: "Anthropic’s Complete Guide For Building Skills For Claude [VERBATIM]",
     summary:
