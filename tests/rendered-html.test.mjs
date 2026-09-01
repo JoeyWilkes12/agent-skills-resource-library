@@ -208,6 +208,11 @@ test("server-renders the Matt Pocock skill-by-skill security review", async () =
   assert.match(html, /git-guardrails-claude-code/);
   assert.match(html, /Matt Pocock versus Obra Superpowers/);
   assert.match(html, /static scan plus local semantic review/);
+  assert.match(html, /href="https:\/\/docs\.rhi\.zone\/skills-mattpocock\.html"/);
+  assert.match(html, /href="https:\/\/kaizencode\.art\/notepad\/matt-pocock-skills-guide\/"/);
+  assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills\/issues\/247"/);
+  assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills\/issues\/853"/);
+  assert.match(html, /href="https:\/\/www\.reddit\.com\/r\/vibecoding\/comments\/1uxvmle\/superpowers_or_mattpocock\/"/);
 });
 
 test("server-renders the attributed Anthropic verbatim guide", async () => {
