@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "86150632420eee7e400c2e36cefdd80fedf3e403",
+  "generatedFrom": "3b4970288f07b797eefc1f36a25cfd39e19b15bc",
   "releases": [
     {
       "date": "2026-09-01",
@@ -49,6 +49,11 @@
               "kind": "project",
               "text": "Link community sources in Matt Pocock guide.",
               "commit": "86150632420eee7e400c2e36cefdd80fedf3e403"
+            },
+            {
+              "kind": "project",
+              "text": "Keep guide table headers visible while scrolling.",
+              "commit": "3b4970288f07b797eefc1f36a25cfd39e19b15bc"
             }
           ]
         }
