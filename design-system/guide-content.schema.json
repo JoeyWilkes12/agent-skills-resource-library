@@ -1,0 +1,626 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-skills-resource-library:guide-content:v0.1",
+  "title": "Agent Skills Resource Library guide",
+  "description": "Authoring contract for Guides. Existing pages may migrate incrementally.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "title",
+    "summary",
+    "family",
+    "audience",
+    "outcomes",
+    "interactionMode",
+    "effects",
+    "sourceClass",
+    "status",
+    "lastVerified",
+    "owner",
+    "sections"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 120
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 80,
+      "maxLength": 200
+    },
+    "deck": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 360
+    },
+    "family": {
+      "$ref": "#/$defs/family"
+    },
+    "audience": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 60
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 180
+      }
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 480
+    },
+    "difficulty": {
+      "enum": ["introductory", "intermediate", "advanced"]
+    },
+    "interactionMode": {
+      "$ref": "#/$defs/interactionMode"
+    },
+    "effects": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/effect"
+      }
+    },
+    "sourceClass": {
+      "$ref": "#/$defs/sourceClass"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "lastVerified": {
+      "type": "string",
+      "format": "date"
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 180
+      }
+    },
+    "tools": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      }
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src", "alt"],
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 240
+        }
+      }
+    },
+    "contentTopics": {
+      "description": "Curated search phrases derived from the guide, not a copy of the full text.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 100
+      }
+    },
+    "relatedGuides": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 4,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/section"
+      }
+    }
+  },
+  "$defs": {
+    "family": {
+      "enum": [
+        "concept",
+        "decision",
+        "workflow",
+        "checklist",
+        "evidence-review",
+        "reference",
+        "verbatim"
+      ]
+    },
+    "interactionMode": {
+      "enum": [
+        "read",
+        "plan",
+        "local-write",
+        "network",
+        "third-party-action",
+        "publish"
+      ]
+    },
+    "effect": {
+      "enum": [
+        "none",
+        "reads-local-files",
+        "writes-local-files",
+        "uses-network",
+        "uses-credentials",
+        "changes-external-state",
+        "contacts-third-party",
+        "publishes-publicly"
+      ]
+    },
+    "sourceClass": {
+      "enum": [
+        "primary-source",
+        "literature-synthesis",
+        "independent-finding",
+        "community-report",
+        "editorial-inference",
+        "mixed",
+        "verbatim"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "editorial-review",
+        "evidence-review",
+        "approved",
+        "published",
+        "stale",
+        "archived"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url", "class"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 180
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "class": {
+          "$ref": "#/$defs/sourceClass"
+        },
+        "publisher": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "accessed": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "heading", "blocks"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "ordered": {
+          "description": "True only when section order is necessary to complete a procedure.",
+          "type": "boolean",
+          "default": false
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        }
+      }
+    },
+    "block": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/textBlock"
+        },
+        {
+          "$ref": "#/$defs/listBlock"
+        },
+        {
+          "$ref": "#/$defs/calloutBlock"
+        },
+        {
+          "$ref": "#/$defs/codeBlock"
+        },
+        {
+          "$ref": "#/$defs/promptBlock"
+        },
+        {
+          "$ref": "#/$defs/evidenceBlock"
+        },
+        {
+          "$ref": "#/$defs/checklistBlock"
+        },
+        {
+          "$ref": "#/$defs/tableBlock"
+        },
+        {
+          "$ref": "#/$defs/figureBlock"
+        },
+        {
+          "$ref": "#/$defs/troubleshootingBlock"
+        }
+      ]
+    },
+    "textBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "text"],
+      "properties": {
+        "type": {
+          "enum": ["paragraph", "lede", "done-when", "next-action"]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "listBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "items"],
+      "properties": {
+        "type": {
+          "enum": ["list", "ordered-list", "outcomes", "prerequisites", "scope"]
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "calloutBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "variant", "title", "text"],
+      "properties": {
+        "type": {
+          "const": "callout"
+        },
+        "variant": {
+          "enum": ["note", "evidence", "caution", "stop", "checkpoint"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recovery": {
+          "type": "string"
+        }
+      }
+    },
+    "codeBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "code"],
+      "properties": {
+        "type": {
+          "const": "code"
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "code": {
+          "type": "string"
+        },
+        "expectedOutput": {
+          "type": "string"
+        }
+      }
+    },
+    "promptBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "goal",
+        "context",
+        "prompt",
+        "constraints",
+        "nonGoals",
+        "doneWhen",
+        "interactionMode",
+        "effects"
+      ],
+      "properties": {
+        "type": {
+          "const": "prompt"
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 4
+        },
+        "context": {
+          "type": "string",
+          "minLength": 4
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 10
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nonGoals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "doneWhen": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interactionMode": {
+          "$ref": "#/$defs/interactionMode"
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/effect"
+          }
+        }
+      }
+    },
+    "evidenceBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "claim", "class", "finding", "sources"],
+      "properties": {
+        "type": {
+          "const": "evidence"
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 4
+        },
+        "class": {
+          "$ref": "#/$defs/sourceClass"
+        },
+        "method": {
+          "type": "string"
+        },
+        "finding": {
+          "type": "string",
+          "minLength": 4
+        },
+        "limitation": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      }
+    },
+    "checklistBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "variant", "items"],
+      "properties": {
+        "type": {
+          "const": "checklist"
+        },
+        "variant": {
+          "enum": ["verification", "review", "preflight"]
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label"],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 2
+              },
+              "evidence": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "tableBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "headers", "rows"],
+      "properties": {
+        "type": {
+          "const": "table"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "headers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "figureBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "src", "alt", "caption"],
+      "properties": {
+        "type": {
+          "const": "figure"
+        },
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 2
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      }
+    },
+    "troubleshootingBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "items"],
+      "properties": {
+        "type": {
+          "const": "troubleshooting"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["symptom", "likelyCause", "nextCheck"],
+            "properties": {
+              "symptom": {
+                "type": "string",
+                "minLength": 2
+              },
+              "likelyCause": {
+                "type": "string",
+                "minLength": 2
+              },
+              "nextCheck": {
+                "type": "string",
+                "minLength": 2
+              },
+              "escalateWhen": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
