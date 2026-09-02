@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GuideTableViewport } from "./guide-table-viewport";
 
 type GuideBlock =
   | { type: "blockquote"; text: string }
@@ -325,12 +326,18 @@ export function GuideBlocks({
 
     if (block.type === "table") {
       return (
-        <div className="spectrum-table-wrap" key={`table-${index}`}>
+        <GuideTableViewport
+          ariaLabel={block.headers[0] ? `Data table beginning with ${block.headers[0]}` : undefined}
+          className="spectrum-table-wrap"
+          key={`table-${index}`}
+        >
           <table className="spectrum-table">
             <thead>
               <tr>
                 {block.headers.map((header) => (
-                  <th key={header}>{inlineContent(header, anchorPrefix, basePath, highlightExternalLinks)}</th>
+                  <th key={header} scope="col">
+                    {inlineContent(header, anchorPrefix, basePath, highlightExternalLinks)}
+                  </th>
                 ))}
               </tr>
             </thead>
@@ -346,7 +353,7 @@ export function GuideBlocks({
               ))}
             </tbody>
           </table>
-        </div>
+        </GuideTableViewport>
       );
     }
 

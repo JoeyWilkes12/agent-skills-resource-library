@@ -133,7 +133,24 @@ test("server-renders the Skills and plugins research guide with supporting HTML 
     "/guides/skills-plugins-impact/adjacent-literature",
   );
   assert.equal(adjacentResponse.status, 200);
-  assert.match(await adjacentResponse.text(), /Adjacent literature: skills, plugins, memory/);
+  const adjacentHtml = await adjacentResponse.text();
+  assert.match(adjacentHtml, /Adjacent literature: skills, plugins, memory/);
+  assert.match(adjacentHtml, /data-guide-table-viewport="true"/);
+  assert.match(adjacentHtml, /aria-label="Data table beginning with Source"/);
+  assert.equal(
+    [...adjacentHtml.matchAll(/<th scope="col">/g)].length,
+    5,
+    "the Evidence Matrix should expose all five column headers",
+  );
+  const evidenceMatrixBody = adjacentHtml.match(
+    /<table class="spectrum-table">[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/,
+  )?.[1];
+  assert.ok(evidenceMatrixBody, "expected the Evidence Matrix body to render");
+  assert.equal(
+    [...evidenceMatrixBody.matchAll(/<tr>/g)].length,
+    15,
+    "the Evidence Matrix should render all fifteen evidence rows",
+  );
 
   const ecosystemResponse = await renderPath(
     "/guides/skills-plugins-impact/ecosystem-evidence",

@@ -2,7 +2,7 @@
 
 Status: proposed foundation, Guides-first
 
-Version: 0.1
+Version: 0.2
 
 Last reviewed: September 1, 2026
 
@@ -292,6 +292,7 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `Callout`: `note`, `evidence`, `caution`, or `stop`. Do not create decorative callouts.
 - `EvidenceBlock`: claim, source class, method, finding, limitation, and linked artifact.
 - `ComparisonTable`: direct comparison with a visible row/column header structure.
+- `GuideTableViewport`: native horizontal scrolling plus a synchronized visual header that remains fixed only while the table crosses the viewport.
 - `Figure`: image, useful alt text, caption, and source when external.
 
 ### Completion
@@ -302,6 +303,44 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `TroubleshootingMatrix`: symptom, likely cause, safest next check, escalation point.
 - `NextActions`: two to four actions grounded in the completed outcome.
 - `SourceList`: canonical links, access dates when appropriate, and provenance labels.
+
+## Evidence tables
+
+Long tables are reading tools, not miniature spreadsheets. Preserve the comparison structure and keep context visible while the reader moves through evidence.
+
+### Required behavior
+
+- Use a real `<table>` with one `<thead>` and one `<tbody>`.
+- Column headers use `<th scope="col">`; row labels use `<th scope="row">` when the authored format supports them.
+- Wrap wide tables in `GuideTableViewport`. The wrapper remains a native, keyboard-focusable horizontal scroll region.
+- Once the source header crosses the viewport top, show a synchronized `aria-hidden` header copy at `--guide-sticky-table-offset`.
+- Keep the header fixed only until the table bottom reaches it. As the last row leaves, the header releases upward with the table.
+- Synchronize the visual header to native `scrollLeft` so headings remain aligned after touch, trackpad, wheel, or keyboard scrolling.
+- Recalculate widths with `ResizeObserver`; do not assume a breakpoint means overflow exists.
+- Preserve opaque header backgrounds, a clear bottom rule, and sufficient z-index in both themes.
+- Do not place an invisible gesture-capture layer over table links or selectable evidence.
+
+### Mobile treatment
+
+- Keep a minimum table width when preserving columns is essential to comparison. Do not compress evidence into unreadable cells.
+- Let the next column edge remain visible when possible so horizontal movement is discoverable.
+- Keep the first column scrollable by default. A pinned key column is opt-in for tables with four or more columns when losing row identity would make values ambiguous.
+- If a key column is pinned, keep its semantic header available to assistive technology and provide an opaque surface plus a separation rule.
+- Reformat into stacked records only when rows are independent. Do not turn a matrix into cards when cross-column comparison is the task.
+- Keep captions, caveats, and source notes in the normal document flow below the table.
+
+### Accessibility and interaction
+
+- The synchronized header copy is `aria-hidden`, has no duplicated IDs, cannot receive focus, and does not intercept pointer events.
+- The original header remains the only semantic header.
+- The scroll region has a descriptive accessible name and visible coral focus treatment.
+- Horizontal scrolling remains native; arrow keys work while the region is focused.
+- A `<caption>` is preferred for the table's purpose. A nearby visible heading can supply the accessible name when a caption would repeat it.
+- Test at 200% zoom and at 320px width; the document itself must not overflow horizontally.
+
+### Reference behavior
+
+Anthropic's Fable 5.1 benchmark table uses sticky column headers that sit at the viewport top while the table is in view and release at the table boundary. At a measured 390px viewport, four 105px model columns occupy a 342px content opening; horizontal movement reveals the remaining 78px, and the featured model column stays pinned. The library adopts the bounded sticky header and geometry-based overflow detection, but keeps native scrolling because its evidence tables contain interactive links.
 
 ## PromptCard contract
 
@@ -353,6 +392,7 @@ Agents may reorder blocks when the family permits it. They may not remove proven
 - Disclosure controls expose `aria-expanded` and preserve focus.
 - Figures use content-aware alt text; decorative images use empty alt text.
 - Tables retain semantic headers and scroll horizontally without clipping content.
+- Sticky table headers release at the table boundary; their visual copies are hidden from assistive technology and never cover interactive cells.
 - Code remains selectable and scrollable.
 - Status never depends on color alone.
 - Reduced-motion preferences are respected.
@@ -366,6 +406,7 @@ Agents may reorder blocks when the family permits it. They may not remove proven
 - At 780px, stack feature layouts, evidence grids, comparisons, and hero actions.
 - At 540px, use single-column rows and panels; preserve 44px targets and readable code overflow.
 - Never hide trust, source, or effect metadata on mobile. Reduce its density through stacking or disclosure.
+- Wide evidence tables keep a fixed header while their rows are in view and native horizontal scrolling for every input method.
 - Test long titles, long URLs, code, tables, and 200% text zoom.
 
 ## Publishing lifecycle
@@ -404,6 +445,7 @@ The existing code already supplies much of the foundation:
 | `app/guides/guide-reading-layout.tsx` | Reading shell | Keep; add a trust-receipt slot and consistent footer slots |
 | `app/guides/table-of-contents.tsx` | GuideTableOfContents | Keep active-state and compact behavior; stop numbering conceptual sections |
 | `app/guides/markdown-guide.tsx` | Block parser/renderer | Evolve toward explicit semantic blocks and metadata rather than visual-only Markdown patterns |
+| `app/guides/guide-table-viewport.tsx` | GuideTableViewport | Shared bounded sticky-header and horizontal-scroll behavior for Markdown and bespoke tables |
 | `app/guides/markdown-guide-page.tsx` | Standard guide template | Keep as the migration target for prose-heavy guides |
 | Bespoke `page.tsx` guides | Specialized blocks | Promote patterns only after three same-intent uses; otherwise keep local |
 | `content/guides` | Authored content | Add schema-validated metadata without forcing one storage format immediately |
@@ -417,6 +459,21 @@ Observed debt to address during migration:
 - Generated Markdown guides and bespoke TSX guides expose different block capabilities.
 - Verification, recovery, and contextual next actions are inconsistent.
 - Dark mode relies on long selector groups because components do not consume semantic surface and text roles.
+
+## Additional lessons from Anthropic's Fable 5.1 page
+
+The useful patterns are structural, not a visual skin to copy.
+
+- **Use two content measures.** The reference page uses an approximately 640px reading column and an approximately 880px media column on desktop. Keep prose narrow and let evidence figures deliberately break wider.
+- **Make the opening an index.** Its hero previews the article's narrative rather than stopping at a launch claim. Guide heroes can preview the outcome, evidence, limits, and next action without duplicating the full table of contents.
+- **Pace claim, evidence, caveat.** Major claims are followed by a chart or table, an interpretation, and a nearby methodology or uncertainty note. `EvidenceFigure` should encode that order.
+- **Separate reading and utility type.** Serif carries narrative copy; sans serif carries navigation, captions, controls, and data labels. The library keeps its own Georgia/Inter pairing.
+- **Let media adapt, not merely shrink.** Wide benchmark tables recompose on mobile, chart tabs collapse, and galleries become horizontal sequences. Each evidence block chooses a mobile behavior based on its task.
+- **Use stage-specific actions.** The reference closes with distinct product and builder actions. Guides should name the next move—`Copy the prompt`, `Open the evidence`, `Download the checklist`—instead of repeating `Learn more`.
+- **Keep caveats close and sources deep.** Short uncertainty notes belong beside the evidence; detailed methodology, footnotes, corrections, and further reading remain separate end matter.
+- **Offer a text path for visual evidence.** Charts, canvas, video, and interactive views require a table, transcript, or written summary that carries the same conclusion.
+- **Use motion only to explain change.** Crossfades and height transitions can support view switching; reduced-motion users get a static state. Reading content does not need entrance animation.
+- **Keep the library's identity.** Do not copy celestial launch art, Anthropic fonts or glyphs, testimonial carousels, competitor-winner styling, or campaign-specific color effects.
 
 ## Rollout order
 

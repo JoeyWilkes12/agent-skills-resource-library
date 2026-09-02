@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -123,7 +124,7 @@ export default function ReviewingUiUxProMaxWithSkillspector() {
                 model-based semantic mode was intentionally not used for this
                 first pass.
               </p>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -142,7 +143,7 @@ export default function ReviewingUiUxProMaxWithSkillspector() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               <p>
                 The high score for <code>design</code> was not treated as a
                 verdict by itself. It prompted line-level investigation,

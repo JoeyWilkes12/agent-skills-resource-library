@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -678,7 +679,7 @@ export default function MattPocockSkillsSkillSpectorReview() {
                 debugging, review, and multi-agent work. They make different
                 bets about how much of the lifecycle should be mandatory.
               </p>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -697,7 +698,7 @@ export default function MattPocockSkillsSkillSpectorReview() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               <div className="guide-callout">
                 <strong>Best hybrid</strong>
                 <p>

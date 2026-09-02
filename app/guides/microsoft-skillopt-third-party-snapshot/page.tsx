@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -153,13 +154,13 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
               isolation, grader calibration, leakage prevention, and review of
               unsafe generalization.
             </p>
-            <div className="guide-table-wrap">
+            <GuideTableViewport className="guide-table-wrap">
               <table className="guide-table">
                 <thead>
                   <tr>
-                    <th>Capability</th>
-                    <th>Developer value</th>
-                    <th>Limit</th>
+                    <th scope="col">Capability</th>
+                    <th scope="col">Developer value</th>
+                    <th scope="col">Limit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -195,7 +196,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </GuideTableViewport>
             <p>
               The native search state is one Markdown document. SkillOpt does
               not optimize a complete Agent Skills package containing
@@ -211,13 +212,13 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           <div>
             <p className="guide-label">Maturity</p>
             <h2>Strong research velocity, limited operational history</h2>
-            <div className="guide-table-wrap">
+            <GuideTableViewport className="guide-table-wrap">
               <table className="guide-table">
                 <thead>
                   <tr>
-                    <th>Signal</th>
-                    <th>Snapshot</th>
-                    <th>Meaning</th>
+                    <th scope="col">Signal</th>
+                    <th scope="col">Snapshot</th>
+                    <th scope="col">Meaning</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -248,7 +249,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </GuideTableViewport>
             <p>
               The framework is suitable for an isolated and metered pilot, but
               it should not yet be treated as an unattended production
@@ -282,13 +283,13 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
               when GPT-5.5 served as both target and optimizer. It does not
               publish the actual input, output, and cached-token split.
             </p>
-            <div className="guide-table-wrap">
+            <GuideTableViewport className="guide-table-wrap">
               <table className="guide-table">
                 <thead>
                   <tr>
-                    <th>Benchmark</th>
-                    <th>Reported training tokens</th>
-                    <th>Illustrative token cost</th>
+                    <th scope="col">Benchmark</th>
+                    <th scope="col">Reported training tokens</th>
+                    <th scope="col">Illustrative token cost</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -301,7 +302,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
                   <tr><td>Total</td><td>526.7M</td><td>$5,267</td></tr>
                 </tbody>
               </table>
-            </div>
+            </GuideTableViewport>
             <p className="guide-source-note">
               Illustration only: 80% uncached input and 20% output at the
               GPT-5.5 direct API rates observed on August 14, 2026. It excludes
@@ -330,13 +331,13 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
               curated body of skill research. Those pieces are complementary to
               SkillOpt.
             </p>
-            <div className="guide-table-wrap">
+            <GuideTableViewport className="guide-table-wrap">
               <table className="guide-table">
                 <thead>
                   <tr>
-                    <th>Needed capability</th>
-                    <th>Current state</th>
-                    <th>What SkillOpt contributes</th>
+                    <th scope="col">Needed capability</th>
+                    <th scope="col">Current state</th>
+                    <th scope="col">What SkillOpt contributes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -372,7 +373,7 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </GuideTableViewport>
             <p>
               SkillOpt fills only the behavioral optimization layer. Before it
               is useful here, define one narrow self-service workflow, author

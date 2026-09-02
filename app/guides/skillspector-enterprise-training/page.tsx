@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -227,10 +228,10 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
           <p className="guide-section-number">06</p>
           <div>
             <h2>Read completeness before the score</h2>
-            <div className="guide-table-wrap">
+            <GuideTableViewport className="guide-table-wrap">
               <table className="guide-table">
                 <thead>
-                  <tr><th>Output field</th><th>Question for the reviewer</th></tr>
+                  <tr><th scope="col">Output field</th><th scope="col">Question for the reviewer</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>Scanner version</td><td>Which code and rule set produced this evidence?</td></tr>
@@ -241,7 +242,7 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
                   <tr><td>Finding location and confidence</td><td>What source line supports the finding, and how certain is the detector?</td></tr>
                 </tbody>
               </table>
-            </div>
+            </GuideTableViewport>
             <p>
               Finding confidence affects prioritization; it is not the
               confidence of the whole scan. A tag such as <code>llm-unconfirmed</code>{" "}

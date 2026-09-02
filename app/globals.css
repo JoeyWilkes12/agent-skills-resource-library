@@ -13,6 +13,7 @@
   --line: rgba(7, 27, 51, 0.16);
   --shadow: 0 18px 50px rgba(7, 27, 51, 0.1);
   --content-width: 1440px;
+  --guide-sticky-table-offset: 0px;
 }
 
 :root[data-theme="dark"] {
@@ -2264,10 +2265,49 @@ footer p:first-child {
 }
 
 .spectrum-table-wrap {
+  position: relative;
   margin: 30px 0;
   overflow-x: auto;
   background: var(--white);
   border: 1px solid var(--line);
+  outline: none;
+  overscroll-behavior-inline: contain;
+}
+
+.spectrum-table-wrap:focus-visible,
+.guide-table-wrap:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.guide-table-sticky-overlay {
+  position: fixed;
+  z-index: 35;
+  overflow: hidden;
+  pointer-events: none;
+  box-shadow:
+    0 1px 0 var(--line),
+    0 14px 24px -22px rgba(7, 27, 51, 0.65);
+}
+
+.guide-table-sticky-overlay[hidden] {
+  display: none;
+}
+
+.guide-table-sticky-overlay table {
+  margin: 0;
+  table-layout: fixed;
+  will-change: transform;
+}
+
+.guide-table-sticky-overlay thead,
+.guide-table-sticky-overlay tr,
+.guide-table-sticky-overlay th {
+  visibility: visible;
+}
+
+.guide-table-sticky-overlay th {
+  position: static !important;
 }
 
 .spectrum-table {
@@ -2628,9 +2668,12 @@ footer p:first-child {
 }
 
 .guide-table-wrap {
+  position: relative;
   margin: 30px 0;
   overflow-x: auto;
   border: 1px solid var(--line);
+  outline: none;
+  overscroll-behavior-inline: contain;
 }
 
 .guide-table {

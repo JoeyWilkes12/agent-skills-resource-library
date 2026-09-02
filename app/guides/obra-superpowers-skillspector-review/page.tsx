@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -173,7 +174,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
             <p className="guide-section-number">02</p>
             <div>
               <h2>Four categories, four kinds of leverage</h2>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -196,7 +197,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               <p className="guide-source-note">
                 These categories follow the repository README’s organization;
                 they are descriptive groupings, not scanner risk categories.
@@ -252,7 +253,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                 explanations, confidence values, analyzer status, and
                 completeness details.
               </p>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -277,7 +278,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               <p className="guide-source-note">
                 The scanner’s low-score output still recommends CAUTION for this
                 static-only run. That conservative label is preserved exactly;
@@ -340,7 +341,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                 Claude Code as the more native target, while treating Codex as a
                 viable but more explicit environment for subagent-heavy workflows.
               </p>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -361,7 +362,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               <div className="guide-callout">
                 <strong>Read the complete archived contents</strong>
                 <p>

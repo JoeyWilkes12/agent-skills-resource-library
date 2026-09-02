@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -168,7 +169,7 @@ export default function WritingWithoutTheAiSheenGuide() {
                 those narrow expressions. That is triage evidence, not a safety
                 certificate.
               </p>
-              <div className="guide-table-wrap">
+              <GuideTableViewport className="guide-table-wrap">
                 <table className="guide-table">
                   <thead>
                     <tr>
@@ -187,7 +188,7 @@ export default function WritingWithoutTheAiSheenGuide() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </GuideTableViewport>
               {reviews.map((review) => (
                 <details className="guide-callout" key={`${review.name}-details`}>
                   <summary><strong>{review.name}: static evidence and human read</strong></summary>
