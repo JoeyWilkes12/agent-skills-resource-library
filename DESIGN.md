@@ -2,7 +2,7 @@
 
 Status: proposed foundation, Guides-first
 
-Version: 0.2
+Version: 0.3
 
 Last reviewed: September 1, 2026
 
@@ -203,6 +203,7 @@ The current palette remains. New work consumes semantic tokens rather than raw v
 | `--text-secondary` | `#3f4e5c` | Reading copy and supporting text |
 | `--text-inverse` | `--paper-0` | Copy on inverse surfaces |
 | `--text-accent` | `--mint-700` | Labels, verified status, links |
+| `--link-evidence` | `#075a4e` | External evidence links in reading copy |
 | `--border-subtle` | `rgba(7, 27, 51, 0.16)` | Dividers and contained regions |
 | `--status-ready` | `--mint-300` | Verified, safe to proceed within scope |
 | `--status-review` | `--gold-400` | Conditional or incomplete review |
@@ -291,6 +292,7 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `CodeBlock`: language, copy action, and optional expected output.
 - `Callout`: `note`, `evidence`, `caution`, or `stop`. Do not create decorative callouts.
 - `EvidenceBlock`: claim, source class, method, finding, limitation, and linked artifact.
+- `GuideResourceLink`: a descriptive external evidence link with persistent mint color, underline, and a trailing northeast arrow.
 - `ComparisonTable`: direct comparison with a visible row/column header structure.
 - `GuideTableViewport`: native horizontal scrolling plus a synchronized visual header that remains fixed only while the table crosses the viewport.
 - `Figure`: image, useful alt text, caption, and source when external.
@@ -303,6 +305,14 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `TroubleshootingMatrix`: symptom, likely cause, safest next check, escalation point.
 - `NextActions`: two to four actions grounded in the completed outcome.
 - `SourceList`: canonical links, access dates when appropriate, and provenance labels.
+
+### External evidence links
+
+- Use `GuideResourceLink` for external evidence cited inside reading copy. Navigation, hero actions, and button-like calls to action keep their own treatments.
+- Link text must be present, descriptive, and normally two to five words. Do not use an empty anchor, a raw URL, or generic labels such as `here` when a source-specific phrase is available.
+- Keep the deep-mint action color and 1.5px underline visible at rest. Color is not the only affordance.
+- Follow the text with the shared northeast-arrow SVG. The icon is decorative and `aria-hidden`; the descriptive link text remains the accessible name.
+- On hover, deepen the link color and move the arrow slightly up and right. On keyboard focus, use the coral focus ring. Dark mode remaps the evidence-link tokens to a higher-contrast mint.
 
 ## Evidence tables
 

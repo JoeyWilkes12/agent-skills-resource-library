@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -655,10 +656,10 @@ export default function MattPocockSkillsSkillSpectorReview() {
                 summaries.
               </p>
               <ul className="guide-checklist">
-                <li><strong>Adopt with adaptation:</strong> <a href="https://docs.rhi.zone/skills-mattpocock.html" rel="noreferrer" target="_blank">Rhi’s running review</a> kept the architecture vocabulary, exploration gate, inline context updates, and Design It Twice pattern, while dropping ADR ceremony and TypeScript-specific pieces that did not fit its environment.</li>
-                <li><strong>Strongest independent praise:</strong> <a href="https://kaizencode.art/notepad/matt-pocock-skills-guide/" rel="noreferrer" target="_blank">Kaizen Craft’s critical guide</a> singled out feedback-loop-first diagnosis and the no-op/context-load theory in the earlier writing skill, while warning that much of the wording is self-reported methodology rather than evaluated performance.</li>
-                <li><strong>Upstream friction:</strong> GitHub issue #247 reports a <a href="https://github.com/mattpocock/skills/issues/247" rel="noreferrer" target="_blank">12-hour grilling session</a>; issue #853 reports 40–50 questions, <a href="https://github.com/mattpocock/skills/issues/853" rel="noreferrer" target="_blank">context compaction and spec drift</a>; issue #797 asks for hypothesis-led confirmation to reduce question count.</li>
-                <li><strong>Superpowers comparison is anecdotal:</strong> <a href="https://www.reddit.com/r/vibecoding/comments/1uxvmle/superpowers_or_mattpocock/" rel="noreferrer" target="_blank">one Reddit comparison thread</a> reports higher token burn with Superpowers and better edge-case discovery with <code>grill-me</code>; replies recommend taking only one or two useful skills and customizing them.</li>
+                <li><strong>Adopt with adaptation:</strong> <GuideResourceLink href="https://docs.rhi.zone/skills-mattpocock.html">Rhi’s running review</GuideResourceLink> kept the architecture vocabulary, exploration gate, inline context updates, and Design It Twice pattern, while dropping ADR ceremony and TypeScript-specific pieces that did not fit its environment.</li>
+                <li><strong>Strongest independent praise:</strong> <GuideResourceLink href="https://kaizencode.art/notepad/matt-pocock-skills-guide/">Kaizen Craft’s critical guide</GuideResourceLink> singled out feedback-loop-first diagnosis and the no-op/context-load theory in the earlier writing skill, while warning that much of the wording is self-reported methodology rather than evaluated performance.</li>
+                <li><strong>Upstream friction:</strong> GitHub issue #247 reports a <GuideResourceLink href="https://github.com/mattpocock/skills/issues/247">12-hour grilling session</GuideResourceLink>; issue #853 reports 40–50 questions, <GuideResourceLink href="https://github.com/mattpocock/skills/issues/853">context compaction and spec drift</GuideResourceLink>; issue #797 asks for hypothesis-led confirmation to reduce question count.</li>
+                <li><strong>Superpowers comparison is anecdotal:</strong> <GuideResourceLink href="https://www.reddit.com/r/vibecoding/comments/1uxvmle/superpowers_or_mattpocock/">one Reddit comparison thread</GuideResourceLink> reports higher token burn with Superpowers and better edge-case discovery with <code>grill-me</code>; replies recommend taking only one or two useful skills and customizing them.</li>
               </ul>
               <p>
                 My inference from the source and the reviews: the pack’s durable

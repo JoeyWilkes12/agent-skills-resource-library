@@ -230,6 +230,9 @@ test("server-renders the Matt Pocock skill-by-skill security review", async () =
   assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills\/issues\/247"/);
   assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills\/issues\/853"/);
   assert.match(html, /href="https:\/\/www\.reddit\.com\/r\/vibecoding\/comments\/1uxvmle\/superpowers_or_mattpocock\/"/);
+  assert.equal((html.match(/class="guide-resource-link"/g) ?? []).length >= 5, true);
+  assert.equal((html.match(/class="guide-resource-link-icon"/g) ?? []).length >= 5, true);
+  assert.match(html, /class="guide-resource-link"[^>]*>Rhi’s running review<svg/);
 });
 
 test("server-renders the attributed Anthropic verbatim guide", async () => {

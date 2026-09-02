@@ -11,6 +11,9 @@
   --coral: #ff6954;
   --gold: #e8b44f;
   --line: rgba(7, 27, 51, 0.16);
+  --link-evidence: #075a4e;
+  --link-evidence-hover: #043f37;
+  --link-evidence-underline: rgba(7, 90, 78, 0.6);
   --shadow: 0 18px 50px rgba(7, 27, 51, 0.1);
   --content-width: 1440px;
   --guide-sticky-table-offset: 0px;
@@ -26,6 +29,9 @@
   --theme-text: #edf4f7;
   --theme-muted: #b7c5cf;
   --theme-mint-text: #9edfc6;
+  --link-evidence: var(--theme-mint-text);
+  --link-evidence-hover: #c7f3e2;
+  --link-evidence-underline: rgba(158, 223, 198, 0.72);
 }
 
 * {
@@ -2426,38 +2432,38 @@ footer p:first-child {
   color: var(--ink);
 }
 
-.prose-guide .guide-resource-link {
+.guide-resource-link {
   display: inline-flex;
   align-items: baseline;
   gap: 0.22em;
-  color: #075a4e;
+  color: var(--link-evidence);
   font-weight: 720;
   text-decoration-line: underline;
-  text-decoration-color: rgba(7, 90, 78, 0.6);
+  text-decoration-color: var(--link-evidence-underline);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.18em;
   transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
-.prose-guide .guide-resource-link-icon {
+.guide-resource-link-icon {
   width: 0.86em;
   height: 0.86em;
   flex: 0 0 auto;
   transition: transform 160ms ease;
 }
 
-.prose-guide .guide-resource-link:hover {
-  color: #043f37;
+.guide-resource-link:hover {
+  color: var(--link-evidence-hover);
   text-decoration-color: currentColor;
 }
 
-.prose-guide .guide-resource-link:hover .guide-resource-link-icon {
+.guide-resource-link:hover .guide-resource-link-icon {
   transform: translate(0.1em, -0.1em);
 }
 
-.prose-guide .guide-resource-link:focus-visible {
+.guide-resource-link:focus-visible {
   border-radius: 2px;
-  outline: 2px solid var(--mint-dark);
+  outline: 2px solid var(--coral);
   outline-offset: 3px;
 }
 
@@ -3411,9 +3417,7 @@ footer p:first-child {
 :root[data-theme="dark"] .changelog-commit:hover,
 :root[data-theme="dark"] .changelog-group li > span > a:hover,
 :root[data-theme="dark"] .guide-contents-toggle-status,
-:root[data-theme="dark"] .guides-list li > a:hover,
-:root[data-theme="dark"] .prose-guide .guide-resource-link,
-:root[data-theme="dark"] .prose-guide .guide-resource-link:hover {
+:root[data-theme="dark"] .guides-list li > a:hover {
   color: var(--theme-mint-text);
 }
 

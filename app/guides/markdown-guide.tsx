@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GuideResourceLink } from "./guide-resource-link";
 import { GuideTableViewport } from "./guide-table-viewport";
 
 type GuideBlock =
@@ -23,14 +24,6 @@ export type MarkdownGuide = {
   sections: GuideSection[];
   title: string;
 };
-
-function ExternalLinkIcon() {
-  return (
-    <svg aria-hidden="true" className="guide-resource-link-icon" viewBox="0 0 16 16">
-      <path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
-    </svg>
-  );
-}
 
 function slugify(value: string) {
   return value
@@ -225,16 +218,22 @@ function inlineContent(
           ? `${basePath}${link[2]}`
           : link[2];
       const isExternal = /^https?:\/\//.test(href);
+      if (highlightExternalLinks && isExternal) {
+        return (
+          <GuideResourceLink href={href} key={`${href}-${index}`}>
+            {link[1]}
+          </GuideResourceLink>
+        );
+      }
+
       return (
         <a
-          className={highlightExternalLinks && isExternal ? "guide-resource-link" : undefined}
           href={href}
           key={`${href}-${index}`}
           rel={isExternal ? "noreferrer" : undefined}
           target={isExternal ? "_blank" : undefined}
         >
           {link[1]}
-          {highlightExternalLinks && isExternal ? <ExternalLinkIcon /> : null}
         </a>
       );
     }
