@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "5ca63df459feaffc63c09fe4348875323642c29c",
+  "generatedFrom": "d97f2a62bf25123ba3084f7632a18f51156afa1a",
   "releases": [
     {
       "date": "2026-09-01",
@@ -54,6 +54,11 @@
               "kind": "project",
               "text": "Keep guide table headers visible while scrolling.",
               "commit": "3b4970288f07b797eefc1f36a25cfd39e19b15bc"
+            },
+            {
+              "kind": "project",
+              "text": "Standardize visible guide evidence links.",
+              "commit": "d97f2a62bf25123ba3084f7632a18f51156afa1a"
             }
           ]
         }
