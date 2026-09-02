@@ -2,6 +2,10 @@
 
 - Before adding a row to `public/data/resources.csv`, check existing rows for similar URL domains. If it is unclear whether the proposed resource duplicates an existing one, add the row rather than omitting it; then run `npm run data:duplicates` so exact URL duplicates are marked correctly.
 
+# Design-system maintenance
+
+- Before making or reviewing user-facing changes to the AI Agent Skills Resource Library, read and follow the project-level `DESIGN.md`. Treat it as the source of truth for the Guides-first visual language, content structure, evidence tables, responsive behavior, accessibility, and agent-readable design rules. When an intentional change supersedes those rules, update `DESIGN.md` in the same change so implementation and guidance remain aligned.
+
 # Changelog maintenance
 
 - Every user-visible website change must be reflected in the About-page changelog. The changelog is generated from Git history, so use a clear, visitor-facing commit subject and run `npm run changelog:generate` before previewing or building. Do not hand-edit `app/about/generated/changelog.json`.
