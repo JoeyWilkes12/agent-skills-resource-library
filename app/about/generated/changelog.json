@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "d97f2a62bf25123ba3084f7632a18f51156afa1a",
+  "generatedFrom": "bc5217339a0d520323e27a40efe14424591629ae",
   "releases": [
+    {
+      "date": "2026-09-03",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added full-resolution SkillSpector guide image.",
+              "commit": "bc5217339a0d520323e27a40efe14424591629ae"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-01",
       "sections": [
