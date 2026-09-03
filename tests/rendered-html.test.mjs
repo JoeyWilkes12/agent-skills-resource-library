@@ -65,6 +65,11 @@ test("server-renders the internal when-not-to-use-a-skill guide", async () => {
   assert.match(html, /When not to use a skill/);
   assert.match(html, /Agent-assisted requests/);
   assert.match(html, /Primary documentation is often the safer shortcut/);
+  assert.match(html, /class="spectrum-visual"/);
+  assert.match(html, /src="\/guides\/shai-hulud-worm-ai-software-engineering-risks\.jpg"/);
+  assert.match(html, /alt="Shai-Hulud worm and AI software engineering risks:/);
+  assert.match(html, /Skills are not npm packages, but/);
+  assert.match(html, /href="https:\/\/content\.govdelivery\.com\/accounts\/USDHSCISA\/bulletins\/3f408db"/);
 });
 
 test("server-renders the Markdown-powered skill sophistication guide", async () => {
