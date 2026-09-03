@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "2063b3930d350697d8662e17086bf5ed76612a93",
+  "generatedFrom": "342dc60c7699f5200fd33bd6903af1b4e27c9b79",
   "releases": [
     {
       "date": "2026-09-03",
@@ -16,6 +16,11 @@
               "kind": "project",
               "text": "Added full-resolution Matt Pocock guide image.",
               "commit": "2063b3930d350697d8662e17086bf5ed76612a93"
+            },
+            {
+              "kind": "project",
+              "text": "Added Shai-Hulud visual to skill decision guide.",
+              "commit": "342dc60c7699f5200fd33bd6903af1b4e27c9b79"
             }
           ]
         }
