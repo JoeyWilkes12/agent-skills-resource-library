@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "bc5217339a0d520323e27a40efe14424591629ae",
+  "generatedFrom": "2063b3930d350697d8662e17086bf5ed76612a93",
   "releases": [
     {
       "date": "2026-09-03",
@@ -11,6 +11,11 @@
               "kind": "project",
               "text": "Added full-resolution SkillSpector guide image.",
               "commit": "bc5217339a0d520323e27a40efe14424591629ae"
+            },
+            {
+              "kind": "project",
+              "text": "Added full-resolution Matt Pocock guide image.",
+              "commit": "2063b3930d350697d8662e17086bf5ed76612a93"
             }
           ]
         }
