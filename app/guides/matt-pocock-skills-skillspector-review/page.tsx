@@ -440,6 +440,14 @@ export const metadata: Metadata = {
     title: "Matt Pocock’s Skills for Real Engineers: all 37 reviewed",
     description:
       "What each skill contributes, where the action surfaces need controls, and how the collection compares with Obra Superpowers.",
+    images: [`${basePath}/guides/matt-pocock-skills-skillspector-review.jpg`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matt Pocock’s Skills for Real Engineers: all 37 reviewed",
+    description:
+      "What each skill contributes, where the action surfaces need controls, and how the collection compares with Obra Superpowers.",
+    images: [`${basePath}/guides/matt-pocock-skills-skillspector-review.jpg`],
   },
 };
 
@@ -474,34 +482,49 @@ function SkillReviewList({ reviews }: { reviews: SkillReview[] }) {
 
 export default function MattPocockSkillsSkillSpectorReview() {
   return (
-    <main className="guide-page">
+    <main className="guide-page spectrum-page">
       <SiteHeader currentSection="guides" />
 
-      <article className="guide-article">
-        <div className="guide-hero training-hero">
-          <p className="eyebrow">Case study · Open-source skill library</p>
-          <h1>Matt Pocock’s Skills for Real Engineers: all 37 reviewed.</h1>
-          <p className="guide-deck">
-            The collection’s best ideas are its smallest ones: dependency-aware
-            grilling, shared domain language, feedback-loop-first diagnosis,
-            seam-based TDD, and compact handoffs. Adopt those selectively. The
-            higher-agency tracker, secret, shell, and parallel-agent workflows
-            need stronger controls than their prose currently supplies.
-          </p>
-          <div className="guide-hero-actions">
-            <a href={repositoryUrl} rel="noreferrer" target="_blank">
-              Open Matt Pocock’s skills repository <span aria-hidden="true">↗</span>
-            </a>
-            <a href={repositoryUrl + "/commit/" + commit} rel="noreferrer" target="_blank">
-              Open the reviewed commit <span aria-hidden="true">↗</span>
-            </a>
-            <a href={basePath + "/guides/obra-superpowers-skillspector-review"}>
-              Compare with Obra Superpowers
-            </a>
-          </div>
-          <p className="guide-meta">
-            Reviewed September 1, 2026 · SkillSpector 2.11.0 · static scan plus local semantic review · commit {commit.slice(0, 12)}
-          </p>
+      <article className="guide-article spectrum-guide">
+        <div className="spectrum-feature">
+          <header className="guide-hero spectrum-hero training-hero">
+            <p className="eyebrow">Case study · Open-source skill library</p>
+            <h1>Matt Pocock’s Skills for Real Engineers: all 37 reviewed.</h1>
+            <p className="guide-deck">
+              The collection’s best ideas are its smallest ones: dependency-aware
+              grilling, shared domain language, feedback-loop-first diagnosis,
+              seam-based TDD, and compact handoffs. Adopt those selectively. The
+              higher-agency tracker, secret, shell, and parallel-agent workflows
+              need stronger controls than their prose currently supplies.
+            </p>
+            <div className="guide-hero-actions">
+              <a href={repositoryUrl} rel="noreferrer" target="_blank">
+                Open Matt Pocock’s skills repository <span aria-hidden="true">↗</span>
+              </a>
+              <a href={repositoryUrl + "/commit/" + commit} rel="noreferrer" target="_blank">
+                Open the reviewed commit <span aria-hidden="true">↗</span>
+              </a>
+              <a href={basePath + "/guides/obra-superpowers-skillspector-review"}>
+                Compare with Obra Superpowers
+              </a>
+            </div>
+            <p className="guide-meta">
+              Reviewed September 1, 2026 · SkillSpector 2.11.0 · static scan plus local semantic review · commit {commit.slice(0, 12)}
+            </p>
+          </header>
+
+          <figure className="spectrum-visual">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Matt Pocock Skills for AI Agents review summary showing the 37-skill map, supported workflow, recommended starting skills, security posture, score nuance, and selective adoption path"
+              className="spectrum-image"
+              src={`${basePath}/guides/matt-pocock-skills-skillspector-review.jpg`}
+            />
+            <figcaption>
+              The 37-skill review at a glance: start with the strongest thinking
+              tools, then add controls in proportion to each workflow’s agency.
+            </figcaption>
+          </figure>
         </div>
 
         <GuideReadingLayout contents={contents} path={path}>

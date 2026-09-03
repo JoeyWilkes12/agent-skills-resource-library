@@ -1832,6 +1832,7 @@ footer p:first-child {
 }
 
 .guide-sources a {
+  overflow-wrap: anywhere;
   text-underline-offset: 4px;
 }
 

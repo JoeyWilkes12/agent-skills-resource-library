@@ -219,6 +219,7 @@ test("server-renders the Matt Pocock skill-by-skill security review", async () =
 
   const html = await response.text();
   assert.match(html, /Matt Pocock’s Skills for Real Engineers: all 37 reviewed/);
+  assert.match(html, /guides\/matt-pocock-skills-skillspector-review\.jpg/);
   assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills"/);
   assert.match(html, /<strong>37<\/strong><span>separate scans<\/span>/);
   assert.match(html, /All 18 engineering skills, individually reviewed/);
