@@ -20,30 +20,59 @@ export const metadata: Metadata = {
   title: "NVIDIA SkillSpector enterprise training guide | Agent Skills Resource Library",
   description:
     "A presentation-ready guide to using NVIDIA SkillSpector as a preliminary agent-skill security screen and interpreting its static and LLM-assisted results.",
+  openGraph: {
+    title: "NVIDIA SkillSpector enterprise training guide",
+    description:
+      "A presentation-ready guide to using NVIDIA SkillSpector as a preliminary agent-skill security screen and interpreting its static and LLM-assisted results.",
+    images: [`${basePath}/guides/skillspector-enterprise-training.jpg`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NVIDIA SkillSpector enterprise training guide",
+    description:
+      "A presentation-ready guide to using NVIDIA SkillSpector as a preliminary agent-skill security screen and interpreting its static and LLM-assisted results.",
+    images: [`${basePath}/guides/skillspector-enterprise-training.jpg`],
+  },
 };
 
 export default function SkillSpectorEnterpriseTrainingGuide() {
   return (
-    <main className="guide-page">
+    <main className="guide-page spectrum-page">
       <SiteHeader currentSection="guides" />
 
-      <article className="guide-article">
-        <div className="guide-hero training-hero">
-          <h1>NVIDIA SkillSpector for enterprise teams</h1>
-          <p className="guide-deck">
-            A training guide for screening an agent skill before installation,
-            understanding what a second-pass LLM can add, and turning scanner
-            output into a defensible human decision.
-          </p>
-          <div className="guide-hero-actions">
-            <a href="#runbook">Use the review runbook</a>
-            <a href={`${basePath}/guides/skillspector-skill-demo`}>
-              Inspect the demo skill
-            </a>
-          </div>
-          <p className="guide-meta">
-            Last reviewed August 11, 2026 · SkillSpector 2.9.2
-          </p>
+      <article className="guide-article spectrum-guide">
+        <div className="spectrum-feature">
+          <header className="guide-hero spectrum-hero training-hero">
+            <h1>NVIDIA SkillSpector for enterprise teams</h1>
+            <p className="guide-deck">
+              A training guide for screening an agent skill before installation,
+              understanding what a second-pass LLM can add, and turning scanner
+              output into a defensible human decision.
+            </p>
+            <div className="guide-hero-actions">
+              <a href="#runbook">Use the review runbook</a>
+              <a href={`${basePath}/guides/skillspector-skill-demo`}>
+                Inspect the demo skill
+              </a>
+            </div>
+            <p className="guide-meta">
+              Last reviewed August 11, 2026 · SkillSpector 2.9.2
+            </p>
+          </header>
+
+          <figure className="spectrum-visual">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="NVIDIA SkillSpector for enterprise teams: a six-part guide to static analysis, semantic review, and accountable approval decisions"
+              className="spectrum-image"
+              src={`${basePath}/guides/skillspector-enterprise-training.jpg`}
+            />
+            <figcaption>
+              NVIDIA SkillSpector for enterprise teams: scan to decide what
+              deserves attention, then use people and policy to decide what
+              earns trust.
+            </figcaption>
+          </figure>
         </div>
 
         <GuideReadingLayout
