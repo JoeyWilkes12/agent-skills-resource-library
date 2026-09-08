@@ -98,6 +98,24 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "Generative flexibility",
+      "Nondeterminism as a system property",
+      "Four levels of reproducibility",
+      "Repeated-run reliability",
+      "Variability budgets",
+      "Skills and deterministic scripts",
+      "Guardrails and evals",
+      "Vendor-risk review example",
+      "Constraint violation rates",
+      "Accountable human judgment",
+    ],
+    href: "/guides/controlled-variation-agent-nondeterminism",
+    title: "Controlled variation: the capability and control problem of AI agents",
+    summary:
+      "Why agent flexibility creates both novel problem-solving value and reliability risk—and how Skills, scripts, guardrails, and evals control the tradeoff.",
+  },
+  {
+    contentTopics: [
       "How to use this library",
       "A twelve-resource starting shelf",
       "Agentic AI Foundation and the Linux Foundation",

@@ -31,6 +31,10 @@ const markdownGuides = [
     target: "app/guides/generated/skills-in-the-agentic-performance-system.ts",
   },
   {
+    source: "content/drafts/controlled-variation-agent-nondeterminism.md",
+    target: "app/guides/generated/controlled-variation-agent-nondeterminism.ts",
+  },
+  {
     source: "content/research/agentic-performance-source-library.md",
     target: "app/guides/generated/agentic-performance-source-library.ts",
   },
