@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "342dc60c7699f5200fd33bd6903af1b4e27c9b79",
+  "generatedFrom": "e80b83c83f57e71e06788c0ec853ce9f78493f86",
   "releases": [
+    {
+      "date": "2026-09-07",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Refined Guides search coverage and ordering.",
+              "commit": "e80b83c83f57e71e06788c0ec853ce9f78493f86"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-03",
       "sections": [
@@ -84,6 +99,11 @@
               "kind": "project",
               "text": "Standardize visible guide evidence links.",
               "commit": "d97f2a62bf25123ba3084f7632a18f51156afa1a"
+            },
+            {
+              "kind": "project",
+              "text": "Added in-depth guide keyword search.",
+              "commit": "f1e5955a2bff64615300ea127d6d3e0d8a988281"
             }
           ]
         }
