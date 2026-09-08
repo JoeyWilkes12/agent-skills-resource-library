@@ -61,3 +61,49 @@ test("matches useful prefixes without matching acronyms inside other words", () 
   assert.equal(searchGuides([noisyGuide], "UX").length, 0);
   assert.equal(searchGuides([noisyGuide], "AI").length, 0);
 });
+
+test("ranks direct matches before content-only matches without reordering a tier", () => {
+  const contentOnlyGuide = {
+    contentTopics: ["NVIDIA SkillSpector"],
+    href: "/guides/content-only",
+    summary: "A practical writing workflow.",
+    title: "Writing without the AI sheen",
+  };
+  const directGuide = {
+    contentTopics: [],
+    href: "/guides/direct",
+    summary: "A security review with NVIDIA tooling.",
+    title: "Enterprise scanning",
+  };
+  const secondDirectGuide = {
+    contentTopics: [],
+    href: "/guides/second-direct",
+    summary: "Another NVIDIA case study.",
+    title: "Bundle review",
+  };
+
+  assert.deepEqual(
+    searchGuides(
+      [contentOnlyGuide, directGuide, secondDirectGuide],
+      "NVIDIA",
+    ).map((result) => result.guide.href),
+    ["/guides/direct", "/guides/second-direct", "/guides/content-only"],
+  );
+});
+
+test("finds Humanizer through a guide's curated internal topics", () => {
+  const writingGuide = {
+    contentTopics: ["Humanizer by blader", "Humanizer Skill by Aboudjem"],
+    href: "/guides/writing-without-the-ai-sheen",
+    summary: "An authenticity-first editing workflow.",
+    title: "Writing without the AI sheen",
+  };
+
+  const [result] = searchGuides([writingGuide], "Humanizer");
+
+  assert.equal(result.guide.href, "/guides/writing-without-the-ai-sheen");
+  assert.deepEqual(result.foundInside, [
+    "Humanizer by blader",
+    "Humanizer Skill by Aboudjem",
+  ]);
+});

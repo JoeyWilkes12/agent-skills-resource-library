@@ -42,8 +42,9 @@ function topicMatches(topics, tokens) {
 }
 
 /**
- * Return catalog entries in editorial order. Every query token must be found
- * somewhere in the title, summary, or curated content topics (AND matching).
+ * Return direct title/summary matches before content-only matches, preserving
+ * editorial order within each tier. Every query token must be found somewhere
+ * in the title, summary, or curated content topics (AND matching).
  */
 export function searchGuides(guides, query) {
   const tokens = searchTokens(query);
@@ -58,7 +59,7 @@ export function searchGuides(guides, query) {
     }));
   }
 
-  return guides.flatMap((guide) => {
+  const matches = guides.flatMap((guide) => {
     const fields = searchableFields(guide);
     const normalizedTopics = fields.contentTopics.map(normalizeSearchText);
     const normalizedFields = [
@@ -95,4 +96,8 @@ export function searchGuides(guides, query) {
       },
     ];
   });
+
+  return matches.sort(
+    (first, second) => Number(first.contentOnly) - Number(second.contentOnly),
+  );
 }
