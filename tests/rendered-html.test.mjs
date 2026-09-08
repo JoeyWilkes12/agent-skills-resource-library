@@ -103,6 +103,20 @@ test("server-renders the new agentic performance guides", async () => {
   assert.match(sourceLibraryHtml, /target="_blank"/);
 });
 
+test("server-renders the controlled variation guide", async () => {
+  const response = await renderPath(
+    "/guides/controlled-variation-agent-nondeterminism",
+  );
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Controlled variation: the capability and control problem/);
+  assert.match(html, /Nondeterminism is a system property/);
+  assert.match(html, /A variability budget is more useful/);
+  assert.match(html, /Flexible reasoning\. Explicit method\. Deterministic mechanics/);
+  assert.doesNotMatch(html, /last_verified|status: Published/);
+});
+
 test("server-renders the Skills and plugins research guide with supporting HTML notes", async () => {
   const synthesisResponse = await renderPath("/guides/skills-plugins-impact");
   assert.equal(synthesisResponse.status, 200);
@@ -192,12 +206,13 @@ test("server-renders the Guides index and its published entries", async () => {
     /Search titles, summaries, and selected headings and topics from every/,
   );
   assert.match(html, /Article body text is not indexed/);
-  assert.match(html, /18 guides/);
+  assert.match(html, /19 guides/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
   assert.match(html, /More guides from the library/);
   assert.match(html, /href="\/guides\/enterprise-agent-skills-presenter-readiness"/);
   assert.match(html, /href="\/guides\/skills-in-the-agentic-performance-system"/);
+  assert.match(html, /href="\/guides\/controlled-variation-agent-nondeterminism"/);
   assert.match(html, /href="\/guides\/agentic-performance-source-library"/);
   assert.match(html, /href="\/guides\/skills-plugins-impact"/);
   assert.match(html, /href="\/guides\/writing-without-the-ai-sheen"/);

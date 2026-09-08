@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "e80b83c83f57e71e06788c0ec853ce9f78493f86",
+  "generatedFrom": "1f9bfeaae4c9fd2a04b537cb5d7a3136517b878d",
   "releases": [
+    {
+      "date": "2026-09-08",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Publish guide to controlled variation in AI agents.",
+              "commit": "1f9bfeaae4c9fd2a04b537cb5d7a3136517b878d"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "sections": [
