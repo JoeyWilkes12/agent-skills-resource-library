@@ -122,12 +122,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {siteConfig.showMediaFolder && (
+        {/* {siteConfig.showMediaFolder && (
           <p className="about-media-note">
             Download additional content, including images and video, from the{" "}
             <a href={mediaFolderUrl}>Google Drive folder</a>.
           </p>
-        )}
+        )} */}
 
         <section
           className="about-section about-changelog"
