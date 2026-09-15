@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "9c30ab71a0c69f3be5a71df86dd5d99ec906d246",
+  "generatedFrom": "968d0e935ad9bb81834a09b35eb66a7bb3c9f3bc",
   "releases": [
     {
       "date": "2026-09-15",
@@ -20,6 +20,16 @@
               "href": "/guides/skillspector-skill-demo-v2",
               "resourceId": "skillspector-skill-demo-v2",
               "commit": "9c30ab71a0c69f3be5a71df86dd5d99ec906d246"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Standardize guide reference links site-wide.",
+              "commit": "968d0e935ad9bb81834a09b35eb66a7bb3c9f3bc"
             }
           ]
         }
