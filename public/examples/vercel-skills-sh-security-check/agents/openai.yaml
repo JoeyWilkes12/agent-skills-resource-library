@@ -1,0 +1,4 @@
+interface:
+  display_name: "skills.sh Security Check"
+  short_description: "Collect current third-party skill audits"
+  default_prompt: "Use $vercel-skills-sh-security-check to collect and interpret the current skills.sh audits for this third-party skill."

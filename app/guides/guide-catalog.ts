@@ -266,6 +266,23 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "skills.sh security audits",
+      "Gen Agent Trust Hub",
+      "Socket",
+      "Snyk",
+      "Direct skills.sh URL",
+      "Unlisted third-party skill",
+      "Audit freshness",
+      "Registry evidence",
+      "Downloadable Codex skill",
+    ],
+    href: "/guides/vercel-skills-sh-security-check",
+    title: "skills.sh Security Check: collect three audit reports",
+    summary:
+      "Download a Codex skill that finds the current Gen Agent Trust Hub, Socket, and Snyk evidence for a third-party skill without installing it first.",
+  },
+  {
+    contentTopics: [
       "Optimization loop",
       "Skill definition becomes trainable text",
       "Developer experience",
