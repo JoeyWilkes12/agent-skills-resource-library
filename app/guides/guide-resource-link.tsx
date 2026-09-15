@@ -1,4 +1,4 @@
-function ExternalLinkIcon() {
+function ReferenceLinkIcon() {
   return (
     <svg aria-hidden="true" className="guide-resource-link-icon" viewBox="0 0 16 16">
       <path
@@ -22,11 +22,17 @@ export function GuideResourceLink({
 }) {
   const label = children.trim();
   if (!label) throw new Error("GuideResourceLink requires descriptive link text.");
+  const isExternal = /^https?:\/\//i.test(href);
 
   return (
-    <a className="guide-resource-link" href={href} rel="noreferrer" target="_blank">
+    <a
+      className="guide-resource-link"
+      href={href}
+      rel={isExternal ? "noreferrer" : undefined}
+      target={isExternal ? "_blank" : undefined}
+    >
       {label}
-      <ExternalLinkIcon />
+      <ReferenceLinkIcon />
     </a>
   );
 }

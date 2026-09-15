@@ -21,7 +21,6 @@ export default function AgenticPerformanceSourceLibraryPage() {
     <MarkdownGuidePage
       eyebrow="Guide · Research library"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

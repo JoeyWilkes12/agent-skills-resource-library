@@ -23,7 +23,6 @@ export default function PersonalizedSkillsPaperPage() {
       backLabel="Back to the research synthesis"
       eyebrow="Research note · Focal paper"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

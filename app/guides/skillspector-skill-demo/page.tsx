@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -228,11 +229,11 @@ interface:
         <section className="guide-sources" id="continue-learning" aria-labelledby="demo-sources-heading">
           <h2 id="demo-sources-heading">Continue learning</h2>
           <ul>
-            <li><a href="https://agentskills.io/specification">Agent Skills specification</a></li>
-            <li><a href="https://developers.openai.com/plugins/build/skills">OpenAI: Build skills for ChatGPT and Codex</a></li>
-            <li><a href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</a></li>
-            <li><a href={`${basePath}/guides/skillspector-skill-demo-v2`}>SkillSpector Review v2: layered pre-install gate</a></li>
-            <li><a href={`${basePath}/examples/skillspector-review/SKILL.md`}>Complete demonstration SKILL.md</a></li>
+            <li><GuideResourceLink href="https://agentskills.io/specification">Agent Skills specification</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://developers.openai.com/plugins/build/skills">OpenAI: Build skills for ChatGPT and Codex</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink></li>
+            <li><GuideResourceLink href={`${basePath}/guides/skillspector-skill-demo-v2`}>SkillSpector Review v2: layered pre-install gate</GuideResourceLink></li>
+            <li><GuideResourceLink href={`${basePath}/examples/skillspector-review/SKILL.md`}>Complete demonstration SKILL.md</GuideResourceLink></li>
           </ul>
         </section>
 

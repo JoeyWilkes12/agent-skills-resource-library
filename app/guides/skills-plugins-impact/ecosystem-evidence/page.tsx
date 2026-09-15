@@ -23,7 +23,6 @@ export default function EcosystemEvidencePage() {
       backLabel="Back to the research synthesis"
       eyebrow="Research note · Ecosystem evidence"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -181,7 +182,7 @@ export default function WritingWithoutTheAiSheenGuide() {
                   <tbody>
                     {reviews.map((review) => (
                       <tr key={review.name}>
-                        <td><a href={review.href}>{review.name}</a></td>
+                        <td><GuideResourceLink href={review.href}>{review.name}</GuideResourceLink></td>
                         <td>{review.result}</td>
                         <td>Not installed</td>
                       </tr>
@@ -257,13 +258,13 @@ export default function WritingWithoutTheAiSheenGuide() {
           <section className="guide-sources" id="sources" aria-labelledby="guide-sources-heading">
             <h2 id="guide-sources-heading">Sources</h2>
             <ul>
-              <li><a href="https://github.com/conorbronsdon/avoid-ai-writing">Avoid AI Writing</a></li>
-              <li><a href="https://github.com/blader/humanizer">Humanizer by blader</a></li>
-              <li><a href="https://github.com/Aboudjem/humanizer-skill">Humanizer Skill by Aboudjem</a></li>
-              <li><a href="https://github.com/angelarose210/ghostwriter">Ghostwriter</a></li>
-              <li><a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia: Signs of AI writing</a></li>
-              <li><a href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</a></li>
-              <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</a></li>
+              <li><GuideResourceLink href="https://github.com/conorbronsdon/avoid-ai-writing">Avoid AI Writing</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/blader/humanizer">Humanizer by blader</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/Aboudjem/humanizer-skill">Humanizer Skill by Aboudjem</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/angelarose210/ghostwriter">Ghostwriter</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia: Signs of AI writing</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink></li>
             </ul>
           </section>
         </GuideReadingLayout>

@@ -201,7 +201,6 @@ function inlineContent(
   text: string,
   anchorPrefix = "",
   basePath = "",
-  highlightExternalLinks = false,
 ): ReactNode[] {
   const tokens = text.split(/(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\)|\*[^*]+\*)/g);
 
@@ -217,24 +216,10 @@ function inlineContent(
         : link[2].startsWith("/")
           ? `${basePath}${link[2]}`
           : link[2];
-      const isExternal = /^https?:\/\//.test(href);
-      if (highlightExternalLinks && isExternal) {
-        return (
-          <GuideResourceLink href={href} key={`${href}-${index}`}>
-            {link[1]}
-          </GuideResourceLink>
-        );
-      }
-
       return (
-        <a
-          href={href}
-          key={`${href}-${index}`}
-          rel={isExternal ? "noreferrer" : undefined}
-          target={isExternal ? "_blank" : undefined}
-        >
+        <GuideResourceLink href={href} key={`${href}-${index}`}>
           {link[1]}
-        </a>
+        </GuideResourceLink>
       );
     }
 
@@ -262,24 +247,22 @@ export function GuideBlocks({
   anchorPrefix,
   basePath,
   blocks,
-  highlightExternalLinks = false,
 }: {
   anchorPrefix?: string;
   basePath: string;
   blocks: GuideBlock[];
-  highlightExternalLinks?: boolean;
 }) {
   return blocks.map((block, index) => {
     if (block.type === "heading") {
       return (
         <h3 id={block.id} key={`${block.id}-${index}`}>
-          {inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}
+          {inlineContent(block.text, anchorPrefix, basePath)}
         </h3>
       );
     }
 
     if (block.type === "blockquote") {
-      return <blockquote key={`blockquote-${index}`}>{inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}</blockquote>;
+      return <blockquote key={`blockquote-${index}`}>{inlineContent(block.text, anchorPrefix, basePath)}</blockquote>;
     }
 
     if (block.type === "code") {
@@ -307,7 +290,7 @@ export function GuideBlocks({
       return (
         <ul className="spectrum-list" key={`list-${index}`}>
           {block.items.map((item) => (
-            <li key={item}>{inlineContent(item, anchorPrefix, basePath, highlightExternalLinks)}</li>
+            <li key={item}>{inlineContent(item, anchorPrefix, basePath)}</li>
           ))}
         </ul>
       );
@@ -317,7 +300,7 @@ export function GuideBlocks({
       return (
         <ol className="spectrum-list spectrum-ordered-list" key={`ordered-list-${index}`} start={block.start}>
           {block.items.map((item) => (
-            <li key={item}>{inlineContent(item, anchorPrefix, basePath, highlightExternalLinks)}</li>
+            <li key={item}>{inlineContent(item, anchorPrefix, basePath)}</li>
           ))}
         </ol>
       );
@@ -335,7 +318,7 @@ export function GuideBlocks({
               <tr>
                 {block.headers.map((header) => (
                   <th key={header} scope="col">
-                    {inlineContent(header, anchorPrefix, basePath, highlightExternalLinks)}
+                    {inlineContent(header, anchorPrefix, basePath)}
                   </th>
                 ))}
               </tr>
@@ -345,7 +328,7 @@ export function GuideBlocks({
                 <tr key={`row-${rowIndex}`}>
                   {row.map((cell, cellIndex) => (
                     <td key={`cell-${rowIndex}-${cellIndex}`}>
-                      {inlineContent(cell, anchorPrefix, basePath, highlightExternalLinks)}
+                      {inlineContent(cell, anchorPrefix, basePath)}
                     </td>
                   ))}
                 </tr>
@@ -356,6 +339,6 @@ export function GuideBlocks({
       );
     }
 
-    return <p key={`paragraph-${index}`}>{inlineContent(block.text, anchorPrefix, basePath, highlightExternalLinks)}</p>;
+    return <p key={`paragraph-${index}`}>{inlineContent(block.text, anchorPrefix, basePath)}</p>;
   });
 }

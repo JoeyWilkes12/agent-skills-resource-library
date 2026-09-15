@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -273,7 +274,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                         <td>{score}</td>
                         <td>{severity}<br /><small>{recommendation}</small></td>
                         <td>{issues}</td>
-                        <td><a href={reportUrl(skill)}>View report ↗</a></td>
+                        <td><GuideResourceLink href={reportUrl(skill)}>View report</GuideResourceLink></td>
                       </tr>
                     ))}
                   </tbody>
@@ -368,7 +369,7 @@ export default function ObraSuperpowersSkillSpectorReview() {
                 <p>
                   The full visible prompt and response—including its evidence
                   table, caveats, recommendations, and linked sources—is
-                  preserved as a readable Markdown transcript. <a href={`${auditRoot}/shared-thread.md`}>Read the archived transcript</a> or <a href={threadUrl} rel="noreferrer" target="_blank">open the original share page ↗</a>.
+                  preserved as a readable Markdown transcript. <GuideResourceLink href={`${auditRoot}/shared-thread.md`}>Read the archived transcript</GuideResourceLink> or <GuideResourceLink href={threadUrl}>open the original share page</GuideResourceLink>.
                 </p>
               </div>
               <p className="guide-source-note">
@@ -382,15 +383,15 @@ export default function ObraSuperpowersSkillSpectorReview() {
           <section className="guide-sources" id="sources" aria-labelledby="guide-sources-heading">
             <h2 id="guide-sources-heading">Sources and audit files</h2>
             <ul>
-              <li><a href="https://github.com/obra/superpowers" rel="noreferrer" target="_blank">Obra Superpowers repository ↗</a></li>
-              <li><a href={`https://github.com/obra/superpowers/commit/${commit}`} rel="noreferrer" target="_blank">Exact reviewed commit: {commit} ↗</a></li>
-              <li><a href={`${auditRoot}/index.json`}>Machine-readable audit index</a></li>
-              <li><a href={`${auditRoot}/owasp-regex-triage.json`}>OWASP regex triage record</a></li>
-              <li><a href={`${auditRoot}/shared-thread.md`}>Archived shared-thread transcript</a></li>
-              <li><a href="https://github.com/NVIDIA/SkillSpector" rel="noreferrer" target="_blank">NVIDIA SkillSpector ↗</a></li>
-              <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html" rel="noreferrer" target="_blank">OWASP LLM Prompt Injection Prevention Cheat Sheet ↗</a></li>
-              <li><a href="https://github.com/prime-radiant-inc/superpowers-evals/" rel="noreferrer" target="_blank">Superpowers behavioral eval harness ↗</a></li>
-              <li><a href="https://arxiv.org/abs/2603.15401" rel="noreferrer" target="_blank">SWE-Skills-Bench ↗</a></li>
+              <li><GuideResourceLink href="https://github.com/obra/superpowers">Obra Superpowers repository</GuideResourceLink></li>
+              <li><GuideResourceLink href={`https://github.com/obra/superpowers/commit/${commit}`}>{`Exact reviewed commit: ${commit}`}</GuideResourceLink></li>
+              <li><GuideResourceLink href={`${auditRoot}/index.json`}>Machine-readable audit index</GuideResourceLink></li>
+              <li><GuideResourceLink href={`${auditRoot}/owasp-regex-triage.json`}>OWASP regex triage record</GuideResourceLink></li>
+              <li><GuideResourceLink href={`${auditRoot}/shared-thread.md`}>Archived shared-thread transcript</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/prime-radiant-inc/superpowers-evals/">Superpowers behavioral eval harness</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</GuideResourceLink></li>
             </ul>
             <p className="guide-source-note">
               The raw reports are preliminary static evidence. SkillSpector does

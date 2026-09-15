@@ -22,7 +22,6 @@ export default function SkillsPluginsImpactPage() {
     <MarkdownGuidePage
       eyebrow="Guide · Research synthesis"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

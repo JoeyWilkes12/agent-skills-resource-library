@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function renderPath(pathname) {
@@ -18,6 +18,16 @@ async function renderPath(pathname) {
 
 async function render() {
   return renderPath("/");
+}
+
+async function guideHtmlFiles(directory = new URL("../out/guides/", import.meta.url)) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = await Promise.all(entries.map(async (entry) => {
+    const url = new URL(`${entry.name}${entry.isDirectory() ? "/" : ""}`, directory);
+    if (entry.isDirectory()) return guideHtmlFiles(url);
+    return entry.name === "index.html" ? [url] : [];
+  }));
+  return files.flat();
 }
 
 test("server-renders the resource library shell", async () => {
@@ -255,6 +265,35 @@ test("server-renders the downloadable SkillSpector Review v2 guide", async () =>
   assert.match(html, /href="\/examples\/skillspector-review-v2\/SKILL\.md"/);
   assert.match(html, /href="\/downloads\/skillspector-review-v2\.zip"/);
   assert.match(html, /download="skillspector-review-v2\.zip"/);
+  assert.match(
+    html,
+    /<a class="guide-resource-link" href="\/guides\/skillspector-skill-demo">v1 anatomy guide<svg/,
+  );
+  assert.doesNotMatch(
+    html,
+    /<a class="guide-resource-link" href="\/guides\/skillspector-skill-demo"[^>]*target=/,
+  );
+});
+
+test("guide reading references use the shared visible link treatment", async () => {
+  const files = await guideHtmlFiles();
+  assert.ok(files.length > 0, "expected rendered guide pages");
+
+  for (const file of files) {
+    const html = await readFile(file, "utf8");
+    const sourceSections = html.match(/<section\b[^>]*class="[^"]*guide-sources[^"]*"[\s\S]*?<\/section>/g) ?? [];
+
+    for (const section of sourceSections) {
+      const anchors = section.match(/<a\b[^>]*>/g) ?? [];
+      for (const anchor of anchors) {
+        assert.match(
+          anchor,
+          /class="[^"]*guide-resource-link[^"]*"/,
+          `${file.pathname} contains an unstyled source reference: ${anchor}`,
+        );
+      }
+    }
+  }
 });
 
 test("server-renders the downloadable skills.sh security check guide", async () => {

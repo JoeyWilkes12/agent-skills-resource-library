@@ -22,7 +22,6 @@ export default function JetBrainsRtkTokenBenchmarkPage() {
     <MarkdownGuidePage
       eyebrow="Guide · JetBrains benchmark"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

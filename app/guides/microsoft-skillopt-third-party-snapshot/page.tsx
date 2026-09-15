@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -454,29 +455,19 @@ export default function MicrosoftSkillOptThirdPartySnapshot() {
           <h2 id="skillopt-sources-heading">Primary sources and review notes</h2>
           <ul>
             <li>
-              <a href="https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/">
-                Microsoft Research: SkillOpt overview
-              </a>
+              <GuideResourceLink href="https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/">Microsoft Research: SkillOpt overview</GuideResourceLink>
             </li>
             <li>
-              <a href="https://arxiv.org/html/2605.23904">
-                SkillOpt research paper, version 2
-              </a>
+              <GuideResourceLink href="https://arxiv.org/html/2605.23904">SkillOpt research paper, version 2</GuideResourceLink>
             </li>
             <li>
-              <a href="https://github.com/microsoft/SkillOpt">
-                Microsoft SkillOpt source repository
-              </a>
+              <GuideResourceLink href="https://github.com/microsoft/SkillOpt">Microsoft SkillOpt source repository</GuideResourceLink>
             </li>
             <li>
-              <a href="https://pypi.org/project/skillopt/">
-                SkillOpt package metadata and Alpha classifier
-              </a>
+              <GuideResourceLink href="https://pypi.org/project/skillopt/">SkillOpt package metadata and Alpha classifier</GuideResourceLink>
             </li>
             <li>
-              <a href="https://developers.openai.com/api/docs/models/gpt-5.5">
-                GPT-5.5 API pricing used for the dated illustration
-              </a>
+              <GuideResourceLink href="https://developers.openai.com/api/docs/models/gpt-5.5">GPT-5.5 API pricing used for the dated illustration</GuideResourceLink>
             </li>
           </ul>
           <p className="guide-source-note">

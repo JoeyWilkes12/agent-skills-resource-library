@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import checklist from "../../../content/guides/so-you-found-a-skill-checklist.json";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -322,7 +323,7 @@ export default function SkillConfidenceChecklist() {
           <ul>
             {checklist.references.map((reference) => (
               <li key={reference.href}>
-                <a href={reference.href}>{reference.label}</a>
+                <GuideResourceLink href={reference.href}>{reference.label}</GuideResourceLink>
               </li>
             ))}
           </ul>

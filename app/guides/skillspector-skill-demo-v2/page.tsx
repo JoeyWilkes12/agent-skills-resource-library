@@ -81,7 +81,7 @@ export default function SkillSpectorSkillDemoV2() {
                 </p>
               </div>
               <p>
-                Start with the <a href={`${basePath}/guides/skillspector-skill-demo`}>v1 anatomy guide</a>{" "}
+                Start with the <GuideResourceLink href={`${basePath}/guides/skillspector-skill-demo`}>v1 anatomy guide</GuideResourceLink>{" "}
                 if you want the shorter explanation of how a Codex skill is
                 structured and discovered.
               </p>
@@ -305,9 +305,9 @@ reveal\\s+prompt`}</code>
                 </a>
               </div>
               <ul className="guide-checklist">
-                <li><a href={`${artifactRoot}/SKILL.md`}>View the complete v2 SKILL.md</a></li>
-                <li><a href={`${artifactRoot}/agents/openai.yaml`}>View Codex interface metadata</a></li>
-                <li><a href={`${basePath}/guides/vercel-skills-sh-security-check`}>Open the parallel skills.sh registry check</a></li>
+                <li><GuideResourceLink href={`${artifactRoot}/SKILL.md`}>View the complete v2 SKILL.md</GuideResourceLink></li>
+                <li><GuideResourceLink href={`${artifactRoot}/agents/openai.yaml`}>View Codex interface metadata</GuideResourceLink></li>
+                <li><GuideResourceLink href={`${basePath}/guides/vercel-skills-sh-security-check`}>Open the parallel skills.sh registry check</GuideResourceLink></li>
               </ul>
             </div>
           </section>
@@ -318,7 +318,7 @@ reveal\\s+prompt`}</code>
               <li><GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA scanning guide</GuideResourceLink></li>
               <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector source</GuideResourceLink></li>
               <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP prompt-injection guidance</GuideResourceLink></li>
-              <li><a href={`${basePath}/guides/skillspector-skill-demo`}>SkillSpector Review v1 anatomy guide</a></li>
+              <li><GuideResourceLink href={`${basePath}/guides/skillspector-skill-demo`}>SkillSpector Review v1 anatomy guide</GuideResourceLink></li>
             </ul>
           </section>
 

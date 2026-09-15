@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -324,14 +325,14 @@ export default function SkillSpectorEnterpriseTrainingGuide() {
         >
           <h2 id="guide-sources-heading">Presentation and training sources</h2>
           <ul>
-            <li><a href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</a></li>
-            <li><a href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector source repository</a></li>
-            <li><a href="https://github.com/NVIDIA/SkillSpector/releases">NVIDIA SkillSpector releases</a></li>
-            <li><a href="https://docs.nvidia.com/skills/agent-skill-trust-pipeline">NVIDIA: A Trust Pipeline for Agent Skills</a></li>
-            <li><a href="https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/">NVIDIA: capability governance for AI-agent skills</a></li>
-            <li><a href="https://arxiv.org/abs/2601.10338">Agent Skills in the Wild: empirical security study</a></li>
-            <li><a href="https://owasp.org/www-community/attacks/PromptInjection">OWASP: Prompt Injection</a></li>
-            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></li>
+            <li><GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector source repository</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector/releases">NVIDIA SkillSpector releases</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://docs.nvidia.com/skills/agent-skill-trust-pipeline">NVIDIA: A Trust Pipeline for Agent Skills</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/">NVIDIA: capability governance for AI-agent skills</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://arxiv.org/abs/2601.10338">Agent Skills in the Wild: empirical security study</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://owasp.org/www-community/attacks/PromptInjection">OWASP: Prompt Injection</GuideResourceLink></li>
+            <li><GuideResourceLink href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</GuideResourceLink></li>
           </ul>
         </section>
 

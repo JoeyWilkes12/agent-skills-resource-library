@@ -22,7 +22,6 @@ export default function JetBrainsCavemanTokenBenchmarkPage() {
     <MarkdownGuidePage
       eyebrow="Guide · JetBrains benchmark"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

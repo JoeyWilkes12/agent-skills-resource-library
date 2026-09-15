@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "../../site-header";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const artifactRoot = `${basePath}/examples/vercel-skills-sh-security-check`;
@@ -207,9 +208,9 @@ export default function VercelSkillsShSecurityCheckGuide() {
                 and human review.
               </p>
               <ul className="guide-checklist">
-                <li><a href={`${artifactRoot}/SKILL.md`}>View SKILL.md</a></li>
-                <li><a href={`${artifactRoot}/scripts/check_skills_sh_security.py`}>View the Python helper</a></li>
-                <li><a href={`${artifactRoot}/agents/openai.yaml`}>View Codex interface metadata</a></li>
+                <li><GuideResourceLink href={`${artifactRoot}/SKILL.md`}>View SKILL.md</GuideResourceLink></li>
+                <li><GuideResourceLink href={`${artifactRoot}/scripts/check_skills_sh_security.py`}>View the Python helper</GuideResourceLink></li>
+                <li><GuideResourceLink href={`${artifactRoot}/agents/openai.yaml`}>View Codex interface metadata</GuideResourceLink></li>
               </ul>
             </div>
           </section>
@@ -217,10 +218,10 @@ export default function VercelSkillsShSecurityCheckGuide() {
           <section className="guide-sources" aria-labelledby="security-check-sources">
             <h2 id="security-check-sources">Primary references</h2>
             <ul>
-              <li><a href="https://skills.sh/docs/api">skills.sh API reference</a></li>
-              <li><a href="https://skills.sh/audits">skills.sh security audits</a></li>
-              <li><a href="https://www.skills.sh/graphify-labs/graphify/graphify">Example skill listing</a></li>
-              <li><a href={`${artifactRoot}/SKILL.md`}>Complete distributable SKILL.md</a></li>
+              <li><GuideResourceLink href="https://skills.sh/docs/api">skills.sh API reference</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://skills.sh/audits">skills.sh security audits</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://www.skills.sh/graphify-labs/graphify/graphify">Example skill listing</GuideResourceLink></li>
+              <li><GuideResourceLink href={`${artifactRoot}/SKILL.md`}>Complete distributable SKILL.md</GuideResourceLink></li>
             </ul>
           </section>
 

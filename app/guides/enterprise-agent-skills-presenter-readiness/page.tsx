@@ -22,7 +22,6 @@ export default function EnterpriseAgentSkillsPresenterReadinessPage() {
     <MarkdownGuidePage
       eyebrow="Guide · Enterprise training"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

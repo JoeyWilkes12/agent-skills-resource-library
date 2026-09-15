@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "../../site-header";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import styles from "./page.module.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -125,9 +126,7 @@ export default function AnthropicCompleteGuidePage() {
                 Original title: <em>The Complete Guide to Building Skills for Claude</em>
               </li>
               <li>
-                <a href={sourceUrl} rel="noreferrer" target="_blank">
-                  Original publisher-hosted PDF
-                </a>
+                <GuideResourceLink href={sourceUrl}>Original publisher-hosted PDF</GuideResourceLink>
               </li>
             </ul>
             <p className="guide-source-note">

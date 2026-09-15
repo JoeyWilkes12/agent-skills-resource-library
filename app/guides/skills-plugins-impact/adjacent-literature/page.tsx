@@ -23,7 +23,6 @@ export default function AdjacentLiteraturePage() {
       backLabel="Back to the research synthesis"
       eyebrow="Research note · Adjacent literature"
       guide={guide}
-      highlightExternalLinks
       path={path}
     />
   );

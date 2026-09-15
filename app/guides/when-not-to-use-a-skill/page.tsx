@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -236,29 +237,19 @@ export default function WhenNotToUseASkill() {
               <h2 id="guide-sources-heading">Sources and further reading</h2>
               <ul>
                 <li>
-                  <a href="https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3f408db">
-                    CISA: npm ecosystem supply-chain compromise alert
-                  </a>
+                  <GuideResourceLink href="https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3f408db">CISA: npm ecosystem supply-chain compromise alert</GuideResourceLink>
                 </li>
                 <li>
-                  <a href="https://docs.nvidia.com/skills/scanning-agent-skills">
-                    NVIDIA: Scan Agent Skills Before Installation
-                  </a>
+                  <GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink>
                 </li>
                 <li>
-                  <a href="https://github.com/cisco-ai-defense/skill-scanner">
-                    Cisco AI Defense: Skill Scanner
-                  </a>
+                  <GuideResourceLink href="https://github.com/cisco-ai-defense/skill-scanner">Cisco AI Defense: Skill Scanner</GuideResourceLink>
                 </li>
                 <li>
-                  <a href="https://docs.replit.com/features/agent/skills">
-                    Replit: Agent Skills
-                  </a>
+                  <GuideResourceLink href="https://docs.replit.com/features/agent/skills">Replit: Agent Skills</GuideResourceLink>
                 </li>
                 <li>
-                  <a href="https://docs.replit.com/learn/projects-and-artifacts/replit-deployments">
-                    Replit: Publishing
-                  </a>
+                  <GuideResourceLink href="https://docs.replit.com/learn/projects-and-artifacts/replit-deployments">Replit: Publishing</GuideResourceLink>
                 </li>
               </ul>
             </section>

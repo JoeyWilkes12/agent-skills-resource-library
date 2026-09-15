@@ -9,14 +9,12 @@ export function MarkdownGuidePage({
   backLabel = "Back to guides",
   eyebrow,
   guide,
-  highlightExternalLinks = false,
   path,
 }: {
   backHref?: string;
   backLabel?: string;
   eyebrow: string;
   guide: MarkdownGuide;
-  highlightExternalLinks?: boolean;
   path: string;
 }) {
   const articleSections = guide.sections.filter((section) => section.id !== "contents");
@@ -55,7 +53,6 @@ export function MarkdownGuidePage({
                   anchorPrefix={path}
                   basePath={basePath}
                   blocks={guide.intro}
-                  highlightExternalLinks={highlightExternalLinks}
                 />
               </div>
             ) : null}
@@ -67,7 +64,6 @@ export function MarkdownGuidePage({
                   anchorPrefix={path}
                   basePath={basePath}
                   blocks={section.blocks}
-                  highlightExternalLinks={highlightExternalLinks}
                 />
               </section>
             ))}

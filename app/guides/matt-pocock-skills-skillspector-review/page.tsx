@@ -472,7 +472,7 @@ function SkillReviewList({ reviews }: { reviews: SkillReview[] }) {
           <p><strong>Strength:</strong> {review.strength}</p>
           <p><strong>Weakness / risk:</strong> {review.weakness}</p>
           <p className="guide-source-note">
-            SkillSpector: {review.score} / {review.severity}. <a href={sourceUrl(review)} rel="noreferrer" target="_blank">Open the pinned skill ↗</a>
+            SkillSpector: {review.score} / {review.severity}. <GuideResourceLink href={sourceUrl(review)}>Open the pinned skill</GuideResourceLink>
           </p>
         </details>
       ))}
@@ -768,17 +768,17 @@ export default function MattPocockSkillsSkillSpectorReview() {
           <section className="guide-sources" id="sources" aria-labelledby="guide-sources-heading">
             <h2 id="guide-sources-heading">Sources</h2>
             <ul>
-              <li><a href={repositoryUrl} rel="noreferrer" target="_blank">Matt Pocock’s skills repository ↗</a></li>
-              <li><a href={repositoryUrl + "/commit/" + commit} rel="noreferrer" target="_blank">Exact reviewed commit: {commit} ↗</a></li>
-              <li><a href="https://github.com/NVIDIA/SkillSpector" rel="noreferrer" target="_blank">NVIDIA SkillSpector ↗</a></li>
-              <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html" rel="noreferrer" target="_blank">OWASP LLM Prompt Injection Prevention Cheat Sheet ↗</a></li>
-              <li><a href="https://docs.rhi.zone/skills-mattpocock.html" rel="noreferrer" target="_blank">Rhi: running skill-by-skill review ↗</a></li>
-              <li><a href="https://kaizencode.art/notepad/matt-pocock-skills-guide/" rel="noreferrer" target="_blank">Kaizen Craft: critical guide ↗</a></li>
-              <li><a href="https://github.com/mattpocock/skills/issues/247" rel="noreferrer" target="_blank">Issue #247: grilling severity ↗</a></li>
-              <li><a href="https://github.com/mattpocock/skills/issues/853" rel="noreferrer" target="_blank">Issue #853: long interviews and context compaction ↗</a></li>
-              <li><a href="https://github.com/mattpocock/skills/issues/797" rel="noreferrer" target="_blank">Issue #797: hypothesis-led confirmation request ↗</a></li>
-              <li><a href="https://www.reddit.com/r/vibecoding/comments/1uxvmle/superpowers_or_mattpocock/" rel="noreferrer" target="_blank">Reddit: Superpowers or Matt Pocock discussion ↗</a></li>
-              <li><a href={basePath + "/guides/obra-superpowers-skillspector-review"}>Resource Library: Obra Superpowers review</a></li>
+              <li><GuideResourceLink href={repositoryUrl}>Matt Pocock’s skills repository</GuideResourceLink></li>
+              <li><GuideResourceLink href={repositoryUrl + "/commit/" + commit}>{`Exact reviewed commit: ${commit}`}</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://docs.rhi.zone/skills-mattpocock.html">Rhi: running skill-by-skill review</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://kaizencode.art/notepad/matt-pocock-skills-guide/">Kaizen Craft: critical guide</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/mattpocock/skills/issues/247">Issue #247: grilling severity</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/mattpocock/skills/issues/853">Issue #853: long interviews and context compaction</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/mattpocock/skills/issues/797">Issue #797: hypothesis-led confirmation request</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://www.reddit.com/r/vibecoding/comments/1uxvmle/superpowers_or_mattpocock/">Reddit: Superpowers or Matt Pocock discussion</GuideResourceLink></li>
+              <li><GuideResourceLink href={basePath + "/guides/obra-superpowers-skillspector-review"}>Resource Library: Obra Superpowers review</GuideResourceLink></li>
             </ul>
             <p className="guide-source-note">
               SkillSpector is a preliminary static precaution. It does not prove

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GuideReadingLayout } from "../guide-reading-layout";
+import { GuideResourceLink } from "../guide-resource-link";
 import { GuideTableViewport } from "../guide-table-viewport";
 import { SiteHeader } from "../../site-header";
 
@@ -158,7 +159,7 @@ export default function ReviewingUiUxProMaxWithSkillspector() {
             <div>
               <h2>Use OWASP patterns as triage—not clearance</h2>
               <p>
-                The <a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</a>{" "}
+                The <GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink>{" "}
                 explains why natural-language instructions and data need clear
                 separation. We used its example direct-injection expressions
                 as a deterministic first check:
@@ -288,29 +289,19 @@ export default function ReviewingUiUxProMaxWithSkillspector() {
             <h2 id="guide-sources-heading">Sources</h2>
             <ul>
               <li>
-                <a href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">
-                  OWASP: LLM Prompt Injection Prevention Cheat Sheet
-                </a>
+                <GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP: LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink>
               </li>
               <li>
-                <a href="https://docs.nvidia.com/skills/scanning-agent-skills">
-                  NVIDIA: Scan Agent Skills Before Installation
-                </a>
+                <GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink>
               </li>
               <li>
-                <a href="https://github.com/NVIDIA/SkillSpector">
-                  NVIDIA SkillSpector repository and scanner documentation
-                </a>
+                <GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector repository and scanner documentation</GuideResourceLink>
               </li>
               <li>
-                <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">
-                  UI/UX Pro Max source repository
-                </a>
+                <GuideResourceLink href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">UI/UX Pro Max source repository</GuideResourceLink>
               </li>
               <li>
-                <a href="https://openrouter.ai/docs/guides/routing/provider-selection">
-                  OpenRouter: provider routing
-                </a>
+                <GuideResourceLink href="https://openrouter.ai/docs/guides/routing/provider-selection">OpenRouter: provider routing</GuideResourceLink>
               </li>
             </ul>
           </section>

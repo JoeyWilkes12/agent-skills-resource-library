@@ -292,7 +292,7 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `CodeBlock`: language, copy action, and optional expected output.
 - `Callout`: `note`, `evidence`, `caution`, or `stop`. Do not create decorative callouts.
 - `EvidenceBlock`: claim, source class, method, finding, limitation, and linked artifact.
-- `GuideResourceLink`: a descriptive external evidence link with persistent mint color, underline, and a trailing northeast arrow.
+- `GuideResourceLink`: a descriptive guide reference link with persistent mint color, underline, and a trailing northeast arrow.
 - `ComparisonTable`: direct comparison with a visible row/column header structure.
 - `GuideTableViewport`: native horizontal scrolling plus a synchronized visual header that remains fixed only while the table crosses the viewport.
 - `Figure`: image, useful alt text, caption, and source when external.
@@ -306,12 +306,13 @@ Each block has one job. A block name describes its meaning, not its appearance.
 - `NextActions`: two to four actions grounded in the completed outcome.
 - `SourceList`: canonical links, access dates when appropriate, and provenance labels.
 
-### External evidence links
+### Guide reference links
 
-- Use `GuideResourceLink` for external evidence cited inside reading copy. Navigation, hero actions, and button-like calls to action keep their own treatments.
+- Use `GuideResourceLink` for linked references inside reading copy, source lists, evidence tables, and checklists, whether the destination is internal or external. Navigation, hero actions, download buttons, and button-like calls to action keep their own treatments.
 - Link text must be present, descriptive, and normally two to five words. Do not use an empty anchor, a raw URL, or generic labels such as `here` when a source-specific phrase is available.
 - Keep the deep-mint action color and 1.5px underline visible at rest. Color is not the only affordance.
-- Follow the text with the shared northeast-arrow SVG. The icon is decorative and `aria-hidden`; the descriptive link text remains the accessible name.
+- Follow the text with the shared northeast-arrow SVG. It denotes a linked reference, not new-window behavior. The icon is decorative and `aria-hidden`; the descriptive link text remains the accessible name.
+- Open internal references in the same tab. Open external HTTP(S) references in a new tab with `rel="noreferrer"`.
 - On hover, deepen the link color and move the arrow slightly up and right. On keyboard focus, use the coral focus ring. Dark mode remaps the evidence-link tokens to a higher-contrast mint.
 
 ## Evidence tables
