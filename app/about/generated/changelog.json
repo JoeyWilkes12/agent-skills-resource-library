@@ -1,6 +1,38 @@
 {
-  "generatedFrom": "1f9bfeaae4c9fd2a04b537cb5d7a3136517b878d",
+  "generatedFrom": "c744fb83bd354618a673282833340d1c7551673b",
   "releases": [
+    {
+      "date": "2026-09-15",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“skills.sh Security Check: collect three audit reports” resource.",
+              "href": "/guides/vercel-skills-sh-security-check",
+              "resourceId": "vercel-skills-sh-security-check",
+              "commit": "c744fb83bd354618a673282833340d1c7551673b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "sections": [
+        {
+          "type": "Removed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Removed google drive link.",
+              "commit": "d14a8330b6406e809341587c84437071f3c33887"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-08",
       "sections": [
