@@ -206,7 +206,7 @@ test("server-renders the Guides index and its published entries", async () => {
     /Search titles, summaries, and selected headings and topics from every/,
   );
   assert.match(html, /Article body text is not indexed/);
-  assert.match(html, /20 guides/);
+  assert.match(html, /21 guides/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
   assert.match(html, /More guides from the library/);
@@ -220,6 +220,7 @@ test("server-renders the Guides index and its published entries", async () => {
   assert.match(html, /href="\/guides\/so-you-found-a-skill-checklist"/);
   assert.match(html, /href="\/guides\/skillspector-enterprise-training"/);
   assert.match(html, /href="\/guides\/skillspector-skill-demo"/);
+  assert.match(html, /href="\/guides\/skillspector-skill-demo-v2"/);
   assert.match(html, /href="\/guides\/vercel-skills-sh-security-check"/);
   assert.match(html, /href="\/guides\/microsoft-skillopt-third-party-snapshot"/);
   assert.match(html, /href="\/guides\/matt-pocock-skills-skillspector-review"/);
@@ -238,6 +239,22 @@ test("server-renders the Guides index and its published entries", async () => {
     listedGuideHrefs.at(-1),
     "/guides/anthropics-complete-guide-for-building-skills-for-claude",
   );
+});
+
+test("server-renders the downloadable SkillSpector Review v2 guide", async () => {
+  const response = await renderPath("/guides/skillspector-skill-demo-v2");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /SkillSpector Review v2: a layered pre-install gate/);
+  assert.match(html, /The skill now records a chain of evidence/);
+  assert.match(html, /OWASP triage widens the prompt-injection lens/);
+  assert.match(html, /Independent semantic audit/);
+  assert.match(html, /Semantic adjudication/);
+  assert.match(html, /Targeted second opinion/);
+  assert.match(html, /href="\/examples\/skillspector-review-v2\/SKILL\.md"/);
+  assert.match(html, /href="\/downloads\/skillspector-review-v2\.zip"/);
+  assert.match(html, /download="skillspector-review-v2\.zip"/);
 });
 
 test("server-renders the downloadable skills.sh security check guide", async () => {

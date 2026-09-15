@@ -266,6 +266,27 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "SkillSpector Review v2",
+      "Layered pre-install security gate",
+      "skills.sh registry evidence",
+      "Gen Agent Trust Hub Socket and Snyk",
+      "Exact artifact and immutable commit",
+      "Static analysis before semantic review",
+      "OWASP prompt-injection triage",
+      "Local Codex semantic review",
+      "OpenRouter authorization boundary",
+      "Independent semantic audit",
+      "Semantic adjudication",
+      "Targeted second opinion",
+      "Security evidence coverage",
+    ],
+    href: "/guides/skillspector-skill-demo-v2",
+    title: "SkillSpector Review v2: a layered pre-install gate",
+    summary:
+      "A walkthrough of the current global skill: registry evidence, exact-artifact static analysis, OWASP triage, and authorization-aware semantic review.",
+  },
+  {
+    contentTopics: [
       "skills.sh security audits",
       "Gen Agent Trust Hub",
       "Socket",

@@ -36,8 +36,8 @@ export default function SkillSpectorSkillDemo() {
             <a href={`${basePath}/examples/skillspector-review/SKILL.md`}>
               Read the complete SKILL.md
             </a>
-            <a href={`${basePath}/guides/skillspector-enterprise-training`}>
-              Open the training guide
+            <a href={`${basePath}/guides/skillspector-skill-demo-v2`}>
+              Open the v2 workflow
             </a>
           </div>
           <p className="guide-meta">Demonstration artifact · Updated August 11, 2026</p>
@@ -231,6 +231,7 @@ interface:
             <li><a href="https://agentskills.io/specification">Agent Skills specification</a></li>
             <li><a href="https://developers.openai.com/plugins/build/skills">OpenAI: Build skills for ChatGPT and Codex</a></li>
             <li><a href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</a></li>
+            <li><a href={`${basePath}/guides/skillspector-skill-demo-v2`}>SkillSpector Review v2: layered pre-install gate</a></li>
             <li><a href={`${basePath}/examples/skillspector-review/SKILL.md`}>Complete demonstration SKILL.md</a></li>
           </ul>
         </section>
