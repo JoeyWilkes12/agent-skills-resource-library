@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "c744fb83bd354618a673282833340d1c7551673b",
+  "generatedFrom": "9c30ab71a0c69f3be5a71df86dd5d99ec906d246",
   "releases": [
     {
       "date": "2026-09-15",
@@ -13,6 +13,13 @@
               "href": "/guides/vercel-skills-sh-security-check",
               "resourceId": "vercel-skills-sh-security-check",
               "commit": "c744fb83bd354618a673282833340d1c7551673b"
+            },
+            {
+              "kind": "resource",
+              "text": "“SkillSpector Review v2: a layered pre-install gate” resource.",
+              "href": "/guides/skillspector-skill-demo-v2",
+              "resourceId": "skillspector-skill-demo-v2",
+              "commit": "9c30ab71a0c69f3be5a71df86dd5d99ec906d246"
             }
           ]
         }
