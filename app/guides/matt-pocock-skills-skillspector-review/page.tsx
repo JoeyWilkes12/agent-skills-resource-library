@@ -6,8 +6,10 @@ import { SiteHeader } from "../../site-header";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const path = basePath + "/guides/matt-pocock-skills-skillspector-review";
-const commit = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
+const commit = "959a8e9f1edc3adbe2f7e3054bb6fbefa6696260";
+const semanticCommit = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
 const repositoryUrl = "https://github.com/mattpocock/skills";
+const evidenceUrl = basePath + "/evidence/matt-pocock-skills-review-2026-09-15.json";
 
 type Posture = "Start here" | "Use with controls" | "Harden first" | "Beta: evaluate only";
 
@@ -26,10 +28,12 @@ const contents = [
   { id: "bottom-line", label: "Bottom line" },
   { id: "library-map", label: "The 37-skill map" },
   { id: "security-review", label: "Security review" },
+  { id: "third-party-audits", label: "Registry cross-check" },
   { id: "engineering-skills", label: "18 engineering skills" },
   { id: "other-skills", label: "Productivity, misc, and beta" },
   { id: "community-feedback", label: "What reviewers report" },
   { id: "superpowers-comparison", label: "Compared with Superpowers" },
+  { id: "suppression-policy", label: "Suppression policy" },
   { id: "adoption-guide", label: "How to adopt selectively" },
   { id: "sources", label: "Sources" },
 ];
@@ -68,12 +72,12 @@ const engineeringReviews: SkillReview[] = [
   {
     category: "engineering",
     name: "diagnosing-bugs",
-    score: 27,
-    severity: "MEDIUM",
+    score: 0,
+    severity: "LOW",
     posture: "Start here",
     purpose: "Builds a deterministic red feedback loop, minimizes the failure, tests falsifiable hypotheses, instruments one variable, fixes, and regression-tests.",
     strength: "This is the collection’s best operational discipline: reproduce before theorizing, preserve a regression at the right seam, then remove throwaway instrumentation.",
-    weakness: "Curl, trace replay, bisection, fuzzing, stress, and temporary production instrumentation need environment, rate, and authorization controls. Its scanner finding about “show instruction” is a contextual false positive, but captured logs still need redaction.",
+    weakness: "Curl, trace replay, bisection, fuzzing, stress, and temporary production instrumentation need environment, rate, and authorization controls. Its OWASP secret-request lead is a contextual false positive at the identical file hash, but captured logs still need redaction.",
   },
   {
     category: "engineering",
@@ -148,8 +152,8 @@ const engineeringReviews: SkillReview[] = [
   {
     category: "engineering",
     name: "setup-matt-pocock-skills",
-    score: 32,
-    severity: "MEDIUM",
+    score: 7,
+    severity: "LOW",
     posture: "Use with controls",
     purpose: "Configures issue-tracker conventions, triage labels, and domain-document layout for the rest of the engineering collection.",
     strength: "It explores first, supports GitHub, GitLab, local Markdown, and custom trackers, and tries to preview persistent files before writing.",
@@ -208,7 +212,7 @@ const engineeringReviews: SkillReview[] = [
   {
     category: "engineering",
     name: "wizard",
-    score: 19,
+    score: 0,
     severity: "LOW",
     posture: "Harden first",
     purpose: "Generates an interactive Bash wizard for human-only setup, credential, dashboard, migration, and cutover steps.",
@@ -294,8 +298,8 @@ const miscReviews: SkillReview[] = [
   {
     category: "misc",
     name: "git-guardrails-claude-code",
-    score: 62,
-    severity: "HIGH",
+    score: 50,
+    severity: "MEDIUM",
     posture: "Harden first",
     purpose: "Installs a Claude Code PreToolUse hook intended to block destructive Git commands.",
     strength: "The defensive goal and project-versus-global scope question are right.",
@@ -377,12 +381,12 @@ const inProgressReviews: SkillReview[] = [
   {
     category: "in-progress",
     name: "setup-ts-deep-modules",
-    score: 37,
-    severity: "MEDIUM",
+    score: 0,
+    severity: "LOW",
     posture: "Beta: evaluate only",
     purpose: "Installs dependency-cruiser and enforces flat TypeScript packages whose subfolders are private behind root entry points.",
     strength: "The pass-fail-pass proof is excellent, the supplied rules are readable, and existing configuration is meant to be merged rather than replaced.",
-    weakness: "The layout heuristics are opinionated, the dependency is unpinned, verification temporarily breaks a test file, and many project files change. The failed 33.3% static scan was a parser/reference limit; manual review found a declarative config, not executable misbehavior.",
+    weakness: "The layout heuristics are opinionated, the dependency is unpinned, verification temporarily breaks a test file, and many project files change. The fresh entrypoint scan is partial because its companion configuration was outside the exact-file scope; the older pinned support-file review found a declarative config, not executable misbehavior.",
   },
   {
     category: "in-progress",
@@ -472,7 +476,7 @@ function SkillReviewList({ reviews }: { reviews: SkillReview[] }) {
           <p><strong>Strength:</strong> {review.strength}</p>
           <p><strong>Weakness / risk:</strong> {review.weakness}</p>
           <p className="guide-source-note">
-            SkillSpector: {review.score} / {review.severity}. <GuideResourceLink href={sourceUrl(review)}>Open the pinned skill</GuideResourceLink>
+            SkillSpector 2.11.2 at <code>{commit.slice(0, 12)}</code>: {review.score} / {review.severity}. <GuideResourceLink href={sourceUrl(review)}>Open the pinned skill</GuideResourceLink>
           </p>
         </details>
       ))}
@@ -502,14 +506,15 @@ export default function MattPocockSkillsSkillSpectorReview() {
                 Open Matt Pocock’s skills repository <span aria-hidden="true">↗</span>
               </a>
               <a href={repositoryUrl + "/commit/" + commit} rel="noreferrer" target="_blank">
-                Open the reviewed commit <span aria-hidden="true">↗</span>
+                Open the current scan pin <span aria-hidden="true">↗</span>
               </a>
+              <a href={evidenceUrl}>Download the evidence index</a>
               <a href={basePath + "/guides/obra-superpowers-skillspector-review"}>
                 Compare with Obra Superpowers
               </a>
             </div>
             <p className="guide-meta">
-              Reviewed September 1, 2026 · SkillSpector 2.11.0 · static scan plus local semantic review · commit {commit.slice(0, 12)}
+              Verified September 15, 2026 · SkillSpector 2.11.2 · isolated static scan at {commit.slice(0, 12)} · semantic baseline at {semanticCommit.slice(0, 12)}
             </p>
           </header>
 
@@ -567,11 +572,12 @@ export default function MattPocockSkillsSkillSpectorReview() {
             <div>
               <h2>One repository, three confidence levels</h2>
               <p>
-                The pinned tree contains 37 skill directories. The Claude Code
-                plugin manifest includes the 18 engineering and seven
-                productivity skills. Four misc utilities sit outside that
-                manifest, and eight skills are explicitly labeled in progress
-                and excluded from the plugin.
+                All 37 previously catalogued <code>SKILL.md</code> entrypoints
+                still resolve at the current pin. Thirty-six are byte-for-byte
+                identical to the deeper August 24 review; <code>retro</code> is
+                the only changed entrypoint. The 25 plugin, four misc, and eight
+                in-progress groupings below come from the fully inventoried
+                <code>{semanticCommit.slice(0, 12)}</code> snapshot.
               </p>
               <div className="scan-evidence" aria-label="Matt Pocock skills map">
                 <div><strong>25</strong><span>plugin skills</span></div>
@@ -587,6 +593,12 @@ export default function MattPocockSkillsSkillSpectorReview() {
                 Bug diagnosis, triage, research, and wayfinding enter from the
                 side when the situation calls for them.
               </p>
+              <p className="guide-source-note">
+                Scope limit: the current whole-repository archive was rejected
+                because it contains a link or special entry. The current count
+                therefore confirms the same 37 known entrypoints, but does not
+                prove that no new skill directory was added elsewhere.
+              </p>
             </div>
           </section>
 
@@ -594,46 +606,85 @@ export default function MattPocockSkillsSkillSpectorReview() {
             <p className="guide-section-number">03</p>
             <div>
               <p className="guide-label">Pre-install screen</p>
-              <h2>The aggregate score was alarming. The individual evidence was more useful.</h2>
+              <h2>The fresh result is useful because its scope is explicit.</h2>
               <p>
-                SkillSpector 2.11.0 scanned the mutable repository URL first,
-                then the exact commit, then every skill directory separately in
-                static-only mode. The repository-wide result was
-                <strong> 100 / CRITICAL / DO_NOT_INSTALL</strong> with 94.5%
-                coverage marked partial. Duplicate documentation, the root
-                dependency lockfile, unresolved references, and context-blind
-                prose matches drove that score.
+                The latest Docker-isolated review resolved the default branch to
+                <code> {commit}</code>, then acquired each known entrypoint at
+                that exact commit through a restricted broker. SkillSpector
+                2.11.2 ran with no network, no host mount, no Docker socket,
+                dropped capabilities, a read-only root filesystem, and no target
+                code execution. No baseline or suppression was applied.
               </p>
               <div className="scan-evidence" aria-label="Per-skill SkillSpector results">
                 <div><strong>37</strong><span>separate scans</span></div>
-                <p>One static report for every directory containing a SKILL.md at commit <code>{commit.slice(0, 12)}</code>.</p>
-                <div><strong>16</strong><span>static findings</span></div>
-                <p>33 skills scored LOW, three MEDIUM, one HIGH, and none CRITICAL when scoped individually.</p>
-                <div><strong>14</strong><span>complete scans</span></div>
-                <p>22 were partial and <code>setup-ts-deep-modules</code> failed at 33.3% because a bounded parser could not fully inspect its referenced CJS config.</p>
+                <p>Every previously catalogued <code>SKILL.md</code> was fetched and scanned at <code>{commit.slice(0, 12)}</code>.</p>
+                <div><strong>11</strong><span>static findings</span></div>
+                <p>Thirty-six entrypoints scored LOW; <code>git-guardrails-claude-code</code> scored 50 / MEDIUM. None scored HIGH or CRITICAL.</p>
+                <div><strong>16</strong><span>complete scans</span></div>
+                <p>Twenty-one were partial because a single-file scan cannot resolve every companion file. Partial means incomplete context, not unsafe or safe.</p>
               </div>
               <ul className="guide-checklist">
-                <li><strong>Clear false positives:</strong> “clear context” was labeled memory poisoning; “can always answer” was labeled anti-refusal; “show instruction” in a human prompt helper was labeled system-prompt leakage; a Git deny-list was read as command abuse.</li>
-                <li><strong>Real action surfaces:</strong> external PR execution in <code>triage</code>, secret and ENV_FILE handling in <code>wizard</code>, fail-open lexical matching in <code>git-guardrails-claude-code</code>, and unpinned package-manager commands in setup utilities.</li>
-                <li><strong>Main OWASP gap:</strong> issues, PRs, repository docs, web pages, traces, research output, specs, and handoffs are frequently consumed without explicit instruction/data separation or output screening.</li>
-                <li><strong>Direct pattern triage:</strong> OWASP’s narrow ignore-previous-instructions, developer-mode, system-override, prompt-leakage, API-key, and numbered-instruction expressions returned no matches. A fuzzy six-word pass produced 29 matches across 21 files; manual review found ordinary engineering prose, not direct injection.</li>
+                <li><strong>Stable entrypoint evidence:</strong> 36 of 37 current files have the same SHA-256 as the prior pin. Their earlier local semantic review still describes the exact bytes scanned now.</li>
+                <li><strong>Changed file:</strong> <code>retro</code> changed and received a fresh static scan only. Its older semantic note is retained as historical context, not a fresh independent audit.</li>
+                <li><strong>Static noise remains:</strong> ordinary phrases in <code>grilling</code>, <code>to-questionnaire</code>, and <code>to-tickets</code> still produce low-severity pattern findings. The Git deny-list also produces contextual matches, while its 50 / MEDIUM result remains visible.</li>
+                <li><strong>One OWASP lead:</strong> <code>diagnosing-bugs</code> matched a secret-request expression. Manual review at the identical file hash found a redaction-oriented human prompt helper, not a request to expose a secret.</li>
               </ul>
               <div className="guide-callout">
-                <strong>Review coverage</strong>
+                <strong>Two pins, two scopes</strong>
                 <p>
-                  SkillSpector’s LLM layer was not used: <code>llm_requested</code>,
-                  <code>llm_available</code>, and <code>meta_analysis_applied</code>
-                  were false. Three GPT-5.6 Luna agents and the primary Codex
-                  agent instead read all 37 raw skills and relevant support
-                  files locally. No repository script was executed and no raw
-                  artifact was sent to an external semantic reviewer.
+                  The fresh static result belongs to <code>{commit}</code>. The
+                  complete support-file and local semantic review belongs to
+                  <code>{semanticCommit}</code>. Thirty-six entrypoint hashes
+                  bridge those reviews; support-file conclusions do not carry
+                  forward unless the current support artifact was independently
+                  confirmed. SkillSpector’s integrated LLM layer was not used,
+                  no repository script ran, and no raw artifact was sent to an
+                  external semantic reviewer.
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="guide-section" id="engineering-skills">
+          <section className="guide-section" id="third-party-audits">
             <p className="guide-section-number">04</p>
+            <div>
+              <p className="guide-label">Registry evidence · September 15, 2026</p>
+              <h2>Third-party audits mostly support the review, but they do not share its pin.</h2>
+              <p>
+                The skills.sh cross-check loaded all 37 listings and all 111
+                detailed audit pages from Gen Agent Trust Hub, Socket, and Snyk.
+                A conservative roll-up produced 29 passes, seven warnings, and
+                one failure. Trust Hub reported 34 pass and three warn; Socket
+                reported 36 pass and one warn; Snyk reported 31 pass, five warn,
+                and one fail. These are registry verdicts for provider-selected
+                packages; none proved exact correspondence to either reviewed
+                Git commit or raw <code>SKILL.md</code> hash.
+              </p>
+              <div className="scan-evidence" aria-label="skills.sh registry cross-check">
+                <div><strong>12</strong><span>support</span></div>
+                <p>Provider detail reinforces a local concern or false-positive adjudication.</p>
+                <div><strong>3</strong><span>contradict</span></div>
+                <p>All providers passed while the pinned local review found a narrower behavior they did not test.</p>
+                <div><strong>22</strong><span>not applicable</span></div>
+                <p>The registry verdict addresses a different question or provides too little detail to compare.</p>
+              </div>
+              <ul className="guide-checklist">
+                <li><strong>Strong support:</strong> <GuideResourceLink href="https://skills.sh/mattpocock/skills/triage">triage</GuideResourceLink> is warned for checking out and running external pull-request code plus indirect prompt injection; this directly supports the local remote-code-execution concern.</li>
+                <li><strong>Strong support:</strong> <GuideResourceLink href="https://skills.sh/mattpocock/skills/code-review">code-review</GuideResourceLink> receives Trust Hub warnings and the only Snyk failure, covering untrusted diffs/specs, command input, and verbatim secret reproduction.</li>
+                <li><strong>Additional support:</strong> the providers reinforce runtime-CDN concerns in <code>improve-codebase-architecture</code>, outsider-content risk in <code>resolving-merge-conflicts</code>, tracker ingestion in <code>to-tickets</code> and <code>wayfinder</code>, and command/prompt injection in <code>claude-handoff</code>.</li>
+                <li><strong>Meaningful disagreement:</strong> all three providers pass <GuideResourceLink href="https://skills.sh/mattpocock/skills/git-guardrails-claude-code">git-guardrails-claude-code</GuideResourceLink>, <code>setup-pre-commit</code>, and <code>wizard</code>. The local review tests narrower properties—fail-open command matching, package lifecycle and resolution controls, and secret/path serialization—that the registry reports do not discuss.</li>
+              </ul>
+              <p className="guide-source-note">
+                Freshness also differs: 21 registry audits predate the deeper
+                review pin and 16 postdate it. “Supports” and “contradicts” mean
+                comparison of stated findings, not proof that both scanners saw
+                the same artifact.
+              </p>
+            </div>
+          </section>
+
+          <section className="guide-section" id="engineering-skills">
+            <p className="guide-section-number">05</p>
             <div>
               <h2>All 18 engineering skills, individually reviewed</h2>
               <p>
@@ -646,7 +697,7 @@ export default function MattPocockSkillsSkillSpectorReview() {
           </section>
 
           <section className="guide-section" id="other-skills">
-            <p className="guide-section-number">05</p>
+            <p className="guide-section-number">06</p>
             <div>
               <h2>The other 19: productivity, misc, and public experiments</h2>
               <p className="guide-label">Seven productivity skills</p>
@@ -661,14 +712,15 @@ export default function MattPocockSkillsSkillSpectorReview() {
               <SkillReviewList reviews={inProgressReviews} />
               <p className="guide-source-note">
                 Count check: {allReviews.length} individual reviews. Scores are
-                from per-directory SkillSpector 2.11.0 static scans; local
-                semantic judgment determines the posture.
+                from exact-file SkillSpector 2.11.2 static scans at
+                <code> {commit.slice(0, 12)}</code>; local semantic judgment at
+                the separately named baseline pin determines the posture.
               </p>
             </div>
           </section>
 
           <section className="guide-section" id="community-feedback">
-            <p className="guide-section-number">06</p>
+            <p className="guide-section-number">07</p>
             <div>
               <p className="guide-label">External signal, carefully weighted</p>
               <h2>Reviewers praise the primitives and complain about the same edge: too much grilling.</h2>
@@ -695,7 +747,7 @@ export default function MattPocockSkillsSkillSpectorReview() {
           </section>
 
           <section className="guide-section" id="superpowers-comparison">
-            <p className="guide-section-number">07</p>
+            <p className="guide-section-number">08</p>
             <div>
               <h2>Matt Pocock versus Obra Superpowers</h2>
               <p>
@@ -738,13 +790,46 @@ export default function MattPocockSkillsSkillSpectorReview() {
                 The Resource Library’s Obra review used SkillSpector 2.10.0 at a
                 different commit and scope. Its 14 reports and 46 findings are
                 useful context, not a numerical risk benchmark against this
-                2.11.0 review.
+                2.11.2 review.
               </p>
             </div>
           </section>
 
+          <section className="guide-section" id="suppression-policy">
+            <p className="guide-section-number">09</p>
+            <div>
+              <p className="guide-label">Tertiary recommendation</p>
+              <h2>Use suppression to preserve signal, never to manufacture agreement.</h2>
+              <p>
+                SkillSpector can generate a baseline, remove matching findings
+                before scoring, and retain suppressed items in machine-readable
+                output. Its <GuideResourceLink href="https://github.com/NVIDIA/SkillSpector/blob/main/docs/SUPPRESSION.md">suppression guide</GuideResourceLink> supports exact v2 fingerprints and broader rule, path, and message globs. This review intentionally applied none, so the figures above remain the raw scanner result.
+              </p>
+              <ol className="skill-workflow">
+                <li><strong>Keep raw</strong><span>Publish the unsuppressed report first. A suppressed score is a triage view, not the canonical security result.</span></li>
+                <li><strong>Own the baseline</strong><span>Store a reviewer-controlled baseline outside the third-party artifact. Do not trust or auto-apply a baseline shipped by the skill author.</span></li>
+                <li><strong>Suppress narrowly</strong><span>Prefer an exact v2 fingerprint for one adjudicated false positive. Avoid broad rule-family globs, because source drift can turn a benign phrase into a materially different finding.</span></li>
+                <li><strong>Record why</strong><span>Each entry should name the pin, scanner version, finding, rationale, reviewer, review date, and expiry or re-review trigger.</span></li>
+                <li><strong>Show the record</strong><span>Run the triaged view with <code>--show-suppressed</code>; suppressed findings remain excluded from the score but visible to reviewers.</span></li>
+                <li><strong>Reconcile separately</strong><span>Use registry audits to challenge the adjudication. Do not suppress a local finding merely because Socket, Snyk, or Trust Hub passed it, and do not add a suppression to force matching totals.</span></li>
+              </ol>
+              <div className="guide-callout">
+                <strong>Good candidates here</strong>
+                <p>
+                  The ordinary-language hits in <code>grilling</code>,
+                  <code>to-questionnaire</code>, and <code>to-tickets</code>, plus
+                  the redaction-oriented phrase in <code>diagnosing-bugs</code>,
+                  are candidates for exact, documented fingerprints after a
+                  fresh manual check. The <code>git-guardrails-claude-code</code>
+                  deny-list matches should remain visible until the companion
+                  script’s fail-open behavior is revalidated at the same pin.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section className="guide-section guide-conclusion" id="adoption-guide">
-            <p className="guide-section-number">08</p>
+            <p className="guide-section-number">10</p>
             <div>
               <h2>Adopt one behavior at a time.</h2>
               <ol className="skill-workflow">
@@ -769,8 +854,12 @@ export default function MattPocockSkillsSkillSpectorReview() {
             <h2 id="guide-sources-heading">Sources</h2>
             <ul>
               <li><GuideResourceLink href={repositoryUrl}>Matt Pocock’s skills repository</GuideResourceLink></li>
-              <li><GuideResourceLink href={repositoryUrl + "/commit/" + commit}>{`Exact reviewed commit: ${commit}`}</GuideResourceLink></li>
+              <li><GuideResourceLink href={repositoryUrl + "/commit/" + commit}>{`Exact static-scan pin: ${commit}`}</GuideResourceLink></li>
+              <li><GuideResourceLink href={repositoryUrl + "/commit/" + semanticCommit}>{`Exact support-file and semantic-review pin: ${semanticCommit}`}</GuideResourceLink></li>
+              <li><GuideResourceLink href={evidenceUrl}>Machine-readable evidence index</GuideResourceLink></li>
               <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://github.com/NVIDIA/SkillSpector/blob/main/docs/SUPPRESSION.md">SkillSpector suppression documentation</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://skills.sh/mattpocock/skills">skills.sh Matt Pocock collection</GuideResourceLink></li>
               <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink></li>
               <li><GuideResourceLink href="https://docs.rhi.zone/skills-mattpocock.html">Rhi: running skill-by-skill review</GuideResourceLink></li>
               <li><GuideResourceLink href="https://kaizencode.art/notepad/matt-pocock-skills-guide/">Kaizen Craft: critical guide</GuideResourceLink></li>

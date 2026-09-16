@@ -1,0 +1,1038 @@
+{
+  "schema_version": 1,
+  "published_at": "2026-09-15",
+  "repository": "https://github.com/mattpocock/skills",
+  "scope": {
+    "static_scan_commit": "959a8e9f1edc3adbe2f7e3054bb6fbefa6696260",
+    "support_and_semantic_review_commit": "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76",
+    "known_entrypoints_scanned": 37,
+    "whole_repository_current_scan": "incomplete: archive contained a link or special entry",
+    "discovery_limit": "The current scan confirms the 37 previously catalogued entrypoints; it does not prove no new directory exists."
+  },
+  "tooling": {
+    "review_skill_version": "0.3.0",
+    "review_skill_commit": "2dc9f4408895f542de817b4b15415f2b6396a48a",
+    "skillspector_version": "2.11.2",
+    "skillspector_commit": "9749372ec9a47f77e9c51cf1bf0500487858e96d",
+    "isolation": "Docker offline worker; restricted acquisition broker; no target execution",
+    "baseline_applied": false
+  },
+  "entrypoint_summary": {
+    "severity": {
+      "LOW": 36,
+      "MEDIUM": 1
+    },
+    "status": {
+      "partial": 21,
+      "complete": 16
+    },
+    "issues": 11,
+    "leads": 1,
+    "same_hash": 36,
+    "changed_hash": 1,
+    "suppressed": 0,
+    "bytes": 159119
+  },
+  "registry_summary": {
+    "retrieved_at_range": {
+      "first": "2026-09-15T21:18:59.019509+00:00",
+      "last": "2026-09-15T21:19:04.910678+00:00"
+    },
+    "provider_counts": {
+      "Gen Agent Trust Hub": {
+        "pass": 34,
+        "warn": 3
+      },
+      "Socket": {
+        "pass": 36,
+        "warn": 1
+      },
+      "Snyk": {
+        "pass": 31,
+        "fail": 1,
+        "warn": 5
+      }
+    },
+    "conservative_skill_counts": {
+      "pass": 29,
+      "fail": 1,
+      "warn": 7
+    },
+    "relation_counts": {
+      "not applicable": 22,
+      "supports": 12,
+      "contradicts": 3
+    },
+    "identity_and_freshness": {
+      "exact_listings_resolved": 37,
+      "provider_detail_pages_loaded": 111,
+      "skills_with_audits_predating_pinned_commit": 21,
+      "skills_with_audits_postdating_pinned_commit": 16,
+      "exact_snapshot_correspondence_proven": 0
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "ask-matt",
+      "category": "engineering",
+      "sha256": "b25d86fb36b1d294eeead5d7db529f86135f9671f2afcd607579a63bb2213769",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/ask-matt",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not examine the router's transitive reliance on wizard and merge-conflict behavior.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "claude-handoff",
+      "category": "in-progress",
+      "sha256": "6738e8b7c7899ea0038fb7a5c859ca1b90c7b1eb40123dcdbe94c51b5b119f12",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/claude-handoff",
+        "providers": {
+          "Gen Agent Trust Hub": "warn",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Trust Hub flags shell quoting/command injection and prompt injection into the next session, matching and extending our command-line handoff concern.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "code-review",
+      "category": "engineering",
+      "sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/code-review",
+        "providers": {
+          "Gen Agent Trust Hub": "warn",
+          "Socket": "pass",
+          "Snyk": "fail"
+        },
+        "conservative_result": "fail",
+        "relation_to_local_findings": "supports",
+        "rationale": "Trust Hub flags command/prompt injection and Snyk flags verbatim secret reproduction from diffs/specs, matching our instruction-boundary and redaction concern.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "codebase-design",
+      "category": "engineering",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/codebase-design",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not address whether its vocabulary and adapter heuristic become overly rigid.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "diagnosing-bugs",
+      "category": "engineering",
+      "sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 1,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/diagnosing-bugs",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "supports",
+        "rationale": "Trust Hub expressly recognizes the redaction safeguard, supporting our adjudication that the secret/show-instruction matches were contextual; its pass does not clear runtime environment or rate controls.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "domain-modeling",
+      "category": "engineering",
+      "sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/domain-modeling",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess persistent future-agent trust in generated CONTEXT.md and ADRs.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "git-guardrails-claude-code",
+      "category": "misc",
+      "sha256": "69b291d655626a01602b998a1836fcb93c058ede68dfafddfd71e87f17074764",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 50,
+        "severity": "MEDIUM",
+        "coverage": "partial",
+        "finding_count": 3,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/git-guardrails-claude-code",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "contradicts",
+        "rationale": "All providers pass it and Trust Hub describes the deny-list as validating command strings. This conflicts with our exact-script finding that lexical matching fails open on malformed input, aliases, indirection, and equivalent command forms.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "grill-me",
+      "category": "productivity",
+      "sha256": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/grill-me",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess its almost entirely transitive dependency on grilling.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "grill-with-docs",
+      "category": "engineering",
+      "sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/grill-with-docs",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not resolve the wrapper's transitive dependence on child-skill ordering and permissions.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "grilling",
+      "category": "productivity",
+      "sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 8,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 1,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/grilling",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "supports",
+        "rationale": "All providers pass the skill, consistent with our conclusion that the scanner's 'don't ask the user' autonomy match was ordinary fact-finding language; round-budget and subagent-scope concerns remain untested.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "handoff",
+      "category": "productivity",
+      "sha256": "7c62de979fdc7ac32fb5ddb2146156c917f80ee070d30fadc9d40343c4b6ed25",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/handoff",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess temporary-file naming, permissions, collisions, retention, or cleanup.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "implement",
+      "category": "engineering",
+      "sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/implement",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "The pass/no-code verdict does not assess clean-tree checks, branch isolation, staging scope, or commit governance.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "implement-spec",
+      "category": "in-progress",
+      "sha256": "f703b5f41df9c2202e19540d203e0d5fc32613572a838a070136cc22e712b129",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/implement-spec",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "warn",
+          "Snyk": "pass"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Socket warns about broad autonomous development combined with external-document intake and code-writing subagents, matching our beta-only, human-gated posture.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "category": "engineering",
+      "sha256": "d1ac25511a936ff4250a48dbcefda363837d6bb9321b3cba73df99fa37270a75",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/improve-codebase-architecture",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "warn"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Snyk flags runtime CDN dependencies; Trust Hub also identifies missing sanitization and Mermaid securityLevel loose while still assigning PASS. This directly supports our HTML-rendering finding.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "loop-me",
+      "category": "in-progress",
+      "sha256": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 7,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 1,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/loop-me",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess recovery and confirmation for creating, editing, or deleting workflow specs.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "migrate-to-shoehorn",
+      "category": "misc",
+      "sha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/migrate-to-shoehorn",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not establish pinned package resolution or validate fragile grep discovery and fromAny casts.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "prototype",
+      "category": "engineering",
+      "sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/prototype",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess retained authentication, real-data access, or promotion of intentionally incomplete prototype code.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "research",
+      "category": "engineering",
+      "sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/research",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not provide evidence against our remote-content prompt-injection and persistent-artifact controls.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "resolving-merge-conflicts",
+      "category": "engineering",
+      "sha256": "9d8114f8ef0b31f535a265fc05c364bd8cf2e2895a830040e06c22acb11f54b0",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/resolving-merge-conflicts",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "warn"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Snyk flags outsider-authored PR/issue ingestion. This reinforces the skill's unsafe trust surface, while our separate never-abort and stage-everything concerns remain untested.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "retro",
+      "category": "in-progress",
+      "sha256": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
+      "unchanged_from_semantic_pin": false,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/retro",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess consent, scope, or redaction when searching session logs.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "scaffold-exercises",
+      "category": "misc",
+      "sha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/scaffold-exercises",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess plan-derived filesystem paths, unconditional commits, or staging scope.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "category": "engineering",
+      "sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 7,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 1,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/setup-matt-pocock-skills",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess durable AGENTS.md/CLAUDE.md writes or default layout selection.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "setup-pre-commit",
+      "category": "misc",
+      "sha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 12,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 3,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/setup-pre-commit",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "contradicts",
+        "rationale": "All providers pass it and Trust Hub treats npm/npx execution as standard. This conflicts with our supply-chain and lifecycle-hook concern, but no registry detail shows a reviewed lockfile or resolved dependency graph.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "setup-ts-deep-modules",
+      "category": "in-progress",
+      "sha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/setup-ts-deep-modules",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "supports",
+        "rationale": "Registry passes are consistent with our standalone config review finding no executable misbehavior, but they do not clear the unpinned dependency, installer, temporary test breakage, or multi-file mutation.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "tdd",
+      "category": "engineering",
+      "sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/tdd",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess repository-command trust or whether the one-seam heuristic is too rigid.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "teach",
+      "category": "productivity",
+      "sha256": "a32df9dcdfc0c4fdc1c98e1ed3940c5f56b84c1aa90ff60346f32b8b53915b43",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/teach",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess active HTML lessons, private learning records, or external-action boundaries.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "to-questionnaire",
+      "category": "productivity",
+      "sha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 17,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 1,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/to-questionnaire",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "supports",
+        "rationale": "All providers pass it, consistent with our conclusion that 'always answer' was an ordinary-language false positive; destination, collision, and privacy controls remain untested.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "to-spec",
+      "category": "engineering",
+      "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/to-spec",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not address preview/redaction and final approval before tracker publication.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "to-tickets",
+      "category": "engineering",
+      "sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 17,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 1,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/to-tickets",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "warn"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Snyk flags third-party spec/issue ingestion, matching our untrusted-ticket-content concern; it does not address the final publish gate.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "triage",
+      "category": "engineering",
+      "sha256": "623a2ed692bdc77d2090e2a3dea3b627dd722ad3bbaca0be83aada75292c8fc4",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/triage",
+        "providers": {
+          "Gen Agent Trust Hub": "warn",
+          "Socket": "pass",
+          "Snyk": "warn"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Trust Hub independently identifies command execution, contributor-code RCE, and indirect prompt injection; Snyk also flags outsider-authored tracker content. This strongly supports our highest-priority triage finding.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "wait-what",
+      "category": "productivity",
+      "sha256": "e3f44e3ccbc0e7b62f20ba70b295fc9c9f4aa3f96c77168faee1c71bacbf4215",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/wait-what",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess missing or contradictory CONTEXT.md handling.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "wayfinder",
+      "category": "engineering",
+      "sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/wayfinder",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "warn"
+        },
+        "conservative_result": "warn",
+        "relation_to_local_findings": "supports",
+        "rationale": "Snyk flags on-demand ingestion of outsider-authored ticket bodies, matching our untrusted tracker-content concern.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "wizard",
+      "category": "engineering",
+      "sha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/wizard",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "contradicts",
+        "rationale": "All providers pass it and Trust Hub calls hidden input plus .env/GitHub-secret handling safe. That conflicts with our harden-first conclusion, but it does not test arbitrary ENV_FILE paths, dotenv serialization, ambient repository targeting, or newline/key validation.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "writing-beats",
+      "category": "in-progress",
+      "sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/writing-beats",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess provenance, prompt boundaries, or the cost and persistence of its raw-material pile.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "writing-for-agents",
+      "category": "productivity",
+      "sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "partial",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/writing-for-agents",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not validate its behavioral claims or the absence of explicit tool-security guidance.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "writing-fragments",
+      "category": "in-progress",
+      "sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/writing-fragments",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess silent retention, provenance, growth limits, or sensitive conversation material.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    },
+    {
+      "name": "writing-shape",
+      "category": "in-progress",
+      "sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "unchanged_from_semantic_pin": true,
+      "skillspector": {
+        "score": 0,
+        "severity": "LOW",
+        "coverage": "complete",
+        "finding_count": 0,
+        "owasp_lead_count": 0,
+        "suppressed_count": 0
+      },
+      "registry": {
+        "url": "https://skills.sh/mattpocock/skills/writing-shape",
+        "providers": {
+          "Gen Agent Trust Hub": "pass",
+          "Socket": "pass",
+          "Snyk": "pass"
+        },
+        "conservative_result": "pass",
+        "relation_to_local_findings": "not applicable",
+        "rationale": "Registry passes do not assess attribution, provenance, or treating the source pile as untrusted data.",
+        "snapshot_correspondence": "unproven; Socket package hash has different scope and is not a raw SKILL.md digest"
+      }
+    }
+  ]
+}

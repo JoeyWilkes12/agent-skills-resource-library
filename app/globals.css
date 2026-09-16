@@ -3570,6 +3570,25 @@ footer p:first-child {
   color: var(--theme-muted) !important;
 }
 
+:root[data-theme="dark"] .guide-sources,
+:root[data-theme="dark"] .guide-sources h2 {
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .guide-sources .guide-source-note {
+  color: var(--ink-soft) !important;
+}
+
+:root[data-theme="dark"] .guide-sources .guide-resource-link {
+  color: #075a4e;
+  text-decoration-color: rgba(7, 90, 78, 0.6);
+}
+
+:root[data-theme="dark"] .guide-sources .guide-resource-link:hover {
+  color: #043f37;
+  text-decoration-color: currentColor;
+}
+
 :root[data-theme="dark"] .guides-search-field input,
 :root[data-theme="dark"] .guides-search-clear,
 :root[data-theme="dark"] .guides-search-field > span {

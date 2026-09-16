@@ -325,7 +325,9 @@ test("server-renders the Matt Pocock skill-by-skill security review", async () =
   assert.match(html, /All 18 engineering skills, individually reviewed/);
   assert.match(html, /git-guardrails-claude-code/);
   assert.match(html, /Matt Pocock versus Obra Superpowers/);
-  assert.match(html, /static scan plus local semantic review/);
+  assert.match(html, /SkillSpector 2\.11\.2/);
+  assert.match(html, /Registry evidence/);
+  assert.match(html, /Suppression policy/);
   assert.match(html, /href="https:\/\/docs\.rhi\.zone\/skills-mattpocock\.html"/);
   assert.match(html, /href="https:\/\/kaizencode\.art\/notepad\/matt-pocock-skills-guide\/"/);
   assert.match(html, /href="https:\/\/github\.com\/mattpocock\/skills\/issues\/247"/);

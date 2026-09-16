@@ -129,6 +129,15 @@ test("every authored hyperlink is valid and every local destination renders", as
       assert.ok(asset.length > 0, `${href} must contain downloadable content`);
       continue;
     }
+    if (pathname.startsWith("/evidence/") && pathname.endsWith(".json")) {
+      assert.doesNotMatch(pathname, /\.\./, `${href} must stay in public evidence`);
+      const asset = await readFile(
+        new URL(`../public${pathname}`, import.meta.url),
+        "utf8",
+      );
+      assert.doesNotThrow(() => JSON.parse(asset), `${href} must contain valid JSON`);
+      continue;
+    }
     if (pathname.startsWith("/guides/") && pathname.endsWith(".md")) {
       assert.doesNotMatch(pathname, /\.\./, `${href} must stay in public guides`);
       const asset = await readFile(
