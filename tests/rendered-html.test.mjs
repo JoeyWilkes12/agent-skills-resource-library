@@ -364,6 +364,9 @@ test("server-renders the writing authenticity guide and review disclosures", asy
   assert.match(html, /Four skills, reviewed before installation/);
   assert.match(html, /Avoid AI Writing(?:<!-- -->)?\s*:\s*static evidence and human read/);
   assert.match(html, /Humanizer Skill by Aboudjem/);
+  assert.match(html, /skills\.sh registry check: one warning, the rest pass/);
+  assert.match(html, /https:\/\/skills\.sh\/angelarose210\/ghostwriter\/voice-apply\/security\/agent-trust-hub/);
+  assert.match(html, /Conservative result: manual review is still required/);
   assert.match(html, /None installed/);
 });
 

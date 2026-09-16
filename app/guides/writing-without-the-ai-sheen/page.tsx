@@ -11,6 +11,7 @@ const contents = [
   { id: "editing-loop", label: "A practical editing loop" },
   { id: "what-to-watch", label: "Patterns worth watching" },
   { id: "skill-reviews", label: "Four skills, reviewed" },
+  { id: "registry-check", label: "Published registry audits" },
   { id: "safe-trial", label: "Test safely" },
   { id: "editor-prompt", label: "A reusable editor brief" },
   { id: "sources", label: "Sources" },
@@ -20,19 +21,19 @@ const reviews = [
   {
     name: "Avoid AI Writing",
     href: "https://github.com/conorbronsdon/avoid-ai-writing",
-    commit: "b504e2086bd3e544615afba7e5c7f31c8eade1d0",
-    result: "76 · High · Do not install",
-    coverage: "95.7% static coverage",
+    commit: "64b2de64239e09d87267234edb4589ef0b5aff5d",
+    result: "99 · Critical · Do not install",
+    coverage: "58.3% static coverage · partial",
     summary:
       "It offers detect, rewrite, and in-place edit modes, and explicitly says that AI-writing patterns are not authorship proof.",
     findings:
-      "The high score came from a missing tool declaration plus matches in a test, generated comment, and documentation. Those are mostly context-dependent, but edit mode can change a file, so use detect mode first and confirm an exact file scope before any write.",
+      "The score is dominated by incomplete reference analysis and contextual matches: visible HTML boundary comments, the phrase “output rules” in documentation, and Unicode normalization used by the detector. The missing tool declaration is real, and bundled Node.js helpers still need code review. Edit mode can change a file, so use detect mode first and confirm an exact file scope before any write.",
   },
   {
     name: "Humanizer by blader",
     href: "https://github.com/blader/humanizer",
-    commit: "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5",
-    result: "37 · Medium · Caution",
+    commit: "9862685f575c65a8247f90369951df1b3416e3d6",
+    result: "47 · Medium · Caution",
     coverage: "100% static coverage",
     summary:
       "A prose-rewriting skill based on Wikipedia’s Signs of AI writing that asks the agent to retain claims, avoid invented facts, and follow a supplied sample’s voice.",
@@ -42,31 +43,90 @@ const reviews = [
   {
     name: "Humanizer Skill by Aboudjem",
     href: "https://github.com/Aboudjem/humanizer-skill",
-    commit: "9a7f35b7b9ad8c3abd71f10757ec9f91fb8ae165",
-    result: "20 · Low · Safe (targeted skill scan)",
-    coverage: "83.3% static coverage",
+    commit: "a58df065367550b6ce40ff3f648335018d8e0589",
+    result: "45 · Medium · Caution (targeted skill scan)",
+    coverage: "83.3% static coverage · partial",
     summary:
       "The focused scan covered the installable humanizer folder rather than the repository’s documentation and site assets. It declares read, write, edit, search, and user-question tools.",
     findings:
-      "The one alert is “without warning” in a prose example. More importantly, the skill automatically loads a project-level humanizer-context.md file as voice guidance. Treat that file as untrusted unless the user explicitly selected it; it can otherwise become an indirect instruction source.",
+      "The scanner treated “without warning” and “do not judge” in prose examples as anti-refusal language, and misread a documented copy command as snooping and persistence. Those are contextual false positives. More importantly, the skill automatically loads a project-level humanizer-context.md file as voice guidance. Treat that file as untrusted unless the user explicitly selected it; it can otherwise become an indirect instruction source.",
   },
   {
     name: "Ghostwriter",
     href: "https://github.com/angelarose210/ghostwriter",
     commit: "6245570aedebb0a10c6e801c6d4c9ee7fa29484e",
-    result: "32 · Medium · Caution",
+    result: "39 · Medium · Caution",
     coverage: "100% static coverage",
     summary:
       "A four-skill voice-profile collection for analyzing samples, creating or blending profiles, and applying a profile to drafts.",
     findings:
-      "The scanner flagged a “no disclaimers” instruction in the apply skill and profile-loading behavior across project and user directories. The latter broadens what can influence a rewrite, while voice samples may be sensitive. Limit reads to a consented profile and never use a writing-style rule to suppress safety-relevant disclosures.",
+      "The scanner flagged the real “no disclaimers” instruction in the apply skill; two other persistence findings were false positives on the ordinary word “create.” Profile loading across project and user directories still broadens what can influence a rewrite, while voice samples may be sensitive. Limit reads to a consented profile and never use a writing-style rule to suppress safety-relevant disclosures.",
+  },
+];
+
+const registryChecks = [
+  {
+    name: "Avoid AI Writing",
+    href: "https://skills.sh/conorbronsdon/avoid-ai-writing/avoid-ai-writing",
+    auditDate: "Sep 15, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Humanizer by blader",
+    href: "https://skills.sh/blader/humanizer/humanizer",
+    auditDate: "Sep 7, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Humanizer by Aboudjem",
+    href: "https://skills.sh/aboudjem/humanizer-skill/humanizer",
+    auditDate: "Sep 14, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Ghostwriter · voice-apply",
+    href: "https://skills.sh/angelarose210/ghostwriter/voice-apply",
+    auditDate: "Jun 26, 2026",
+    agentTrustHub: "Warn · Medium",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Ghostwriter · voice-analyze",
+    href: "https://skills.sh/angelarose210/ghostwriter/voice-analyze",
+    auditDate: "Jun 26, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Ghostwriter · voice-create",
+    href: "https://skills.sh/angelarose210/ghostwriter/voice-create",
+    auditDate: "Jun 26, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
+  },
+  {
+    name: "Ghostwriter · voice-blend",
+    href: "https://skills.sh/angelarose210/ghostwriter/voice-blend",
+    auditDate: "Jun 26, 2026",
+    agentTrustHub: "Pass · Safe",
+    socket: "Pass",
+    snyk: "Pass · Low",
   },
 ];
 
 export const metadata: Metadata = {
   title: "Writing without the AI sheen | Agent Skills Resource Library",
   description:
-    "An authenticity-first workflow for using AI as an editor, with static SkillSpector evidence for four community writing skills.",
+    "An authenticity-first workflow for using AI as an editor, with static SkillSpector evidence and current published registry audits for community writing skills.",
 };
 
 export default function WritingWithoutTheAiSheenGuide() {
@@ -84,7 +144,7 @@ export default function WritingWithoutTheAiSheenGuide() {
             point of view more clearly—then keep ownership of the final pass.
           </p>
           <p className="guide-meta">
-            Last reviewed August 19, 2026 · Four repositories statically reviewed · None installed
+            Last reviewed September 15, 2026 · Four repositories statically reviewed · None installed
           </p>
         </div>
 
@@ -164,7 +224,7 @@ export default function WritingWithoutTheAiSheenGuide() {
             <div>
               <h2>Four skills, reviewed before installation</h2>
               <p>
-                NVIDIA SkillSpector v2.9.6 ran in static-only mode against the
+                NVIDIA SkillSpector v2.11.2 ran in static-only mode against the
                 exact commits below. We also ran OWASP’s high-signal direct
                 prompt-injection patterns; none of the four targets matched
                 those narrow expressions. That is triage evidence, not a safety
@@ -210,8 +270,127 @@ export default function WritingWithoutTheAiSheenGuide() {
             </div>
           </section>
 
-          <section className="guide-section" id="safe-trial">
+          <section className="guide-section" id="registry-check">
             <p className="guide-section-number">05</p>
+            <div>
+              <h2>skills.sh registry check: one warning, the rest pass</h2>
+              <p>
+                Retrieved September 15, 2026. Exact skills.sh listings exist for
+                Avoid AI Writing and both Humanizer projects. Ghostwriter is
+                published as four separate skills, so each listing was checked
+                instead of inventing a repository-wide verdict. Every row links
+                to the listing; each provider result links to its detailed audit.
+              </p>
+              <GuideTableViewport className="guide-table-wrap">
+                <table className="guide-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Published skill</th>
+                      <th scope="col">Gen Agent Trust Hub</th>
+                      <th scope="col">Socket</th>
+                      <th scope="col">Snyk</th>
+                      <th scope="col">Audited</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {registryChecks.map((check) => (
+                      <tr key={check.href}>
+                        <td><GuideResourceLink href={check.href}>{check.name}</GuideResourceLink></td>
+                        <td>
+                          <GuideResourceLink href={`${check.href}/security/agent-trust-hub`}>
+                            {check.agentTrustHub}
+                          </GuideResourceLink>
+                        </td>
+                        <td>
+                          <GuideResourceLink href={`${check.href}/security/socket`}>
+                            {check.socket}
+                          </GuideResourceLink>
+                        </td>
+                        <td>
+                          <GuideResourceLink href={`${check.href}/security/snyk`}>
+                            {check.snyk}
+                          </GuideResourceLink>
+                        </td>
+                        <td>{check.auditDate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </GuideTableViewport>
+
+              <details className="guide-callout">
+                <summary><strong>Avoid AI Writing: three passes, with declared exposure</strong></summary>
+                <p>
+                  Gen Agent Trust Hub records bundled local Node.js scripts and
+                  indirect-prompt-injection exposure, but also notes explicit
+                  instructions to treat audited prose as data. Socket reports no
+                  flagged malicious, trust, obfuscation, or autonomy behavior;
+                  Snyk reports Low risk with no issues detected.
+                </p>
+                <p>
+                  <strong>Snapshot note:</strong> Socket&apos;s package identifier
+                  ends in <code>64b2de64239e09d87267234edb4589ef0b5aff5d</code>,
+                  which matched the exact commit in the static-review table above.
+                </p>
+              </details>
+
+              <details className="guide-callout">
+                <summary><strong>The two Humanizers: three passes do not erase the input boundary</strong></summary>
+                <p>
+                  Gen Agent Trust Hub marks both Safe while documenting the same
+                  material weakness: each skill processes untrusted prose without
+                  strict boundary markers or sanitization. Aboudjem&apos;s version
+                  also declares Read, Write, Edit, Grep, Glob, and user-question
+                  capabilities, so embedded instructions could influence a
+                  higher-impact agent if the host does not enforce separation.
+                </p>
+                <p>
+                  <strong>Snapshot note:</strong> blader&apos;s Socket identifier
+                  matched the exact reviewed commit <code>9862685f575c65a8247f90369951df1b3416e3d6</code>.
+                  Aboudjem&apos;s identifier is a content hash, not a verified Git
+                  commit mapping; the exact snapshot correspondence remains unproven.
+                </p>
+              </details>
+
+              <details className="guide-callout">
+                <summary><strong>Ghostwriter: provider disagreement changes the decision</strong></summary>
+                <p>
+                  Gen Agent Trust Hub rates <code>voice-apply</code> Warn / Medium
+                  because it suppresses AI-identity and limitation disclaimers
+                  and accepts untrusted text without explicit boundaries. It also
+                  notes an indirect-injection surface in <code>voice-blend</code>,
+                  which loads project and user voice profiles and can run a local
+                  Python helper. Socket passes all four listings, while Snyk rates
+                  each Low with no issues detected.
+                </p>
+                <p>
+                  <strong>Snapshot note:</strong> the four registry entries use
+                  content hashes that could not be mapped to Git commit
+                  <code>6245570aedebb0a10c6e801c6d4c9ee7fa29484e</code>.
+                  Treat the June audits as useful but not exact-artifact evidence.
+                </p>
+              </details>
+
+              <div className="guide-callout">
+                <strong>Conservative result: manual review is still required.</strong>
+                <p>
+                  The Medium warning blocks a blanket approval of Ghostwriter,
+                  and the Humanizer passes still expose indirect prompt-injection
+                  surfaces. These results support the local findings above; they
+                  do not replace them or turn any project into a verified-safe install.
+                </p>
+              </div>
+              <p>
+                This skills.sh registry check reflects third-party audits of
+                mutable registry snapshots. It does not verify publisher identity,
+                the exact local artifact, dependencies resolved at install time,
+                or runtime behavior. A missing or unmapped snapshot remains unknown.
+              </p>
+            </div>
+          </section>
+
+          <section className="guide-section" id="safe-trial">
+            <p className="guide-section-number">06</p>
             <div>
               <h2>Test safely before you trust it</h2>
               <p>
@@ -224,8 +403,8 @@ export default function WritingWithoutTheAiSheenGuide() {
               <div className="guide-callout">
                 <strong>Decision today: no installation.</strong>
                 <p>
-                  The static pass identified areas that need a local semantic
-                  review. Any later approval should pin the exact commit, define
+                  The static, registry, and local semantic reviews all identify
+                  areas that need caution. Any later approval should pin the exact commit, define
                   allowed tools and files, preserve a rollback copy, and require
                   a fresh review for updates.
                 </p>
@@ -234,7 +413,7 @@ export default function WritingWithoutTheAiSheenGuide() {
           </section>
 
           <section className="guide-section guide-conclusion" id="editor-prompt">
-            <p className="guide-section-number">06</p>
+            <p className="guide-section-number">07</p>
             <div>
               <h2>A reusable editor brief</h2>
               <p>
@@ -265,6 +444,8 @@ export default function WritingWithoutTheAiSheenGuide() {
               <li><GuideResourceLink href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia: Signs of AI writing</GuideResourceLink></li>
               <li><GuideResourceLink href="https://docs.nvidia.com/skills/scanning-agent-skills">NVIDIA: Scan Agent Skills Before Installation</GuideResourceLink></li>
               <li><GuideResourceLink href="https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html">OWASP LLM Prompt Injection Prevention Cheat Sheet</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://skills.sh/audits">skills.sh security audits</GuideResourceLink></li>
+              <li><GuideResourceLink href="https://skills.sh/docs/api">skills.sh API reference</GuideResourceLink></li>
             </ul>
           </section>
         </GuideReadingLayout>
