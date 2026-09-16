@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "968d0e935ad9bb81834a09b35eb66a7bb3c9f3bc",
+  "generatedFrom": "d81d480a68029e9261ec2a3c57bb89add8026a38",
   "releases": [
     {
       "date": "2026-09-15",
@@ -30,6 +30,21 @@
               "kind": "project",
               "text": "Standardize guide reference links site-wide.",
               "commit": "968d0e935ad9bb81834a09b35eb66a7bb3c9f3bc"
+            },
+            {
+              "kind": "project",
+              "text": "Update changelog for guide link conformity.",
+              "commit": "9d8c34ab8db378e101ac9bee9c7c357e9b4c3def"
+            }
+          ]
+        },
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Refresh Matt Pocock skills security review.",
+              "commit": "d81d480a68029e9261ec2a3c57bb89add8026a38"
             }
           ]
         }
