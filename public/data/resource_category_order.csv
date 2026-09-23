@@ -28,6 +28,7 @@ jetbrains-rtk-token-benchmark,intent,evaluate,18
 jetbrains-ponytail-code-benchmark,intent,evaluate,19
 anthropic-how-we-use-skills,intent,evaluate,20
 langchain-eval-engineering,intent,evaluate,30
+aws-skill-equipped-agent-evaluation,intent,evaluate,35
 superpowers-evaluation-dialogue,intent,evaluate,40
 claude-code-skills,intent,manage,10
 skillopt-project,intent,manage,20

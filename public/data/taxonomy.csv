@@ -30,6 +30,7 @@ publisher,Agent Plugins,Agent Plugins,Open Agent Plugins standard documentation,
 publisher,Anthropic,Anthropic,Official Anthropic and Claude resources,30,true
 publisher,Replit,Replit,Official Replit documentation,40,true
 publisher,NVIDIA,NVIDIA,Official NVIDIA documentation and open-source resources,50,true
+publisher,AWS,AWS,Official Amazon Web Services guidance and resources for agent skills and evaluation,55,true
 publisher,Cisco AI Defense,Cisco AI Defense,Security tooling and guidance from Cisco AI Defense,60,true
 publisher,Resource Library,Resource Library,Original guides published by this resource library,70,true
 publisher,Microsoft Research,Microsoft Research,Microsoft research projects and source code,80,true
