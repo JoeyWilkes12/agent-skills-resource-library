@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "a70a26fdca195e760fc082d84ea9b6dd15292a6c",
+  "generatedFrom": "3574ddb25e5a8aa269d8db04a93307d6f22661e1",
   "releases": [
     {
       "date": "2026-09-25",
@@ -13,6 +13,23 @@
               "href": "https://github.com/headroomlabs-ai/headroom",
               "resourceId": "headroom-context-compression",
               "commit": "a70a26fdca195e760fc082d84ea9b6dd15292a6c"
+            },
+            {
+              "kind": "resource",
+              "text": "“Headroom: effectiveness and security evidence” resource.",
+              "href": "/guides/headroom-context-compression-evidence",
+              "resourceId": "headroom-context-compression-evidence",
+              "commit": "3574ddb25e5a8aa269d8db04a93307d6f22661e1"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Update changelog for Headroom resource.",
+              "commit": "fe6d3cbb8b4c025bcb3bd76458525eed703d31fd"
             }
           ]
         }
