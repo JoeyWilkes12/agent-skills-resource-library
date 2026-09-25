@@ -22,6 +22,7 @@ anthropic-how-we-use-skills,intent,apply,10
 anthropic-self-service-analytics,intent,apply,20
 anthropic-verification-loops,intent,apply,30
 skillopt-project,intent,evaluate,10
+skill2env-nvidia,intent,evaluate,12
 skillopt-third-party-snapshot,intent,evaluate,15
 jetbrains-caveman-token-benchmark,intent,evaluate,17
 jetbrains-rtk-token-benchmark,intent,evaluate,18
