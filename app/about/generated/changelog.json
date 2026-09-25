@@ -1,6 +1,23 @@
 {
-  "generatedFrom": "bc50a0dab98cd1abfea13df3a25b437a063afeda",
+  "generatedFrom": "a70a26fdca195e760fc082d84ea9b6dd15292a6c",
   "releases": [
+    {
+      "date": "2026-09-25",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Headroom: context compression for AI agents” resource.",
+              "href": "https://github.com/headroomlabs-ai/headroom",
+              "resourceId": "headroom-context-compression",
+              "commit": "a70a26fdca195e760fc082d84ea9b6dd15292a6c"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-24",
       "sections": [
@@ -13,6 +30,16 @@
               "href": "https://github.com/NVlabs/Skill2Env",
               "resourceId": "skill2env-nvidia",
               "commit": "bc50a0dab98cd1abfea13df3a25b437a063afeda"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Update changelog for NVIDIA Skill2Env resource.",
+              "commit": "0605c05879746ee6e1fb6aef5b61693b10f679d1"
             }
           ]
         }
