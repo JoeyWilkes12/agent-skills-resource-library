@@ -1,6 +1,23 @@
 {
-  "generatedFrom": "7c726fae329472d24c9941b0dfa6c2a762181350",
+  "generatedFrom": "bc50a0dab98cd1abfea13df3a25b437a063afeda",
   "releases": [
+    {
+      "date": "2026-09-24",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Skill2Env: turn public agent skills into RL tasks” resource.",
+              "href": "https://github.com/NVlabs/Skill2Env",
+              "resourceId": "skill2env-nvidia",
+              "commit": "bc50a0dab98cd1abfea13df3a25b437a063afeda"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "sections": [
