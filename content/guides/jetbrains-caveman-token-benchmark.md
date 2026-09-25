@@ -1,7 +1,7 @@
 ---
 publisher: JetBrains
 source: https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/
-last_verified: 2026-09-01
+last_verified: 2026-09-25
 ---
 
 # Does Speaking to AI Agents Like Cavemen Really Save 65% of Tokens?
@@ -13,6 +13,8 @@ last_verified: 2026-09-01
 This page summarizes and interprets [JetBrains' original benchmark](https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/). It is not a replacement for the article's methodology notes or artifacts.
 
 The series continues with [the rtk compression trial](/guides/jetbrains-rtk-token-benchmark) and [the Ponytail minimal-code trial](/guides/jetbrains-ponytail-code-benchmark).
+
+For a separate context-compression case that JetBrains did not test, see [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence).
 
 ## The short answer
 
@@ -56,6 +58,7 @@ The decision should be phrased as “this configuration reduced cost on this wor
 
 ## Sources and further reading
 
+- [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence)
 - [JetBrains: Does Speaking to AI Agents Like Cavemen Really Save 65% of Tokens?](https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/)
 - [JetBrains: Does “rtk” skill really cut agent tokens by 60–90%?](/guides/jetbrains-rtk-token-benchmark)
 - [JetBrains: Ponytail Skill for Claude Code](/guides/jetbrains-ponytail-code-benchmark)

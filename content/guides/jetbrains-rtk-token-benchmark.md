@@ -1,7 +1,7 @@
 ---
 publisher: JetBrains
 source: https://blog.jetbrains.com/ai/2026/07/rtk-claude-code-token-savings/
-last_verified: 2026-09-01
+last_verified: 2026-09-25
 ---
 
 # Does “rtk” Really Cut Agent Tokens by 60–90%?
@@ -13,6 +13,8 @@ last_verified: 2026-09-01
 This page summarizes and interprets [JetBrains' original rtk benchmark](https://blog.jetbrains.com/ai/2026/07/rtk-claude-code-token-savings/). Read the source for the complete transcript forensics, accounting correction, and methodology.
 
 The series begins with [the Caveman style trial](/guides/jetbrains-caveman-token-benchmark) and continues with [the Ponytail minimal-code trial](/guides/jetbrains-ponytail-code-benchmark).
+
+For a separate context-compression case that JetBrains did not test, see [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence).
 
 ## The short answer
 
@@ -56,6 +58,7 @@ The adoption question is not “how many characters did rtk remove?” It is “
 
 ## Sources and further reading
 
+- [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence)
 - [JetBrains: Does “rtk” skill really cut agent tokens by 60–90%?](https://blog.jetbrains.com/ai/2026/07/rtk-claude-code-token-savings/)
 - [JetBrains: Does Speaking to AI Agents Like Cavemen Really Save 65% of Tokens?](/guides/jetbrains-caveman-token-benchmark)
 - [JetBrains: Ponytail Skill for Claude Code](/guides/jetbrains-ponytail-code-benchmark)

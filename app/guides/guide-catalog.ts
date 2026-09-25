@@ -321,6 +321,22 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "Headroom context compression",
+      "RTK comparison",
+      "Completed-task cost",
+      "Independent benchmarks",
+      "SkillSpector static review",
+      "skills.sh security audits",
+      "Prompt injection",
+      "Cache-aware pricing",
+    ],
+    href: "/guides/headroom-context-compression-evidence",
+    title: "Headroom: effectiveness and security evidence",
+    summary:
+      "Compare Headroom's token claims with third-party coding-agent tests, a scoped SkillSpector review, and the separate skills.sh community-skill audits.",
+  },
+  {
+    contentTopics: [
       "JetBrains benchmark",
       "Terse agent narration",
       "Advertised 65% token saving",

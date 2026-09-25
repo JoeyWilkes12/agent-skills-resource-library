@@ -1,7 +1,7 @@
 ---
 publisher: JetBrains
 source: https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/
-last_verified: 2026-09-01
+last_verified: 2026-09-25
 ---
 
 # Ponytail Skill for Claude Code: Does It Really Cut Agent Code by 54%?
@@ -13,6 +13,8 @@ last_verified: 2026-09-01
 This page summarizes and interprets [JetBrains' original Ponytail benchmark](https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/). The source includes the full setup, paired-task data, extractor caveats, and statistical notes.
 
 The series begins with [the Caveman style trial](/guides/jetbrains-caveman-token-benchmark) and [the rtk compression trial](/guides/jetbrains-rtk-token-benchmark).
+
+For a separate context-compression case that JetBrains did not test, see [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence).
 
 ## The short answer
 
@@ -56,6 +58,7 @@ Use the observed result as a local baseline: “Ponytail reduced cost on this ta
 
 ## Sources and further reading
 
+- [Headroom: effectiveness and security evidence](/guides/headroom-context-compression-evidence)
 - [JetBrains: Ponytail Skill for Claude Code: Does It Really Cut Agent Code by 54%?](https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/)
 - [JetBrains: Does Speaking to AI Agents Like Cavemen Really Save 65% of Tokens?](/guides/jetbrains-caveman-token-benchmark)
 - [JetBrains: Does “rtk” skill really cut agent tokens by 60–90%?](/guides/jetbrains-rtk-token-benchmark)

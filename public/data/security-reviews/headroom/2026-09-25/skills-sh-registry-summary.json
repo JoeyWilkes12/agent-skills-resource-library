@@ -1,0 +1,38 @@
+{
+  "retrieved_on": "2026-09-25",
+  "first_party": {
+    "id": "headroomlabs-ai/headroom/headroom",
+    "listing_url": "https://skills.sh/headroomlabs-ai/headroom/headroom",
+    "result": "No verified skill listing; page reports unavailable and three audit detail pages returned 404."
+  },
+  "community_skill": {
+    "id": "romangalaxys10-spec/headroom-skill/headroom",
+    "repository_commit": "118466d7737ebc42806c331e44bd251b5222d59b",
+    "listing_url": "https://skills.sh/romangalaxys10-spec/headroom-skill/headroom",
+    "audit_date": "2026-08-07",
+    "audits": [
+      {
+        "provider": "Gen Agent Trust Hub",
+        "status": "PASS",
+        "risk_level": "SAFE",
+        "url": "https://skills.sh/romangalaxys10-spec/headroom-skill/headroom/security/agent-trust-hub",
+        "note": "Potential indirect prompt-injection exposure from external tool data acknowledged in analysis."
+      },
+      {
+        "provider": "Socket",
+        "status": "PASS",
+        "url": "https://skills.sh/romangalaxys10-spec/headroom-skill/headroom/security/socket",
+        "note": "Package URL names commit 118466d7737ebc42806c331e44bd251b5222d59b."
+      },
+      {
+        "provider": "Snyk",
+        "status": "WARN",
+        "risk_level": "MEDIUM",
+        "issue_id": "W011",
+        "url": "https://skills.sh/romangalaxys10-spec/headroom-skill/headroom/security/snyk",
+        "note": "Third-party tool/API/search content sent through SmartCrusher and then to the LLM may carry indirect prompt injection."
+      }
+    ]
+  },
+  "limitation": "These registry audits concern the community Agent Skill, not the official Headroom package. Exact snapshot correspondence for Gen Agent Trust Hub and Snyk was not exposed."
+}

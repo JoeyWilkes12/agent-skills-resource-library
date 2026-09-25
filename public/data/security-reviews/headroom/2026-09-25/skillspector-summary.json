@@ -1,0 +1,603 @@
+{
+  "reviewed_on": "2026-09-25",
+  "method": "SkillSpector v2.12.0 static-only, --no-llm",
+  "note": "Normalized finding summary. Scope is limited to the listed paths; scanner scores are triage signals, and all code-directory scans had incomplete coverage. No target code was executed.",
+  "artifacts": [
+    {
+      "id": "official-readme",
+      "repository": "headroomlabs-ai/headroom",
+      "commit": "66f426171bab32692cf93d2b656a8e4be9004186",
+      "scanned_path": "README.md",
+      "risk_assessment": {
+        "score": 48,
+        "severity": "MEDIUM",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "HIGH"
+      },
+      "coverage": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true
+      },
+      "findings": [
+        {
+          "id": "EA5",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "README.md",
+          "start_line": 262,
+          "explanation": "Skill selects an external model or provider that may use a different account or billing plan than the operator expects. Undisclosed model switches can cause unexpected cost or quota consumption."
+        },
+        {
+          "id": "PE3",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "file": "README.md",
+          "start_line": 291,
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+        },
+        {
+          "id": "RP1",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "README.md",
+          "start_line": 427,
+          "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+        },
+        {
+          "id": "SC2",
+          "severity": "LOW",
+          "confidence": 0.15,
+          "file": "README.md",
+          "start_line": 517,
+          "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+        }
+      ]
+    },
+    {
+      "id": "official-transforms",
+      "repository": "headroomlabs-ai/headroom",
+      "commit": "66f426171bab32692cf93d2b656a8e4be9004186",
+      "scanned_path": "headroom/transforms",
+      "risk_assessment": {
+        "score": 50,
+        "severity": "MEDIUM",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "MEDIUM"
+      },
+      "coverage": {
+        "total_components": 39,
+        "scanned_components": 33,
+        "coverage_percent": 84.6,
+        "is_complete": false
+      },
+      "findings": [
+        {
+          "id": "AST6",
+          "severity": "MEDIUM",
+          "confidence": 0.65,
+          "file": "code_compressor.py",
+          "start_line": 2290,
+          "explanation": "compile() creates code objects from strings. When combined with exec()/eval(), it enables obfuscated code execution."
+        },
+        {
+          "id": "AE4",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "content_router.py",
+          "start_line": 1,
+          "explanation": "Suspicious Unicode normalization or mixed-script content"
+        },
+        {
+          "id": "EA4",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "content_router.py",
+          "start_line": 116,
+          "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+        },
+        {
+          "id": "PE2",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "file": "content_router.py",
+          "start_line": 754,
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+        },
+        {
+          "id": "AST10",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "file": "kompress_compressor.py",
+          "start_line": 811,
+          "explanation": "Untrusted data is passed to an insecure deserializer (pickle, marshal, dill, jsonpickle, joblib, yaml.load without a safe Loader, or torch.load without weights_only). These deserializers reconstruct arbitrary objects and invoke callables during loading, so deserializing attacker-controlled bytes is equivalent to arbitrary code execution."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "__init__.py",
+          "start_line": 224,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        }
+      ]
+    },
+    {
+      "id": "official-mcp-registry",
+      "repository": "headroomlabs-ai/headroom",
+      "commit": "66f426171bab32692cf93d2b656a8e4be9004186",
+      "scanned_path": "headroom/mcp_registry",
+      "risk_assessment": {
+        "score": 95,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "coverage": {
+        "total_components": 10,
+        "scanned_components": 7,
+        "coverage_percent": 70.0,
+        "is_complete": false
+      },
+      "findings": [
+        {
+          "id": "AS2",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "file": "claude.py",
+          "start_line": 8,
+          "explanation": "Skill accesses MCP server configuration files (mcp.json). MCP configs contain server URLs, authentication tokens, and tool definitions \u2014 reading them allows the skill to discover and potentially abuse other tool integrations."
+        },
+        {
+          "id": "E2",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "file": "claude.py",
+          "start_line": 292,
+          "explanation": "Code enumerates, copies, or searches environment variables for secrets. Bulk environment access can collect credentials unrelated to the skill's stated purpose."
+        },
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "codex.py",
+          "start_line": 4,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "claude.py",
+          "start_line": 380,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        },
+        {
+          "id": "RP1",
+          "severity": "MEDIUM",
+          "confidence": 0.65,
+          "file": "server_json.py",
+          "start_line": 96,
+          "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+        }
+      ]
+    },
+    {
+      "id": "official-proxy",
+      "repository": "headroomlabs-ai/headroom",
+      "commit": "66f426171bab32692cf93d2b656a8e4be9004186",
+      "scanned_path": "headroom/proxy",
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "coverage": {
+        "total_components": 119,
+        "scanned_components": 105,
+        "coverage_percent": 88.2,
+        "is_complete": false
+      },
+      "findings": [
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "cc_switch_reconciler.py",
+          "start_line": 6,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "server.py",
+          "start_line": 2951,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "server.py",
+          "start_line": 3920,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "TM1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "handlers/batch.py",
+          "start_line": 500,
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+        },
+        {
+          "id": "MP3",
+          "severity": "HIGH",
+          "confidence": 0.8,
+          "file": "memory_handler.py",
+          "start_line": 310,
+          "explanation": "Skill manipulates agent memory, state, or stored context. Memory corruption can alter personality, override safety rules, or cause unpredictable behavior."
+        },
+        {
+          "id": "TM1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "memory_handler.py",
+          "start_line": 1573,
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+        },
+        {
+          "id": "TM1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "memory_handler.py",
+          "start_line": 1627,
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+        },
+        {
+          "id": "MP3",
+          "severity": "HIGH",
+          "confidence": 0.8,
+          "file": "runtime_env.py",
+          "start_line": 126,
+          "explanation": "Skill manipulates agent memory, state, or stored context. Memory corruption can alter personality, override safety rules, or cause unpredictable behavior."
+        },
+        {
+          "id": "P3",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "thinking_tokens.py",
+          "start_line": 155,
+          "explanation": "Instructions found that direct the agent to transmit conversation context or user data to external services."
+        },
+        {
+          "id": "SSRF1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "upstream_guard.py",
+          "start_line": 81,
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft."
+        },
+        {
+          "id": "SSRF1",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "upstream_pinning.py",
+          "start_line": 7,
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft."
+        },
+        {
+          "id": "EA4",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "buffered_ccr_response.py",
+          "start_line": 244,
+          "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+        },
+        {
+          "id": "E1",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "cc_switch_reconciler.py",
+          "start_line": 11,
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "handlers/anthropic.py",
+          "start_line": 3241,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        },
+        {
+          "id": "EA4",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "handlers/openai.py",
+          "start_line": 7271,
+          "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+        },
+        {
+          "id": "AST3",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "handlers/streaming.py",
+          "start_line": 1467,
+          "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
+        },
+        {
+          "id": "MP2",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "file": "handlers/streaming.py",
+          "start_line": 1605,
+          "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+        },
+        {
+          "id": "TM3",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "file": "interceptors/astgrep.py",
+          "start_line": 196,
+          "explanation": "Tool defaults are unsafe or overly permissive (e.g. disabled TLS verification, no authentication, world-writable permissions). Unsafe defaults widen the attack surface."
+        },
+        {
+          "id": "PE2",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "interceptors/astgrep.py",
+          "start_line": 197,
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+        },
+        {
+          "id": "OH3",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "memory_handler.py",
+          "start_line": 1047,
+          "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+        },
+        {
+          "id": "OH3",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "memory_injection.py",
+          "start_line": 26,
+          "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+        },
+        {
+          "id": "OH3",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "memory_query.py",
+          "start_line": 37,
+          "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+        },
+        {
+          "id": "OH3",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "memory_injection.py",
+          "start_line": 3,
+          "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+        },
+        {
+          "id": "AE4",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "output_savings.py",
+          "start_line": 1,
+          "explanation": "Suspicious Unicode normalization or mixed-script content"
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "request_logger.py",
+          "start_line": 120,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        },
+        {
+          "id": "EA2",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "request_logger.py",
+          "start_line": 127,
+          "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "server.py",
+          "start_line": 2894,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        },
+        {
+          "id": "TM3",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "file": "ssl_context.py",
+          "start_line": 28,
+          "explanation": "Tool defaults are unsafe or overly permissive (e.g. disabled TLS verification, no authentication, world-writable permissions). Unsafe defaults widen the attack surface."
+        },
+        {
+          "id": "OH3",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "file": "upstream_trust.py",
+          "start_line": 66,
+          "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "cost.py",
+          "start_line": 622,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "cost.py",
+          "start_line": 630,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "request_logger.py",
+          "start_line": 186,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "request_logger.py",
+          "start_line": 204,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "route_advice.py",
+          "start_line": 71,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "server.py",
+          "start_line": 3237,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "server.py",
+          "start_line": 5690,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "server.py",
+          "start_line": 5705,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        },
+        {
+          "id": "AST7",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "file": "upstream_trust.py",
+          "start_line": 106,
+          "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+        }
+      ]
+    },
+    {
+      "id": "community-skill",
+      "repository": "romangalaxys10-spec/headroom-skill",
+      "commit": "118466d7737ebc42806c331e44bd251b5222d59b",
+      "scanned_path": ".",
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "coverage": {
+        "total_components": 21,
+        "scanned_components": 20,
+        "coverage_percent": 95.2,
+        "is_complete": false
+      },
+      "findings": [
+        {
+          "id": "AE1",
+          "severity": "HIGH",
+          "confidence": 1.0,
+          "file": "SKILL.md",
+          "start_line": 111,
+          "explanation": "Referenced artifact was not completely inspected"
+        },
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "file": "docs/integrations.md",
+          "start_line": 45,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "AS1",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "file": "docs/integrations.md",
+          "start_line": 112,
+          "explanation": "Skill reads from agent configuration directories (.claude/, .codex/, .gemini/). These directories may contain API keys, personal settings, and other credentials that the skill has no legitimate need to access."
+        },
+        {
+          "id": "EA5",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "file": "docs/integrations.md",
+          "start_line": 251,
+          "explanation": "Skill selects an external model or provider that may use a different account or billing plan than the operator expects. Undisclosed model switches can cause unexpected cost or quota consumption."
+        },
+        {
+          "id": "TM1",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "file": "docs/reversible-ccr.md",
+          "start_line": 65,
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+        },
+        {
+          "id": "TM1",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "file": "docs/reversible-ccr.md",
+          "start_line": 119,
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+        },
+        {
+          "id": "LP3",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "file": "SKILL.md",
+          "start_line": 1,
+          "explanation": "Without declared permissions the skill's intent is opaque and cannot be validated."
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "docs/integrations.md",
+          "start_line": 44,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        },
+        {
+          "id": "RA2",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "file": "docs/integrations.md",
+          "start_line": 44,
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+        }
+      ]
+    }
+  ]
+}
