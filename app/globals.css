@@ -1831,6 +1831,15 @@ footer p:first-child {
   text-underline-offset: 4px;
 }
 
+.guide-contents.is-unnumbered .guide-contents-list a {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 44px;
+}
+
+.guide-contents.is-compact.is-unnumbered .guide-contents-toggle {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
 .guide-contents-list a[aria-current="location"] {
   background: rgba(255, 253, 248, 0.8);
   text-decoration: underline;
@@ -2572,6 +2581,82 @@ footer p:first-child {
   margin-top: clamp(52px, 7vw, 80px);
 }
 
+.prose-guide-with-receipt .prose-guide-hero {
+  padding-bottom: 76px;
+}
+
+.guide-trust-receipt {
+  position: relative;
+  width: min(100%, 980px);
+  margin: -32px auto 0;
+  padding: 24px 32px;
+  color: var(--ink-soft);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--mint-dark);
+}
+
+.guide-trust-receipt dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 32px;
+  margin: 0;
+}
+
+.guide-trust-receipt dt {
+  margin-bottom: 8px;
+  color: var(--link-evidence);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.guide-trust-receipt dd {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.guide-trust-receipt-effects {
+  grid-column: span 2;
+}
+
+:root[data-theme="dark"] .guide-trust-receipt {
+  color: var(--theme-muted);
+  background: var(--theme-surface);
+  border-top-color: var(--theme-mint-text);
+}
+
+@media (max-width: 780px) {
+  .guide-trust-receipt {
+    width: calc(100% - 24px);
+    padding: 24px;
+  }
+
+  .guide-trust-receipt dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .guide-trust-receipt-effects {
+    grid-column: auto;
+  }
+
+  .guide-trust-receipt dl > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 540px) {
+  .guide-trust-receipt dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
 .prose-guide-reading {
   width: min(100%, 72ch);
   margin-inline: auto;
@@ -2685,6 +2770,7 @@ footer p:first-child {
   color: var(--ink);
   background: rgba(174, 231, 206, 0.55);
   font-size: 0.9em;
+  overflow-wrap: anywhere;
 }
 
 .prose-guide-section .prose-guide-code,

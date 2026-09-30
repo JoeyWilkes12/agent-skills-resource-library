@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-30",
+  "packaged_at": "2026-09-30T15:27:06.062061+00:00",
+  "label": "skills.sh registry check",
+  "source": {
+    "repository": "https://github.com/inclusionAI/ling-cookbook",
+    "commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+    "commit_date": "2026-09-23T06:53:28Z",
+    "checkout_status": "Pinned commit; clean working tree verified before hashing."
+  },
+  "conclusion": "Exact inclusionAI listings not found. All three provider child audits are missing for both skills; registry coverage unknown/incomplete.",
+  "scope_note": "Third-party audits of a skills.sh snapshot do not establish publisher identity, the exact local artifact, dependency resolution, or runtime safety. No exact snapshot was verified here.",
+  "records": [
+    {
+      "retrieved_at": "2026-09-30T06:06:42.786379+00:00",
+      "id": "inclusionAI/ling-cookbook/ling-ui-design",
+      "canonical_url": "https://skills.sh/inclusionAI/ling-cookbook/ling-ui-design",
+      "listing": {
+        "http_status": 200,
+        "url": "https://www.skills.sh/inclusionai/ling-cookbook/ling-ui-design",
+        "text": "skills / inclusionai / ling-cookbook\n404\nling-ui-design isn’t available in this repository.\nIt may have been renamed or removed. These skills are still published by inclusionai / ling-cookbook .\nDid you mean?\nView repository\nling-gui-agent-skill"
+      },
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/ling-ui-design/security/agent-trust-hub",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/ling-ui-design/security/socket",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/ling-ui-design/security/snyk",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "listing_classification": "Not found: HTTP 200 soft-404 page explicitly says requested skill is unavailable",
+      "registry_coverage": "Incomplete; all three detail pages HTTP 404",
+      "snapshot_correspondence": "Not proven; no exact listing, audit timestamp, content hash, or provider snapshot available",
+      "search_queries": [
+        "site:skills.sh/inclusionai/ling-cookbook \"ling-ui-design\""
+      ],
+      "findings_exposed": [],
+      "target_commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+      "target_commit_date": "2026-09-23T06:53:28Z",
+      "frontmatter_name_confirmation": "ling-ui-design",
+      "source_repository_directory": "resources/recommended-skills/ling-ui-design"
+    },
+    {
+      "retrieved_at": "2026-09-30T06:06:45.543235+00:00",
+      "id": "inclusionAI/ling-cookbook/image-to-editable-ppt",
+      "canonical_url": "https://skills.sh/inclusionAI/ling-cookbook/image-to-editable-ppt",
+      "listing": {
+        "http_status": 200,
+        "url": "https://www.skills.sh/inclusionai/ling-cookbook/image-to-editable-ppt",
+        "text": "skills / inclusionai / ling-cookbook\n404\nimage-to-editable-ppt isn’t available in this repository.\nIt may have been renamed or removed. These skills are still published by inclusionai / ling-cookbook .\nDid you mean?\nView repository\nling-gui-agent-skill"
+      },
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/image-to-editable-ppt/security/agent-trust-hub",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/image-to-editable-ppt/security/socket",
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "status": null,
+          "risk_level": null,
+          "categories": [],
+          "audited_on": null,
+          "finding_count": null,
+          "http_status": 404,
+          "url": "https://skills.sh/inclusionAI/ling-cookbook/image-to-editable-ppt/security/snyk",
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "listing_classification": "Not found: HTTP 200 soft-404 page explicitly says requested skill is unavailable",
+      "registry_coverage": "Incomplete; all three detail pages HTTP 404",
+      "snapshot_correspondence": "Not proven; no exact listing, audit timestamp, content hash, or provider snapshot available",
+      "search_queries": [
+        "site:skills.sh/inclusionai/ling-cookbook \"image-to-editable-ppt\""
+      ],
+      "findings_exposed": [],
+      "different_publisher_candidate": {
+        "url": "https://www.skills.sh/ningzimu/image-to-editable-ppt-skill/image-to-editable-ppt",
+        "id": "ningzimu/image-to-editable-ppt-skill/image-to-editable-ppt",
+        "note": "Search returned this different source. Parent badges say Pass for all three providers; not attributed to inclusionAI copy, not used for requested exact-artifact review."
+      },
+      "target_commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+      "target_commit_date": "2026-09-23T06:53:28Z",
+      "frontmatter_name_confirmation": "image-to-editable-ppt",
+      "source_repository_directory": "resources/recommended-skills/image-to-editable-ppt"
+    }
+  ]
+}

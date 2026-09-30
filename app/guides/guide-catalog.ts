@@ -153,6 +153,30 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "Ming-Image-0.1",
+      "Design layer",
+      "Ming layers",
+      "Ling UI design",
+      "ling-ui-design",
+      "image-to-editable-ppt",
+      "Editable PowerPoint",
+      "Image references",
+      "Replit Design",
+      "Claude Design",
+      "Opus 5.5 Motion",
+      "Hugging Face demo",
+      "OpenRouter image models",
+      "SkillSpector snapshot review",
+      "skills.sh security evidence",
+      "Writing without the AI sheen",
+    ],
+    href: "/guides/ming-design-layer-and-editable-design",
+    title: "From images to editable design",
+    summary:
+      "Compare Ming layers, Ling UI, and editable PowerPoint workflows, with scoped security evidence and a practical path from images to editable design.",
+  },
+  {
+    contentTopics: [
       "Start with the trust boundary",
       "Data movement and cloud API access",
       "Primary documentation",

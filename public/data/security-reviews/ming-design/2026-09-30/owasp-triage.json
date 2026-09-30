@@ -1,0 +1,669 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-30",
+  "triaged_at": "2026-09-30T15:27:06.062061+00:00",
+  "source": {
+    "repository": "https://github.com/inclusionAI/ling-cookbook",
+    "commit": "c4a519f51bc238acefef009f957540d91ddd41fd"
+  },
+  "reference": {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+    "retrieved_date": "2026-09-30"
+  },
+  "method": "Case-insensitive regex text triage plus Unicode character inspection. All matches are leads and were inspected in source context; no code executed.",
+  "rules": [
+    {
+      "id": "direct-ignore-previous",
+      "class": "direct-instruction",
+      "regex": "ignore\\s+(all\\s+)?previous\\s+instructions?",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "direct-developer-mode",
+      "class": "direct-instruction",
+      "regex": "you\\s+are\\s+now\\s+(in\\s+)?developer\\s+mode",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "direct-system-override",
+      "class": "direct-instruction",
+      "regex": "system\\s+override",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "direct-reveal-prompt",
+      "class": "direct-instruction",
+      "regex": "reveal\\s+prompt",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "output-system-persona",
+      "class": "output-leakage-indicator",
+      "regex": "SYSTEM\\s*[:]\\s*You\\s+are",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "output-api-key",
+      "class": "output-leakage-indicator",
+      "regex": "API[_\\s]KEY[:=]\\s*\\w+",
+      "flags": [
+        "IGNORECASE"
+      ]
+    },
+    {
+      "id": "output-numbered-instructions",
+      "class": "output-leakage-indicator",
+      "regex": "instructions?[:]\\s*\\d+\\.",
+      "flags": [
+        "IGNORECASE"
+      ]
+    }
+  ],
+  "unicode_check": {
+    "classes": [
+      "Unicode Cf format characters",
+      "unexpected Cc control characters excluding tab, LF, CR",
+      "combining grapheme joiner",
+      "Hangul/Braille blank fillers",
+      "variation selectors",
+      "Unicode Zl/Zp separators"
+    ],
+    "note": "Chinese and other ordinary non-ASCII text is not treated as suspicious."
+  },
+  "limits": [
+    "Regex and Unicode inspection cannot clear an artifact or rule out prompt injection.",
+    "No multimodal steganography, remote content, runtime actions, package resolution, or model execution tested.",
+    "The separate local Codex semantic review addresses intent and data flow; this file is only static text triage."
+  ],
+  "artifacts": [
+    {
+      "skill": "ling-ui-design",
+      "frontmatter_name": "ling-ui-design",
+      "file_count": 27,
+      "total_bytes": 153810,
+      "text_files_checked": 27,
+      "decode_errors": [],
+      "direct_instruction_match_count": 0,
+      "output_indicator_match_count": 14,
+      "confirmed_prompt_injection_findings_from_regex": 0,
+      "matches": [
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": ".env.example",
+          "location": {
+            "start_line": 3,
+            "start_column": 15,
+            "end_line": 4
+          },
+          "match": "API_KEY=\nLING_UI_DESIGN_API_BASE",
+          "context": "Copy to .env in this skill root. .env is gitignored; secrets stay local.\n# scripts/configure.py creates the file safely and never overwrites it.\nLING_UI_DESIGN_API_KEY=\nLING_UI_DESIGN_API_BASE=https://api.novita.ai/openai/v1/\n\nLING_UI_DESIGN_IMAGE_MODEL=ming-image-0.1-design\nLING_UI_DESIGN_IMAGE_TIMEOUT=600\n\nLING_UI_DESIGN_DECOMPOSE_MODEL=ming-image-",
+          "adjudication": "benign",
+          "note": "Blank API-key template: regex whitespace crosses the newline into the next variable name."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "scripts/_common.py",
+          "location": {
+            "start_line": 262,
+            "start_column": 4,
+            "end_line": 262
+          },
+          "match": "api_key: str",
+          "context": "s()).decode(\"ascii\")\n    return f\"data:{mime_type};base64,{encoded}\"\n\n\ndef post_json(\n    url: str,\n    payload: dict[str, Any],\n    *,\n    timeout: float,\n    api_key: str | None = None,\n    attempts: int = 3,\n    multipart: bool = False,\n) -> dict[str, Any]:\n    try:\n        import requests\n    except ImportError as exc:\n       ",
+          "adjudication": "benign",
+          "note": "Python parameter/type annotation, conditional, or named argument; no credential value exposed by this match."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "scripts/_common.py",
+          "location": {
+            "start_line": 273,
+            "start_column": 7,
+            "end_line": 274
+          },
+          "match": "api_key:\n        headers",
+          "context": "se SystemExit(\"error: Requests is unavailable; install the optional helpers\") from exc\n    headers = {\n        \"Content-Type\": \"application/json\",\n    }\n    if api_key:\n        headers[\"Authorization\"] = f\"Bearer {api_key}\"\n    request_body: dict[str, Any] = {\"json\": payload}\n    if multipart:\n        files = []\n        for index, item in enu",
+          "adjudication": "benign",
+          "note": "Python parameter/type annotation, conditional, or named argument; no credential value exposed by this match."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "scripts/decompose_layers.py",
+          "location": {
+            "start_line": 203,
+            "start_column": 8,
+            "end_line": 203
+          },
+          "match": "api_key=api_key",
+          "context": "\n    started = time.perf_counter()\n    body = post_json(\n        f\"{args.api_base.rstrip('/')}/images/edits\",\n        payload,\n        timeout=timeout,\n        api_key=api_key,\n        multipart=True,\n    )\n    layer_data = [item_bytes(item, timeout) for item in image_items(body)]\n    validate_layers(layer_data, args.layers)\n    outp",
+          "adjudication": "benign",
+          "note": "Python parameter/type annotation, conditional, or named argument; no credential value exposed by this match."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "scripts/generate_image.py",
+          "location": {
+            "start_line": 55,
+            "start_column": 8,
+            "end_line": 55
+          },
+          "match": "api_key=api_key",
+          "context": "00\"))\n    started = time.perf_counter()\n    body = post_json(\n        f\"{args.api_base.rstrip('/')}/{route}\",\n        payload,\n        timeout=timeout,\n        api_key=api_key,\n    )\n    raw = item_bytes(image_items(body)[0], timeout)\n    validate_image_bytes(raw, label=\"generated image\")\n    output.parent.mkdir(parents=True, exist_o",
+          "adjudication": "benign",
+          "note": "Python parameter/type annotation, conditional, or named argument; no credential value exposed by this match."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_asset_regions.py",
+          "location": {
+            "start_line": 96,
+            "start_column": 23,
+            "end_line": 96
+          },
+          "match": "API_KEY=local",
+          "context": "]) for item in enriched}\n\n\ndef test_non_image_file_cannot_be_uploaded(tmp_path: Path) -> None:\n    source = tmp_path / \"credentials.png\"\n    source.write_text(\"API_KEY=local-test-only\")\n    with pytest.raises(SystemExit, match=\"valid image\") as error:\n        image_data_url(str(source))\n    assert \"local-test-only\" not in str(error",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_helpers.py",
+          "location": {
+            "start_line": 484,
+            "start_column": 24,
+            "end_line": 484
+          },
+          "match": "API_KEY=first",
+          "context": " test_dotenv_empty_duplicate_does_not_wipe_earlier_value(tmp_path: Path) -> None:\n    dotenv = tmp_path / \".env\"\n    dotenv.write_text(\n        \"LING_UI_DESIGN_API_KEY=first-value\\nLING_UI_DESIGN_API_KEY=\\n\",\n        encoding=\"utf-8\",\n    )\n\n    assert _common.read_dotenv(dotenv)[\"LING_UI_DESIGN_API_KEY\"] == \"first-value\"\n\n\ndef tes",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_helpers.py",
+          "location": {
+            "start_line": 532,
+            "start_column": 38,
+            "end_line": 532
+          },
+          "match": "API_KEY=keep",
+          "context": ": Path, monkeypatch: pytest.MonkeyPatch\n) -> None:\n    dotenv = tmp_path / \".env\"\n    example = tmp_path / \".env.example\"\n    dotenv.write_text(\"LING_UI_DESIGN_API_KEY=keep-me\\n\", encoding=\"utf-8\")\n    example.write_text(\"LING_UI_DESIGN_API_KEY=\\n\", encoding=\"utf-8\")\n    monkeypatch.setattr(_common, \"ENV_FILE\", dotenv)\n    monkeyp",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_helpers.py",
+          "location": {
+            "start_line": 541,
+            "start_column": 65,
+            "end_line": 541
+          },
+          "match": "API_KEY=keep",
+          "context": "created = _common.initialize_env_file()\n\n    assert path == dotenv\n    assert created is False\n    assert dotenv.read_text(encoding=\"utf-8\") == \"LING_UI_DESIGN_API_KEY=keep-me\\n\"\n\n\ndef test_installer_maps_project_and_user_scopes(tmp_path: Path) -> None:\n    assert install.destination_for(\n        \"universal\", \"project\", project_ro",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_helpers.py",
+          "location": {
+            "start_line": 576,
+            "start_column": 34,
+            "end_line": 576
+          },
+          "match": "API_KEY=secret",
+          "context": " / \"SKILL.md\").write_text(\"skill\", encoding=\"utf-8\")\n    (source / \".env.example\").write_text(\"API_KEY=\\n\", encoding=\"utf-8\")\n    (source / \".env\").write_text(\"API_KEY=secret\\n\", encoding=\"utf-8\")\n    (source / \".git\").mkdir()\n    destination = tmp_path / \"copy\" / \"ling-ui-design\"\n\n    config, created = install.install(source, desti",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_shared_config.py",
+          "location": {
+            "start_line": 113,
+            "start_column": 38,
+            "end_line": 113
+          },
+          "match": "API_KEY=file",
+          "context": "iron):\n        if name.startswith(\"LING_UI_DESIGN_\"):\n            monkeypatch.delenv(name)\n    dotenv = tmp_path / \".env\"\n    dotenv.write_text(\"LING_UI_DESIGN_API_KEY=file-test-key\\n\")\n    monkeypatch.setattr(_common, \"ENV_FILE\", dotenv)\n    if source == \"environment\":\n        monkeypatch.setenv(\"LING_UI_DESIGN_API_KEY\", \"environ",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_shared_config.py",
+          "location": {
+            "start_line": 180,
+            "start_column": 38,
+            "end_line": 180
+          },
+          "match": "API_KEY=file",
+          "context": "ath: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str],\n) -> None:\n    dotenv = tmp_path / \".env\"\n    dotenv.write_text(\"LING_UI_DESIGN_API_KEY=file-test-key\\n\" if source != \"missing\" else \"\")\n    monkeypatch.setattr(_common, \"ENV_FILE\", dotenv)\n    monkeypatch.delenv(\"LING_UI_DESIGN_API_KEY\", raising=False",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_shared_config.py",
+          "location": {
+            "start_line": 213,
+            "start_column": 96,
+            "end_line": 213
+          },
+          "match": "API_KEY=file",
+          "context": "le\")\n    dotenv = tmp_path / \".env\"\n    if source != \"missing\":\n        dotenv.write_text(\"LING_UI_DESIGN_API_KEY=\\n\" if source == \"blank\" else \"LING_UI_DESIGN_API_KEY=file-test-key\\n\")\n    environment = {k: v for k, v in os.environ.items() if not k.startswith(\"LING_UI_DESIGN_\")}\n    if source == \"environment\":\n        environment",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "tests/test_shared_config.py",
+          "location": {
+            "start_line": 234,
+            "start_column": 49,
+            "end_line": 234
+          },
+          "match": "API_KEY: configured",
+          "context": "   assert result.returncode == 0\n        status = \"process environment\" if source == \"environment\" else \".env\"\n        assert result.stdout == f\"LING_UI_DESIGN_API_KEY: configured ({status})\\n\"\n",
+          "adjudication": "benign",
+          "note": "Benign test fixture/assertion with explicit dummy credential text; not an actual credential leak."
+        }
+      ],
+      "unicode_match_count": 0,
+      "unicode_matches": [],
+      "fuzzy_triage": {
+        "terms": [
+          "ignore",
+          "bypass",
+          "override",
+          "reveal",
+          "delete",
+          "system"
+        ],
+        "counts": {
+          "exact_term:override": 6,
+          "exact_term:system": 7,
+          "exact_term:ignore": 2
+        },
+        "representative_examples": [
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "README.md",
+            "location": {
+              "start_line": 83,
+              "start_column": 26,
+              "end_line": 83
+            },
+            "context": " API base is `https://api.novita.ai/openai/v1/`. The default model IDs\nare `ming-image-0.1-design` and `ming-image-0.1-design-layer`.\nFor a compatible service, override `LING_UI_DESIGN_API_BASE`,\n`LING_UI_DESIGN_IMAGE_MODEL`, `LING_UI_DESIGN_DECOMPOSE_MODEL`, and\n`LING_UI_DESIGN_API_KEY` in `.env` or the process environment. R"
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "SKILL.md",
+            "location": {
+              "start_line": 43,
+              "start_column": 47,
+              "end_line": 43
+            },
+            "context": "elected path. Do not begin\n   page implementation until it is usable or the user explicitly chooses direct code.\n3. Separate product UI from browser, operating-system, device, and host-container\n   chrome. Recreate only product-owned content unless the user asks for a mock device.\n4. Prepare reusable raster assets before wri"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "SKILL.md",
+            "location": {
+              "start_line": 112,
+              "start_column": 26,
+              "end_line": 112
+            },
+            "context": "A rendered screenshot of the current implementation.\n4. Decomposed layers, which may overlap, omit content, or invent hidden pixels.\n\nDo not let a lower source override a visibly contradictory higher source.\n\n## Service and environment rules\n\n- Use one `LING_UI_DESIGN_API_KEY` for image generation and decomposition.\n  Read it "
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "SKILL.md",
+            "location": {
+              "start_line": 133,
+              "start_column": 48,
+              "end_line": 133
+            },
+            "context": "rect UI coding. A supplied screenshot\n  skips reference generation, but decomposition uses the same shared key.\n- Installing Playwright, browsers, packages, or system dependencies changes the\n  environment. Ask the user before installation. Prefer an existing harness browser;\n  if a capture tool must be added, prefer one `np"
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "pyproject.toml",
+            "location": {
+              "start_line": 1,
+              "start_column": 7,
+              "end_line": 1
+            },
+            "context": "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"ling-ui-design-skill\"\nversion = \"0.1.0\"\ndescription = \"Portable helpe"
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "references/engineering-taste.md",
+            "location": {
+              "start_line": 14,
+              "start_column": 20,
+              "end_line": 14
+            },
+            "context": "usual choices. The brief owns behavior and copy; the reference owns appearance.\nDo not invent features, claims, routes, or hidden content.\n\n## Build a coherent system\n\n- Infer shared alignment edges, container behavior, grid, and a small set of type,\n  spacing, color, radius, and elevation roles. Prefer reusable rules over u"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "references/layer-decomposition.md",
+            "location": {
+              "start_line": 27,
+              "start_column": 55,
+              "end_line": 27
+            },
+            "context": "ration. Configure it\nin the skill-root `.env` or process environment. `LING_UI_DESIGN_API_BASE` sets the\nshared endpoint; `LING_UI_DESIGN_DECOMPOSE_*` settings override decomposition defaults.\n\nSend the original image at its original resolution. `size` is the target resolution:\nuse `auto` to let the service choose from the ref"
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "references/visual-direction.md",
+            "location": {
+              "start_line": 39,
+              "start_column": 21,
+              "end_line": 39
+            },
+            "context": "eset, custom direction, or no extra style direction>\n\nRender a scrollable <desktop or mobile> page with <target aspect ratio>; no browser,\ndevice, or operating-system chrome. Keep the above-fold UI at a natural scale and let\nlater sections continue below it instead of shrinking the complete page to fit. Use\ntext as a layout "
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "references/visual-validation.md",
+            "location": {
+              "start_line": 82,
+              "start_column": 18,
+              "end_line": 82
+            },
+            "context": "s a download:\n\n```bash\npython -m pip install -e \"$LING_UI_DESIGN_SKILL_ROOT[browser]\"\npython -m playwright install --only-shell chromium\n```\n\nOn Linux, missing system libraries may require `python -m playwright install-deps\nchromium`, which can modify the system and therefore needs separate approval.\n\nAn existing browser bin"
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "references/visual-validation.md",
+            "location": {
+              "start_line": 83,
+              "start_column": 32,
+              "end_line": 83
+            },
+            "context": "playwright install --only-shell chromium\n```\n\nOn Linux, missing system libraries may require `python -m playwright install-deps\nchromium`, which can modify the system and therefore needs separate approval.\n\nAn existing browser binary without Playwright can provide a coarse desktop screenshot,\nbut command-line `--window-size`"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/configure.py",
+            "location": {
+              "start_line": 41,
+              "start_column": 41,
+              "end_line": 41
+            },
+            "context": "existing\"\n    print(f\"{verb} {path}\")\n    print(f\"Set {SECRET_NAME} locally. Do not paste or echo its value in chat.\")\n    print(\"Process environment variables override values in this file.\")\n\n\nif __name__ == \"__main__\":\n    main()\n"
+          },
+          {
+            "term": "ignore",
+            "kind": "exact_term",
+            "token": "ignore",
+            "file": "scripts/crop_elements.py",
+            "location": {
+              "start_line": 393,
+              "start_column": 54,
+              "end_line": 393
+            },
+            "context": "RACTABLE_ROLES),\n        help=\"comma-separated layer roles to extract (default: image,background)\",\n    )\n    result.add_argument(\"--min-area\", type=int, help=\"ignore smaller alpha components\")\n    result.add_argument(\"--trim-alpha\", action=\"store_true\")\n    result.add_argument(\"--keep-largest-alpha\", action=\"store_true\")\n  "
+          }
+        ],
+        "interpretation": "Exact terms are noisy: comments, platform/system calls, test cleanup, ignored files, and ordinary program terminology. Samples are not evidence of malicious instructions."
+      }
+    },
+    {
+      "skill": "image-to-editable-ppt",
+      "frontmatter_name": "image-to-editable-ppt",
+      "file_count": 20,
+      "total_bytes": 160046,
+      "text_files_checked": 20,
+      "decode_errors": [],
+      "direct_instruction_match_count": 0,
+      "output_indicator_match_count": 2,
+      "confirmed_prompt_injection_findings_from_regex": 0,
+      "matches": [
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": ".env.example",
+          "location": {
+            "start_line": 3,
+            "start_column": 5,
+            "end_line": 3
+          },
+          "match": "API_KEY=sk_xxx",
+          "context": "# Copy this file to .env and fill in the API key locally.\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer\n",
+          "adjudication": "benign",
+          "note": "Documented sk_xxx placeholder in .env.example or README; not an actual credential."
+        },
+        {
+          "rule_id": "output-api-key",
+          "class": "output-leakage-indicator",
+          "file": "README.md",
+          "location": {
+            "start_line": 33,
+            "start_column": 5,
+            "end_line": 33
+          },
+          "match": "API_KEY=sk_xxx",
+          "context": "is [Ming Image Layer Decoupling](https://docs.novita.ai/api-reference/model-apis-ming-image-layer):\n\n```bash\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer\n```\n\n## Use\n\nGive the agent the source image and name this skill. For example:\n\n```text\nUse $image-to-editable-ppt to re",
+          "adjudication": "benign",
+          "note": "Documented sk_xxx placeholder in .env.example or README; not an actual credential."
+        }
+      ],
+      "unicode_match_count": 0,
+      "unicode_matches": [],
+      "fuzzy_triage": {
+        "terms": [
+          "ignore",
+          "bypass",
+          "override",
+          "reveal",
+          "delete",
+          "system"
+        ],
+        "counts": {
+          "exact_term:bypass": 1,
+          "exact_term:override": 9,
+          "exact_term:ignore": 1,
+          "exact_term:system": 1
+        },
+        "representative_examples": [
+          {
+            "term": "bypass",
+            "kind": "exact_term",
+            "token": "bypass",
+            "file": "references/iterative-decomposition.md",
+            "location": {
+              "start_line": 93,
+              "start_column": 7,
+              "end_line": 93
+            },
+            "context": "resize each leaf and place it on a transparent root-sized canvas. All files in `layers_final/` therefore share one canvas and remain correctly aligned.\n\nDo not bypass `--assemble` by copying a file from `refine/` directly into the slide; its coordinates are local to the crop.\n\n## API configuration\n\nThe client reads `LING_BAS"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "references/iterative-decomposition.md",
+            "location": {
+              "start_line": 99,
+              "start_column": 38,
+              "end_line": 99
+            },
+            "context": "`.env`. Copy `.env.example` to `.env` and fill it in before the first call. Do not pass the API key on the command line.\n\n`DECOMPOSE_TIMEOUT_FINAL_S` can still override the request timeout.\n\nRequired Python packages are `requests`, `Pillow`, and `numpy`. Network/API failures are retried by the wrapper. After its bounded retrie"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/api_services/image_decomposer.py",
+            "location": {
+              "start_line": 573,
+              "start_column": 50,
+              "end_line": 573
+            },
+            "context": "                 help=\"final=auto assets (default). probe=512 check; do not use those files as slide assets\")\n    ap.add_argument(\"--size\", default=None, help=\"override size (default is 512 for probe and auto for final)\")\n    args = ap.parse_args()\n\n    if not args.prompt and not args.plan:\n        ap.error(\"pass --prompt or -"
+          },
+          {
+            "term": "ignore",
+            "kind": "exact_term",
+            "token": "ignore",
+            "file": "scripts/crop_alpha_assets.py",
+            "location": {
+              "start_line": 44,
+              "start_column": 14,
+              "end_line": 44
+            },
+            "context": "n runs separated by at most this many pixels\",\n    )\n    parser.add_argument(\n        \"--min-alpha-pixels\",\n        type=int,\n        default=20,\n        help=\"Ignore x-groups with fewer visible pixels than this\",\n    )\n    parser.add_argument(\"--expected-count\", type=int, help=\"Fail unless this many crops are detected\")\n   "
+          },
+          {
+            "term": "system",
+            "kind": "exact_term",
+            "token": "system",
+            "file": "scripts/decompose_iterative.py",
+            "location": {
+              "start_line": 502,
+              "start_column": 36,
+              "end_line": 502
+            },
+            "context": "cw * n, ch + cap_h\n    panel = Image.new(\"RGB\", (panel_w, panel_h), (255, 255, 255))\n    d = ImageDraw.Draw(panel)\n    try:\n        font = ImageFont.truetype(\"/System/Library/Fonts/Helvetica.ttc\", max(13, cap_h // 3))\n    except Exception:\n        font = ImageFont.load_default()\n\n    for i, (label, im) in enumerate(cells):\n "
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 342,
+              "start_column": 15,
+              "end_line": 342
+            },
+            "context": "ContentType=\"image/png\"/>'\n            '<Default Extension=\"jpg\" ContentType=\"image/jpeg\"/><Default Extension=\"jpeg\" ContentType=\"image/jpeg\"/>'\n            f'<Override PartName=\"/ppt/presentation.xml\" ContentType=\"{CT}presentation.main+xml\"/>'\n            f'<Override PartName=\"/ppt/slides/slide1.xml\" ContentType=\"{CT}slide+xm"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 343,
+              "start_column": 15,
+              "end_line": 343
+            },
+            "context": "Extension=\"jpeg\" ContentType=\"image/jpeg\"/>'\n            f'<Override PartName=\"/ppt/presentation.xml\" ContentType=\"{CT}presentation.main+xml\"/>'\n            f'<Override PartName=\"/ppt/slides/slide1.xml\" ContentType=\"{CT}slide+xml\"/>'\n            f'<Override PartName=\"/ppt/slideLayouts/slideLayout1.xml\" ContentType=\"{CT}slideLa"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 344,
+              "start_column": 15,
+              "end_line": 344
+            },
+            "context": "ntation.xml\" ContentType=\"{CT}presentation.main+xml\"/>'\n            f'<Override PartName=\"/ppt/slides/slide1.xml\" ContentType=\"{CT}slide+xml\"/>'\n            f'<Override PartName=\"/ppt/slideLayouts/slideLayout1.xml\" ContentType=\"{CT}slideLayout+xml\"/>'\n            f'<Override PartName=\"/ppt/slideMasters/slideMaster1.xml\" Conten"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 345,
+              "start_column": 15,
+              "end_line": 345
+            },
+            "context": "1.xml\" ContentType=\"{CT}slide+xml\"/>'\n            f'<Override PartName=\"/ppt/slideLayouts/slideLayout1.xml\" ContentType=\"{CT}slideLayout+xml\"/>'\n            f'<Override PartName=\"/ppt/slideMasters/slideMaster1.xml\" ContentType=\"{CT}slideMaster+xml\"/>'\n            '<Override PartName=\"/ppt/theme/theme1.xml\" ContentType=\"applica"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 346,
+              "start_column": 14,
+              "end_line": 346
+            },
+            "context": "\" ContentType=\"{CT}slideLayout+xml\"/>'\n            f'<Override PartName=\"/ppt/slideMasters/slideMaster1.xml\" ContentType=\"{CT}slideMaster+xml\"/>'\n            '<Override PartName=\"/ppt/theme/theme1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.theme+xml\"/>'\n            '<Override PartName=\"/docProps/core.xml\" "
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 347,
+              "start_column": 14,
+              "end_line": 347
+            },
+            "context": "deMaster+xml\"/>'\n            '<Override PartName=\"/ppt/theme/theme1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.theme+xml\"/>'\n            '<Override PartName=\"/docProps/core.xml\" ContentType=\"application/vnd.openxmlformats-package.core-properties+xml\"/>'\n            '<Override PartName=\"/docProps/app.xml\" C"
+          },
+          {
+            "term": "override",
+            "kind": "exact_term",
+            "token": "override",
+            "file": "scripts/pptx_native.py",
+            "location": {
+              "start_line": 348,
+              "start_column": 14,
+              "end_line": 348
+            },
+            "context": "nt.theme+xml\"/>'\n            '<Override PartName=\"/docProps/core.xml\" ContentType=\"application/vnd.openxmlformats-package.core-properties+xml\"/>'\n            '<Override PartName=\"/docProps/app.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.extended-properties+xml\"/>'\n            '</Types>',\n        \"_rels/.rel"
+          }
+        ],
+        "interpretation": "Exact terms are noisy: comments, platform/system calls, test cleanup, ignored files, and ordinary program terminology. Samples are not evidence of malicious instructions."
+      }
+    }
+  ]
+}

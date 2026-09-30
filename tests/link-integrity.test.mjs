@@ -88,6 +88,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/guides",
     "/guides/enterprise-agent-skills-presenter-readiness",
     "/guides/writing-without-the-ai-sheen",
+    "/guides/ming-design-layer-and-editable-design",
     "/guides/spectrum-of-skill-sophistication",
     "/guides/when-not-to-use-a-skill",
     "/guides/so-you-found-a-skill-checklist",

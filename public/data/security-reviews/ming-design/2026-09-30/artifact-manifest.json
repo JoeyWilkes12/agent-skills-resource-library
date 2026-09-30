@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-30",
+  "packaged_at": "2026-09-30T15:27:06.062061+00:00",
+  "source": {
+    "repository": "https://github.com/inclusionAI/ling-cookbook",
+    "commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+    "commit_date": "2026-09-23T06:53:28Z",
+    "checkout_status": "Pinned commit; clean working tree verified before hashing."
+  },
+  "scanner": {
+    "name": "NVIDIA SkillSpector",
+    "version": "2.12.0",
+    "origin": "https://github.com/NVIDIA/SkillSpector.git",
+    "upstream_revision": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+    "mode": "static-only (--no-llm)",
+    "llm_executed": false
+  },
+  "scope": "Both exact recommended-skills directories, including dotfiles, references, tests, and manifests. No skill code executed or installed.",
+  "normalization": {
+    "removed_machine_paths": true,
+    "changes": [
+      "skill.source machine absolute path replaced with repository-relative directory.",
+      "Added review provenance; all original issues, rule IDs, confidence, locations, snippets, analyzer metadata, completeness, limits, flags, and suppressions retained."
+    ],
+    "raw_report_sha256_note": "Binds private original scanner-report bytes before path normalization; normalized public file has different bytes."
+  },
+  "artifacts": [
+    {
+      "skill": "ling-ui-design",
+      "frontmatter_name": "ling-ui-design",
+      "repository_directory": "resources/recommended-skills/ling-ui-design",
+      "source_url": "https://github.com/inclusionAI/ling-cookbook/tree/c4a519f51bc238acefef009f957540d91ddd41fd/resources/recommended-skills/ling-ui-design",
+      "file_count": 27,
+      "total_bytes": 153810,
+      "files": [
+        {
+          "path": ".env.example",
+          "repository_path": "resources/recommended-skills/ling-ui-design/.env.example",
+          "bytes": 510,
+          "sha256": "3218f147383a0f5bda9850c86c9a3af684c9652f04888ef5727699c76137335b"
+        },
+        {
+          "path": ".gitignore",
+          "repository_path": "resources/recommended-skills/ling-ui-design/.gitignore",
+          "bytes": 131,
+          "sha256": "21467bae0b89091af0bd53e6efbad201f15848c2ee50022c6a2eb5aa9065bf09"
+        },
+        {
+          "path": "LICENSE",
+          "repository_path": "resources/recommended-skills/ling-ui-design/LICENSE",
+          "bytes": 1066,
+          "sha256": "be3e61e3c7fbd53a16f5dd40c802f088c318c23f051080cff776764f815fe262"
+        },
+        {
+          "path": "README.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/README.md",
+          "bytes": 5119,
+          "sha256": "9966ae420edec398d2427af5779868dda506dd2011713e160bf3a42ddc07a39d"
+        },
+        {
+          "path": "SKILL.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/SKILL.md",
+          "bytes": 8437,
+          "sha256": "3fb897e20bd28059ccbe03baa44d3759c39fd04abb0e702398dd4fa8a5587465"
+        },
+        {
+          "path": "pyproject.toml",
+          "repository_path": "resources/recommended-skills/ling-ui-design/pyproject.toml",
+          "bytes": 505,
+          "sha256": "a54f7a99308de4f602bf97502878fdb19607bf855b0971d60e25b591a4284fc4"
+        },
+        {
+          "path": "pyrightconfig.json",
+          "repository_path": "resources/recommended-skills/ling-ui-design/pyrightconfig.json",
+          "bytes": 249,
+          "sha256": "8193045423ae105f87bb1cccb0a0bc5f6c9b1a15c81192a3c759385bc22e767f"
+        },
+        {
+          "path": "references/asset-placement.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/asset-placement.md",
+          "bytes": 2852,
+          "sha256": "5299f82f5553a192d02ce05637d9dcc5376be729f8a56be1baa2e10e7acf3a2a"
+        },
+        {
+          "path": "references/engineering-taste.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/engineering-taste.md",
+          "bytes": 3318,
+          "sha256": "d5cd772c84e919b713708e2e4392a3468f39fa6fbf04c74a744713976a47ab2b"
+        },
+        {
+          "path": "references/image-generation.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/image-generation.md",
+          "bytes": 2486,
+          "sha256": "4b16b54c7506612c91aafaa22d6c9280c6c27242e355bee766266e5b4f82ab72"
+        },
+        {
+          "path": "references/layer-decomposition.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/layer-decomposition.md",
+          "bytes": 5659,
+          "sha256": "065bd8f53772537ed24bada6bf5377e180f9dfc673dd34add31dba7f01f7b215"
+        },
+        {
+          "path": "references/pre-implementation-analysis.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/pre-implementation-analysis.md",
+          "bytes": 1396,
+          "sha256": "a5f60813db07f9b10ee375da4179f1e24686511ddbab7bfc7bd7459484882cc5"
+        },
+        {
+          "path": "references/visual-direction.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/visual-direction.md",
+          "bytes": 2628,
+          "sha256": "05a9bf86bf091750671b0ed752085cad034073cd34413d72cb7fad5a3b3dda79"
+        },
+        {
+          "path": "references/visual-validation.md",
+          "repository_path": "resources/recommended-skills/ling-ui-design/references/visual-validation.md",
+          "bytes": 4735,
+          "sha256": "1257de4d34eacdcc824a3ea526d3caf79df96e2c736940572b2a3b06b8db4ead"
+        },
+        {
+          "path": "scripts/_asset_regions.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/_asset_regions.py",
+          "bytes": 2199,
+          "sha256": "1aacb222e7a3a1ca31183a9587ba141bf58a9f57cd93c2055944c37a5ebe3d66"
+        },
+        {
+          "path": "scripts/_common.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/_common.py",
+          "bytes": 13332,
+          "sha256": "ff46127607b2360ca438805ff3c44383fd1463e820be7f1e40e815c54250537c"
+        },
+        {
+          "path": "scripts/capture_page.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/capture_page.py",
+          "bytes": 6350,
+          "sha256": "baa627c48c849a5fc548401288da8b286ab1ef0239bf16bc288689072a64e725"
+        },
+        {
+          "path": "scripts/configure.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/configure.py",
+          "bytes": 1432,
+          "sha256": "be9049a93a69af3c02d063fb2591bb35a36578d284ad2d613f8b790bc4d31b2e"
+        },
+        {
+          "path": "scripts/crop_elements.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/crop_elements.py",
+          "bytes": 17830,
+          "sha256": "1bd8bdc6f3028d052f003f3128c4789398e3ea5f4706b9b25f33107831e9a54c"
+        },
+        {
+          "path": "scripts/decompose_layers.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/decompose_layers.py",
+          "bytes": 8939,
+          "sha256": "407728a6f079ad9d68cda1b650c62e78378fc4f2468cadb2e40eb810728320d2"
+        },
+        {
+          "path": "scripts/generate_image.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/generate_image.py",
+          "bytes": 2081,
+          "sha256": "1dff6d71c4f327bf286a4020517edc362c4927afc750338cd070fe38c5e43c94"
+        },
+        {
+          "path": "scripts/install.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/install.py",
+          "bytes": 4624,
+          "sha256": "9714f0c6e0dda4f3107230c28977221fd34cc78d01d2cc482221d299e29fa3c5"
+        },
+        {
+          "path": "scripts/refine_crop.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/scripts/refine_crop.py",
+          "bytes": 8212,
+          "sha256": "1c141d620f821fbb006947a8f1a2783dd9c758bd00d589f277f661a28964dd5c"
+        },
+        {
+          "path": "tests/test_asset_regions.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/tests/test_asset_regions.py",
+          "bytes": 13051,
+          "sha256": "495600bc214a4a757479ee8eaf30098c8a359f21adf8c890b52d2d04abd71404"
+        },
+        {
+          "path": "tests/test_helpers.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/tests/test_helpers.py",
+          "bytes": 21128,
+          "sha256": "9ca8017e594fdf8b6d550688bb478d8347cd6ea81c99325e0da369bb31f6e7da"
+        },
+        {
+          "path": "tests/test_output_paths.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/tests/test_output_paths.py",
+          "bytes": 4724,
+          "sha256": "4b8b449b3fbda6f78fa4912cf174943b6cfd9ad5c59da04ad88912b4a75348ae"
+        },
+        {
+          "path": "tests/test_shared_config.py",
+          "repository_path": "resources/recommended-skills/ling-ui-design/tests/test_shared_config.py",
+          "bytes": 10817,
+          "sha256": "08fe41f96b2b2406e763f1d381b8f36c236810b7cf67edf220a5ff91e27970ae"
+        }
+      ]
+    },
+    {
+      "skill": "image-to-editable-ppt",
+      "frontmatter_name": "image-to-editable-ppt",
+      "repository_directory": "resources/recommended-skills/image-to-editable-ppt",
+      "source_url": "https://github.com/inclusionAI/ling-cookbook/tree/c4a519f51bc238acefef009f957540d91ddd41fd/resources/recommended-skills/image-to-editable-ppt",
+      "file_count": 20,
+      "total_bytes": 160046,
+      "files": [
+        {
+          "path": ".env.example",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/.env.example",
+          "bytes": 163,
+          "sha256": "7ad4de4c3fc1534f07482983c6cb66a151f921c8c0b97f0fba11f8f394c81b89"
+        },
+        {
+          "path": ".gitignore",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/.gitignore",
+          "bytes": 38,
+          "sha256": "8ec4ab95fd04f289980a5ddf65fd5169a5a5e8ad4c4c95ffcd05285633c8b9f2"
+        },
+        {
+          "path": "LICENSE",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/LICENSE",
+          "bytes": 1066,
+          "sha256": "be3e61e3c7fbd53a16f5dd40c802f088c318c23f051080cff776764f815fe262"
+        },
+        {
+          "path": "README-zh.md",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/README-zh.md",
+          "bytes": 2236,
+          "sha256": "abd2bafbd150d35b3da08a96a9bfc301ebf5df5e1d5c739cb43253baf2c067e7"
+        },
+        {
+          "path": "README.md",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/README.md",
+          "bytes": 1946,
+          "sha256": "82b38dbf5dbe5537cb06bb5eb4065df1d07b5303932f350a875df409b35a0b44"
+        },
+        {
+          "path": "SKILL.md",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/SKILL.md",
+          "bytes": 11878,
+          "sha256": "891f187386744ff302c66e8104c7e66695901aee3697b6c90d4563430290bd09"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/agents/openai.yaml",
+          "bytes": 227,
+          "sha256": "1d23cc66b65c0106e0a2128655f1996ae275ee656c66dcf48dc50f845e794252"
+        },
+        {
+          "path": "references/iterative-decomposition.md",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/references/iterative-decomposition.md",
+          "bytes": 5188,
+          "sha256": "fbe68c92f7e5cf1ebb2fd8781ac23b336026113bcb0207b3acffee807e481828"
+        },
+        {
+          "path": "references/scene-schema.md",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/references/scene-schema.md",
+          "bytes": 5499,
+          "sha256": "a5bf20c551216522cb6428813cbb6c5ea3f234d01f222d19f462438beb89a73f"
+        },
+        {
+          "path": "requirements.txt",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/requirements.txt",
+          "bytes": 40,
+          "sha256": "a15cc49155ea0e1ffb244519b8b8a110efc8fb8d450707192138972b50cc91c7"
+        },
+        {
+          "path": "scripts/api_services/__init__.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/api_services/__init__.py",
+          "bytes": 483,
+          "sha256": "d04cf3bab85b5dff1a2375238512e822335321a00b6cca3241d98c03a782494c"
+        },
+        {
+          "path": "scripts/api_services/artifact_store.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/api_services/artifact_store.py",
+          "bytes": 2012,
+          "sha256": "f30660e06367a4263ac9301cc6e685c24d5658f4237743b9f04f7591cd6566f5"
+        },
+        {
+          "path": "scripts/api_services/image_decomposer.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/api_services/image_decomposer.py",
+          "bytes": 24189,
+          "sha256": "efdb19bd41a78d462f6b2ede0224875baa06e037ef34edbcb377725b9ed94a3c"
+        },
+        {
+          "path": "scripts/crop_alpha_assets.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/crop_alpha_assets.py",
+          "bytes": 5549,
+          "sha256": "c6fc21e415c9eaa7f655d935771d01a95da77ee9157870772b8fdc8112e98206"
+        },
+        {
+          "path": "scripts/decompose_iterative.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/decompose_iterative.py",
+          "bytes": 45375,
+          "sha256": "fb5dce79aad080b7f14d788bb0b78ff67d2171368caea746ee1fce79410d10a4"
+        },
+        {
+          "path": "scripts/pptx_native.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/pptx_native.py",
+          "bytes": 22879,
+          "sha256": "ab616dc1e52f2756f601edf7bba9095270a1c70ce0a5d80a75ffb843273e8016"
+        },
+        {
+          "path": "scripts/render_pptx.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/render_pptx.py",
+          "bytes": 10586,
+          "sha256": "d4ad51999fff319bd265ed71d6d08ad3d65f61b6ce8e0200895f393f410c48af"
+        },
+        {
+          "path": "scripts/scene_dom.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/scene_dom.py",
+          "bytes": 12948,
+          "sha256": "bd32d1fc0943e432a53238207dc34f04445ad567a98bac786b2a0844357cc991"
+        },
+        {
+          "path": "scripts/scene_to_pptx.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/scene_to_pptx.py",
+          "bytes": 2044,
+          "sha256": "76156b4d7da17c527c81fc023c810044cbc597c87d2c36167ab20c3f4e2c0163"
+        },
+        {
+          "path": "scripts/validate_pptx.py",
+          "repository_path": "resources/recommended-skills/image-to-editable-ppt/scripts/validate_pptx.py",
+          "bytes": 5700,
+          "sha256": "f865e6da53eb18ae6bdd3a1c07138db3b5b995182bf28d456d0edbe8aff0f1c4"
+        }
+      ]
+    }
+  ],
+  "total_file_count": 47,
+  "total_bytes": 313856
+}

@@ -453,11 +453,11 @@ The existing code already supplies much of the foundation:
 | --- | --- | --- |
 | `app/globals.css :root` | Primitive tokens | Split primitive and semantic roles; replace repeated hard-coded text colors incrementally |
 | `app/guides/page.tsx` | Guides index | Move catalog metadata out of the page; add task/family discovery and trust metadata |
-| `app/guides/guide-reading-layout.tsx` | Reading shell | Keep; add a trust-receipt slot and consistent footer slots |
-| `app/guides/table-of-contents.tsx` | GuideTableOfContents | Keep active-state and compact behavior; stop numbering conceptual sections |
+| `app/guides/guide-reading-layout.tsx` | Reading shell | Keep; supports opt-in unnumbered contents for decision and conceptual guides; add consistent footer slots |
+| `app/guides/table-of-contents.tsx` | GuideTableOfContents | Active-state and compact behavior remain; `numbered={false}` uses an unordered list without section numbers |
 | `app/guides/markdown-guide.tsx` | Block parser/renderer | Evolve toward explicit semantic blocks and metadata rather than visual-only Markdown patterns |
 | `app/guides/guide-table-viewport.tsx` | GuideTableViewport | Shared bounded sticky-header and horizontal-scroll behavior for Markdown and bespoke tables |
-| `app/guides/markdown-guide-page.tsx` | Standard guide template | Keep as the migration target for prose-heavy guides |
+| `app/guides/markdown-guide-page.tsx` | Standard guide template | Supports an opt-in trust receipt with source, verification date, reading mode, linked workflow effects, and outcome; supports unnumbered decision contents |
 | Bespoke `page.tsx` guides | Specialized blocks | Promote patterns only after three same-intent uses; otherwise keep local |
 | `content/guides` | Authored content | Add schema-validated metadata without forcing one storage format immediately |
 

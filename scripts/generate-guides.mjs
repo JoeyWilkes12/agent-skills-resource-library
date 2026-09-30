@@ -43,6 +43,10 @@ const markdownGuides = [
     target: "app/guides/generated/headroom-context-compression-evidence.ts",
   },
   {
+    source: "content/guides/ming-design-layer-and-editable-design.md",
+    target: "app/guides/generated/ming-design-layer-and-editable-design.ts",
+  },
+  {
     source: "content/guides/jetbrains-caveman-token-benchmark.md",
     target: "app/guides/generated/jetbrains-caveman-token-benchmark.ts",
   },

@@ -1,0 +1,3835 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-30",
+  "packaged_at": "2026-09-30T15:27:06.062061+00:00",
+  "source": {
+    "repository": "https://github.com/inclusionAI/ling-cookbook",
+    "commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+    "commit_date": "2026-09-23T06:53:28Z",
+    "checkout_status": "Pinned commit; clean working tree verified before hashing."
+  },
+  "scanner": {
+    "name": "NVIDIA SkillSpector",
+    "version": "2.12.0",
+    "origin": "https://github.com/NVIDIA/SkillSpector.git",
+    "upstream_revision": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+    "mode": "static-only (--no-llm)",
+    "llm_executed": false
+  },
+  "scope": "Both exact recommended-skills directories, including dotfiles, references, tests, and manifests. No skill code executed or installed.",
+  "normalization": {
+    "removed_machine_paths": true,
+    "changes": [
+      "skill.source machine absolute path replaced with repository-relative directory.",
+      "Added review provenance; all original issues, rule IDs, confidence, locations, snippets, analyzer metadata, completeness, limits, flags, and suppressions retained."
+    ],
+    "raw_report_sha256_note": "Binds private original scanner-report bytes before path normalization; normalized public file has different bytes."
+  },
+  "interpretation": "Static-only triage. Scores are scanner signals, not confirmed malicious behavior. Both scans were successful but partial; preserve all issue and completeness details for manual review.",
+  "summary": [
+    {
+      "skill": "ling-ui-design",
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "issue_count": 35,
+      "severity_counts": {
+        "HIGH": 22,
+        "MEDIUM": 9,
+        "LOW": 4
+      },
+      "rule_counts": {
+        "PE3": 19,
+        "P6": 1,
+        "E2": 2,
+        "LP3": 1,
+        "E1": 6,
+        "AS3": 1,
+        "AST4": 1,
+        "SC4": 4
+      },
+      "coverage_percent": 92.6,
+      "is_complete": false,
+      "suppressed_count": 0
+    },
+    {
+      "skill": "image-to-editable-ppt",
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "CRITICAL"
+      },
+      "issue_count": 18,
+      "severity_counts": {
+        "CRITICAL": 3,
+        "HIGH": 4,
+        "MEDIUM": 5,
+        "LOW": 6
+      },
+      "rule_counts": {
+        "TT3": 3,
+        "PE3": 3,
+        "P6": 1,
+        "E1": 2,
+        "LP3": 1,
+        "TT2": 1,
+        "AST4": 1,
+        "SC1": 3,
+        "SC4": 3
+      },
+      "coverage_percent": 90.0,
+      "is_complete": false,
+      "suppressed_count": 0
+    }
+  ],
+  "reports": [
+    {
+      "skill": {
+        "name": "ling-ui-design",
+        "source": "resources/recommended-skills/ling-ui-design",
+        "scanned_at": "2026-09-30T06:09:12.686510+00:00"
+      },
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": ".env.example",
+          "type": "other",
+          "lines": 13,
+          "executable": false,
+          "size_bytes": 510,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": ".gitignore",
+          "type": "other",
+          "lines": 13,
+          "executable": false,
+          "size_bytes": 131,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "LICENSE",
+          "type": "other",
+          "lines": 21,
+          "executable": false,
+          "size_bytes": 1066,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "README.md",
+          "type": "markdown",
+          "lines": 127,
+          "executable": false,
+          "size_bytes": 5119,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 143,
+          "executable": false,
+          "size_bytes": 8437,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "pyproject.toml",
+          "type": "toml",
+          "lines": 25,
+          "executable": false,
+          "size_bytes": 505,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "pyrightconfig.json",
+          "type": "json",
+          "lines": 9,
+          "executable": false,
+          "size_bytes": 249,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/asset-placement.md",
+          "type": "markdown",
+          "lines": 60,
+          "executable": false,
+          "size_bytes": 2852,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/engineering-taste.md",
+          "type": "markdown",
+          "lines": 56,
+          "executable": false,
+          "size_bytes": 3318,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/image-generation.md",
+          "type": "markdown",
+          "lines": 53,
+          "executable": false,
+          "size_bytes": 2486,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/layer-decomposition.md",
+          "type": "markdown",
+          "lines": 111,
+          "executable": false,
+          "size_bytes": 5659,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/pre-implementation-analysis.md",
+          "type": "markdown",
+          "lines": 24,
+          "executable": false,
+          "size_bytes": 1396,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/visual-direction.md",
+          "type": "markdown",
+          "lines": 50,
+          "executable": false,
+          "size_bytes": 2628,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/visual-validation.md",
+          "type": "markdown",
+          "lines": 109,
+          "executable": false,
+          "size_bytes": 4735,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/_asset_regions.py",
+          "type": "python",
+          "lines": 61,
+          "executable": true,
+          "size_bytes": 2199,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/_common.py",
+          "type": "python",
+          "lines": 359,
+          "executable": true,
+          "size_bytes": 13332,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/capture_page.py",
+          "type": "python",
+          "lines": 159,
+          "executable": true,
+          "size_bytes": 6350,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/configure.py",
+          "type": "python",
+          "lines": 45,
+          "executable": true,
+          "size_bytes": 1432,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/crop_elements.py",
+          "type": "python",
+          "lines": 462,
+          "executable": true,
+          "size_bytes": 17830,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/decompose_layers.py",
+          "type": "python",
+          "lines": 247,
+          "executable": true,
+          "size_bytes": 8939,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/generate_image.py",
+          "type": "python",
+          "lines": 67,
+          "executable": true,
+          "size_bytes": 2081,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/install.py",
+          "type": "python",
+          "lines": 146,
+          "executable": true,
+          "size_bytes": 4624,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/refine_crop.py",
+          "type": "python",
+          "lines": 240,
+          "executable": true,
+          "size_bytes": 8212,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "tests/test_asset_regions.py",
+          "type": "python",
+          "lines": 276,
+          "executable": true,
+          "size_bytes": 13051,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "tests/test_helpers.py",
+          "type": "python",
+          "lines": 596,
+          "executable": true,
+          "size_bytes": 21128,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "tests/test_output_paths.py",
+          "type": "python",
+          "lines": 108,
+          "executable": true,
+          "size_bytes": 4724,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "tests/test_shared_config.py",
+          "type": "python",
+          "lines": 234,
+          "executable": true,
+          "size_bytes": 10817,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "PE3",
+          "finding_id": "finding-7501a1f83b564c5c917d36df48a853ad",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": ".env.example",
+            "start_line": 1,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy to .env in this skill root. .env is gitignored; secrets stay local.\n# scripts/configure.py creates the file safely and never overwrites it.\nLING_UI_DESIGN_API_KEY=\nLING_UI_DESIGN_API_BASE=https://api.novita.ai/openai/v1/",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": ".env.example",
+              "start_line": 1,
+              "end_line": null,
+              "start_column": 10
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-7501a1f83b564c5c917d36df48a853ad",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": ".env.example",
+            "start_line": 1,
+            "end_line": null,
+            "start_column": 35
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy to .env in this skill root. .env is gitignored; secrets stay local.\n# scripts/configure.py creates the file safely and never overwrites it.\nLING_UI_DESIGN_API_KEY=\nLING_UI_DESIGN_API_BASE=https://api.novita.ai/openai/v1/",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": ".env.example",
+              "start_line": 1,
+              "end_line": null,
+              "start_column": 35
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-7501a1f83b564c5c917d36df48a853ad",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": ".gitignore",
+            "start_line": 1,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy to .env in this skill root. .env is gitignored; secrets stay local.\n# scripts/configure.py creates the file safely and never overwrites it.\nLING_UI_DESIGN_API_KEY=\nLING_UI_DESIGN_API_BASE=https://api.novita.ai/openai/v1/",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": ".gitignore",
+              "start_line": 1,
+              "end_line": null,
+              "start_column": 0
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-7501a1f83b564c5c917d36df48a853ad",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/configure.py",
+            "start_line": 18,
+            "end_line": null,
+            "start_column": 67
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy to .env in this skill root. .env is gitignored; secrets stay local.\n# scripts/configure.py creates the file safely and never overwrites it.\nLING_UI_DESIGN_API_KEY=\nLING_UI_DESIGN_API_BASE=https://api.novita.ai/openai/v1/",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": "scripts/configure.py",
+              "start_line": 18,
+              "end_line": null,
+              "start_column": 67
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/_common.py",
+            "start_line": 14,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "scripts/_common.py",
+              "start_line": 14,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/install.py",
+            "start_line": 57,
+            "end_line": null,
+            "start_column": 29
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "scripts/install.py",
+              "start_line": 57,
+              "end_line": null,
+              "start_column": 29
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/install.py",
+            "start_line": 62,
+            "end_line": null,
+            "start_column": 23
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "scripts/install.py",
+              "start_line": 62,
+              "end_line": null,
+              "start_column": 23
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 482,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 482,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 494,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 494,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 511,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 511,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 530,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 530,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 564,
+            "end_line": null,
+            "start_column": 31
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 564,
+              "end_line": null,
+              "start_column": 31
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 576,
+            "end_line": null,
+            "start_column": 15
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 576,
+              "end_line": null,
+              "start_column": 15
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_helpers.py",
+            "start_line": 583,
+            "end_line": null,
+            "start_column": 36
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_helpers.py",
+              "start_line": 583,
+              "end_line": null,
+              "start_column": 36
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 84,
+            "end_line": null,
+            "start_column": 57
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 84,
+              "end_line": null,
+              "start_column": 57
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 112,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 112,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 179,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 179,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 211,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 211,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-40e866777c20401ea5aba5e9d1baf42e",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 233,
+            "end_line": null,
+            "start_column": 72
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n\nSKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 233,
+              "end_line": null,
+              "start_column": 72
+            }
+          ]
+        },
+        {
+          "id": "P6",
+          "finding_id": "finding-31abf796151c4707870c1e734b144f16",
+          "category": "System Prompt Leakage",
+          "pattern": "Direct Prompt Extraction",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "scripts/decompose_layers.py",
+            "start_line": 45,
+            "end_line": null,
+            "start_column": 8
+          },
+          "finding": "return prompt",
+          "explanation": "Skill contains instructions that could directly expose system prompts, internal rules, or hidden instructions to users or external parties.",
+          "remediation": "Remove any instructions that reveal, print, or output system prompts or internal rules. System instructions should never be exposed to end users.",
+          "code_snippet": "        prompt = Path(args.prompt_file).read_text(encoding=\"utf-8\").strip()\n        if not prompt:\n            raise SystemExit(\"error: prompt file is empty\")\n        return prompt\n    if args.layers == 4:\n        return DEFAULT_PROMPT\n    return f\"\"\"Decompose this image into {args.layers} layers with the following specifications:",
+          "intent": null,
+          "tags": [
+            "System Prompt Leakage"
+          ],
+          "evidence": {},
+          "match_fingerprint": "18bb822f71209cb3a04d792499f0995d675d1c638e97c90968b496128c99c88d",
+          "occurrences": [
+            {
+              "file": "scripts/decompose_layers.py",
+              "start_line": 45,
+              "end_line": null,
+              "start_column": 8
+            }
+          ]
+        },
+        {
+          "id": "E2",
+          "finding_id": "finding-c11722380c9349dfb3b3e07d0f1fae4c",
+          "category": "Data Exfiltration",
+          "pattern": "Env Variable Harvesting",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 109,
+            "end_line": 109,
+            "start_column": 16
+          },
+          "finding": "list(os.environ)",
+          "explanation": "Code enumerates, copies, or searches environment variables for secrets. Bulk environment access can collect credentials unrelated to the skill's stated purpose.",
+          "remediation": "Read only explicitly required environment variables by name. Avoid enumerating or copying the full environment, and never log or transmit credentials to untrusted destinations.",
+          "code_snippet": "    kind: str, source: str, configured_timeout: int | None,\n    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,\n) -> None:\n    for name in list(os.environ):\n        if name.startswith(\"LING_UI_DESIGN_\"):\n            monkeypatch.delenv(name)\n    dotenv = tmp_path / \".env\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "fea96b957ae5ce479376b0c4b20defaead3427461b0cbde8466b2001799c7058",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 109,
+              "end_line": 109,
+              "start_column": 16
+            }
+          ]
+        },
+        {
+          "id": "E2",
+          "finding_id": "finding-1ee82d7075a3492ba58e4f339acde479",
+          "category": "Data Exfiltration",
+          "pattern": "Env Variable Harvesting",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 214,
+            "end_line": 214,
+            "start_column": 36
+          },
+          "finding": "os.environ.items()",
+          "explanation": "Code enumerates, copies, or searches environment variables for secrets. Bulk environment access can collect credentials unrelated to the skill's stated purpose.",
+          "remediation": "Read only explicitly required environment variables by name. Avoid enumerating or copying the full environment, and never log or transmit credentials to untrusted destinations.",
+          "code_snippet": "    dotenv = tmp_path / \".env\"\n    if source != \"missing\":\n        dotenv.write_text(\"LING_UI_DESIGN_API_KEY=\\n\" if source == \"blank\" else \"LING_UI_DESIGN_API_KEY=file-test-key\\n\")\n    environment = {k: v for k, v in os.environ.items() if not k.startswith(\"LING_UI_DESIGN_\")}\n    if source == \"environment\":\n        environment[\"LING_UI_DESIGN_API_KEY\"] = \"environment-test-key\"\n        # An exported key must not depend on a readable dotenv file.",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "21b29b57b89a5a3233f697b487f442cbfa19ad73da80ad74d8531f3d6c0dc384",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 214,
+              "end_line": 214,
+              "start_column": 36
+            }
+          ]
+        },
+        {
+          "id": "LP3",
+          "finding_id": "finding-4c3887d878644b45b39966dea48278e6",
+          "category": "MCP Least Privilege",
+          "pattern": "Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: env, file_read, file_write, network, shell.",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 1,
+            "end_line": null
+          },
+          "finding": "Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: env, file_read, file_write, network, shell.",
+          "explanation": "Without declared permissions the skill's intent is opaque and cannot be validated.",
+          "remediation": "Declare the skill's tool scope: for Claude Code / Agent Skills SKILL.md, list the tools the skill may invoke in the 'allowed-tools' frontmatter field; for MCP server manifests, add a 'permissions' list naming the required capabilities.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "ASI02"
+          ],
+          "evidence": {},
+          "match_fingerprint": null,
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 1,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": ".env.example",
+            "start_line": 4,
+            "end_line": null,
+            "start_column": 24
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": ".env.example",
+              "start_line": 4,
+              "end_line": null,
+              "start_column": 24
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "README.md",
+            "start_line": 81,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "README.md",
+              "start_line": 81,
+              "end_line": null,
+              "start_column": 25
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "references/image-generation.md",
+            "start_line": 10,
+            "end_line": null,
+            "start_column": 14
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "references/image-generation.md",
+              "start_line": 10,
+              "end_line": null,
+              "start_column": 14
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "references/layer-decomposition.md",
+            "start_line": 12,
+            "end_line": null,
+            "start_column": 14
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "references/layer-decomposition.md",
+              "start_line": 12,
+              "end_line": null,
+              "start_column": 14
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/_common.py",
+            "start_line": 16,
+            "end_line": null,
+            "start_column": 20
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "scripts/_common.py",
+              "start_line": 16,
+              "end_line": null,
+              "start_column": 20
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-893f437680d546e0ad1a1b2838ca303a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 91,
+            "end_line": null,
+            "start_column": 57
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "SKILL_ROOT = Path(__file__).resolve().parents[1]\nENV_FILE = SKILL_ROOT / \".env\"\nENV_EXAMPLE = SKILL_ROOT / \".env.example\"\nDEFAULT_API_BASE = \"https://api.novita.ai/openai/v1/\"\nKEY_SETUP_URL = \"https://novita.ai/\"\n_ENV_NAME = re.compile(r\"^[A-Za-z_][A-Za-z0-9_]*$\")\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 91,
+              "end_line": null,
+              "start_column": 57
+            }
+          ]
+        },
+        {
+          "id": "AS3",
+          "finding_id": "finding-8210bd7909fc421fbc93be95c335b6d2",
+          "category": "Agent Snooping",
+          "pattern": "Skill Enumeration",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "scripts/install.py",
+            "start_line": 47,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "dir = \".claude/skills",
+          "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+          "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+          "code_snippet": "        root = project_root.expanduser().resolve(strict=False)\n    else:\n        root = (home or Path.home()).expanduser().resolve(strict=False)\n    skill_dir = \".claude/skills\" if harness == \"claude\" else \".agents/skills\"\n    return root / skill_dir / SKILL_NAME\n\n",
+          "intent": null,
+          "tags": [
+            "Agent Snooping"
+          ],
+          "evidence": {},
+          "match_fingerprint": "00ee21ec0dc35f2337f616b8d8bea9d09ba121a7c808a844d9945c3023a297e3",
+          "occurrences": [
+            {
+              "file": "scripts/install.py",
+              "start_line": 47,
+              "end_line": null,
+              "start_column": 10
+            }
+          ]
+        },
+        {
+          "id": "AST4",
+          "finding_id": "finding-d88c7fd1b1ed45609d7121e27d2a578f",
+          "category": "Dangerous Code Execution",
+          "pattern": "subprocess module call",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "tests/test_shared_config.py",
+            "start_line": 219,
+            "end_line": 222,
+            "start_column": 13,
+            "end_column": 5
+          },
+          "finding": "subprocess.run(\n        [sys.executable, \"-B\", str(scripts / \"configure.py\"), \"--check\"],\n        env=environment, capture_output=True, text=True, check=False,\n    )",
+          "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection.",
+          "remediation": "Use subprocess.run() with shell=False and an explicit argument list. Validate all inputs and avoid passing user-controlled data to commands.",
+          "code_snippet": "        environment[\"LING_UI_DESIGN_API_KEY\"] = \"environment-test-key\"\n        # An exported key must not depend on a readable dotenv file.\n        dotenv.write_text(\"invalid dotenv content\")\n    result = subprocess.run(\n        [sys.executable, \"-B\", str(scripts / \"configure.py\"), \"--check\"],\n        env=environment, capture_output=True, text=True, check=False,\n    )",
+          "intent": null,
+          "tags": [
+            "Dangerous Code Execution"
+          ],
+          "evidence": {},
+          "match_fingerprint": "3cf55c9a59f957f7aaa4d1fe25b3b293eac48ced29a24576e86063cb2da5c449",
+          "occurrences": [
+            {
+              "file": "tests/test_shared_config.py",
+              "start_line": 219,
+              "end_line": 222,
+              "start_column": 13,
+              "end_column": 5
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-abf6f12fce584f3fb146f72cf6c151eb",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: setuptools has 10 known advisory(ies) (CVE-2013-1633 (Setuptools vulnerable to Man-in-the-middle attacks); CVE-2025-47273 (setuptools has a path traversal vulnerability in PackageIndex.download that lead); CVE-2024-6345 (setuptools vulnerable to Command Injection via package URL) +7 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "pyproject.toml",
+            "start_line": 2,
+            "end_line": null
+          },
+          "finding": "setuptools",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f6ce7da36c40d6b1c90738a6b6d9f1c27f59e9fa8cf03f7f75918baf30c37519",
+          "occurrences": [
+            {
+              "file": "pyproject.toml",
+              "start_line": 2,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-372e6911cf504c2185838d9e5f87db24",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: Pillow has 16 known advisory(ies) (CVE-2016-2533 (Pillow buffer overflow in ImagingPcdDecode); CVE-2023-50447 (Arbitrary Code Execution in Pillow); CVE-2021-27922 (Pillow Uncontrolled Resource Consumption) +13 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "pyproject.toml",
+            "start_line": 12,
+            "end_line": null
+          },
+          "finding": "Pillow",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "dd8e79d61dd101079536d6680ca830a64bdd1dfc09e23b77bb2413ead7384d2c",
+          "occurrences": [
+            {
+              "file": "pyproject.toml",
+              "start_line": 12,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-45c1e0ba1b9249cc887f3f1df4d2a5c1",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: requests has 16 known advisory(ies) (CVE-2014-1830 (Exposure of Sensitive Information to an Unauthorized Actor in Requests); CVE-2024-47081 (Requests vulnerable to .netrc credentials leak via malicious URLs); CVE-2024-35195 (Requests `Session` object does not verify requests after making first request wi) +13 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "pyproject.toml",
+            "start_line": 13,
+            "end_line": null
+          },
+          "finding": "requests",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "09deeb6fdb55899e7b284b11a4a1f240e895ab350d9ef10d889ca4cada77cadd",
+          "occurrences": [
+            {
+              "file": "pyproject.toml",
+              "start_line": 13,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-a7f550c0cc924595aadbd3cd7bb36844",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: pytest has 2 known advisory(ies) (CVE-2025-71176 (pytest has vulnerable tmpdir handling); CVE-2025-71176 (pytest has vulnerable tmpdir handling)), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "pyproject.toml",
+            "start_line": 18,
+            "end_line": null
+          },
+          "finding": "pytest",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "2bb87de6fccba4b2dc35bf620098e447807772cc6d188fd23580bf6c0df60dbf",
+          "occurrences": [
+            {
+              "file": "pyproject.toml",
+              "start_line": 18,
+              "end_line": null
+            }
+          ]
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": true,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "execution_successful": true,
+      "analysis_completeness": {
+        "total_components": 27,
+        "scanned_components": 25,
+        "coverage_percent": 92.6,
+        "is_complete": false,
+        "status": "partial",
+        "execution_successful": true,
+        "fully_inspected_files": 25,
+        "partially_inspected_files": 2,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "static",
+            "reason_code": "static_parse_limit",
+            "message": "A security-relevant expression exceeded a bounded static parser's span limit.",
+            "path": "SKILL.md",
+            "start_line": null,
+            "end_line": null,
+            "fatal": false,
+            "analyzers": [
+              "static_patterns_tool_misuse"
+            ]
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 37,
+            "end_line": 37,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 52,
+            "end_line": 52,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 54,
+            "end_line": 54,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "static",
+            "reason_code": "output_limit",
+            "message": "Inspection reached its configured output limit.",
+            "path": "pyproject.toml",
+            "start_line": null,
+            "end_line": null,
+            "fatal": false,
+            "analyzers": [
+              "static_patterns_supply_chain_dependencies_output_limit"
+            ]
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "completed",
+            "planned_work": 13,
+            "completed": 13,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "completed",
+            "planned_work": 13,
+            "completed": 13,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "completed",
+            "planned_work": 14,
+            "completed": 14,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "degraded",
+            "planned_work": 28,
+            "completed": 27,
+            "partial": 1,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "degraded",
+            "planned_work": 27,
+            "completed": 26,
+            "partial": 1,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 27,
+            "completed": 27,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 20,
+            "column": 45,
+            "evidence": "- **Text-to-code:** read [visual direction](references/visual-direction.md) and",
+            "target_path": "references/visual-direction.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 21,
+            "column": 22,
+            "evidence": "[image generation](references/image-generation.md). Unless the user explicitly",
+            "target_path": "references/image-generation.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 26,
+            "column": 61,
+            "evidence": "generate a replacement design. Read [layer decomposition](references/layer-decomposition.md)",
+            "target_path": "references/layer-decomposition.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 37,
+            "column": 36,
+            "evidence": "target viewports. Run `python \"$LING_UI_DESIGN_SKILL_ROOT/scripts/configure.py\" --check`",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 52,
+            "column": 17,
+            "evidence": "`python \"$LING_UI_DESIGN_SKILL_ROOT/scripts/crop_elements.py\" --layers <decompose-dir> --outdir <crops-dir>`",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 54,
+            "column": 16,
+            "evidence": "Inspect `manifest.json` and every written candidate PNG.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 56,
+            "column": 47,
+            "evidence": "split or clean a useful candidate with `scripts/refine_crop.py` or the manual",
+            "target_path": "scripts/refine_crop.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 16,
+            "evidence": "mode of `crop_elements.py`. Read [asset placement](references/asset-placement.md)",
+            "target_path": "scripts/crop_elements.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 58,
+            "evidence": "mode of `crop_elements.py`. Read [asset placement](references/asset-placement.md)",
+            "target_path": "references/asset-placement.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 65,
+            "column": 41,
+            "evidence": "5. Follow [pre-implementation analysis](references/pre-implementation-analysis.md) and",
+            "target_path": "references/pre-implementation-analysis.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 66,
+            "column": 24,
+            "evidence": "[engineering taste](references/engineering-taste.md). Complete the checklist below",
+            "target_path": "references/engineering-taste.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 81,
+            "column": 48,
+            "evidence": "6. Run the page and follow [visual validation](references/visual-validation.md).",
+            "target_path": "references/visual-validation.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 101,
+            "column": 49,
+            "evidence": "For a misplaced or noisy crop, reclean it with `scripts/refine_crop.py` in that",
+            "target_path": "scripts/refine_crop.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 102,
+            "column": 58,
+            "evidence": "image's own coordinates, or pass an explicit `--box` to `crop_elements.py`.",
+            "target_path": "scripts/crop_elements.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 126,
+            "column": 4,
+            "evidence": "`.env.example`; credentials have no defaults.",
+            "target_path": ".env.example",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [
+          "Analyzer static_patterns_supply_chain status: degraded.",
+          "Analyzer static_patterns_tool_misuse status: degraded."
+        ],
+        "findings_before_filtering": 35,
+        "findings_after_filtering": 35
+      },
+      "review_provenance": {
+        "review_date": "2026-09-30",
+        "repository": "https://github.com/inclusionAI/ling-cookbook",
+        "source_commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+        "source_commit_date": "2026-09-23T06:53:28Z",
+        "repository_directory": "resources/recommended-skills/ling-ui-design",
+        "frontmatter_name": "ling-ui-design",
+        "scanner_origin": "https://github.com/NVIDIA/SkillSpector.git",
+        "scanner_upstream_revision": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+        "raw_report_sha256": "5d9e6c5e9e754e80f31dc35b6a194f162fa400e745c3a54b7a26642a379d56db",
+        "artifact_file_count": 27,
+        "artifact_total_bytes": 153810,
+        "artifact_manifest": "artifact-manifest.json",
+        "normalization": "Machine absolute skill.source replaced with repository-relative source; original scanner fields otherwise retained."
+      }
+    },
+    {
+      "skill": {
+        "name": "image-to-editable-ppt",
+        "source": "resources/recommended-skills/image-to-editable-ppt",
+        "scanned_at": "2026-09-30T06:09:29.106612+00:00"
+      },
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "CRITICAL"
+      },
+      "components": [
+        {
+          "path": ".env.example",
+          "type": "other",
+          "lines": 4,
+          "executable": false,
+          "size_bytes": 163,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": ".gitignore",
+          "type": "other",
+          "lines": 4,
+          "executable": false,
+          "size_bytes": 38,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "LICENSE",
+          "type": "other",
+          "lines": 21,
+          "executable": false,
+          "size_bytes": 1066,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "README-zh.md",
+          "type": "markdown",
+          "lines": 50,
+          "executable": false,
+          "size_bytes": 2236,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "README.md",
+          "type": "markdown",
+          "lines": 51,
+          "executable": false,
+          "size_bytes": 1946,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 209,
+          "executable": false,
+          "size_bytes": 11878,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 4,
+          "executable": false,
+          "size_bytes": 227,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/iterative-decomposition.md",
+          "type": "markdown",
+          "lines": 101,
+          "executable": false,
+          "size_bytes": 5188,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "references/scene-schema.md",
+          "type": "markdown",
+          "lines": 158,
+          "executable": false,
+          "size_bytes": 5499,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "requirements.txt",
+          "type": "text",
+          "lines": 3,
+          "executable": false,
+          "size_bytes": 40,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/api_services/__init__.py",
+          "type": "python",
+          "lines": 26,
+          "executable": true,
+          "size_bytes": 483,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/api_services/artifact_store.py",
+          "type": "python",
+          "lines": 54,
+          "executable": true,
+          "size_bytes": 2012,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/api_services/image_decomposer.py",
+          "type": "python",
+          "lines": 583,
+          "executable": true,
+          "size_bytes": 24189,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/crop_alpha_assets.py",
+          "type": "python",
+          "lines": 152,
+          "executable": true,
+          "size_bytes": 5549,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/decompose_iterative.py",
+          "type": "python",
+          "lines": 996,
+          "executable": true,
+          "size_bytes": 45375,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/pptx_native.py",
+          "type": "python",
+          "lines": 415,
+          "executable": true,
+          "size_bytes": 22879,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/render_pptx.py",
+          "type": "python",
+          "lines": 330,
+          "executable": true,
+          "size_bytes": 10586,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/scene_dom.py",
+          "type": "python",
+          "lines": 306,
+          "executable": true,
+          "size_bytes": 12948,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/scene_to_pptx.py",
+          "type": "python",
+          "lines": 57,
+          "executable": true,
+          "size_bytes": 2044,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "scripts/validate_pptx.py",
+          "type": "python",
+          "lines": 139,
+          "executable": true,
+          "size_bytes": 5700,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "TT3",
+          "finding_id": "finding-f42b8c75ccb94fd4b34d40a9fecacc02",
+          "category": "Data Flow",
+          "pattern": "Tainted flow: 'DOWNLOAD_TIMEOUT_S' from os.environ.get (line 76, credential/environment) → requests.get (network output)",
+          "severity": "CRITICAL",
+          "confidence": 0.9,
+          "location": {
+            "file": "scripts/api_services/image_decomposer.py",
+            "start_line": 253,
+            "end_line": 253,
+            "start_column": 15,
+            "end_column": 63
+          },
+          "finding": "requests.get(source, timeout=DOWNLOAD_TIMEOUT_S)",
+          "explanation": "Credentials or environment variables flow to a network sink. This is a high-confidence indicator of credential exfiltration.",
+          "remediation": "Never send credentials or environment variables over the network. Use secure credential stores and avoid transmitting secrets in request bodies or URLs.",
+          "code_snippet": "        mime = header.split(\";\")[0].split(\":\", 1)[-1] or \"image/png\"\n        return base64.b64decode(payload), mime\n    if source.startswith((\"http://\", \"https://\")):\n        resp = requests.get(source, timeout=DOWNLOAD_TIMEOUT_S)\n        if not resp.ok:\n            raise RuntimeError(f\"failed to download source HTTP {resp.status_code}: {source[:160]}\")\n        mime = (resp.headers.get(\"content-type\") or \"image/png\").split(\";\")[0].strip()",
+          "intent": null,
+          "tags": [
+            "Data Flow"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d98fa00a0d304ebb615270d97320ae30e724347abd64847bca7fda3fffea8902",
+          "occurrences": [
+            {
+              "file": "scripts/api_services/image_decomposer.py",
+              "start_line": 253,
+              "end_line": 253,
+              "start_column": 15,
+              "end_column": 63
+            }
+          ]
+        },
+        {
+          "id": "TT3",
+          "finding_id": "finding-d0d4ab015e554a29a30c676fe0b67286",
+          "category": "Data Flow",
+          "pattern": "Tainted flow: 'timeout' from os.environ.get (line 360, credential/environment) → requests.post (network output)",
+          "severity": "CRITICAL",
+          "confidence": 0.9,
+          "location": {
+            "file": "scripts/api_services/image_decomposer.py",
+            "start_line": 298,
+            "end_line": 307,
+            "start_column": 11,
+            "end_column": 5
+          },
+          "finding": "requests.post(\n        _endpoint(settings[\"LING_BASE_URL\"]),\n        headers={\n            \"Authorization\": f\"Bearer {settings['LING_API_KEY']}\",\n            \"Accept\": \"application/json\",\n        },\n ",
+          "explanation": "Credentials or environment variables flow to a network sink. This is a high-confidence indicator of credential exfiltration.",
+          "remediation": "Never send credentials or environment variables over the network. Use secure credential stores and avoid transmitting secrets in request bodies or URLs.",
+          "code_snippet": "    \"\"\"\n    settings = _ling_settings()\n    raw, mime = _read_image_bytes(source)\n    resp = requests.post(\n        _endpoint(settings[\"LING_BASE_URL\"]),\n        headers={\n            \"Authorization\": f\"Bearer {settings['LING_API_KEY']}\",",
+          "intent": null,
+          "tags": [
+            "Data Flow"
+          ],
+          "evidence": {},
+          "match_fingerprint": "af3cf28c06944890b66e19e311c0bfe206960356516ed71cf665fe5a415e5618",
+          "occurrences": [
+            {
+              "file": "scripts/api_services/image_decomposer.py",
+              "start_line": 298,
+              "end_line": 307,
+              "start_column": 11,
+              "end_column": 5
+            }
+          ]
+        },
+        {
+          "id": "TT3",
+          "finding_id": "finding-f435075ab07942b38490151f29686840",
+          "category": "Data Flow",
+          "pattern": "Tainted flow: 'DOWNLOAD_TIMEOUT_S' from os.environ.get (line 76, credential/environment) → requests.get (network output)",
+          "severity": "CRITICAL",
+          "confidence": 0.9,
+          "location": {
+            "file": "scripts/api_services/image_decomposer.py",
+            "start_line": 392,
+            "end_line": 392,
+            "start_column": 19,
+            "end_column": 64
+          },
+          "finding": "requests.get(url, timeout=DOWNLOAD_TIMEOUT_S)",
+          "explanation": "Credentials or environment variables flow to a network sink. This is a high-confidence indicator of credential exfiltration.",
+          "remediation": "Never send credentials or environment variables over the network. Use secure credential stores and avoid transmitting secrets in request bodies or URLs.",
+          "code_snippet": "    if isinstance(item, dict):\n        url = item.get(\"url\")\n        if url:\n            resp = requests.get(url, timeout=DOWNLOAD_TIMEOUT_S)\n            if not resp.ok:\n                raise RuntimeError(f\"layer download failed HTTP {resp.status_code}: {url[:160]}\")\n            return resp.content",
+          "intent": null,
+          "tags": [
+            "Data Flow"
+          ],
+          "evidence": {},
+          "match_fingerprint": "3204accf0fef87b74df989438067f3d162986d0b632e07b56ee9751af39cfdd1",
+          "occurrences": [
+            {
+              "file": "scripts/api_services/image_decomposer.py",
+              "start_line": 392,
+              "end_line": 392,
+              "start_column": 19,
+              "end_column": 64
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-c0660d08b2414a96a6c3afea525e1dd0",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": ".env.example",
+            "start_line": 1,
+            "end_line": null,
+            "start_column": 20
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy this file to .env and fill in the API key locally.\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": ".env.example",
+              "start_line": 1,
+              "end_line": null,
+              "start_column": 20
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-c0660d08b2414a96a6c3afea525e1dd0",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": ".gitignore",
+            "start_line": 4,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Copy this file to .env and fill in the API key locally.\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": ".gitignore",
+              "start_line": 4,
+              "end_line": null,
+              "start_column": 0
+            }
+          ]
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-fbf8dd055ea34e62bf76d27122ff3e0f",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "scripts/api_services/image_decomposer.py",
+            "start_line": 52,
+            "end_line": null,
+            "start_column": 38
+          },
+          "finding": ".env\"",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# ==================== Config ====================\n\n_SKILL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), \"..\", \"..\"))\n_ENV_FILE = os.path.join(_SKILL_DIR, \".env\")\n_ENV_EXAMPLE = os.path.join(_SKILL_DIR, \".env.example\")\n_LING_KEYS = (\"LING_BASE_URL\", \"LING_MODEL\", \"LING_API_KEY\")\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "933e7e6dda63d615cb9ac0846682521855cd79c351e84f3fa87d934c18b752db",
+          "occurrences": [
+            {
+              "file": "scripts/api_services/image_decomposer.py",
+              "start_line": 52,
+              "end_line": null,
+              "start_column": 38
+            }
+          ]
+        },
+        {
+          "id": "P6",
+          "finding_id": "finding-2b40ed6370bd4c04b0b8797f7cdb5d8f",
+          "category": "System Prompt Leakage",
+          "pattern": "Direct Prompt Extraction",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "scripts/decompose_iterative.py",
+            "start_line": 555,
+            "end_line": null,
+            "start_column": 12
+          },
+          "finding": "return prompt",
+          "explanation": "Skill contains instructions that could directly expose system prompts, internal rules, or hidden instructions to users or external parties.",
+          "remediation": "Remove any instructions that reveal, print, or output system prompts or internal rules. System instructions should never be exposed to end users.",
+          "code_snippet": "    plan = load_plan(args.plan or img_dir)\n    if plan:\n        try:\n            return prompt_from_plan(plan), (\"--plan\" if args.plan else \"decompose_plan.json\")\n        except ValueError as e:\n            raise SystemExit(f\"could not read a prompt from the layer plan: {e}\\n\"\n                             f\"  → pass --prompt \\\"N layers: 1 ..., 2 ..., N background\\\"\")",
+          "intent": null,
+          "tags": [
+            "System Prompt Leakage"
+          ],
+          "evidence": {},
+          "match_fingerprint": "18bb822f71209cb3a04d792499f0995d675d1c638e97c90968b496128c99c88d",
+          "occurrences": [
+            {
+              "file": "scripts/decompose_iterative.py",
+              "start_line": 555,
+              "end_line": null,
+              "start_column": 12
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-53647b7d833c49ebbfa67e0f81a9a2c2",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.5,
+          "location": {
+            "file": ".env.example",
+            "start_line": 2,
+            "end_line": null,
+            "start_column": 14
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "# Copy this file to .env and fill in the API key locally.\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": ".env.example",
+              "start_line": 2,
+              "end_line": null,
+              "start_column": 14
+            }
+          ]
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-53647b7d833c49ebbfa67e0f81a9a2c2",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.5,
+          "location": {
+            "file": "README.md",
+            "start_line": 32,
+            "end_line": null,
+            "start_column": 14
+          },
+          "finding": "https://api.novita.ai/",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "# Copy this file to .env and fill in the API key locally.\nLING_BASE_URL=https://api.novita.ai/openai/v1\nLING_API_KEY=sk_xxx\nLING_MODEL=ming-image-0.1-design-layer",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a9276aecbd94fb1c6fdcb5c8c39ef92d55162798549b7c29e84d8e1b6d26112a",
+          "occurrences": [
+            {
+              "file": "README.md",
+              "start_line": 32,
+              "end_line": null,
+              "start_column": 14
+            }
+          ]
+        },
+        {
+          "id": "LP3",
+          "finding_id": "finding-29e05de356764efda9ac4a844d8175b8",
+          "category": "MCP Least Privilege",
+          "pattern": "Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: env, file_read, file_write, network, shell.",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 1,
+            "end_line": null
+          },
+          "finding": "Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: env, file_read, file_write, network, shell.",
+          "explanation": "Without declared permissions the skill's intent is opaque and cannot be validated.",
+          "remediation": "Declare the skill's tool scope: for Claude Code / Agent Skills SKILL.md, list the tools the skill may invoke in the 'allowed-tools' frontmatter field; for MCP server manifests, add a 'permissions' list naming the required capabilities.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "ASI02"
+          ],
+          "evidence": {},
+          "match_fingerprint": null,
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 1,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "TT2",
+          "finding_id": "finding-25423303140440bf85671234d64855a8",
+          "category": "Data Flow",
+          "pattern": "Tainted flow: 'mime' from requests.get (line 256, network input) → requests.post (network output)",
+          "severity": "MEDIUM",
+          "confidence": 0.65,
+          "location": {
+            "file": "scripts/api_services/image_decomposer.py",
+            "start_line": 298,
+            "end_line": 307,
+            "start_column": 11,
+            "end_column": 5
+          },
+          "finding": "requests.post(\n        _endpoint(settings[\"LING_BASE_URL\"]),\n        headers={\n            \"Authorization\": f\"Bearer {settings['LING_API_KEY']}\",\n            \"Accept\": \"application/json\",\n        },\n ",
+          "explanation": "Data from a source is assigned to a variable that is later passed to a sink, creating a variable-mediated taint flow.",
+          "remediation": "Validate tainted variables before passing them to sinks. Use allowlists, type checks, or sanitization functions on data from external sources.",
+          "code_snippet": "    \"\"\"\n    settings = _ling_settings()\n    raw, mime = _read_image_bytes(source)\n    resp = requests.post(\n        _endpoint(settings[\"LING_BASE_URL\"]),\n        headers={\n            \"Authorization\": f\"Bearer {settings['LING_API_KEY']}\",",
+          "intent": null,
+          "tags": [
+            "Data Flow"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1f2d1266d8cb86be2b5bcbe065d573d8475d2f5ef939a892b6f246445daf8176",
+          "occurrences": [
+            {
+              "file": "scripts/api_services/image_decomposer.py",
+              "start_line": 298,
+              "end_line": 307,
+              "start_column": 11,
+              "end_column": 5
+            }
+          ]
+        },
+        {
+          "id": "AST4",
+          "finding_id": "finding-3e2a48360c4240b3ae53df04d05521da",
+          "category": "Dangerous Code Execution",
+          "pattern": "subprocess module call",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "scripts/render_pptx.py",
+            "start_line": 91,
+            "end_line": 96,
+            "start_column": 15,
+            "end_column": 9
+          },
+          "finding": "subprocess.Popen(\n            command,\n            stdout=log,\n            stderr=subprocess.STDOUT,\n            start_new_session=(os.name == \"posix\"),\n        )",
+          "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection.",
+          "remediation": "Use subprocess.run() with shell=False and an explicit argument list. Validate all inputs and avoid passing user-controlled data to commands.",
+          "code_snippet": "    exit_seen: float | None = None\n\n    with log_path.open(\"w\", encoding=\"utf-8\") as log:\n        proc = subprocess.Popen(\n            command,\n            stdout=log,\n            stderr=subprocess.STDOUT,",
+          "intent": null,
+          "tags": [
+            "Dangerous Code Execution"
+          ],
+          "evidence": {},
+          "match_fingerprint": "214a4723e6a6fe13d1c8fd457f3752b3159a4629ff84c4d7829a720e7e82b788",
+          "occurrences": [
+            {
+              "file": "scripts/render_pptx.py",
+              "start_line": 91,
+              "end_line": 96,
+              "start_column": 15,
+              "end_column": 9
+            }
+          ]
+        },
+        {
+          "id": "SC1",
+          "finding_id": "finding-d7ad7e101b2f409fbb02c2e408182a48",
+          "category": "Supply Chain",
+          "pattern": "Unpinned Dependencies",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 1,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "Pillow>=10.0",
+          "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions.",
+          "remediation": "Pin all dependency versions in requirements.txt or pyproject.toml. Use exact versions (==) or compatible ranges. Run pip-audit regularly.",
+          "code_snippet": "Pillow>=10.0\nnumpy>=1.26\nrequests>=2.31",
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "9fed5cf3427d0ac503a56553b1a3f08f715d4e92c65fe2c1b55c1ac0fc45a42c",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 1,
+              "end_line": null,
+              "start_column": 0
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-7a5edf5e0e094b778b7b72e06a9f56b3",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: Pillow has 16 known advisory(ies) (CVE-2016-2533 (Pillow buffer overflow in ImagingPcdDecode); CVE-2023-50447 (Arbitrary Code Execution in Pillow); CVE-2021-27922 (Pillow Uncontrolled Resource Consumption) +13 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 1,
+            "end_line": null
+          },
+          "finding": "Pillow",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "dd8e79d61dd101079536d6680ca830a64bdd1dfc09e23b77bb2413ead7384d2c",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 1,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "SC1",
+          "finding_id": "finding-24231099918d4fd4ab33dc5558bddb04",
+          "category": "Supply Chain",
+          "pattern": "Unpinned Dependencies",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 2,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "numpy>=1.26",
+          "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions.",
+          "remediation": "Pin all dependency versions in requirements.txt or pyproject.toml. Use exact versions (==) or compatible ranges. Run pip-audit regularly.",
+          "code_snippet": "Pillow>=10.0\nnumpy>=1.26\nrequests>=2.31",
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f8431feb58b20e51e6428388864f96a52a7117e8918a4380119503d38c8cc3ca",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 2,
+              "end_line": null,
+              "start_column": 0
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-fa018354bfef4ee9884a1517bbc0706d",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: numpy has 16 known advisory(ies) (CVE-2014-1859 (Numpy arbitrary file write via symlink attack); CVE-2021-41495 (NumPy NULL Pointer Dereference); CVE-2021-33430 (NumPy Buffer Overflow (Disputed)) +13 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 2,
+            "end_line": null
+          },
+          "finding": "numpy",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "4f79ecef9fb365f08743ec4501c2301acbdffbc92cf5eb8581b3feba433c9899",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 2,
+              "end_line": null
+            }
+          ]
+        },
+        {
+          "id": "SC1",
+          "finding_id": "finding-f4b4f9149a384bad9af272bb80f29385",
+          "category": "Supply Chain",
+          "pattern": "Unpinned Dependencies",
+          "severity": "LOW",
+          "confidence": 0.5,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 3,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "requests>=2.31\n",
+          "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions.",
+          "remediation": "Pin all dependency versions in requirements.txt or pyproject.toml. Use exact versions (==) or compatible ranges. Run pip-audit regularly.",
+          "code_snippet": "Pillow>=10.0\nnumpy>=1.26\nrequests>=2.31",
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "efdebf639e751519b1b47549af044c3d58d1b4e9ea5547082faaab9130d9c472",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 3,
+              "end_line": null,
+              "start_column": 0
+            }
+          ]
+        },
+        {
+          "id": "SC4",
+          "finding_id": "finding-4f70dad5557348c3a12600853418729c",
+          "category": "Supply Chain",
+          "pattern": "Unverifiable Dependency: requests has 16 known advisory(ies) (CVE-2014-1830 (Exposure of Sensitive Information to an Unauthorized Actor in Requests); CVE-2024-47081 (Requests vulnerable to .netrc credentials leak via malicious URLs); CVE-2024-35195 (Requests `Session` object does not verify requests after making first request wi) +13 more), but the manifest does not pin a version, so it is unknown whether the installed release is affected",
+          "severity": "LOW",
+          "confidence": 0.4,
+          "location": {
+            "file": "requirements.txt",
+            "start_line": 3,
+            "end_line": null
+          },
+          "finding": "requests",
+          "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits.",
+          "remediation": "Update the dependency to a patched version that addresses the known CVE. Check OSV (osv.dev) or NVD for details on the vulnerability.",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "09deeb6fdb55899e7b284b11a4a1f240e895ab350d9ef10d889ca4cada77cadd",
+          "occurrences": [
+            {
+              "file": "requirements.txt",
+              "start_line": 3,
+              "end_line": null
+            }
+          ]
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": true,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.2",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "execution_successful": true,
+      "analysis_completeness": {
+        "total_components": 20,
+        "scanned_components": 18,
+        "coverage_percent": 90.0,
+        "is_complete": false,
+        "status": "partial",
+        "execution_successful": true,
+        "fully_inspected_files": 18,
+        "partially_inspected_files": 2,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "static",
+            "reason_code": "static_parse_limit",
+            "message": "A security-relevant expression exceeded a bounded static parser's span limit.",
+            "path": "SKILL.md",
+            "start_line": null,
+            "end_line": null,
+            "fatal": false,
+            "analyzers": [
+              "static_patterns_tool_misuse"
+            ]
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 10,
+            "end_line": 10,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 65,
+            "end_line": 65,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 72,
+            "end_line": 72,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 76,
+            "end_line": 76,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 81,
+            "end_line": 81,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 92,
+            "end_line": 92,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 134,
+            "end_line": 134,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 149,
+            "end_line": 149,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 151,
+            "end_line": 151,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 153,
+            "end_line": 153,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 157,
+            "end_line": 157,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 167,
+            "end_line": 167,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 170,
+            "end_line": 170,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "static",
+            "reason_code": "output_limit",
+            "message": "Inspection reached its configured output limit.",
+            "path": "requirements.txt",
+            "start_line": null,
+            "end_line": null,
+            "fatal": false,
+            "analyzers": [
+              "static_patterns_supply_chain_dependencies_output_limit"
+            ]
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "completed",
+            "planned_work": 10,
+            "completed": 10,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "completed",
+            "planned_work": 10,
+            "completed": 10,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "completed",
+            "planned_work": 11,
+            "completed": 11,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "degraded",
+            "planned_work": 21,
+            "completed": 20,
+            "partial": 1,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "degraded",
+            "planned_work": 20,
+            "completed": 19,
+            "partial": 1,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 20,
+            "completed": 20,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 10,
+            "column": 50,
+            "evidence": "This skill is self-contained. Run every `python3 scripts/...` command from this skill directory, so `scripts/` resolves. Paths such as `/absolute/path/to/case` ",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "inline_command"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 14,
+            "column": 215,
+            "evidence": "ot print that file or pass the key on the command line. If it is missing, copy `.env.example` to `.env` and fill it in.",
+            "target_path": ".env.example",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 58,
+            "column": 9,
+            "evidence": "python3 scripts/decompose_iterative.py /absolute/path/to/case \\",
+            "target_path": "scripts/decompose_iterative.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 65,
+            "column": 24,
+            "evidence": "While it runs, create `scene.json` from the source image dimensions and build everything that does not depend on returned pixels:",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 72,
+            "column": 47,
+            "evidence": "If useful, compile this native-only scene to `work/scaffold.pptx` and inspect text wrapping and container geometry:",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 75,
+            "column": 9,
+            "evidence": "python3 scripts/scene_to_pptx.py /absolute/path/to/case \\",
+            "target_path": "scripts/scene_to_pptx.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 76,
+            "column": 28,
+            "evidence": "--scene scene.json --out work/scaffold.pptx",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 81,
+            "column": 135,
+            "evidence": " the root result arrives, if its canvas differs from the source canvas, change `scene.canvas` to the returned canvas and scale all pixel-based native geometry o",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 92,
+            "column": 10,
+            "evidence": "Inspect `case/layers/auto_preview.png`. Mechanical signals in `auto_report.json` are clues; visual inspection decides whether a layer is usable.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 92,
+            "column": 64,
+            "evidence": "Inspect `case/layers/auto_preview.png`. Mechanical signals in `auto_report.json` are clues; visual inspection decides whether a layer is usable.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 109,
+            "column": 9,
+            "evidence": "python3 scripts/decompose_iterative.py /absolute/path/to/case \\",
+            "target_path": "scripts/decompose_iterative.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 117,
+            "column": 9,
+            "evidence": "python3 scripts/decompose_iterative.py /absolute/path/to/case \\",
+            "target_path": "scripts/decompose_iterative.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 122,
+            "column": 46,
+            "evidence": "Read [references/iterative-decomposition.md](references/iterative-decomposition.md) only when deciding a refinement prompt, handling a stuck layer, or interpret",
+            "target_path": "references/iterative-decomposition.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 122,
+            "column": 7,
+            "evidence": "Read [references/iterative-decomposition.md](references/iterative-decomposition.md) only when deciding a refinement prompt, handling a stuck layer, or interpret",
+            "target_path": "references/iterative-decomposition.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 131,
+            "column": 9,
+            "evidence": "python3 scripts/decompose_iterative.py /absolute/path/to/case --assemble",
+            "target_path": "scripts/decompose_iterative.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 134,
+            "column": 149,
+            "evidence": "ned children are resized and mapped back to their exact root-canvas positions; `manifest.json` records their origins and root boxes.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 139,
+            "column": 9,
+            "evidence": "python3 scripts/crop_alpha_assets.py \\",
+            "target_path": "scripts/crop_alpha_assets.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 149,
+            "column": 18,
+            "evidence": "### 5. Complete `scene.json` and compile",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 35,
+            "evidence": "Read [references/scene-schema.md](references/scene-schema.md) when authoring `scene.json`. Use `layers_final/manifest.json.canvas` as the final `scene.canvas`. ",
+            "target_path": "references/scene-schema.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 7,
+            "evidence": "Read [references/scene-schema.md](references/scene-schema.md) when authoring `scene.json`. Use `layers_final/manifest.json.canvas` as the final `scene.canvas`. ",
+            "target_path": "references/scene-schema.md",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 79,
+            "evidence": "Read [references/scene-schema.md](references/scene-schema.md) when authoring `scene.json`. Use `layers_final/manifest.json.canvas` as the final `scene.canvas`. ",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 97,
+            "evidence": "/scene-schema.md](references/scene-schema.md) when authoring `scene.json`. Use `layers_final/manifest.json.canvas` as the final `scene.canvas`. Coordinates rema",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 146,
+            "evidence": "n authoring `scene.json`. Use `layers_final/manifest.json.canvas` as the final `scene.canvas`. Coordinates remain in pixels until compilation.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 153,
+            "column": 310,
+            "evidence": ". Do not patch the binary scaffold PPTX or recreate its native objects; update `scene.json` and compile a fresh final PPTX.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 157,
+            "column": 28,
+            "evidence": "- the clean last layer as `background.asset`;",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 166,
+            "column": 9,
+            "evidence": "python3 scripts/scene_to_pptx.py /absolute/path/to/case \\",
+            "target_path": "scripts/scene_to_pptx.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 167,
+            "column": 28,
+            "evidence": "--scene scene.json --out final/output.pptx",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 170,
+            "column": 50,
+            "evidence": "Text or layout corrections require only editing `scene.json` and rerunning this command. Do not refetch layers for a local text, shape, position, color, or z-or",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 179,
+            "column": 9,
+            "evidence": "python3 scripts/validate_pptx.py /absolute/path/to/case/final/output.pptx \\",
+            "target_path": "scripts/validate_pptx.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 182,
+            "column": 9,
+            "evidence": "python3 scripts/render_pptx.py /absolute/path/to/case/final/output.pptx \\",
+            "target_path": "scripts/render_pptx.py",
+            "status": "resolved",
+            "disposition": "analyzed",
+            "reference_kind": "plain_path"
+          }
+        ],
+        "limitations": [
+          "Analyzer static_patterns_supply_chain status: degraded.",
+          "Analyzer static_patterns_tool_misuse status: degraded."
+        ],
+        "findings_before_filtering": 18,
+        "findings_after_filtering": 18
+      },
+      "review_provenance": {
+        "review_date": "2026-09-30",
+        "repository": "https://github.com/inclusionAI/ling-cookbook",
+        "source_commit": "c4a519f51bc238acefef009f957540d91ddd41fd",
+        "source_commit_date": "2026-09-23T06:53:28Z",
+        "repository_directory": "resources/recommended-skills/image-to-editable-ppt",
+        "frontmatter_name": "image-to-editable-ppt",
+        "scanner_origin": "https://github.com/NVIDIA/SkillSpector.git",
+        "scanner_upstream_revision": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+        "raw_report_sha256": "42cf5d6fa58cc7ec417c1ee7f4a8eac7a99cb9b07e4fb410f5ca997c73173f2b",
+        "artifact_file_count": 20,
+        "artifact_total_bytes": 160046,
+        "artifact_manifest": "artifact-manifest.json",
+        "normalization": "Machine absolute skill.source replaced with repository-relative source; original scanner fields otherwise retained."
+      }
+    }
+  ]
+}

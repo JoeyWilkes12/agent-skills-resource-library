@@ -11,10 +11,12 @@ export function GuideTableOfContents({
   items,
   className = "",
   path,
+  numbered = true,
 }: {
   items: GuideContentsItem[];
   className?: string;
   path: string;
+  numbered?: boolean;
 }) {
   const contentsId = useId();
   const navRef = useRef<HTMLElement>(null);
@@ -28,6 +30,7 @@ export function GuideTableOfContents({
   );
   const activeItem = items[activeIndex];
   const isCollapsed = isCompact && !isExpanded;
+  const ContentsList = numbered ? "ol" : "ul";
 
   useEffect(() => {
     const sections = items
@@ -103,7 +106,7 @@ export function GuideTableOfContents({
         aria-label="Guide sections"
         className={`guide-contents ${isCompact ? "is-compact" : ""} ${
           isExpanded ? "is-expanded" : ""
-        } ${className}`.trim()}
+        } ${numbered ? "" : "is-unnumbered"} ${className}`.trim()}
         ref={navRef}
       >
         <p className="guide-contents-heading">On this page</p>
@@ -120,26 +123,30 @@ export function GuideTableOfContents({
           <span className="guide-contents-toggle-current">
             {activeItem?.label ?? "On this page"}
           </span>
-          <span aria-hidden="true" className="guide-contents-toggle-status">
-            {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
-          </span>
+          {numbered ? (
+            <span aria-hidden="true" className="guide-contents-toggle-status">
+              {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
+            </span>
+          ) : null}
           <span aria-hidden="true">{isCollapsed ? "Show" : "Hide"}</span>
         </button>
-        <ol className="guide-contents-list" hidden={isCollapsed} id={contentsId}>
+        <ContentsList className="guide-contents-list" hidden={isCollapsed} id={contentsId}>
           {items.map((item, index) => (
             <li key={item.id}>
               <a
                 aria-current={item.id === activeId ? "location" : undefined}
                 href={`${path}#${item.id}`}
               >
-                <span aria-hidden="true" className="guide-contents-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                {numbered ? (
+                  <span aria-hidden="true" className="guide-contents-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                ) : null}
                 <span>{item.label}</span>
               </a>
             </li>
           ))}
-        </ol>
+        </ContentsList>
       </nav>
     </>
   );
