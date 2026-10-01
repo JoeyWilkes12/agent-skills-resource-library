@@ -1,0 +1,504 @@
+{
+  "scanner_version": "2.12.0",
+  "scanner_revision": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+  "mode": "static-only (--no-llm)",
+  "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "skills": [
+    {
+      "name": "build-review-interface",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:10.479748+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 96,
+          "executable": false,
+          "size_bytes": 5408,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 255,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "error-discovery",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:11.682486+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 203,
+          "executable": false,
+          "size_bytes": 14931,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 231,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "review-loop.md",
+          "type": "markdown",
+          "lines": 83,
+          "executable": false,
+          "size_bytes": 5839,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "partial",
+        "is_complete": false,
+        "coverage_percent": 100.0,
+        "total_components": 3,
+        "scanned_components": 3,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 119,
+            "end_line": 119,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 131,
+            "end_line": 131,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "eval-audit",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:11.966607+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 183,
+          "executable": false,
+          "size_bytes": 9977,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 233,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "evals-start",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:12.020995+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 25,
+          "executable": false,
+          "size_bytes": 1646,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 232,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "evaluate-rag",
+      "risk_assessment": {
+        "score": 7,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "MEDIUM"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:12.480086+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 177,
+          "executable": false,
+          "size_bytes": 7625,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 222,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [
+        {
+          "id": "EA2",
+          "finding_id": "finding-f170a074ed8944dca34a973c4f0f4d11",
+          "category": "Excessive Agency",
+          "pattern": "Autonomous Decision Making",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 177,
+            "end_line": null,
+            "start_column": 24
+          },
+          "finding": "without checking",
+          "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation.",
+          "remediation": "Add human-in-the-loop confirmation for destructive, irreversible, or high-impact operations. Never auto-execute commands that modify files, send data, or alter system state.",
+          "code_snippet": "- Jumping directly to metrics without reading traces first.\n- Overfitting to synthetic evaluation data. Validate against real user queries regularly.\n- Using similarity metrics (ROUGE, BERTScore, cosine similarity) as primary generation evaluation. Use binary evaluators driven by error analysis.\n- Evaluating generation without checking context grounding.",
+          "intent": null,
+          "tags": [
+            "Excessive Agency"
+          ],
+          "evidence": {},
+          "match_fingerprint": "9341b6f34d6af9081a0d6673f4217b7307d273da9f43357efd9029e15c5da76c",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 177,
+              "end_line": null,
+              "start_column": 24
+            }
+          ]
+        }
+      ],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "generate-synthetic-data",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:12.782816+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 131,
+          "executable": false,
+          "size_bytes": 5427,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 258,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "validate-evaluator",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:13.311599+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 215,
+          "executable": false,
+          "size_bytes": 8901,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 249,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "write-code-eval",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:13.363077+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 27,
+          "executable": false,
+          "size_bytes": 1538,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 264,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    },
+    {
+      "name": "write-judge-prompt",
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "execution_successful": true,
+      "scanned_at": "2026-10-01T00:26:13.792416+00:00",
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 144,
+          "executable": false,
+          "size_bytes": 7693,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        },
+        {
+          "path": "agents/openai.yaml",
+          "type": "yaml",
+          "lines": 7,
+          "executable": false,
+          "size_bytes": 244,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "issues": [],
+      "suppressed_count": 0,
+      "llm_requested": false,
+      "llm_available": false,
+      "meta_analysis_applied": false,
+      "completeness": {
+        "status": "complete",
+        "is_complete": true,
+        "coverage_percent": 100.0,
+        "total_components": 2,
+        "scanned_components": 2,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "limitations": []
+      }
+    }
+  ]
+}

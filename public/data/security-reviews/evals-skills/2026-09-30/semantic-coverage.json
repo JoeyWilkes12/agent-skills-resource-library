@@ -1,0 +1,186 @@
+{
+  "source_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "review_class": "Independent local raw-artifact semantic review",
+  "reviewer": "local Codex session, based on GPT-6; exact variant unavailable",
+  "reasoning_effort": "unavailable",
+  "external_semantic_provider": false,
+  "fallback": false,
+  "raw_artifact_filtered": false,
+  "sanitized_before_review": false,
+  "input_output_tokens": "unavailable",
+  "cost": "unavailable",
+  "file_count": 26,
+  "bytes_represented": 1670337,
+  "text_file_count": 25,
+  "text_bytes": 89381,
+  "image_file_count": 1,
+  "image_bytes": 1580956,
+  "files": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "size_bytes": 357,
+      "sha256": "054a3e8f4ec6bfcce1a751ab3d8c78b543a9352e253bc565f520fff4f7161755",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "size_bytes": 440,
+      "sha256": "13815ef25fb329219f52bd537bcde5be013c17cf0f2cde358172882b09b02cf0",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "size_bytes": 544,
+      "sha256": "78f95c36cce4b0e6cb9e77f5998c33b3d91355d60eba754591f36ff9b38a2fdb",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "size_bytes": 1112,
+      "sha256": "fae77c0125ad086b35705154adc3b94deede6ef366d9569039f16c18fdd8b39b",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4398,
+      "sha256": "868be07b328ec2ef44f7e702ea945106e9b41fe7e235f8f5a3dc6f90c955c3fb",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/build-review-interface/SKILL.md",
+      "size_bytes": 5408,
+      "sha256": "8cd4f794f590619a220162e366faf6bd35cb620050db324b69a7af0d36f52c4b",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/build-review-interface/agents/openai.yaml",
+      "size_bytes": 255,
+      "sha256": "cbe23b0397135bc1eac90f99e80b558afbcb4fe32fc09e5fb16ff6083bd52ba9",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/error-discovery/SKILL.md",
+      "size_bytes": 14931,
+      "sha256": "e125c9b764b7aa658ea8c9104fb2856b67b40c0604e73d5bfe142e0dd5d10149",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/error-discovery/agents/openai.yaml",
+      "size_bytes": 231,
+      "sha256": "c81cd1d86a317fcefbf0cba9efa20a7bf993c66fbd6ca1f70e3d48ac5777fd56",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/error-discovery/review-loop.md",
+      "size_bytes": 5839,
+      "sha256": "4c500d0fc6fbeba9bbd8d4858e7e14c848b8ea8cd2a6bdef5c854b668943286a",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/eval-audit/SKILL.md",
+      "size_bytes": 9977,
+      "sha256": "9f4b23dfe06f4c42a28d4bb054d75b5da1bff39ea57e0450689a4f699604bc63",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/eval-audit/agents/openai.yaml",
+      "size_bytes": 233,
+      "sha256": "cfcb2a19fa1f5e655fe650c2e8f600d9dbff0d82ab7b8fcc3660f4a7c042406b",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/evals-start/SKILL.md",
+      "size_bytes": 1646,
+      "sha256": "d035307708a8feded6eb52a03048146a34b506049a242f6fcc7eb3e2a4511097",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/evals-start/agents/openai.yaml",
+      "size_bytes": 232,
+      "sha256": "e4007d2872b5b9c7b905a462e303f19528cc561b41a9662cd0a5349e68afad7c",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/evaluate-rag/SKILL.md",
+      "size_bytes": 7625,
+      "sha256": "e22a7bff31a73a9a82722c771326acf13121622a8caca6221fcbea111c9bf88d",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/evaluate-rag/agents/openai.yaml",
+      "size_bytes": 222,
+      "sha256": "ba53b0727a83dc2d0a5657e20ef4904d7cfbc18b4f072888020e2687d41b4376",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/generate-synthetic-data/SKILL.md",
+      "size_bytes": 5427,
+      "sha256": "37b8e12ceb020f0fdf7c9c8bf7f3d3fce3dd506f1dfecdc64c25f80c10130da2",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/generate-synthetic-data/agents/openai.yaml",
+      "size_bytes": 258,
+      "sha256": "17f1a09186ff5c3adfc8233eedbd36a7ac3745cd4c13250efe0efce51a46be68",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/validate-evaluator/SKILL.md",
+      "size_bytes": 8901,
+      "sha256": "dd601ca58d2165f51798e12934170a435af9a7938832b67bb00986b881752355",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/validate-evaluator/agents/openai.yaml",
+      "size_bytes": 249,
+      "sha256": "5e3e1b5b7c466f6982d25bea5814fd2fbda0eb1a01ee0a4bc9f41f380a617bbf",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/write-code-eval/SKILL.md",
+      "size_bytes": 1538,
+      "sha256": "6acf7d26f1b64d2dd7792675e3afefa0fc7accd6e0efd73184c6dd356c64338b",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/write-code-eval/agents/openai.yaml",
+      "size_bytes": 264,
+      "sha256": "5e0a5fa940ad295c7693d712221e65c030b06a3e2044a52a772ec175ad61eb7e",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/write-judge-prompt/SKILL.md",
+      "size_bytes": 7693,
+      "sha256": "b50dc2d668a9984df1b5e64c94ffecf0baaf186566759fdf5c0c60747961f860",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "skills/write-judge-prompt/agents/openai.yaml",
+      "size_bytes": 244,
+      "sha256": "211afc8bcf8034c8c54b73099fad4331eaec1096dbaffd8898bd621924fcf4a2",
+      "review_mode": "raw text semantic inspection"
+    },
+    {
+      "path": "workflow.png",
+      "size_bytes": 1580956,
+      "sha256": "a1f43ee9c7786e08b3f86b9a2cec98e2645832780b403f87b377ef2f6edfa8af",
+      "review_mode": "visual inspection"
+    }
+  ],
+  "material_exclusions": [
+    ".git metadata/history",
+    "Linked external articles, videos, packages and third-party skills",
+    "Dependency resolution and publisher provenance",
+    "Future updates",
+    "Live account data and traces",
+    "Generated application/runtime behavior",
+    "Image steganography assurance"
+  ],
+  "report": "review.md"
+}

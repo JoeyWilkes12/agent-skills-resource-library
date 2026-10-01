@@ -19,6 +19,25 @@ export type GuideCatalogEntry = {
 export const guideCatalog: readonly GuideCatalogEntry[] = [
   {
     contentTopics: [
+      "AI evals",
+      "Product evaluations",
+      "Hamel Husain",
+      "Shreya Shankar",
+      "Human trace review",
+      "Error discovery",
+      "LLM judges",
+      "Held-out human labels",
+      "RAG grounding",
+      "SkillSpector",
+      "skills.sh security audits",
+    ],
+    href: "/guides/ai-evals-short-guide",
+    title: "AI evals: a quick guide",
+    summary:
+      "Start with human trace review, choose practical evaluation checks, and inspect scoped security results for all nine evals-skills packages.",
+  },
+  {
+    contentTopics: [
       "A quick win is a beginning",
       "Professional use creates more handoffs",
       "Where variability enters",

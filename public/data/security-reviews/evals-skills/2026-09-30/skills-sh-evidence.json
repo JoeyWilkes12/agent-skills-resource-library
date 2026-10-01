@@ -1,0 +1,1010 @@
+{
+  "review_label": "skills.sh registry check",
+  "target_repository": "https://github.com/ai-evals-course/evals-skills",
+  "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "target_commit_date": "2026-09-24T18:21:08Z",
+  "skills_count": 9,
+  "audits_count": 27,
+  "summary": "All 9 exact listings and all 27 detailed audit pages returned HTTP 200; all published verdicts PASS. Public page coverage is complete; exact Git snapshot correspondence is unverified.",
+  "scope_limitations": "Third-party audits of skills.sh snapshots do not verify publisher identity, exact local artifact, dependencies at install time, or runtime behavior. No target skills were installed or executed.",
+  "freshness_note": "No displayed audit date predates its target skill directory\u2019s latest change. Dates omit timezone; this is not proof of content correspondence.",
+  "skills": [
+    {
+      "id": "ai-evals-course/evals-skills/build-review-interface",
+      "skill": "build-review-interface",
+      "source_directory": "skills/build-review-interface",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/build-review-interface",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:27.147930+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/build-review-interface/SKILL.md",
+        "latest_file_change_commit": "81e82163bc5529900c9425cc6b7d908f8f18c158",
+        "latest_file_change_date": "2026-08-16T02:56:55Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fbuild-review-interface%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/build-review-interface",
+        "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+        "latest_directory_change_date": "2026-08-31T23:09:29Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fbuild-review-interface&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/build-review-interface/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148214+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "NO_CODE"
+          ],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "NO_CODE",
+              "summary": "Published analysis describes Markdown design instructions with no executable scripts or command snippets."
+            },
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "Rendered traces are untrusted; the skill calls for sanitizing content, removing raw HTML, and disabling Markdown images."
+            },
+            {
+              "category": "COMMAND_EXECUTION",
+              "summary": "Mentions Playwright interface testing; the provider found no malicious commands."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/build-review-interface/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148368+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fbuild-review-interface%2F@92b9166a4c49189189d220dcce502a17c39a8970e6c845588c4654d691597efa",
+          "snapshot_hash": "92b9166a4c49189189d220dcce502a17c39a8970e6c845588c4654d691597efa",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/build-review-interface/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148434+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 06:59 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/error-discovery",
+      "skill": "error-discovery",
+      "source_directory": "skills/error-discovery",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/error-discovery",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:27.148491+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": null,
+      "source_file_freshness": {
+        "source_file": "skills/error-discovery/SKILL.md",
+        "latest_file_change_commit": "bb80ca8f5331ef2f204a68f2d4bae73a74ec1824",
+        "latest_file_change_date": "2026-08-16T04:37:24Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Ferror-discovery%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/error-discovery",
+        "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+        "latest_directory_change_date": "2026-08-31T23:09:29Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Ferror-discovery&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/error-discovery/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148585+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "INDIRECT_PROMPT_INJECTION",
+            "COMMAND_EXECUTION",
+            "EXTERNAL_DOWNLOADS"
+          ],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "JSONL, CSV, and JSON records are ingestion points. Provider reports no explicit data/instruction boundaries or content sanitization before analysis or subagent use.",
+              "affected_path": "SKILL.md, Phase 1a",
+              "capabilities": [
+                "local filesystem reads and writes in error_discovery_data",
+                "local HTTP server",
+                "subagents"
+              ]
+            },
+            {
+              "category": "COMMAND_EXECUTION",
+              "summary": "Instructions include a Python standard-library HTTP server and background subagents for corpus scans."
+            },
+            {
+              "category": "EXTERNAL_DOWNLOADS",
+              "summary": "Recommends frontend libraries from CDNs: marked.js and highlight.js or Prism."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/error-discovery/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148776+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Ferror-discovery%2F@50f7748903e248049b619a50053ae65a795aac620d3c42d739ca7b23bae2b42e",
+          "snapshot_hash": "50f7748903e248049b619a50053ae65a795aac620d3c42d739ca7b23bae2b42e",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/error-discovery/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148745+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 06:59 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/eval-audit",
+      "skill": "eval-audit",
+      "source_directory": "skills/eval-audit",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/eval-audit",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:27.148851+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/eval-audit/SKILL.md",
+        "latest_file_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+        "latest_file_change_date": "2026-09-24T17:58:05Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Feval-audit%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/eval-audit",
+        "latest_directory_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+        "latest_directory_change_date": "2026-09-24T17:58:05Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Feval-audit&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/eval-audit/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148874+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "INDIRECT_PROMPT_INJECTION"
+          ],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "Evaluation traces, evaluator definitions, judge prompts, and labels can contain adversarial instructions. Provider reports absent data boundaries and sanitization guidance. It describes the provided skill as instructional, without declared shell, network, or write tools.",
+              "affected_path": "SKILL.md"
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/eval-audit/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.148912+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:11 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Feval-audit%2F@4098f1098a2725db84ae4487a6ccd4ffcbe16fc0fdb3f5918956a180a0e1a525",
+          "snapshot_hash": "4098f1098a2725db84ae4487a6ccd4ffcbe16fc0fdb3f5918956a180a0e1a525",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/eval-audit/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:27.149043+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/evals-start",
+      "skill": "evals-start",
+      "source_directory": "skills/evals-start",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/evals-start",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:28.395922+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": null,
+      "source_file_freshness": {
+        "source_file": "skills/evals-start/SKILL.md",
+        "latest_file_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+        "latest_file_change_date": "2026-09-24T17:58:05Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevals-start%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/evals-start",
+        "latest_directory_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+        "latest_directory_change_date": "2026-09-24T17:58:05Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevals-start&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evals-start/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.463704+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 04:20 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "SAFE",
+              "summary": "Routing instructions only; published analysis reports no executable logic, filesystem or network actions, or untrusted-data processing."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evals-start/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.485410+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 04:21 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fevals-start%2F@ae2b805cdbb6956b7da6d8c4ae2745a2f6a5dac7a9aca1d4c4e712e51423d698",
+          "snapshot_hash": "ae2b805cdbb6956b7da6d8c4ae2745a2f6a5dac7a9aca1d4c4e712e51423d698",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evals-start/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.518724+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 04:20 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/evaluate-rag",
+      "skill": "evaluate-rag",
+      "source_directory": "skills/evaluate-rag",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/evaluate-rag",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:28.646042+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/evaluate-rag/SKILL.md",
+        "latest_file_change_commit": "3ded0176c7e06beb9e9fd4db4f03f3d8b8dac743",
+        "latest_file_change_date": "2026-08-15T22:48:06Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevaluate-rag%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/evaluate-rag",
+        "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+        "latest_directory_change_date": "2026-08-31T23:09:29Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevaluate-rag&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evaluate-rag/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.680550+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "NO_CODE"
+          ],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 06:59 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "SAFE",
+              "summary": "RAG evaluation methodology, with no scripts, command execution, or network operations identified."
+            },
+            {
+              "category": "NO_CODE",
+              "summary": "Prompt templates and evaluation grids are treated as examples; provider reports no executable files or remote dependencies."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evaluate-rag/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.755911+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fevaluate-rag%2F@4a3d83b9ff4d3b8cab2e97bd691d7c08174b0e1ae9b7de3cede178a0159e0473",
+          "snapshot_hash": "4a3d83b9ff4d3b8cab2e97bd691d7c08174b0e1ae9b7de3cede178a0159e0473",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/evaluate-rag/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.889755+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 06:59 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/generate-synthetic-data",
+      "skill": "generate-synthetic-data",
+      "source_directory": "skills/generate-synthetic-data",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/generate-synthetic-data",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:28.892750+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/generate-synthetic-data/SKILL.md",
+        "latest_file_change_commit": "3ded0176c7e06beb9e9fd4db4f03f3d8b8dac743",
+        "latest_file_change_date": "2026-08-15T22:48:06Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fgenerate-synthetic-data%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/generate-synthetic-data",
+        "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+        "latest_directory_change_date": "2026-08-31T23:09:29Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fgenerate-synthetic-data&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/generate-synthetic-data/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:28.940149+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "INDIRECT_PROMPT_INJECTION"
+          ],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "Application descriptions and dimension values enter prompt templates without explicit delimiters or validation. Malicious inputs could alter query generation.",
+              "affected_path": "SKILL.md, Steps 3 and 4"
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/generate-synthetic-data/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.142329+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 07:00 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fgenerate-synthetic-data%2F@1d386c46551634018d1aa898af9faba9accbee96d78646779f2a41d65f725070",
+          "snapshot_hash": "1d386c46551634018d1aa898af9faba9accbee96d78646779f2a41d65f725070",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/generate-synthetic-data/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.142876+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 1, 2026",
+          "analyzed_display_timestamp": "Sep 1, 2026, 06:59 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/validate-evaluator",
+      "skill": "validate-evaluator",
+      "source_directory": "skills/validate-evaluator",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/validate-evaluator",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:29.208017+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/validate-evaluator/SKILL.md",
+        "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_file_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fvalidate-evaluator%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/validate-evaluator",
+        "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_directory_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fvalidate-evaluator&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/validate-evaluator/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.369813+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "INDIRECT_PROMPT_INJECTION",
+            "EXTERNAL_DOWNLOADS"
+          ],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "Human labels and production traces enter judge evaluation without stated delimiters or filtering. Provider names labeled_data, human_labels, and prod_eval_labels; statistical examples use scikit-learn and numpy.",
+              "affected_path": "SKILL.md"
+            },
+            {
+              "category": "EXTERNAL_DOWNLOADS",
+              "summary": "Recommends pip install judgy for statistical bias correction; that package is a separate dependency outside this registry check.",
+              "affected_path": "SKILL.md, Step 8"
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/validate-evaluator/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.384077+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fvalidate-evaluator%2F@22297cb64d61259813f95479a6aeba45c171504559ac05be139f70860652853c",
+          "snapshot_hash": "22297cb64d61259813f95479a6aeba45c171504559ac05be139f70860652853c",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/validate-evaluator/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.394784+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/write-code-eval",
+      "skill": "write-code-eval",
+      "source_directory": "skills/write-code-eval",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/write-code-eval",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:29.542680+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": null,
+      "source_file_freshness": {
+        "source_file": "skills/write-code-eval/SKILL.md",
+        "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_file_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-code-eval%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/write-code-eval",
+        "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_directory_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-code-eval&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-code-eval/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.556842+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "NO_CODE"
+          ],
+          "audited_on": "Sep 24, 2026",
+          "analyzed_display_timestamp": "Sep 24, 2026, 07:25 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "SAFE",
+              "summary": "Provider describes instructions for writing evaluators; it identifies no executable scripts, command-line operations, network requests, remote dependencies, or malicious patterns."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-code-eval/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.559724+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 08:07 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fwrite-code-eval%2F@49b694e9107fe46d9d7619ab636cb80dd3f6a1d7a78253c949d2188dd748abff",
+          "snapshot_hash": "49b694e9107fe46d9d7619ab636cb80dd3f6a1d7a78253c949d2188dd748abff",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-code-eval/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.751863+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 24, 2026",
+          "analyzed_display_timestamp": "Sep 24, 2026, 07:24 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    },
+    {
+      "id": "ai-evals-course/evals-skills/write-judge-prompt",
+      "skill": "write-judge-prompt",
+      "source_directory": "skills/write-judge-prompt",
+      "canonical_url": "https://skills.sh/ai-evals-course/evals-skills/write-judge-prompt",
+      "target_commit": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+      "target_commit_date": "2026-09-24T18:21:08Z",
+      "listing_http_status": 200,
+      "listing_retrieved_at": "2026-10-01T00:25:29.811022+00:00",
+      "exact_owner_repo_slug_match": true,
+      "listing_origin_note": "Originally from hamelsmu/evals-skills",
+      "source_file_freshness": {
+        "source_file": "skills/write-judge-prompt/SKILL.md",
+        "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_file_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-judge-prompt%2FSKILL.md&per_page=1"
+      },
+      "directory_freshness": {
+        "source_directory": "skills/write-judge-prompt",
+        "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+        "latest_directory_change_date": "2026-09-24T18:15:22Z",
+        "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-judge-prompt&per_page=1"
+      },
+      "snapshot_correspondence": "UNVERIFIED: published package hash has not been mapped to the reviewed Git snapshot",
+      "coverage": "COMPLETE_PUBLIC_PAGE_COVERAGE",
+      "audits": [
+        {
+          "provider": "Gen Agent Trust Hub",
+          "provider_slug": "agent-trust-hub",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-judge-prompt/security/agent-trust-hub",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.841239+00:00",
+          "status": "pass",
+          "risk_level": "SAFE",
+          "categories": [
+            "NO_CODE"
+          ],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "detailed_findings_or_observations": [
+            {
+              "category": "SAFE",
+              "summary": "Markdown and YAML guidance for evaluator prompt design; provider reports no detected security issues."
+            },
+            {
+              "category": "NO_CODE",
+              "summary": "No scripts, binaries, or command execution patterns identified."
+            },
+            {
+              "category": "INDIRECT_PROMPT_INJECTION",
+              "summary": "Processes user-provided failure modes and examples. Provider considers risk negligible in conversational use and attributes no file, network, or shell capabilities to the skill."
+            }
+          ],
+          "finding_count_note": "No numeric issue count displayed; categorical analysis observations accompany PASS.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Socket",
+          "provider_slug": "socket",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-judge-prompt/security/socket",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.846886+00:00",
+          "status": "pass",
+          "risk_level": null,
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": null,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "package_url": "pkg:socket/skills-sh/ai-evals-course%2Fevals-skills%2Fwrite-judge-prompt%2F@539d1fb479a555d61163144572c0d3e70b4e27267a45ba0afa487c7def26047b",
+          "snapshot_hash": "539d1fb479a555d61163144572c0d3e70b4e27267a45ba0afa487c7def26047b",
+          "checks": [
+            "Malicious behavior: injection, exfiltration, untrusted installs",
+            "Security concerns: credential exposure, tool/trust exploitation",
+            "Code obfuscation: hidden or obfuscated code",
+            "Suspicious patterns: reconnaissance, excessive autonomy, resource use"
+          ],
+          "detailed_findings_or_observations": [],
+          "finding_count_note": "No numeric alert count or detailed findings displayed on the PASS page.",
+          "date_predates_directory_change": false
+        },
+        {
+          "provider": "Snyk",
+          "provider_slug": "snyk",
+          "url": "https://www.skills.sh/ai-evals-course/evals-skills/write-judge-prompt/security/snyk",
+          "http_status": 200,
+          "retrieved_at": "2026-10-01T00:25:29.959873+00:00",
+          "status": "pass",
+          "risk_level": "LOW",
+          "categories": [],
+          "audited_on": "Sep 25, 2026",
+          "analyzed_display_timestamp": "Sep 25, 2026, 03:10 PM",
+          "timestamp_timezone": "Not displayed",
+          "finding_count": 0,
+          "identifiers": null,
+          "confidence": null,
+          "remediation": null,
+          "fields_note": "Identifiers, confidence, per-finding severity, and explicit remediation are not exposed on these public pages.",
+          "finding_count_note": "Page explicitly states that no issues were detected.",
+          "detailed_findings_or_observations": [],
+          "date_predates_directory_change": false
+        }
+      ]
+    }
+  ]
+}

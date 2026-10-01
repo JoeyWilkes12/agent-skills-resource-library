@@ -86,6 +86,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/",
     "/about",
     "/guides",
+    "/guides/ai-evals-short-guide",
     "/guides/enterprise-agent-skills-presenter-readiness",
     "/guides/writing-without-the-ai-sheen",
     "/guides/ming-design-layer-and-editable-design",

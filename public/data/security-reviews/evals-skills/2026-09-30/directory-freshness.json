@@ -1,0 +1,56 @@
+{
+  "build-review-interface": {
+    "source_directory": "skills/build-review-interface",
+    "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+    "latest_directory_change_date": "2026-08-31T23:09:29Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fbuild-review-interface&per_page=1"
+  },
+  "error-discovery": {
+    "source_directory": "skills/error-discovery",
+    "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+    "latest_directory_change_date": "2026-08-31T23:09:29Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Ferror-discovery&per_page=1"
+  },
+  "eval-audit": {
+    "source_directory": "skills/eval-audit",
+    "latest_directory_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+    "latest_directory_change_date": "2026-09-24T17:58:05Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Feval-audit&per_page=1"
+  },
+  "evals-start": {
+    "source_directory": "skills/evals-start",
+    "latest_directory_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+    "latest_directory_change_date": "2026-09-24T17:58:05Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevals-start&per_page=1"
+  },
+  "evaluate-rag": {
+    "source_directory": "skills/evaluate-rag",
+    "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+    "latest_directory_change_date": "2026-08-31T23:09:29Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevaluate-rag&per_page=1"
+  },
+  "generate-synthetic-data": {
+    "source_directory": "skills/generate-synthetic-data",
+    "latest_directory_change_commit": "7eea07cc500bcd3f18f0411889f1991c75377bc5",
+    "latest_directory_change_date": "2026-08-31T23:09:29Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fgenerate-synthetic-data&per_page=1"
+  },
+  "validate-evaluator": {
+    "source_directory": "skills/validate-evaluator",
+    "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_directory_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fvalidate-evaluator&per_page=1"
+  },
+  "write-code-eval": {
+    "source_directory": "skills/write-code-eval",
+    "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_directory_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-code-eval&per_page=1"
+  },
+  "write-judge-prompt": {
+    "source_directory": "skills/write-judge-prompt",
+    "latest_directory_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_directory_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-judge-prompt&per_page=1"
+  }
+}

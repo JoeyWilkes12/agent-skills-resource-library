@@ -1,0 +1,1663 @@
+{
+  "skill": {
+    "name": "unknown",
+    "source": "URL_PRECHECK_SOURCE",
+    "scanned_at": "2026-10-01T00:25:04.508829+00:00"
+  },
+  "risk_assessment": {
+    "score": 55,
+    "severity": "HIGH",
+    "recommendation": "DO_NOT_INSTALL",
+    "max_issue_severity": "HIGH"
+  },
+  "components": [
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "type": "json",
+      "lines": 20,
+      "executable": false,
+      "size_bytes": 357,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "type": "json",
+      "lines": 16,
+      "executable": false,
+      "size_bytes": 440,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "type": "json",
+      "lines": 17,
+      "executable": false,
+      "size_bytes": 544,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "type": "json",
+      "lines": 31,
+      "executable": false,
+      "size_bytes": 1112,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/config",
+      "type": "other",
+      "lines": 15,
+      "executable": false,
+      "size_bytes": 378,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "LICENSE",
+      "type": "other",
+      "lines": 201,
+      "executable": false,
+      "size_bytes": 11357,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "README.md",
+      "type": "markdown",
+      "lines": 87,
+      "executable": false,
+      "size_bytes": 4398,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/build-review-interface/SKILL.md",
+      "type": "markdown",
+      "lines": 96,
+      "executable": false,
+      "size_bytes": 5408,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/build-review-interface/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 255,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/error-discovery/SKILL.md",
+      "type": "markdown",
+      "lines": 203,
+      "executable": false,
+      "size_bytes": 14931,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/error-discovery/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 231,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/error-discovery/review-loop.md",
+      "type": "markdown",
+      "lines": 83,
+      "executable": false,
+      "size_bytes": 5839,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/eval-audit/SKILL.md",
+      "type": "markdown",
+      "lines": 183,
+      "executable": false,
+      "size_bytes": 9977,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/eval-audit/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 233,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/evals-start/SKILL.md",
+      "type": "markdown",
+      "lines": 25,
+      "executable": false,
+      "size_bytes": 1646,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/evals-start/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 232,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/evaluate-rag/SKILL.md",
+      "type": "markdown",
+      "lines": 177,
+      "executable": false,
+      "size_bytes": 7625,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/evaluate-rag/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 222,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/generate-synthetic-data/SKILL.md",
+      "type": "markdown",
+      "lines": 131,
+      "executable": false,
+      "size_bytes": 5427,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/generate-synthetic-data/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 258,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/validate-evaluator/SKILL.md",
+      "type": "markdown",
+      "lines": 215,
+      "executable": false,
+      "size_bytes": 8901,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/validate-evaluator/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 249,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/write-code-eval/SKILL.md",
+      "type": "markdown",
+      "lines": 27,
+      "executable": false,
+      "size_bytes": 1538,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/write-code-eval/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 264,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/write-judge-prompt/SKILL.md",
+      "type": "markdown",
+      "lines": 144,
+      "executable": false,
+      "size_bytes": 7693,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "skills/write-judge-prompt/agents/openai.yaml",
+      "type": "yaml",
+      "lines": 7,
+      "executable": false,
+      "size_bytes": 244,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": "workflow.png",
+      "type": "other",
+      "lines": 44188,
+      "executable": false,
+      "size_bytes": 1580956,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/applypatch-msg.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 478,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/commit-msg.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 896,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/fsmonitor-watchman.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 4726,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/post-update.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 189,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-applypatch.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 424,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-commit.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 1643,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-merge-commit.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 416,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-push.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 1374,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-rebase.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 4898,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/pre-receive.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 544,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/prepare-commit-msg.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 1492,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/push-to-checkout.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 2783,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    },
+    {
+      "path": ".git/hooks/update.sample",
+      "type": "other",
+      "lines": 0,
+      "executable": true,
+      "size_bytes": 3650,
+      "source_url": null,
+      "source_identity": null,
+      "source_digest": null
+    }
+  ],
+  "structured_summaries": [],
+  "issues": [
+    {
+      "id": "RA1",
+      "finding_id": "finding-5347a87df4bd4dddb26bc582734a7dad",
+      "category": "Rogue Agent",
+      "pattern": "Self-Modification",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "README.md",
+        "start_line": 83,
+        "end_line": null,
+        "start_column": 60
+      },
+      "finding": "write skill",
+      "explanation": "Skill modifies its own code, configuration, or behavior at runtime. Self-modification enables an agent to escalate privileges, disable safety constraints, or install persistent backdoors.",
+      "remediation": "Prevent the skill from modifying its own code, SKILL.md, or configuration files. Treat skill files as read-only at runtime.",
+      "code_snippet": "\n## Write your own skills\n\nThese skills address common eval mistakes. Start here, then write skills for your own data and domain. Matt Pocock's [writing-for-agents skill](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents) explains how to write instructions for agents.\n\n## Beyond these skills\n",
+      "intent": null,
+      "tags": [
+        "Rogue Agent"
+      ],
+      "evidence": {},
+      "match_fingerprint": "be76aa3b8ee8ba0091b45db5ceb2fe4088a26078a5f1429d11667e608c128e95",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 83,
+          "end_line": null,
+          "start_column": 60
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-18d0b44448a4481aa1cc0e4130054a9e",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 13,
+        "end_line": null,
+        "start_column": 17
+      },
+      "finding": "skills/eval-audit/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "\n**evals-start** is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two:\n\n- **[eval-audit](skills/eval-audit/SKILL.md)**, if you already have an eval pipeline. It inspects your setup and recommends next steps.\n- **[error-discovery](skills/error-discovery/SKILL.md)**, if you have traces but haven't analyzed them yet. It builds an annotation interface and helps you sample traces. Watch [Shreya's walkthrough](https://youtu.be/tqUDjc1HzO4).\n\n## Installation",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "a20762470cc68de43045963f2c74d1870dfea2ebf67104fceceafb1369a005c9",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 13,
+          "end_line": null,
+          "start_column": 17
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-18d0b44448a4481aa1cc0e4130054a9e",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 42,
+        "end_line": null,
+        "start_column": 15
+      },
+      "finding": "skills/eval-audit/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "\n**evals-start** is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two:\n\n- **[eval-audit](skills/eval-audit/SKILL.md)**, if you already have an eval pipeline. It inspects your setup and recommends next steps.\n- **[error-discovery](skills/error-discovery/SKILL.md)**, if you have traces but haven't analyzed them yet. It builds an annotation interface and helps you sample traces. Watch [Shreya's walkthrough](https://youtu.be/tqUDjc1HzO4).\n\n## Installation",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "a20762470cc68de43045963f2c74d1870dfea2ebf67104fceceafb1369a005c9",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 42,
+          "end_line": null,
+          "start_column": 15
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-fae77a8cf5684417a1256807251b3fc5",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 14,
+        "end_line": null,
+        "start_column": 22
+      },
+      "finding": "skills/error-discovery/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "**evals-start** is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two:\n\n- **[eval-audit](skills/eval-audit/SKILL.md)**, if you already have an eval pipeline. It inspects your setup and recommends next steps.\n- **[error-discovery](skills/error-discovery/SKILL.md)**, if you have traces but haven't analyzed them yet. It builds an annotation interface and helps you sample traces. Watch [Shreya's walkthrough](https://youtu.be/tqUDjc1HzO4).\n\n## Installation\n",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "5516f7cfb29ad6f3e6ccdd1c9d655bf477f3451fec6c4e6e53dbd6cd45e54801",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 14,
+          "end_line": null,
+          "start_column": 22
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-fae77a8cf5684417a1256807251b3fc5",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 43,
+        "end_line": null,
+        "start_column": 20
+      },
+      "finding": "skills/error-discovery/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "**evals-start** is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two:\n\n- **[eval-audit](skills/eval-audit/SKILL.md)**, if you already have an eval pipeline. It inspects your setup and recommends next steps.\n- **[error-discovery](skills/error-discovery/SKILL.md)**, if you have traces but haven't analyzed them yet. It builds an annotation interface and helps you sample traces. Watch [Shreya's walkthrough](https://youtu.be/tqUDjc1HzO4).\n\n## Installation\n",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "5516f7cfb29ad6f3e6ccdd1c9d655bf477f3451fec6c4e6e53dbd6cd45e54801",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 43,
+          "end_line": null,
+          "start_column": 20
+        }
+      ]
+    },
+    {
+      "id": "RP1",
+      "finding_id": "finding-279c51d1d62949bb90e93ce8c4e8f821",
+      "category": "MCP Rug Pull",
+      "pattern": "MCP server referenced without pinned version: 'npx skills'.",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 18,
+        "end_line": null
+      },
+      "finding": "npx skills",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update.",
+      "remediation": "Pin the version: npx @scope/server@1.2.3",
+      "code_snippet": null,
+      "intent": null,
+      "tags": [
+        "ASI16"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2b5664f2a936abba4141331e7b3e83205cce617d2cea9af83aa306db07500782",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 18,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "RP1",
+      "finding_id": "finding-279c51d1d62949bb90e93ce8c4e8f821",
+      "category": "MCP Rug Pull",
+      "pattern": "MCP server referenced without pinned version: 'npx skills'.",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 21,
+        "end_line": null
+      },
+      "finding": "npx skills",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update.",
+      "remediation": "Pin the version: npx @scope/server@1.2.3",
+      "code_snippet": null,
+      "intent": null,
+      "tags": [
+        "ASI16"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2b5664f2a936abba4141331e7b3e83205cce617d2cea9af83aa306db07500782",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 21,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "RP1",
+      "finding_id": "finding-279c51d1d62949bb90e93ce8c4e8f821",
+      "category": "MCP Rug Pull",
+      "pattern": "MCP server referenced without pinned version: 'npx skills'.",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 27,
+        "end_line": null
+      },
+      "finding": "npx skills",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update.",
+      "remediation": "Pin the version: npx @scope/server@1.2.3",
+      "code_snippet": null,
+      "intent": null,
+      "tags": [
+        "ASI16"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2b5664f2a936abba4141331e7b3e83205cce617d2cea9af83aa306db07500782",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 27,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "RP1",
+      "finding_id": "finding-279c51d1d62949bb90e93ce8c4e8f821",
+      "category": "MCP Rug Pull",
+      "pattern": "MCP server referenced without pinned version: 'npx skills'.",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 33,
+        "end_line": null
+      },
+      "finding": "npx skills",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update.",
+      "remediation": "Pin the version: npx @scope/server@1.2.3",
+      "code_snippet": null,
+      "intent": null,
+      "tags": [
+        "ASI16"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2b5664f2a936abba4141331e7b3e83205cce617d2cea9af83aa306db07500782",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 33,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "RP1",
+      "finding_id": "finding-279c51d1d62949bb90e93ce8c4e8f821",
+      "category": "MCP Rug Pull",
+      "pattern": "MCP server referenced without pinned version: 'npx skills'.",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 34,
+        "end_line": null
+      },
+      "finding": "npx skills",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update.",
+      "remediation": "Pin the version: npx @scope/server@1.2.3",
+      "code_snippet": null,
+      "intent": null,
+      "tags": [
+        "ASI16"
+      ],
+      "evidence": {},
+      "match_fingerprint": "2b5664f2a936abba4141331e7b3e83205cce617d2cea9af83aa306db07500782",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 34,
+          "end_line": null
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-e59a7fd94c584c869ffa1f7162c96624",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 41,
+        "end_line": null,
+        "start_column": 16
+      },
+      "finding": "skills/evals-start/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "\n| Skill | What it does |\n|-------|-------------|\n| [evals-start](skills/evals-start/SKILL.md) | Entry point. Routes to the skill that matches your situation |\n| [eval-audit](skills/eval-audit/SKILL.md) | Audit an eval pipeline and surface problems with prioritized severity |\n| [error-discovery](skills/error-discovery/SKILL.md) | Build a review app, select diverse samples, and organize your notes into failure modes |\n| [generate-synthetic-data](skills/generate-synthetic-data/SKILL.md) | Create diverse synthetic test inputs using dimension-based tuple generation |",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "bb687407ad0c90aee759be873a4213f7ab09d82dbc8705c024b70c135fbebac9",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 41,
+          "end_line": null,
+          "start_column": 16
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-58e4972e138148088d009b6c814d25f0",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 44,
+        "end_line": null,
+        "start_column": 28
+      },
+      "finding": "skills/generate-synthetic-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [evals-start](skills/evals-start/SKILL.md) | Entry point. Routes to the skill that matches your situation |\n| [eval-audit](skills/eval-audit/SKILL.md) | Audit an eval pipeline and surface problems with prioritized severity |\n| [error-discovery](skills/error-discovery/SKILL.md) | Build a review app, select diverse samples, and organize your notes into failure modes |\n| [generate-synthetic-data](skills/generate-synthetic-data/SKILL.md) | Create diverse synthetic test inputs using dimension-based tuple generation |\n| [write-code-eval](skills/write-code-eval/SKILL.md) | Write code checks for objective failure modes |\n| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "3b8d856685e31fd186642adeee2e55cc4e9a3121efc13ad33442e3f8ee7f83e1",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 44,
+          "end_line": null,
+          "start_column": 28
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-788626ab88b24450ab899fe387220d50",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 45,
+        "end_line": null,
+        "start_column": 20
+      },
+      "finding": "skills/write-code-eval/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [eval-audit](skills/eval-audit/SKILL.md) | Audit an eval pipeline and surface problems with prioritized severity |\n| [error-discovery](skills/error-discovery/SKILL.md) | Build a review app, select diverse samples, and organize your notes into failure modes |\n| [generate-synthetic-data](skills/generate-synthetic-data/SKILL.md) | Create diverse synthetic test inputs using dimension-based tuple generation |\n| [write-code-eval](skills/write-code-eval/SKILL.md) | Write code checks for objective failure modes |\n| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |\n| [evaluate-rag](skills/evaluate-rag/SKILL.md) | Evaluate retrieval and generation quality in RAG pipelines |",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "269db86755925b7f9d72309110902664f9496f958c6240fb636c7e3555c20d0b",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 45,
+          "end_line": null,
+          "start_column": 20
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-0fd6ca356e014d45b4e5b3e2ca9bc566",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 46,
+        "end_line": null,
+        "start_column": 23
+      },
+      "finding": "skills/write-judge-prompt/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [error-discovery](skills/error-discovery/SKILL.md) | Build a review app, select diverse samples, and organize your notes into failure modes |\n| [generate-synthetic-data](skills/generate-synthetic-data/SKILL.md) | Create diverse synthetic test inputs using dimension-based tuple generation |\n| [write-code-eval](skills/write-code-eval/SKILL.md) | Write code checks for objective failure modes |\n| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |\n| [evaluate-rag](skills/evaluate-rag/SKILL.md) | Evaluate retrieval and generation quality in RAG pipelines |\n| [build-review-interface](skills/build-review-interface/SKILL.md) | Build custom annotation interfaces for human trace review |",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "ea17fff8e53880f04408a30048e6912da1fa62592e761b287443a1e56be80464",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 46,
+          "end_line": null,
+          "start_column": 23
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-792d2237b2a444388689f9275ecd830f",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 47,
+        "end_line": null,
+        "start_column": 23
+      },
+      "finding": "skills/validate-evaluator/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [generate-synthetic-data](skills/generate-synthetic-data/SKILL.md) | Create diverse synthetic test inputs using dimension-based tuple generation |\n| [write-code-eval](skills/write-code-eval/SKILL.md) | Write code checks for objective failure modes |\n| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |\n| [evaluate-rag](skills/evaluate-rag/SKILL.md) | Evaluate retrieval and generation quality in RAG pipelines |\n| [build-review-interface](skills/build-review-interface/SKILL.md) | Build custom annotation interfaces for human trace review |\n",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "d64a38e5980c6c7275de76e6baf29f719f4bb66220138fae7bab55b7607c0cd0",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 47,
+          "end_line": null,
+          "start_column": 23
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-9cb42fd02c274b96b2f53c1a90486089",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 48,
+        "end_line": null,
+        "start_column": 17
+      },
+      "finding": "skills/evaluate-rag/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [write-code-eval](skills/write-code-eval/SKILL.md) | Write code checks for objective failure modes |\n| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |\n| [evaluate-rag](skills/evaluate-rag/SKILL.md) | Evaluate retrieval and generation quality in RAG pipelines |\n| [build-review-interface](skills/build-review-interface/SKILL.md) | Build custom annotation interfaces for human trace review |\n\n## The error-discovery skill",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "c02a04a26494c72773caa3c0e8f304cfb0a42978841519a9d2ce368b17fdcedb",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 48,
+          "end_line": null,
+          "start_column": 17
+        }
+      ]
+    },
+    {
+      "id": "AS3",
+      "finding_id": "finding-003ef663e3864b1c8e23cdd19c632586",
+      "category": "Agent Snooping",
+      "pattern": "Skill Enumeration",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 49,
+        "end_line": null,
+        "start_column": 27
+      },
+      "finding": "skills/build-review-interface/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills.",
+      "remediation": "Remove all code or instructions that list or read other skills' files or directories. Skills should operate independently; cross-skill access is a privilege escalation.",
+      "code_snippet": "| [write-judge-prompt](skills/write-judge-prompt/SKILL.md) | Design LLM-as-Judge evaluators for subjective quality criteria |\n| [validate-evaluator](skills/validate-evaluator/SKILL.md) | Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction |\n| [evaluate-rag](skills/evaluate-rag/SKILL.md) | Evaluate retrieval and generation quality in RAG pipelines |\n| [build-review-interface](skills/build-review-interface/SKILL.md) | Build custom annotation interfaces for human trace review |\n\n## The error-discovery skill\n",
+      "intent": null,
+      "tags": [
+        "Agent Snooping"
+      ],
+      "evidence": {},
+      "match_fingerprint": "dbc293d50a41f07ff840e82d6883c167433b34d070540f2eb09ad6cb9eabeb2d",
+      "occurrences": [
+        {
+          "file": "README.md",
+          "start_line": 49,
+          "end_line": null,
+          "start_column": 27
+        }
+      ]
+    },
+    {
+      "id": "EA2",
+      "finding_id": "finding-9f44a17f8d9846968159c3e944fd20fe",
+      "category": "Excessive Agency",
+      "pattern": "Autonomous Decision Making",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "skills/evaluate-rag/SKILL.md",
+        "start_line": 177,
+        "end_line": null,
+        "start_column": 24
+      },
+      "finding": "without checking",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation.",
+      "remediation": "Add human-in-the-loop confirmation for destructive, irreversible, or high-impact operations. Never auto-execute commands that modify files, send data, or alter system state.",
+      "code_snippet": "- Jumping directly to metrics without reading traces first.\n- Overfitting to synthetic evaluation data. Validate against real user queries regularly.\n- Using similarity metrics (ROUGE, BERTScore, cosine similarity) as primary generation evaluation. Use binary evaluators driven by error analysis.\n- Evaluating generation without checking context grounding.",
+      "intent": null,
+      "tags": [
+        "Excessive Agency"
+      ],
+      "evidence": {},
+      "match_fingerprint": "9341b6f34d6af9081a0d6673f4217b7307d273da9f43357efd9029e15c5da76c",
+      "occurrences": [
+        {
+          "file": "skills/evaluate-rag/SKILL.md",
+          "start_line": 177,
+          "end_line": null,
+          "start_column": 24
+        }
+      ]
+    }
+  ],
+  "suppressed_count": 0,
+  "suppressed": [],
+  "metadata": {
+    "has_executable_scripts": true,
+    "skillspector_version": "2.12.0",
+    "llm_requested": false,
+    "llm_available": false,
+    "meta_analysis_applied": false,
+    "inference_usage": [],
+    "llm_provenance": {
+      "schema_version": 1,
+      "provider": {
+        "configured_adapter": "unknown",
+        "resolved_adapter": "unknown",
+        "effective_adapter": "not_applicable",
+        "effective_adapters": [],
+        "service": "unknown",
+        "routing": {
+          "deployment_override": null,
+          "deployment_source": "unknown",
+          "api_version": null,
+          "api_version_source": "unknown"
+        }
+      },
+      "analyzers": [
+        {
+          "analyzer_id": "mcp_tool_poisoning",
+          "model": "z-ai/glm-5.2",
+          "model_source": "resolved_configuration",
+          "analyzer_revision": {
+            "value": "2.12.0",
+            "source": "skillspector_package",
+            "source_revision": {
+              "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+              "source": "package_vcs_metadata"
+            }
+          }
+        },
+        {
+          "analyzer_id": "semantic_developer_intent",
+          "model": "z-ai/glm-5.2",
+          "model_source": "resolved_configuration",
+          "analyzer_revision": {
+            "value": "2.12.0",
+            "source": "skillspector_package",
+            "source_revision": {
+              "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+              "source": "package_vcs_metadata"
+            }
+          }
+        },
+        {
+          "analyzer_id": "semantic_quality_policy",
+          "model": "z-ai/glm-5.2",
+          "model_source": "resolved_configuration",
+          "analyzer_revision": {
+            "value": "2.12.0",
+            "source": "skillspector_package",
+            "source_revision": {
+              "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+              "source": "package_vcs_metadata"
+            }
+          }
+        },
+        {
+          "analyzer_id": "semantic_security_discovery",
+          "model": "z-ai/glm-5.2",
+          "model_source": "resolved_configuration",
+          "analyzer_revision": {
+            "value": "2.12.0",
+            "source": "skillspector_package",
+            "source_revision": {
+              "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+              "source": "package_vcs_metadata"
+            }
+          }
+        },
+        {
+          "analyzer_id": "meta_analyzer",
+          "model": "z-ai/glm-5.2",
+          "model_source": "resolved_configuration",
+          "analyzer_revision": {
+            "value": "2.12.0",
+            "source": "skillspector_package",
+            "source_revision": {
+              "value": "2226747e4ca97198bb82faf5085b8a75f2e1dc02",
+              "source": "package_vcs_metadata"
+            }
+          }
+        }
+      ],
+      "sampling": {
+        "temperature": {
+          "requested": null,
+          "source": "provider_default",
+          "forwarded_to_client": null,
+          "adapter_support": false,
+          "provider_support": "unknown"
+        },
+        "seed": {
+          "requested": null,
+          "source": "unset",
+          "forwarded_to_client": null,
+          "adapter_support": false,
+          "provider_support": "unknown"
+        },
+        "reasoning_effort": {
+          "requested": null,
+          "source": "provider_default",
+          "forwarded_to_client": null,
+          "adapter_support": false,
+          "provider_support": "unknown"
+        }
+      },
+      "determinism": {
+        "classification": "not_applicable",
+        "control_status": "not_applied",
+        "provider_guarantee": false,
+        "reason": "LLM analysis was not executed for this scan."
+      }
+    },
+    "filtering_mode": "heuristic"
+  },
+  "execution_successful": true,
+  "analysis_completeness": {
+    "total_components": 26,
+    "scanned_components": 26,
+    "coverage_percent": 100.0,
+    "is_complete": true,
+    "status": "complete",
+    "execution_successful": true,
+    "fully_inspected_files": 26,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "ledger_exceptions": [],
+    "scope_exclusions": [
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/HEAD",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/description",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/applypatch-msg.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/commit-msg.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/fsmonitor-watchman.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/post-update.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-applypatch.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-commit.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-merge-commit.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-push.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-rebase.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/pre-receive.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/prepare-commit-msg.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/push-to-checkout.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/hooks/update.sample",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/index",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/info/",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/logs/",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/objects/",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/packed-refs",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/refs/",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "discovery",
+        "reason_code": "vcs_metadata",
+        "message": "VCS object and history metadata is outside the bounded artifact inspection profile.",
+        "path": ".git/shallow",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false
+      },
+      {
+        "outcome": "out_of_scope",
+        "phase": "static",
+        "reason_code": "binary_content",
+        "message": "Binary content is unsupported by this analyzer.",
+        "path": "workflow.png",
+        "start_line": null,
+        "end_line": null,
+        "fatal": false,
+        "analyzers": [
+          "static_patterns_agent_snooping",
+          "static_patterns_anti_refusal",
+          "static_patterns_data_exfiltration",
+          "static_patterns_deserialization",
+          "static_patterns_excessive_agency",
+          "static_patterns_harmful_content",
+          "static_patterns_memory_poisoning",
+          "static_patterns_output_handling",
+          "static_patterns_privilege_escalation",
+          "static_patterns_prompt_injection",
+          "static_patterns_rogue_agent",
+          "static_patterns_ssrf",
+          "static_patterns_supply_chain",
+          "static_patterns_system_prompt_leakage",
+          "static_patterns_tool_misuse"
+        ]
+      }
+    ],
+    "analyzer_statuses": [
+      {
+        "analyzer_id": "artifact_integrity",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 27,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "behavioral_ast",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "no_applicable_files",
+        "message": "No files matched this analyzer's applicability contract."
+      },
+      {
+        "analyzer_id": "behavioral_taint_tracking",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "no_applicable_files",
+        "message": "No files matched this analyzer's applicability contract."
+      },
+      {
+        "analyzer_id": "bundled_execution_surface",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "no_applicable_files",
+        "message": "No files matched this analyzer's applicability contract."
+      },
+      {
+        "analyzer_id": "mcp_least_privilege",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "manifest_absent",
+        "message": "No compatible manifest was present for this analyzer."
+      },
+      {
+        "analyzer_id": "mcp_rug_pull",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 27,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "mcp_tool_poisoning",
+        "status": "not_applicable",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "manifest_absent",
+        "message": "No compatible manifest was present for this analyzer."
+      },
+      {
+        "analyzer_id": "meta_analyzer",
+        "status": "disabled",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "disabled_by_configuration",
+        "message": "Analyzer was disabled by the requested configuration."
+      },
+      {
+        "analyzer_id": "semantic_developer_intent",
+        "status": "disabled",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "disabled_by_configuration",
+        "message": "Analyzer was disabled by the requested configuration."
+      },
+      {
+        "analyzer_id": "semantic_quality_policy",
+        "status": "disabled",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "disabled_by_configuration",
+        "message": "Analyzer was disabled by the requested configuration."
+      },
+      {
+        "analyzer_id": "semantic_security_discovery",
+        "status": "disabled",
+        "planned_work": 0,
+        "completed": 0,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0,
+        "reason_code": "disabled_by_configuration",
+        "message": "Analyzer was disabled by the requested configuration."
+      },
+      {
+        "analyzer_id": "static_patterns_agent_snooping",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_anti_refusal",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_data_exfiltration",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_deserialization",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_excessive_agency",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_harmful_content",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_memory_poisoning",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_output_handling",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_privilege_escalation",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_prompt_injection",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_rogue_agent",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_ssrf",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_supply_chain",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_system_prompt_leakage",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_patterns_tool_misuse",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 26,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 1,
+        "unaccounted": 0
+      },
+      {
+        "analyzer_id": "static_yara",
+        "status": "completed",
+        "planned_work": 27,
+        "completed": 27,
+        "partial": 0,
+        "skipped": 0,
+        "failed": 0,
+        "unaccounted": 0
+      }
+    ],
+    "references": [],
+    "limitations": [],
+    "findings_before_filtering": 18,
+    "findings_after_filtering": 18
+  }
+}

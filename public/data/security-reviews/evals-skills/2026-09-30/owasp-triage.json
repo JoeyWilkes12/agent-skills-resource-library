@@ -1,0 +1,129 @@
+{
+  "retrieved_at": "2026-10-01T00:27:47.258615+00:00",
+  "scope": "All 25 text files in exact source artifact; workflow.png excluded from text checks",
+  "text_files_checked": 25,
+  "patterns": [
+    "ignore\\s+(all\\s+)?previous\\s+instructions?",
+    "you\\s+are\\s+now\\s+(in\\s+)?developer\\s+mode",
+    "system\\s+override",
+    "reveal\\s+prompt",
+    "SYSTEM\\s*[:]\\s*You\\s+are",
+    "API[_\\s]KEY[:=]\\s*\\w+",
+    "instructions?[:]\\s*\\d+\\."
+  ],
+  "high_signal_match_count": 0,
+  "high_signal_matches": [],
+  "fuzzy_match_count": 18,
+  "fuzzy_matches": [
+    {
+      "file": "skills/build-review-interface/SKILL.md",
+      "line": 19,
+      "text": "- **Collapse repetitive elements.** If every trace shares the same system prompt, put it in a `<details>` toggle."
+    },
+    {
+      "file": "skills/build-review-interface/SKILL.md",
+      "line": 21,
+      "text": "- **Color-code by role or status.** Use left-border colors to distinguish user messages, assistant messages, tool calls, and system prompts at a glance."
+    },
+    {
+      "file": "skills/build-review-interface/SKILL.md",
+      "line": 95,
+      "text": "8. Expand collapsed sections (system prompts, tool calls) and verify content is accessible"
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 40,
+      "text": "- Multi-turn trace, e.g., a sequence of messages with different roles (system, human, assistant, tool calls, tool results, thinking/reasoning blocks). This is common for agent traces, chatbot logs, and agentic workflows."
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 46,
+      "text": "- What roles or authors exist (system, user, assistant, tool, thinking, etc.)"
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 61,
+      "text": "- Author/role of each segment (human vs agent vs system vs tool)"
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 63,
+      "text": "- Importance/relevance of each segment (boilerplate system prompt vs the actual response)"
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 85,
+      "text": "- For multi-turn traces, use color for message role. Each role (human, assistant, system, tool, thinking) gets its own distinct hue at full saturation. Pick 3 to 5 easily distinguishable hues."
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 91,
+      "text": "- Do not mute content by role. System messages, tool results, and thinking blocks can all contain the actual bug. Mute only specific content that is redundant or mechanical, regardless of which role produced it."
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 151,
+      "text": "  - Role label (small, bold) at the top of each block, e.g., \"System\", \"User\", \"Assistant\", \"Tool Call\", \"Tool Result\", \"Thinking\"."
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 156,
+      "text": "  - Only reduce opacity for content that is literally identical across records, e.g., the same system prompt repeated verbatim in every trace. If system messages vary, keep them fully visible."
+    },
+    {
+      "file": "skills/error-discovery/SKILL.md",
+      "line": 173,
+      "text": "- Margin notes: annotations and suggestions must appear as side notes in a right margin column, aligned vertically with their corresponding highlighted text. Use a two-column layout: the article body on the left (flex: 1, max-width ~720px) and a margin-notes column on the right (width ~240px). Each margin note is position: absolute inside the margin column, with its top offset calculated from the highlight element's position relative to the margin container (use getBoundingClientRect on both the highlight and the margin container, take the difference \u2014 do NOT add scrollTop, as that double-counts the scroll offset). Stack notes with a minimum gap so they do not overlap. Include hover linking: hovering a margin note outlines its highlight, and hovering a highlight outlines its margin note. Each margin note shows the quoted text, the reviewer's note, and edit/delete buttons (visible on hover). Do NOT use hover tooltips as the primary way to show annotation content \u2014 margin notes replace tooltips."
+    },
+    {
+      "file": "skills/eval-audit/SKILL.md",
+      "line": 6,
+      "text": "  inheriting an eval system, when unsure whether evals are trustworthy, or as a"
+    },
+    {
+      "file": "skills/evaluate-rag/SKILL.md",
+      "line": 5,
+      "text": "  Use when evaluating a retrieval-augmented generation system, measuring retrieval quality,"
+    },
+    {
+      "file": "skills/evaluate-rag/SKILL.md",
+      "line": 78,
+      "text": "Prioritize recall for first-pass retrieval. LLMs can ignore irrelevant content but cannot generate from missing content."
+    },
+    {
+      "file": "skills/generate-synthetic-data/SKILL.md",
+      "line": 50,
+      "text": "Start with 3 dimensions. Add more only if initial traces reveal failure patterns along new axes."
+    },
+    {
+      "file": "skills/generate-synthetic-data/SKILL.md",
+      "line": 111,
+      "text": "**Target: ~100 high-quality, diverse traces.** This is a rough heuristic for reaching saturation (where new traces stop revealing new failure categories). The number depends on system complexity."
+    },
+    {
+      "file": "skills/write-judge-prompt/SKILL.md",
+      "line": 127,
+      "text": "| Instruction following | System prompt rules + generated response |"
+    }
+  ],
+  "invisible_text_matches": [],
+  "external_urls": [
+    "http://www.apache.org/licenses/",
+    "http://www.apache.org/licenses/LICENSE-2.0",
+    "https://arxiv.org/abs/2404.12272",
+    "https://github.com/ai-evals-course/evals-skills",
+    "https://github.com/ai-evals-course/evals-skills\",",
+    "https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents",
+    "https://github.com/vercel-labs/skills",
+    "https://hamel.dev/blog/posts/evals-faq/",
+    "https://hamel.dev/blog/posts/evals/index.html",
+    "https://hamel.dev/blog/posts/field-guide/",
+    "https://hamel.dev/blog/posts/llm-judge/",
+    "https://hamel.dev/blog/posts/revenge/",
+    "https://hamel.dev/notes/llm/evals/",
+    "https://maven.com/parlance-labs/evals?promoCode=evals-info-url",
+    "https://maven.com/parlance-labs/evals?promoCode=evals-info-url\",",
+    "https://youtu.be/tqUDjc1HzO4"
+  ],
+  "limitation": "Pattern matches are triage leads; not a semantic or runtime clearance."
+}

@@ -1,0 +1,376 @@
+{
+  "sha": "80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/80d5f7b0127c7572ed9e9339937adbfd7240ffeb",
+  "tree": [
+    {
+      "path": ".agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f99397bf860a368dfe1315c1a55c97f180a334d8",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/f99397bf860a368dfe1315c1a55c97f180a334d8"
+    },
+    {
+      "path": ".agents/plugins",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8c0035c4d397559b0530fc9488f755c30b5cc20",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/a8c0035c4d397559b0530fc9488f755c30b5cc20"
+    },
+    {
+      "path": ".agents/plugins/marketplace.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8964e2bea831815b61a0cdf2025bbcd7929f52c8",
+      "size": 357,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/8964e2bea831815b61a0cdf2025bbcd7929f52c8"
+    },
+    {
+      "path": ".claude-plugin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41291013a78cceb256a2e5e19ff4de922230c201",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/41291013a78cceb256a2e5e19ff4de922230c201"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40cbf4dbc72c83462e5bcef6213240a334c9d839",
+      "size": 440,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/40cbf4dbc72c83462e5bcef6213240a334c9d839"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca506e64f446a9564385763ee298b6ce71b0c8a7",
+      "size": 544,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/ca506e64f446a9564385763ee298b6ce71b0c8a7"
+    },
+    {
+      "path": ".codex-plugin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e53542ce191a37246cff02042de468f8765a3b1",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/7e53542ce191a37246cff02042de468f8765a3b1"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89c9cbef395e4caf36532011709c2163620f43ab",
+      "size": 1112,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/89c9cbef395e4caf36532011709c2163620f43ab"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "size": 11357,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8adfc10c2cfda293e74c6d5498c7cad00e154a79",
+      "size": 4398,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/8adfc10c2cfda293e74c6d5498c7cad00e154a79"
+    },
+    {
+      "path": "skills",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a97df4c29742fa0847b3cf1e2c6703bdb70fb55e",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/a97df4c29742fa0847b3cf1e2c6703bdb70fb55e"
+    },
+    {
+      "path": "skills/build-review-interface",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79d24956d6fd4715f49b59bdb34de7a0fc935055",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/79d24956d6fd4715f49b59bdb34de7a0fc935055"
+    },
+    {
+      "path": "skills/build-review-interface/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fbda06bdd0e0cf0abb044c4e8258bd2744fbc29",
+      "size": 5408,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/2fbda06bdd0e0cf0abb044c4e8258bd2744fbc29"
+    },
+    {
+      "path": "skills/build-review-interface/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b0c78b408dfaae51c9ce271af35979d22252607b",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/b0c78b408dfaae51c9ce271af35979d22252607b"
+    },
+    {
+      "path": "skills/build-review-interface/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daa958852545d518ced1413e7caa20640fca2c76",
+      "size": 255,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/daa958852545d518ced1413e7caa20640fca2c76"
+    },
+    {
+      "path": "skills/error-discovery",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cf78bd81e951d24f70ad3dd45522585a2ef2a0bf",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/cf78bd81e951d24f70ad3dd45522585a2ef2a0bf"
+    },
+    {
+      "path": "skills/error-discovery/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb7cb2b41b8c1b4a6cecefc69c105e8b0998b84b",
+      "size": 14931,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/fb7cb2b41b8c1b4a6cecefc69c105e8b0998b84b"
+    },
+    {
+      "path": "skills/error-discovery/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "935ba9b57bcb9e32993bbe0c2ffcb58f5c1af7d7",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/935ba9b57bcb9e32993bbe0c2ffcb58f5c1af7d7"
+    },
+    {
+      "path": "skills/error-discovery/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32bb07af15f9591e1426880b77289a4009cdbeaa",
+      "size": 231,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/32bb07af15f9591e1426880b77289a4009cdbeaa"
+    },
+    {
+      "path": "skills/error-discovery/review-loop.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a1c31fb1acc8f896a8a0817a7e4d03bbcb9ff1f",
+      "size": 5839,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/0a1c31fb1acc8f896a8a0817a7e4d03bbcb9ff1f"
+    },
+    {
+      "path": "skills/eval-audit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "207d8e83a53477522a6b277c970e6f7ec25afd8d",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/207d8e83a53477522a6b277c970e6f7ec25afd8d"
+    },
+    {
+      "path": "skills/eval-audit/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c932d9d6b8630797c38d50591933329b7f8bb27",
+      "size": 9977,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/4c932d9d6b8630797c38d50591933329b7f8bb27"
+    },
+    {
+      "path": "skills/eval-audit/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "df5f499639a97de382313909937c252a4ee54539",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/df5f499639a97de382313909937c252a4ee54539"
+    },
+    {
+      "path": "skills/eval-audit/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05d657940556bc38d096119a02b934cb3841e51d",
+      "size": 233,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/05d657940556bc38d096119a02b934cb3841e51d"
+    },
+    {
+      "path": "skills/evals-start",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57054b1c1e438b70a7b4b05c51669b6a610e475b",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/57054b1c1e438b70a7b4b05c51669b6a610e475b"
+    },
+    {
+      "path": "skills/evals-start/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16e897a1d19a95163885621c08e422f9e3dbffa2",
+      "size": 1646,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/16e897a1d19a95163885621c08e422f9e3dbffa2"
+    },
+    {
+      "path": "skills/evals-start/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8a6f9cccfa8fc9e253898cdd7a68d24744aa3e63",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/8a6f9cccfa8fc9e253898cdd7a68d24744aa3e63"
+    },
+    {
+      "path": "skills/evals-start/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0e2faa89fc40a4e66c3a09535ae948a646d45d4",
+      "size": 232,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/e0e2faa89fc40a4e66c3a09535ae948a646d45d4"
+    },
+    {
+      "path": "skills/evaluate-rag",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4dfe667786997541b3330fb47566160cef2bde2f",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/4dfe667786997541b3330fb47566160cef2bde2f"
+    },
+    {
+      "path": "skills/evaluate-rag/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "853a2c9c7a4c33ee6078f0e3ef243f7019c8ebb3",
+      "size": 7625,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/853a2c9c7a4c33ee6078f0e3ef243f7019c8ebb3"
+    },
+    {
+      "path": "skills/evaluate-rag/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "755e5e0b849dce218e0370d4fe7d19936038eb05",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/755e5e0b849dce218e0370d4fe7d19936038eb05"
+    },
+    {
+      "path": "skills/evaluate-rag/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03885e22ebe3df905501bc61e63ca01ba8dae422",
+      "size": 222,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/03885e22ebe3df905501bc61e63ca01ba8dae422"
+    },
+    {
+      "path": "skills/generate-synthetic-data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "736dcd60f106992705656d926bcec9f8819736ee",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/736dcd60f106992705656d926bcec9f8819736ee"
+    },
+    {
+      "path": "skills/generate-synthetic-data/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0954334c590cbd3329f31d8555f1ffa8d7fdaf45",
+      "size": 5427,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/0954334c590cbd3329f31d8555f1ffa8d7fdaf45"
+    },
+    {
+      "path": "skills/generate-synthetic-data/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43932c0fbd3e719224be197dcb97ebc9690a8368",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/43932c0fbd3e719224be197dcb97ebc9690a8368"
+    },
+    {
+      "path": "skills/generate-synthetic-data/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e409b40837f98a9ec4f58d605cdd0acda5de39a6",
+      "size": 258,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/e409b40837f98a9ec4f58d605cdd0acda5de39a6"
+    },
+    {
+      "path": "skills/validate-evaluator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9adaf529cddd9bde439688e02600f8463334d1c6",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/9adaf529cddd9bde439688e02600f8463334d1c6"
+    },
+    {
+      "path": "skills/validate-evaluator/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b677b3f02ce26bb784de8404914545dd4faaf20",
+      "size": 8901,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/8b677b3f02ce26bb784de8404914545dd4faaf20"
+    },
+    {
+      "path": "skills/validate-evaluator/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8c0ff2713871ea2568fb3b9122ee09bcc7270af",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/d8c0ff2713871ea2568fb3b9122ee09bcc7270af"
+    },
+    {
+      "path": "skills/validate-evaluator/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "249bc60149b514c6b4facd135d293616dac99358",
+      "size": 249,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/249bc60149b514c6b4facd135d293616dac99358"
+    },
+    {
+      "path": "skills/write-code-eval",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "868a86efe3bdbb24cdf574330802bc49f22ea2ce",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/868a86efe3bdbb24cdf574330802bc49f22ea2ce"
+    },
+    {
+      "path": "skills/write-code-eval/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "361282672c1564f468dabacdcf2f4501f5b32798",
+      "size": 1538,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/361282672c1564f468dabacdcf2f4501f5b32798"
+    },
+    {
+      "path": "skills/write-code-eval/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5dd1def8bc2df6e6f049e3d8a744f59044e9860",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/a5dd1def8bc2df6e6f049e3d8a744f59044e9860"
+    },
+    {
+      "path": "skills/write-code-eval/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30e0883472dd77573313920c0a1b0c9aea026ee9",
+      "size": 264,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/30e0883472dd77573313920c0a1b0c9aea026ee9"
+    },
+    {
+      "path": "skills/write-judge-prompt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "885128d76b6d4a35811f772ede860afb82588ade",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/885128d76b6d4a35811f772ede860afb82588ade"
+    },
+    {
+      "path": "skills/write-judge-prompt/SKILL.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "606fcb86c629b05202c5e4570910a865e47ee78f",
+      "size": 7693,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/606fcb86c629b05202c5e4570910a865e47ee78f"
+    },
+    {
+      "path": "skills/write-judge-prompt/agents",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44f6c6ec2a89e18259c65241b62f58e2968a445b",
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/trees/44f6c6ec2a89e18259c65241b62f58e2968a445b"
+    },
+    {
+      "path": "skills/write-judge-prompt/agents/openai.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb6223d8e5fe364a202ee5dd9f37442aebec81b7",
+      "size": 244,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/cb6223d8e5fe364a202ee5dd9f37442aebec81b7"
+    },
+    {
+      "path": "workflow.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d89badada314daf64e31e5c4dc89726c44515b9a",
+      "size": 1580956,
+      "url": "https://api.github.com/repos/ai-evals-course/evals-skills/git/blobs/d89badada314daf64e31e5c4dc89726c44515b9a"
+    }
+  ],
+  "truncated": false
+}

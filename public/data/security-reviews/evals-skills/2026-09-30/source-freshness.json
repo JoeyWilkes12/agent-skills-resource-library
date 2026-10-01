@@ -1,0 +1,56 @@
+{
+  "build-review-interface": {
+    "source_file": "skills/build-review-interface/SKILL.md",
+    "latest_file_change_commit": "81e82163bc5529900c9425cc6b7d908f8f18c158",
+    "latest_file_change_date": "2026-08-16T02:56:55Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fbuild-review-interface%2FSKILL.md&per_page=1"
+  },
+  "error-discovery": {
+    "source_file": "skills/error-discovery/SKILL.md",
+    "latest_file_change_commit": "bb80ca8f5331ef2f204a68f2d4bae73a74ec1824",
+    "latest_file_change_date": "2026-08-16T04:37:24Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Ferror-discovery%2FSKILL.md&per_page=1"
+  },
+  "eval-audit": {
+    "source_file": "skills/eval-audit/SKILL.md",
+    "latest_file_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+    "latest_file_change_date": "2026-09-24T17:58:05Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Feval-audit%2FSKILL.md&per_page=1"
+  },
+  "evals-start": {
+    "source_file": "skills/evals-start/SKILL.md",
+    "latest_file_change_commit": "f7dad12aa6543f9b942e9e7b5dfec7ae4f2005e3",
+    "latest_file_change_date": "2026-09-24T17:58:05Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevals-start%2FSKILL.md&per_page=1"
+  },
+  "evaluate-rag": {
+    "source_file": "skills/evaluate-rag/SKILL.md",
+    "latest_file_change_commit": "3ded0176c7e06beb9e9fd4db4f03f3d8b8dac743",
+    "latest_file_change_date": "2026-08-15T22:48:06Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fevaluate-rag%2FSKILL.md&per_page=1"
+  },
+  "generate-synthetic-data": {
+    "source_file": "skills/generate-synthetic-data/SKILL.md",
+    "latest_file_change_commit": "3ded0176c7e06beb9e9fd4db4f03f3d8b8dac743",
+    "latest_file_change_date": "2026-08-15T22:48:06Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fgenerate-synthetic-data%2FSKILL.md&per_page=1"
+  },
+  "validate-evaluator": {
+    "source_file": "skills/validate-evaluator/SKILL.md",
+    "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_file_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fvalidate-evaluator%2FSKILL.md&per_page=1"
+  },
+  "write-code-eval": {
+    "source_file": "skills/write-code-eval/SKILL.md",
+    "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_file_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-code-eval%2FSKILL.md&per_page=1"
+  },
+  "write-judge-prompt": {
+    "source_file": "skills/write-judge-prompt/SKILL.md",
+    "latest_file_change_commit": "920297c87c8cac17e4a7f46e85734119b260a9b0",
+    "latest_file_change_date": "2026-09-24T18:15:22Z",
+    "url": "https://api.github.com/repos/ai-evals-course/evals-skills/commits?sha=80d5f7b0127c7572ed9e9339937adbfd7240ffeb&path=skills%2Fwrite-judge-prompt%2FSKILL.md&per_page=1"
+  }
+}
