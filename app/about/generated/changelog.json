@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "35ebd8563c0070c9c637e502ab65bc770f87986e",
+  "generatedFrom": "9c004708b7e4112033a9540ee488605c116434fd",
   "releases": [
     {
       "date": "2026-09-30",
@@ -27,6 +27,13 @@
               "href": "https://github.com/inclusionAI/ling-cookbook/tree/main/resources/recommended-skills/image-to-editable-ppt",
               "resourceId": "image-to-editable-ppt",
               "commit": "35ebd8563c0070c9c637e502ab65bc770f87986e"
+            },
+            {
+              "kind": "resource",
+              "text": "“AI evals: a quick guide” resource.",
+              "href": "/guides/ai-evals-short-guide",
+              "resourceId": "ai-evals-short-guide",
+              "commit": "9c004708b7e4112033a9540ee488605c116434fd"
             }
           ]
         }

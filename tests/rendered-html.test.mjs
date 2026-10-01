@@ -216,7 +216,7 @@ test("server-renders the Guides index and its published entries", async () => {
     /Search titles, summaries, and selected headings and topics from every/,
   );
   assert.match(html, /Article body text is not indexed/);
-  assert.match(html, /23 guides/);
+  assert.match(html, /24 guides/);
   assert.match(html, /href="\/guides\/headroom-context-compression-evidence"/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
