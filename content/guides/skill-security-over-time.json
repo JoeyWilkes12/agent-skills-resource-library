@@ -229,7 +229,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The latest named release observed was [skill-v4.5.2](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.2), published October 9 at 09:30 MDT, at commit [d631a8827f99414d2b6daba4ef08b7f8701751d7](https://github.com/pbakaus/impeccable/commit/d631a8827f99414d2b6daba4ef08b7f8701751d7). It names engine v0.1.14. This is an identifiable review candidate, not a recommendation that it is safest or most stable. An engine version also needs its own provenance and digest checks."
+          "text": "The latest named release observed was [skill-v4.5.2](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.2), published October 9 at 09:30 MDT, at the [release commit](https://github.com/pbakaus/impeccable/commit/d631a8827f99414d2b6daba4ef08b7f8701751d7) (`d631a8827f99414d2b6daba4ef08b7f8701751d7`). It names engine v0.1.14. This is an identifiable review candidate, not a recommendation that it is safest or most stable. An engine version also needs its own provenance and digest checks."
         },
         {
           "type": "paragraph",
