@@ -1,0 +1,300 @@
+{
+  "slug": "skill-security-over-time",
+  "title": "Skill security over time",
+  "summary": "Assess MCP-loaded skills, match audits to exact versions, and keep a practical record of updates, permissions, testing, and rollback.",
+  "deck": "Evaluate the exact skill, its dependencies, and the tools it can reach. Keep a dated evidence record and review changes before updating.",
+  "family": "decision",
+  "audience": [
+    "Practitioners",
+    "Skill reviewers",
+    "Agent builders"
+  ],
+  "outcomes": [
+    "Understand the risks of MCP-loaded unverified skill content.",
+    "Distinguish registry audit evidence from exact-artifact review.",
+    "Maintain a version-specific evidence receipt and update decision."
+  ],
+  "interactionMode": "read",
+  "effects": [
+    "none"
+  ],
+  "sourceClass": "mixed",
+  "status": "editorial-review",
+  "lastVerified": "2026-10-10",
+  "owner": "AI Agent Skills Resource Library",
+  "image": {
+    "src": "/guides/skill-security-over-time.png",
+    "alt": "Pinned skill dossiers connected by a branching thread and rollback path"
+  },
+  "relatedGuides": [
+    "so-you-found-a-skill-checklist",
+    "vercel-skills-sh-security-check",
+    "when-not-to-use-a-skill"
+  ],
+  "sections": [
+    {
+      "heading": "Start with discovery, then establish trust",
+      "id": "start-with-discovery-then-establish-trust",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Skillselion is an independent directory covering agent skills, MCP servers, and marketplaces. Its skill rankings use skills.sh install figures; MCP and marketplace rankings use repository stars. Skillselion says it passes through available third-party security verdicts rather than scanning listings itself, and that those signals do not guarantee safety. That makes it useful for discovery while leaving the adoption decision with you. [Skillselion FAQ](https://skillselion.com/)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Its research methodology adds useful limits: registry installs are cumulative events, bundles can count several skills per installation, and its first-party Verified-Safe and trust-score fields are unpopulated. Popularity can indicate interest and help prioritize investigation. It cannot establish that a particular commit was widely used or reviewed. [Skillselion methodology](https://skillselion.com/research/methodology)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Check the canonical owner, repository, skill directory, and complete files before deciding what to trust. Similar names, copied descriptions, and badges should not substitute for origin verification."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "What an unverified skill MCP could expose",
+      "id": "what-an-unverified-skill-mcp-could-expose",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The Skillselion MCP README documents a loader that puts skill instructions in the agent's context and bundled scripts or references on disk. It also describes synthesis across several matching skills and optional setup that registers the server globally and adds a session-start hook. The README claims it sends a scrubbed query and matched skill for telemetry, with an opt-out. These are published product claims; this guide has not verified the implementation or its privacy behavior. [Skillselion MCP documentation](https://github.com/skillselion/skillselion-mcp)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The security question is what happens when retrieved content starts influencing an agent with other tools. A malicious instruction might ask it to read credentials, run a bundled script, publish private code, or send project details through a legitimate search or messaging tool. A server does not need its own email or deployment permission to try to steer an agent that already has those capabilities."
+        },
+        {
+          "type": "paragraph",
+          "text": "OWASP describes tool poisoning, cross-server escalation, data exfiltration through ordinary calls, supply-chain compromise, and behavior changing after approval. It recommends treating returned content as untrusted and enforcing authorization outside the model. These are conditional risks of this architecture, not findings that Skillselion or any listed skill is malicious. [OWASP MCP security guidance](https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Even a read-only annotation is a hint. MCP says annotations from untrusted servers must be treated as untrusted; its maintainers explain that isolation and network controls provide enforcement that metadata cannot. [MCP Tools specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [MCP annotations explained](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/)"
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "A review is a snapshot",
+      "id": "a-review-is-a-snapshot",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A scanner result answers a bounded question: what did that scanner find in the material it examined, on that date? To use it as evidence for your copy, check the corresponding repository, directory, commit, included files, scan time, and scanner scope."
+        },
+        {
+          "type": "paragraph",
+          "text": "When an audit page does not identify an immutable revision, record that limitation. Do not silently attach its verdict to an older commit, a newer release, a similarly named skill, or a whole repository. A clean static scan also leaves questions about meaning: instructions can request inappropriate actions without containing a conventional vulnerable program."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our editorial recommendation is to combine static inspection with a semantic review of the raw instructions, scripts, and supporting references. Record whether a reviewer saw the complete artifact, selected excerpts, or a summary. These are different levels of evidence. A review of a summary cannot establish what omitted material contains."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Choose a reviewed version, then pin it",
+      "id": "choose-a-reviewed-version-then-pin-it",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "There may be a sensible release or commit to investigate, but a public install total does not identify the most-used commit. Without version-specific telemetry, that question remains unanswered. An old revision may contain known defects; a new one may contain a necessary fix. Age alone settles neither stability nor security."
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose an immutable revision with a reviewable change history, suitable behavior, and evidence that matches its exact files. Record the full commit identifier and content hashes. Include scripts, references, manifests, and lockfiles rather than pinning only SKILL.md. Keep a copy so the approved material remains available for comparison and rollback."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pinning limits one source of drift. A pinned skill can still fetch changing references, install unresolved dependency versions, call a remote service, or behave differently under a new agent runtime. Giving that agent an additional tool can change its effective reach without touching the skill. Your evidence record should therefore cover the execution environment as well as the repository."
+        },
+        {
+          "type": "paragraph",
+          "text": "A pinned revision with a known vulnerability needs a new decision: patch, replace, or retire it. Pinning makes a version reproducible; it does not grant permanent approval."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Keep a small evidence receipt",
+      "id": "keep-a-small-evidence-receipt",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Use one receipt per approved version. Leave unknown fields explicit rather than filling them with a reassuring label. This example is an editorial template, not a certification standard:"
+        },
+        {
+          "type": "code",
+          "language": "text",
+          "code": "Skill / canonical origin:\nRepository / skill directory:\nFull commit / artifact hashes:\nIncluded files / dependencies / remote references:\nAudit provider / URL / displayed date and timezone:\nAudit revision and scope match: yes / no / unknown\nStatic scan / raw-artifact semantic review:\nReviewer / review date / material exclusions:\nAllowed project, tools, credentials, and network destinations:\nIsolated test and observed actions:\nDecision: quarantine / approve for stated scope / reject\nPrior approved version / rollback location:\nNext review date / update triggers:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep sensitive contents out of the receipt. Record which credential scope was available, for example, rather than copying its value. For a practical first pass, use the [skill checklist](/guides/so-you-found-a-skill-checklist) and the [skills.sh security-check guide](/guides/vercel-skills-sh-security-check)."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Review on change, with a scheduled backstop",
+      "id": "review-on-change-with-a-scheduled-backstop",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The following is a suggested operating policy, not an industry-mandated schedule. Review every proposed update before promoting it into normal use. Compare instructions, scripts, dependencies, fetched URLs, hooks, and requested permissions against the approved receipt. Run the relevant checks again on the new complete artifact."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reopen the decision immediately when ownership changes, an advisory appears, an audit verdict changes, a new network destination is introduced, permissions expand, or observed behavior differs from expectations. Reassess after substantial host-tool or agent-runtime changes too."
+        },
+        {
+          "type": "paragraph",
+          "text": "For actively used skills, a monthly evidence check is a reasonable starting point; for isolated, occasional use, quarterly may be sufficient. Adjust this to the consequences of misuse. The scheduled check catches changes outside the repository, including remote references and dependency advisories. It does not replace the update gate."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Quarantine, observe, and retain a rollback path",
+      "id": "quarantine-observe-and-retain-a-rollback-path",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before approval, keep downloaded material in a quarantine directory outside automatically discovered skill locations. Inspect it as untrusted data. Test only in a disposable project with narrow file access, restricted network access, and no valuable credentials. Disable automatic hooks while evaluating the skill."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep an action history of the reviewed version, tools used, destinations contacted, approvals, and unexpected behavior. Exclude secrets and unnecessary private content. Successful output is useful evidence of task performance; also inspect the actions that produced it."
+        },
+        {
+          "type": "paragraph",
+          "text": "If behavior changes unexpectedly, stop automatic loading and remove the skill from sensitive workflows. Preserve the artifact and relevant records for investigation. Return to the previous reviewed version only after checking whether the incident affected that version, shared dependencies, or credentials. Rollback restores files; it does not reverse data already disclosed."
+        },
+        {
+          "type": "paragraph",
+          "text": "Start a fresh agent session and inspect saved memory, hooks, settings, and generated scripts for unauthorized persistent instructions. If credential exposure is suspected, assess revocation and rotation separately from restoring skill files."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Impeccable: a dated example",
+      "id": "impeccable-a-dated-example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**skills.sh registry check — October 9, 2026 (America/Denver).** The canonical ID is `pbakaus/impeccable/impeccable`. Its [listing](https://www.skills.sh/pbakaus/impeccable/impeccable) displayed 322.5K aggregate installs at retrieval. The [official API documentation](https://www.skills.sh/docs/api) describes aggregate installation data; the inspected listing and public schema did not supply adoption or runtime reliability by commit. No most-used or most-stable commit was established."
+        },
+        {
+          "type": "paragraph",
+          "text": "Fresh public HTTP retrieval produced these results. Times below reproduce the audit pages; their timezone is unspecified. They display October 10 while the research date here is October 9 in Denver. Cached search and page-retrieval copies disagreed, including an older September 15 Snyk result; the fresh detail pages are the basis for this table."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Provider",
+            "Published result",
+            "Displayed analyzed time",
+            "Material detail"
+          ],
+          "rows": [
+            [
+              "[Gen Agent Trust Hub](https://www.skills.sh/pbakaus/impeccable/impeccable/security/agent-trust-hub)",
+              "PASS / SAFE",
+              "Oct 10, 2026, 01:34 AM",
+              "Describes binary downloads and execution, indirect prompt-injection exposure, and persistent detector hooks."
+            ],
+            [
+              "[Socket](https://www.skills.sh/pbakaus/impeccable/impeccable/security/socket)",
+              "WARN / one LOW anomaly",
+              "Oct 10, 2026, 01:35 AM",
+              "Flags `scripts/modern-screenshot.umd.js`; remote DOM/CSS resource loading and caller-provided Web Workers need review."
+            ],
+            [
+              "[Snyk](https://www.skills.sh/pbakaus/impeccable/impeccable/security/snyk)",
+              "PASS / LOW",
+              "Oct 10, 2026, 01:33 AM",
+              "Reports no issues detected."
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Gen's analysis describes downloading an engine and its SHA-256 checksum from the author's GitHub, making the engine executable, and optionally adding detector hooks in agent settings. A checksum obtained from the same origin can check consistency with that origin; it is not independent evidence that the publisher or binary is trustworthy. These are the provider's observations, not an independent code audit by this library. [Gen audit detail](https://www.skills.sh/pbakaus/impeccable/impeccable/security/agent-trust-hub)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Socket exposes one low anomaly, confidence 62% and severity 50%, and says no definitive malware indicators were visible. Its concern is unexpected network requests and a broader injection surface when DOM/CSS/options are untrusted. It exposes no separate finding ID or explicit remediation. The warning deserves manual inspection; it is not proof of malware. [Socket audit detail](https://www.skills.sh/pbakaus/impeccable/impeccable/security/socket)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The latest named release observed was [skill-v4.5.2](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.2), published October 9 at 09:30 MDT, at commit [d631a8827f99414d2b6daba4ef08b7f8701751d7](https://github.com/pbakaus/impeccable/commit/d631a8827f99414d2b6daba4ef08b7f8701751d7). It names engine v0.1.14. This is an identifiable review candidate, not a recommendation that it is safest or most stable. An engine version also needs its own provenance and digest checks."
+        },
+        {
+          "type": "paragraph",
+          "text": "Socket's package snapshot is `6bfbdc7f53f3a0817f9ac74401a9e3c7b27ef02527081555b5fa954b9da42a06`. That identifier is not a Git commit SHA, and its correspondence to the release above was not proven. Audit freshness alone cannot establish that two artifacts contain the same bytes. Preserve the Socket warning and the unresolved snapshot match rather than combining the three providers into a reassuring consensus. [Snapshot evidence](https://www.skills.sh/pbakaus/impeccable/impeccable/security/socket)"
+        },
+        {
+          "type": "paragraph",
+          "text": "For source pinning, the official skills CLI v1.7.2 parser recognizes a quoted GitHub source ending in `#FULL_40_CHARACTER_SHA`. Its `@skill` form selects a skill rather than a version. Verify the installed CLI's behavior before relying on syntax, and separately pin any fetched executable or dependency. No installation command is needed to make this assessment. [Official parser](https://github.com/vercel-labs/skills/blob/v1.7.2/src/source-parser.ts), [Git resolution](https://github.com/vercel-labs/skills/blob/v1.7.2/src/git.ts)"
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Impeccable: focused local review",
+      "id": "impeccable-focused-local-review",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "We downloaded the exact Codex variant, `.agents/skills/impeccable`, from the release commit above into quarantine: 62 files, checked against Git blob identifiers and recorded with SHA-256 hashes. It was not installed, loaded as a skill, or executed. The provider snapshot's correspondence to this variant remains unproven."
+        },
+        {
+          "type": "paragraph",
+          "text": "An isolated **SkillSpector 2.12.0** static scan, from NVIDIA upstream commit `5edc347c320bd516f8ff38df200a63831bf92e80`, returned **100 / CRITICAL / DO_NOT_INSTALL**, with 49 entries (11 HIGH, 38 MEDIUM; 25 distinct match fingerprints). Its reported coverage was partial: 54 files fully inspected, eight partly inspected, or 87.1%. This is a triage result. Several high alerts concern scanner coverage limits or design language; the score does not establish malicious intent. Seven OWASP example regex patterns matched nothing, which also does not establish safety. The scan used no LLM and had network access and subprocesses blocked; current online dependency-vulnerability checks were unavailable. [Scanner origin](https://github.com/NVIDIA/skillspector)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Local Codex then examined raw instructions, both launchers, selected references, and excerpts of larger browser code. Material observations include:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**The skill pin does not freeze the selected engine.** The launcher may choose an environment override, sibling binary, or preinstalled home binary before the versioned cache. Its compatibility probe does not authenticate the executable or enforce the named version. Fresh downloads do require a matching checksum, but executable and checksum come from the same origin. [Pinned launcher](https://github.com/pbakaus/impeccable/blob/d631a8827f99414d2b6daba4ef08b7f8701751d7/.agents/skills/impeccable/scripts/impeccable)",
+            "**Dynamic helper output needs an instruction boundary.** The live workflow promotes helper-provided instructions into workflow authority and requests broad execution escalation. Compromised output or unsafe reflection of page content could widen the impact; this review did not establish an exploit or verify the engine's enforcement. Host policy and the user's actual approvals must govern every action. [Pinned live workflow](https://github.com/pbakaus/impeccable/blob/d631a8827f99414d2b6daba4ef08b7f8701751d7/.agents/skills/impeccable/reference/live.md)",
+            "**Persistence extends beyond the skill folder.** Hooks, project configuration, injected development scripts, and session state affect future runs. Some maintenance examples also name an unversioned package executable. A review and rollback receipt should cover these artifacts and the engine, along with the Markdown. [Pinned hook workflow](https://github.com/pbakaus/impeccable/blob/d631a8827f99414d2b6daba4ef08b7f8701751d7/.agents/skills/impeccable/reference/hooks.md)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The browser excerpts also show sidecar component markup inserted into a shadow root and screenshot capture fetching stylesheet/font resources. These are conditional trust and privacy boundaries; server validation and reachable attacker inputs were not established. Observed helper traffic goes to localhost, which does not prove remote exfiltration. The linked review preserves these distinctions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The raw references also contain useful boundaries: production injection is prohibited, development CSP changes require an explicit diff and consent, and hook approval and cleanup are documented. These intentions need implementation and runtime verification."
+        },
+        {
+          "type": "paragraph",
+          "text": "**Review limits and decision:** this was a focused review of raw material, with selected excerpts of large browser files; it was not a complete semantic audit. Engine source outside the skill directory, released binaries, runtime dependencies, other client variants, and runtime behavior were excluded. Keep this candidate quarantined pending engine provenance, enforcement review, and an isolated behavioral test. No installation approval or finding of malware is claimed. Preserve the [focused review](/guides/impeccable-focused-review.md) and [version-specific evidence receipt](/guides/impeccable-review-receipt.json) alongside any later decision."
+        }
+      ],
+      "ordered": false
+    },
+    {
+      "heading": "Decide what to use next",
+      "id": "decide-what-to-use-next",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Editorial decision rule:** keep a candidate quarantined when its identity, full contents, critical behavior, or review coverage is unresolved. Approve a reviewed version only for the project and capabilities written in its receipt. Require another decision when those conditions change."
+        },
+        {
+          "type": "paragraph",
+          "text": "You have a defensible starting point when the receipt identifies the complete artifact, preserves each provider's result and limitations, records your own review and isolated test, and names the next review trigger and rollback copy. For Impeccable, the registry warning, incomplete coverage, engine trust, and unproven revision correspondence remain open. For Skillselion, browsing the directory can support discovery without enabling its MCP loader."
+        }
+      ],
+      "ordered": false
+    }
+  ]
+}

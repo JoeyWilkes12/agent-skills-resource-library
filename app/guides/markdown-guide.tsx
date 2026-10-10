@@ -236,11 +236,14 @@ function inlineContent(
 
 export function publicAssetUrl(source: string, basePath: string) {
   const normalized = source.replace(/\\/g, "/");
+  if (/^(?:https?:)?\/\//i.test(normalized)) return source;
   const publicMarker = "/public/";
   const markerIndex = normalized.lastIndexOf(publicMarker);
 
-  if (markerIndex === -1) return source;
-  return `${basePath}/${normalized.slice(markerIndex + publicMarker.length)}`;
+  if (markerIndex !== -1) {
+    return `${basePath}/${normalized.slice(markerIndex + publicMarker.length)}`;
+  }
+  return normalized.startsWith("/") ? `${basePath}${normalized}` : source;
 }
 
 export function GuideBlocks({

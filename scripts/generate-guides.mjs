@@ -3,6 +3,10 @@ import { dirname, resolve } from "node:path";
 
 const markdownGuides = [
   {
+    source: "content/guides/skill-security-over-time.md",
+    target: "app/guides/generated/skill-security-over-time.ts",
+  },
+  {
     source: "content/guides/ai-evals-short-guide.md",
     target: "app/guides/generated/ai-evals-short-guide.ts",
   },

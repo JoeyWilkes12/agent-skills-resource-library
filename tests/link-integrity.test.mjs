@@ -86,6 +86,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/",
     "/about",
     "/guides",
+    "/guides/skill-security-over-time",
     "/guides/ai-evals-short-guide",
     "/guides/enterprise-agent-skills-presenter-readiness",
     "/guides/writing-without-the-ai-sheen",
@@ -131,7 +132,10 @@ test("every authored hyperlink is valid and every local destination renders", as
       assert.ok(asset.length > 0, `${href} must contain downloadable content`);
       continue;
     }
-    if (pathname.startsWith("/evidence/") && pathname.endsWith(".json")) {
+    if (
+      (pathname.startsWith("/evidence/") || pathname.startsWith("/guides/")) &&
+      pathname.endsWith(".json")
+    ) {
       assert.doesNotMatch(pathname, /\.\./, `${href} must stay in public evidence`);
       const asset = await readFile(
         new URL(`../public${pathname}`, import.meta.url),
