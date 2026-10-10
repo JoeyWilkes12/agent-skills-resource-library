@@ -1,6 +1,40 @@
 {
-  "generatedFrom": "9c004708b7e4112033a9540ee488605c116434fd",
+  "generatedFrom": "fa1ad5df166d75880b8f15e50146b5eeea70047e",
   "releases": [
+    {
+      "date": "2026-10-10",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "resource",
+              "text": "“Skillselion” resource.",
+              "href": "https://skillselion.com/",
+              "resourceId": "skillselion",
+              "commit": "21046842ca62566768e0db673741b51eb25d4855"
+            },
+            {
+              "kind": "resource",
+              "text": "“Skill security over time” resource.",
+              "href": "/guides/skill-security-over-time",
+              "resourceId": "skill-security-over-time",
+              "commit": "21046842ca62566768e0db673741b51eb25d4855"
+            }
+          ]
+        },
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Keep the skill security guide readable on phones.",
+              "commit": "fa1ad5df166d75880b8f15e50146b5eeea70047e"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-30",
       "sections": [
@@ -34,6 +68,16 @@
               "href": "/guides/ai-evals-short-guide",
               "resourceId": "ai-evals-short-guide",
               "commit": "9c004708b7e4112033a9540ee488605c116434fd"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Update changelog and guide count for the AI evals guide.",
+              "commit": "3eaa5ae64e405fd0d8ecb5be3cce279b813fc645"
             }
           ]
         }
