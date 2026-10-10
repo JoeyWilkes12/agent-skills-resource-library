@@ -19,6 +19,21 @@ export type GuideCatalogEntry = {
 export const guideCatalog: readonly GuideCatalogEntry[] = [
   {
     contentTopics: [
+      "Skillselion", "MCP skill loading", "Unverified skills", "Prompt injection",
+      "Skill security lifecycle", "Impeccable", "skills.sh audits",
+      "Gen Agent Trust Hub", "Socket warning", "Snyk", "Commit pinning",
+      "Most-used commit", "Dependencies and remote references", "Rollback",
+    ],
+    href: "/guides/skill-security-over-time",
+    image: {
+      alt: "Pinned skill dossiers connected by a branching thread and rollback path",
+      src: "/guides/skill-security-over-time.png",
+    },
+    title: "Skill security over time",
+    summary: "Assess MCP-loaded skills, match audits to exact versions, and keep a practical record of updates, permissions, testing, and rollback.",
+  },
+  {
+    contentTopics: [
       "AI evals",
       "Product evaluations",
       "Hamel Husain",
