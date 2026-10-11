@@ -21,7 +21,11 @@ export const CANONICAL_HEADERS = [
   "verified_on",
   "exclude",
   "duplicate_url",
+  "added_on",
 ];
+
+// Historical exports predate added_on. Keep chronology owned by Git history.
+const OVERRIDE_HEADERS = CANONICAL_HEADERS.filter((header) => header !== "added_on");
 
 const ALLOWED_HELPER_COLUMNS = new Set(["JW Notes", "featured_JW"]);
 const MAX_FILE_BYTES = 1_000_000;
@@ -138,10 +142,9 @@ function normalizeBoolean(value, field, id) {
 
 function normalizeRating(value, id) {
   const trimmed = String(value).trim();
-  if (!trimmed) return "";
   const rating = Number(trimmed);
-  if (!Number.isFinite(rating) || rating < 0 || rating > 5) {
-    throw new Error(`${id}: rating must be a number from 0.0 to 5.0.`);
+  if (!trimmed || !Number.isFinite(rating) || rating < 0 || rating > 5 || !Number.isInteger(rating * 2)) {
+    throw new Error(`${id}: rating is required and must be from 0.0 to 5.0 in half-point steps.`);
   }
   return rating.toFixed(1);
 }
@@ -205,6 +208,9 @@ function projectRecords(source, sourceName) {
     const verifiedOn = record.verified_on.trim();
     if (verifiedOn && !isValidIsoDate(verifiedOn)) {
       throw new Error(`${id}: verified_on must be blank or YYYY-MM-DD.`);
+    }
+    if (record.added_on && !isValidIsoDate(record.added_on)) {
+      throw new Error(`${id}: added_on must be YYYY-MM-DD when supplied.`);
     }
 
     const output = Object.fromEntries(
@@ -303,7 +309,7 @@ export async function buildOverridePlan({
       stat(sourcePath),
     ]);
     const parsed = parseCsv(input, entry.name);
-    const missing = CANONICAL_HEADERS.filter(
+    const missing = OVERRIDE_HEADERS.filter(
       (header) => !parsed.headers.includes(header),
     );
     discoveries.push({
@@ -354,6 +360,14 @@ export async function buildOverridePlan({
   const sourceRecords = projectRecords(selected.parsed, selected.filename);
   const target = await loadTarget(resolvedTarget);
   const idChanges = assertSameIds(sourceRecords, target.projected);
+  const targetById = new Map(target.projected.map((record) => [record.id, record]));
+  for (const record of sourceRecords) {
+    const recordedDate = targetById.get(record.id).added_on;
+    if (record.added_on && record.added_on !== recordedDate) {
+      throw new Error(`${record.id}: added_on is derived from Git history and cannot be overridden.`);
+    }
+    record.added_on = recordedDate;
+  }
   const changes = diffRecords(sourceRecords, target.projected);
   const skipped = discoveries
     .filter((item) => !item.compatible)

@@ -1,30 +1,49 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const resourceFile = new URL("../public/data/resources.csv", import.meta.url);
 
-function parseCsvLine(input) {
-  const fields = [];
-  let field = "";
+function parseCsvWithPositions(input) {
+  const rows = [];
+  let fields = [];
+  let value = "";
+  let fieldStart = 0;
   let quoted = false;
+
+  function finishRow(end) {
+    fields.push({ value, start: fieldStart, end });
+    if (fields.some((field) => field.value.trim() !== "")) {
+      rows.push({ fields, end });
+    }
+    fields = [];
+    value = "";
+  }
 
   for (let index = 0; index < input.length; index += 1) {
     const character = input[index];
     const next = input[index + 1];
     if (character === '"' && quoted && next === '"') {
-      field += '"';
+      value += '"';
       index += 1;
     } else if (character === '"') {
       quoted = !quoted;
     } else if (character === "," && !quoted) {
-      fields.push(field);
-      field = "";
+      fields.push({ value, start: fieldStart, end: index });
+      value = "";
+      fieldStart = index + 1;
+    } else if ((character === "\n" || character === "\r") && !quoted) {
+      finishRow(index);
+      if (character === "\r" && next === "\n") index += 1;
+      fieldStart = index + 1;
     } else {
-      field += character;
+      value += character;
     }
   }
 
-  fields.push(field);
-  return fields;
+  if (quoted) throw new Error("resources.csv contains an unterminated quoted field.");
+  if (value.length > 0 || fields.length > 0) finishRow(input.length);
+  return rows;
 }
 
 function normalizeUrl(value) {
@@ -34,53 +53,65 @@ function normalizeUrl(value) {
   return new URL(value).href;
 }
 
-const input = await readFile(resourceFile, "utf8");
-const hasFinalNewline = input.endsWith("\n");
-const lines = input.trimEnd().split(/\r?\n/);
-const rows = lines.map(parseCsvLine);
-const headers = rows[0] ?? [];
-const urlIndex = headers.indexOf("url");
-const duplicateIndex = headers.indexOf("duplicate_url");
-
-if (urlIndex < 0) {
-  throw new Error("resources.csv must contain a url column.");
-}
-if (duplicateIndex >= 0 && duplicateIndex !== headers.length - 1) {
-  throw new Error("duplicate_url must be the final resources.csv column.");
-}
-
-const urlCounts = new Map();
-for (const row of rows.slice(1)) {
-  const url = row[urlIndex]?.trim();
-  if (!url) continue;
-  const normalized = normalizeUrl(url);
-  urlCounts.set(normalized, (urlCounts.get(normalized) ?? 0) + 1);
-}
-
-const outputLines = lines.map((line, index) => {
-  if (index === 0) {
-    return duplicateIndex < 0 ? `${line},duplicate_url` : line;
+export function synchronizeDuplicateUrls(input) {
+  const [headerRow, ...rows] = parseCsvWithPositions(input);
+  const headers = headerRow?.fields.map(({ value }) => value.replace(/^\uFEFF/, "")) ?? [];
+  const urlIndex = headers.indexOf("url");
+  const duplicateIndex = headers.indexOf("duplicate_url");
+  if (urlIndex < 0) throw new Error("resources.csv must contain a url column.");
+  if (headers.filter((header) => header === "duplicate_url").length > 1) {
+    throw new Error("resources.csv must contain at most one duplicate_url column.");
   }
 
-  const url = rows[index][urlIndex]?.trim();
-  const isDuplicate = url
-    ? (urlCounts.get(normalizeUrl(url)) ?? 0) > 1
-    : false;
-  const flag = String(isDuplicate);
-
-  if (duplicateIndex < 0) return `${line},${flag}`;
-  if (!/,(?:true|false)$/.test(line)) {
-    throw new Error(`Row ${index + 1} has an invalid duplicate_url value.`);
+  const urlCounts = new Map();
+  for (const [index, row] of rows.entries()) {
+    if (row.fields.length !== headers.length) {
+      throw new Error(`Resource row ${index + 1} has ${row.fields.length} fields; expected ${headers.length}.`);
+    }
+    const url = row.fields[urlIndex].value.trim();
+    if (!url) continue;
+    const normalized = normalizeUrl(url);
+    urlCounts.set(normalized, (urlCounts.get(normalized) ?? 0) + 1);
   }
-  return line.replace(/,(?:true|false)$/, `,${flag}`);
-});
 
-const output = `${outputLines.join("\n")}${hasFinalNewline ? "\n" : ""}`;
-if (output !== input) {
-  await writeFile(resourceFile, output);
+  // Edit field spans instead of reserializing rows: dates, quoting, multiline
+  // descriptions, BOMs, blank lines, and original line endings stay untouched.
+  const edits = duplicateIndex < 0
+    ? [{ start: headerRow.end, end: headerRow.end, value: ",duplicate_url" }]
+    : [];
+  for (const row of rows) {
+    const url = row.fields[urlIndex].value.trim();
+    const flag = String(url ? (urlCounts.get(normalizeUrl(url)) ?? 0) > 1 : false);
+    if (duplicateIndex < 0) {
+      edits.push({ start: row.end, end: row.end, value: `,${flag}` });
+    } else if (row.fields[duplicateIndex].value !== flag) {
+      edits.push({ ...row.fields[duplicateIndex], value: flag });
+    }
+  }
+
+  let output = input;
+  for (const edit of edits.sort((left, right) => right.start - left.start)) {
+    output = `${output.slice(0, edit.start)}${edit.value}${output.slice(edit.end)}`;
+  }
+  return {
+    output,
+    resourceCount: rows.length,
+    duplicateCount: [...urlCounts.values()].filter((count) => count > 1).length,
+  };
 }
 
-const duplicateCount = [...urlCounts.values()].filter((count) => count > 1).length;
-console.log(
-  `Synchronized duplicate_url for ${rows.length - 1} resources (${duplicateCount} duplicated hyperlinks).`,
-);
+async function main() {
+  const input = await readFile(resourceFile, "utf8");
+  const { output, resourceCount, duplicateCount } = synchronizeDuplicateUrls(input);
+  if (output !== input) await writeFile(resourceFile, output);
+  console.log(
+    `Synchronized duplicate_url for ${resourceCount} resources (${duplicateCount} duplicated hyperlinks).`,
+  );
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
+}

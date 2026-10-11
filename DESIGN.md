@@ -142,6 +142,23 @@ Index rules:
 - Featured status is an editorial choice, not an implied ranking.
 - Use one featured guide. The rest remain a calm, sortable reading list.
 
+### Resource library results
+
+The resource library preserves its curated default order and offers explicit
+rating and date-added sorts above the result grid. Display directions with
+SVG up/down arrows, and give each native button a descriptive accessible name,
+visible focus, and `aria-pressed` state. Controls have a minimum 44px target
+and wrap on narrow screens. Sort the full filtered list before pagination;
+changing the sort returns to the first result page and retains active filters.
+Share the selected sort in the URL. Place the linked rating criteria and a
+short usefulness explanation beside the controls. A rating must not imply
+installation approval.
+
+Cards show the library's Git-derived **Added** date separately from the
+**Verified** date. Use semantic `time` elements with ISO date values so neither
+date's meaning depends on color or position alone. Preserve the existing
+paper/navy/mint palette and dark-mode treatments.
+
 ### Guide page
 
 ```text

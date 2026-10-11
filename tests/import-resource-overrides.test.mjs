@@ -28,6 +28,7 @@ function resource(overrides = {}) {
     verified_on: "2026-07-28",
     exclude: "false",
     duplicate_url: "false",
+    added_on: "2026-07-27",
     ...overrides,
   };
 }
@@ -77,6 +78,47 @@ test("selects the newest export and ignores helper columns", async () => {
       { field: "featured", before: "false", after: "true" },
     ],
   );
+});
+
+test("preserves Git-derived added_on when importing an older export", async () => {
+  const root = await mkdtemp(path.join(tmpdir(), "resource-overrides-"));
+  const sourceDirectory = path.join(root, "manual");
+  const targetPath = path.join(root, "resources.csv");
+  await mkdir(sourceDirectory, { recursive: true });
+  await writeFile(targetPath, stringifyCsv(CANONICAL_HEADERS, [resource()]));
+  await writeFile(
+    path.join(sourceDirectory, "resources - 2026-07-28_12-00-00.csv"),
+    stringifyCsv(CANONICAL_HEADERS.filter((header) => header !== "added_on"), [resource({ rating: "3.0" })]),
+  );
+  const plan = await buildOverridePlan({ sourceDirectory, targetPath });
+  assert.equal(plan.records[0].added_on, "2026-07-27");
+  assert.deepEqual(plan.changes.map((change) => change.field), ["rating"]);
+});
+
+test("rejects an override that rewrites added_on", async () => {
+  const root = await mkdtemp(path.join(tmpdir(), "resource-overrides-"));
+  const sourceDirectory = path.join(root, "manual");
+  const targetPath = path.join(root, "resources.csv");
+  await mkdir(sourceDirectory, { recursive: true });
+  await writeFile(targetPath, stringifyCsv(CANONICAL_HEADERS, [resource()]));
+  await writeFile(
+    path.join(sourceDirectory, "resources - 2026-07-28_12-00-00.csv"),
+    stringifyCsv(CANONICAL_HEADERS, [resource({ added_on: "2026-07-28" })]),
+  );
+  await assert.rejects(buildOverridePlan({ sourceDirectory, targetPath }), /cannot be overridden/);
+});
+
+test("rejects blank and unsupported-precision override ratings", async () => {
+  const root = await mkdtemp(path.join(tmpdir(), "resource-overrides-"));
+  const sourceDirectory = path.join(root, "manual");
+  const targetPath = path.join(root, "resources.csv");
+  await mkdir(sourceDirectory, { recursive: true });
+  await writeFile(targetPath, stringifyCsv(CANONICAL_HEADERS, [resource()]));
+  const sourcePath = path.join(sourceDirectory, "resources - 2026-07-28_12-00-00.csv");
+  for (const rating of ["", "4.3"]) {
+    await writeFile(sourcePath, stringifyCsv(CANONICAL_HEADERS, [resource({ rating })]));
+    await assert.rejects(buildOverridePlan({ sourceDirectory, targetPath }), /half-point steps/);
+  }
 });
 
 test("rejects an override that changes the resource ID set", async () => {

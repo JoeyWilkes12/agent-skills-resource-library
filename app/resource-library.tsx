@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { featuredIntro } from "./featured-copy";
 import { siteConfig } from "./site-config";
 import { SiteHeader } from "./site-header";
+import { parseResourceSort, sortResources, type ResourceSort } from "./resource-sort";
 
 type Dimension =
   | "intent"
@@ -28,6 +29,7 @@ type Resource = {
   topics: string[];
   tags: string[];
   verifiedOn: string;
+  addedOn: string;
 };
 
 type TaxonomyItem = {
@@ -180,9 +182,13 @@ function resourceMatchesSelections(
   });
 }
 
-function parseInitialSelections(): { query: string; selections: Selections } {
+function parseInitialSelections(): {
+  query: string;
+  selections: Selections;
+  sort: ResourceSort;
+} {
   if (typeof window === "undefined") {
-    return { query: "", selections: EMPTY_SELECTIONS };
+    return { query: "", selections: EMPTY_SELECTIONS, sort: "curated" };
   }
 
   const parameters = new URLSearchParams(window.location.search);
@@ -190,7 +196,11 @@ function parseInitialSelections(): { query: string; selections: Selections } {
   for (const dimension of DIMENSIONS) {
     selections[dimension] = pipeList(parameters.get(dimension) ?? "");
   }
-  return { query: parameters.get("q") ?? "", selections };
+  return {
+    query: parameters.get("q") ?? "",
+    selections,
+    sort: parseResourceSort(parameters.get("sort")),
+  };
 }
 
 function sourceMark(resource: Resource): string {
@@ -214,6 +224,7 @@ export function ResourceLibrary() {
   const [categoryOrder, setCategoryOrder] = useState<CategoryOrder[]>([]);
   const [query, setQuery] = useState("");
   const [selections, setSelections] = useState<Selections>(EMPTY_SELECTIONS);
+  const [sort, setSort] = useState<ResourceSort>("curated");
   const [visibleCount, setVisibleCount] = useState<number>(
     siteConfig.initialResultCount,
   );
@@ -229,6 +240,7 @@ export function ResourceLibrary() {
     const urlStateFrame = window.requestAnimationFrame(() => {
       setQuery(initial.query);
       setSelections(initial.selections);
+      setSort(initial.sort);
       setUrlStateReady(true);
     });
 
@@ -264,6 +276,7 @@ export function ResourceLibrary() {
             topics: pipeList(record.topics),
             tags: pipeList(record.tags),
             verifiedOn: record.verified_on,
+            addedOn: record.added_on ?? "",
           })),
         );
         setTaxonomy(
@@ -302,6 +315,7 @@ export function ResourceLibrary() {
     if (!urlStateReady || typeof window === "undefined") return;
     const parameters = new URLSearchParams();
     if (query.trim()) parameters.set("q", query.trim());
+    if (sort !== "curated") parameters.set("sort", sort);
     for (const dimension of DIMENSIONS) {
       if (selections[dimension].length > 0) {
         parameters.set(dimension, selections[dimension].join("|"));
@@ -311,7 +325,7 @@ export function ResourceLibrary() {
       parameters.size > 0 ? `?${parameters.toString()}` : ""
     }`;
     window.history.replaceState(null, "", nextUrl);
-  }, [query, selections, urlStateReady]);
+  }, [query, selections, sort, urlStateReady]);
 
   useEffect(() => {
     if (!filterOpen) return;
@@ -380,25 +394,16 @@ export function ResourceLibrary() {
       return matchingRanks.length > 0 ? Math.min(...matchingRanks) : Infinity;
     };
 
-    return published
-      .filter(
+    return sortResources(
+      published.filter(
         (resource) =>
           matchesSearch(resource, query) &&
           resourceMatchesSelections(resource, selections),
-      )
-      .sort((left, right) => {
-        if (activeCategories.length > 0) {
-          const leftRank = rankFor(left);
-          const rightRank = rankFor(right);
-          if (leftRank !== rightRank) return leftRank - rightRank;
-        }
-        return (
-          (right.rating ?? -1) - (left.rating ?? -1) ||
-          Number(right.featured) - Number(left.featured) ||
-          left.title.localeCompare(right.title)
-        );
-      });
-  }, [published, query, selections, categoryOrder]);
+      ),
+      sort,
+      activeCategories.length > 0 ? rankFor : undefined,
+    );
+  }, [published, query, selections, categoryOrder, sort]);
 
   const optionsByDimension = useMemo(() => {
     return Object.fromEntries(
@@ -465,6 +470,11 @@ export function ResourceLibrary() {
   function updateQuery(value: string) {
     setVisibleCount(siteConfig.initialResultCount);
     setQuery(value);
+  }
+
+  function updateSort(value: ResourceSort) {
+    setVisibleCount(siteConfig.initialResultCount);
+    setSort(value);
   }
 
   return (
@@ -698,12 +708,31 @@ export function ResourceLibrary() {
         )}
 
         <div className="results">
-          <div className="results-meta" aria-live="polite">
-            <p>
+          <div className="results-meta">
+            <p aria-live="polite" aria-atomic="true">
               <strong>{filtered.length}</strong>{" "}
               {filtered.length === 1 ? "resource" : "resources"}
+              <span className="visually-hidden">, {SORT_DESCRIPTIONS[sort]}</span>
             </p>
-            <span>Curated order · rating highest first</span>
+            <div className="resource-sorting" role="group" aria-label="Sort resources">
+              <button
+                type="button"
+                className="curated-sort"
+                aria-pressed={sort === "curated"}
+                onClick={() => updateSort("curated")}
+                title="Use curated resource order"
+              >
+                Curated
+              </button>
+              <SortButtons label="Rating" field="rating" sort={sort} onChange={updateSort} />
+              <SortButtons label="Date added" field="added" sort={sort} onChange={updateSort} />
+              <a className="rating-criteria-link" href={`${basePath}/data/resource-ratings.md`}>
+                Rating criteria
+              </a>
+            </div>
+            <p className="ratings-note">
+              Ratings reflect documented usefulness; they do not approve installation.
+            </p>
           </div>
 
           {loading && (
@@ -810,6 +839,22 @@ function ResourceCard({
           </div>
           <h3>{resource.title}</h3>
           <p className="card-description">{resource.summary}</p>
+          <dl className="card-dates">
+            <div>
+              <dt>Added</dt>
+              <dd>
+                {resource.addedOn ? (
+                  <time dateTime={resource.addedOn}>{resource.addedOn}</time>
+                ) : "Unknown"}
+              </dd>
+            </div>
+            {resource.verifiedOn && (
+              <div>
+                <dt>Verified</dt>
+                <dd><time dateTime={resource.verifiedOn}>{resource.verifiedOn}</time></dd>
+              </div>
+            )}
+          </dl>
           <div className="card-footer">
             <div className="card-tags" aria-label="Resource tags">
               {resource.tags.slice(0, 2).map((tag) => (
@@ -850,5 +895,49 @@ function ResourceCard({
         </a>
       </div>
     </details>
+  );
+}
+
+const SORT_DESCRIPTIONS: Record<ResourceSort, string> = {
+  curated: "curated order",
+  "rating-asc": "sorted by rating from lowest to highest",
+  "rating-desc": "sorted by rating from highest to lowest",
+  "added-asc": "sorted by date added from oldest to newest",
+  "added-desc": "sorted by date added from newest to oldest",
+};
+
+function SortButtons({
+  label,
+  field,
+  sort,
+  onChange,
+}: {
+  label: string;
+  field: "rating" | "added";
+  sort: ResourceSort;
+  onChange: (sort: ResourceSort) => void;
+}) {
+  return (
+    <div className="sort-option" role="group" aria-label={`Sort by ${label.toLowerCase()}`}>
+      <span>{label}</span>
+      {(["asc", "desc"] as const).map((direction) => {
+        const value = `${field}-${direction}` as ResourceSort;
+        const description = SORT_DESCRIPTIONS[value];
+        return (
+          <button
+            key={direction}
+            type="button"
+            aria-label={description.replace("sorted", "Sort")}
+            title={description.replace("sorted", "Sort")}
+            aria-pressed={sort === value}
+            onClick={() => onChange(value)}
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d={direction === "asc" ? "M10 16V4m-5 5 5-5 5 5" : "M10 4v12m-5-5 5 5 5-5"} />
+            </svg>
+          </button>
+        );
+      })}
+    </div>
   );
 }
