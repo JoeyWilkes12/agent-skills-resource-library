@@ -11,6 +11,10 @@ const markdownGuides = [
     target: "app/guides/generated/langfuse-cli-beta-security-review.ts",
   },
   {
+    source: "public/data/resource-ratings.md",
+    target: "app/guides/generated/resource-ratings.ts",
+  },
+  {
     source: "content/guides/skill-security-over-time.md",
     target: "app/guides/generated/skill-security-over-time.ts",
   },

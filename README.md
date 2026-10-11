@@ -43,6 +43,10 @@ installation or certify security. Every CSV row has an assessment, including
 hidden drafts. Ratings are shown by default; set
 `NEXT_PUBLIC_SHOW_RATINGS=false` while building to hide the card values.
 
+The library's **Rating criteria** link and the Guides index open the HTML guide
+at `/guides/resource-ratings`. The guide is generated from the same Markdown
+above and uses the shared reading layout, trust receipt, and scrollable tables.
+
 Visitors can select rating or date-added sorting with upward/downward arrow
 buttons. These sort all matching results before pagination and retain search
 and category filters. The active sort is saved in the URL. **Curated** restores
