@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "a1b1a3f611d2248253130c3250f9c3cc217c48ea",
+  "generatedFrom": "a42f05294529c48d6f85aa78970ae4d4745d0860",
   "releases": [
     {
       "date": "2026-10-17",
@@ -26,6 +26,16 @@
               "kind": "project",
               "text": "Added documented ratings and sorting by rating or date added.",
               "commit": "a1b1a3f611d2248253130c3250f9c3cc217c48ea"
+            }
+          ]
+        },
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Open rating criteria as a formatted library guide.",
+              "commit": "a42f05294529c48d6f85aa78970ae4d4745d0860"
             }
           ]
         }
