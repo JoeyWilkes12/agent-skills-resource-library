@@ -119,6 +119,8 @@ export function renderRatingMarkdown(resources, ledger, assessments) {
     .map(([score, count]) => `${score}: ${count}`).join("; ");
   return `# Resource library rating methodology
 
+*Understand the five rating criteria, the evidence behind each resource's score, and how to reassess it.*
+
 Assessed ${ledger.assessedOn} (America/Denver). Rubric version ${ledger.rubricVersion}. Covers all ${resources.length} catalog rows, including hidden drafts and excluded resources.
 
 ## What the number means

@@ -726,7 +726,7 @@ export function ResourceLibrary() {
               </button>
               <SortButtons label="Rating" field="rating" sort={sort} onChange={updateSort} />
               <SortButtons label="Date added" field="added" sort={sort} onChange={updateSort} />
-              <a className="rating-criteria-link" href={`${basePath}/data/resource-ratings.md`}>
+              <a className="rating-criteria-link" href={`${basePath}/guides/resource-ratings`}>
                 Rating criteria
               </a>
             </div>

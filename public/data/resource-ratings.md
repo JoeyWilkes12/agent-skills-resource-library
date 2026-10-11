@@ -1,5 +1,7 @@
 # Resource library rating methodology
 
+*Understand the five rating criteria, the evidence behind each resource's score, and how to reassess it.*
+
 Assessed 2026-10-10 (America/Denver). Rubric version 1. Covers all 71 catalog rows, including hidden drafts and excluded resources.
 
 ## What the number means

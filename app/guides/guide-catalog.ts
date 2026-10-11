@@ -38,6 +38,18 @@ export const guideCatalog: readonly GuideCatalogEntry[] = [
   },
   {
     contentTopics: [
+      "Rating criteria", "Five equally weighted criteria", "Relevance",
+      "Actionability", "Source traceability", "Verification support",
+      "Boundaries and limitations", "Per-resource assessment ledger",
+      "Editorial usefulness", "Reassess a rating",
+    ],
+    href: "/guides/resource-ratings",
+    title: "Resource library rating methodology",
+    summary:
+      "Understand the five usefulness criteria, inspect the evidence behind every resource's score, and learn how ratings are reassessed.",
+  },
+  {
+    contentTopics: [
       "Skillselion", "MCP skill loading", "Unverified skills", "Prompt injection",
       "Skill security lifecycle", "Impeccable", "skills.sh audits",
       "Gen Agent Trust Hub", "Socket warning", "Snyk", "Commit pinning",

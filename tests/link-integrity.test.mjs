@@ -88,6 +88,7 @@ test("every authored hyperlink is valid and every local destination renders", as
     "/guides",
     "/guides/langfuse-cli-beta-security-review",
     "/guides/langfuse-cli-beta-security-review/detailed-review",
+    "/guides/resource-ratings",
     "/guides/skill-security-over-time",
     "/guides/ai-evals-short-guide",
     "/guides/enterprise-agent-skills-presenter-readiness",
