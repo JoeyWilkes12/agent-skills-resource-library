@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "0fd81e856f595e53b12ef22db1ddd08007cee9bf",
+  "generatedFrom": "a1b1a3f611d2248253130c3250f9c3cc217c48ea",
   "releases": [
     {
       "date": "2026-10-17",
@@ -11,6 +11,21 @@
               "kind": "project",
               "text": "Added Langfuse CLI security review with HTML evidence and privacy settings.",
               "commit": "0fd81e856f595e53b12ef22db1ddd08007cee9bf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "sections": [
+        {
+          "type": "Added",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added documented ratings and sorting by rating or date added.",
+              "commit": "a1b1a3f611d2248253130c3250f9c3cc217c48ea"
             }
           ]
         }
