@@ -21,7 +21,7 @@ Multi-value fields in `resources.csv` use `|` as a separator. Published rows
 appear on the site unless `exclude` is `true`. Use `exclude` as a simple
 visibility toggle when a resource should remain in the catalog data but not
 appear as a tile. `draft` and `needs_review` rows also stay in the CSV without
-being shown. The final `duplicate_url` column records whether the same
+being shown. The `duplicate_url` column records whether the same
 hyperlink appears more than once; it is editorial metadata and does not affect
 the interface. Run `npm run data:duplicates` after adding or changing links to
 refresh those flags.
@@ -34,9 +34,32 @@ flags, ratings, taxonomy references, and category ordering.
 
 ## Ratings and ordering
 
-Ratings use a `0.0`–`5.0` scale and determine the default descending tile order.
-They are hidden from visitors by default. Set
-`NEXT_PUBLIC_SHOW_RATINGS=true` while building to display them.
+Ratings use a `0.0`–`5.0` scale in half-point steps. The
+[rating criteria and row-by-row assessments](public/data/resource-ratings.md)
+document relevance, actionable guidance, source traceability, verification
+support, and stated boundaries. They measure documented usefulness for this
+library, including usefulness for evaluating risks. They do not approve
+installation or certify security. Every CSV row has an assessment, including
+hidden drafts. Ratings are shown by default; set
+`NEXT_PUBLIC_SHOW_RATINGS=false` while building to hide the card values.
+
+Visitors can select rating or date-added sorting with upward/downward arrow
+buttons. These sort all matching results before pagination and retain search
+and category filters. The active sort is saved in the URL. **Curated** restores
+the default order. Missing values stay last in either direction.
+
+`added_on` records the first committed introduction of a stable resource ID
+to this library. It is separate from the source's publication date and
+`verified_on`. See [date provenance](docs/resource-added-dates.md) for the
+history method and regeneration command. Manual override imports preserve
+the target's Git-derived date, including when importing older exports that
+lack the column.
+
+Override ratings must follow the half-point rubric. If an import changes a
+rating, update its criterion assessment and rationale in the rating ledger
+before running `npm run ratings:sync`; validation rejects unexplained score
+changes. Older exports with blank or finer-grained scores need reassessment
+before import.
 
 The About page's Google Drive media link is enabled by default. Set
 `NEXT_PUBLIC_SHOW_MEDIA_FOLDER=false` while building to hide it.
@@ -75,6 +98,14 @@ This repository includes `.github/workflows/deploy-pages.yml`. Create a public
 GitHub repository, push the `main` branch, and choose **GitHub Actions** as the
 Pages source in the repository settings. The workflow handles both project
 sites and `<username>.github.io` repositories.
+
+Merging a pull request into `main` triggers this workflow automatically. It
+validates the CSV, builds the static site with the repository base path, uploads
+the Pages artifact, and deploys it. A separate manual republish is normally
+unnecessary. Confirm that **Deploy static site to GitHub Pages** succeeds in
+Actions and verify the live site after the merge. If it fails, fix the failing
+step and rerun the workflow; `workflow_dispatch` also allows a manual run.
+Pushing a feature branch or opening a PR runs validation without publishing.
 
 ## Editorial policy
 

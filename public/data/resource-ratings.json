@@ -1,0 +1,1051 @@
+{
+  "rubricVersion": 1,
+  "assessedOn": "2026-10-10",
+  "catalogCommit": "02bd1ffe5a06024f89789a4886132f945efb7011",
+  "assessments": [
+    {
+      "id": "avoid-ai-writing",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Concrete detect/rewrite modes and style-versus-authorship limits; the existing comparison adds scoped review context, not demonstrated writing effectiveness.",
+      "evidence": [
+        "app/guides/writing-without-the-ai-sheen/page.tsx"
+      ],
+      "catalogFingerprint": "0b113b2cb7c95a93bf3d0c7dd404ff70dc033a180f50ca88c7fd491f31bc5147"
+    },
+    {
+      "id": "aura-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Identifiable design-skills catalog with a clear workflow niche; the description supplies no outcome checks or assessed package evidence.",
+      "evidence": [],
+      "catalogFingerprint": "7aec6a2d72063119f593b306a755b2a134121e408b411cd90f8e4a572d0ba88d"
+    },
+    {
+      "id": "ming-design-layer-and-editable-design",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Source-linked output choices, editability checks, exact-artifact findings, and explicit execution/data limits form a complete decision guide.",
+      "evidence": [
+        "content/guides/ming-design-layer-and-editable-design.md"
+      ],
+      "catalogFingerprint": "5dc0c020f9e0c385b81d3f357469abbb273472a36c9489a614088a9faf1066c6"
+    },
+    {
+      "id": "ling-ui-design",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The reconstruction use case is clear and the existing guide supplies scoped findings and checks; unresolved endpoint and write risks limit adoption readiness despite the useful evidence.",
+      "evidence": [
+        "content/guides/ming-design-layer-and-editable-design.md"
+      ],
+      "catalogFingerprint": "807db9f5b89870f693ba5f247e4bd916ea6c100c0824b51b903db460fe9f1f81"
+    },
+    {
+      "id": "image-to-editable-ppt",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The editable-slide use case has exact-artifact findings and output checks; documented upload and export risks remain unresolved and this score does not authorize execution.",
+      "evidence": [
+        "content/guides/ming-design-layer-and-editable-design.md"
+      ],
+      "catalogFingerprint": "e06dc12c9c9d4f26e7642490ea96e09eafd367a725f8e80079ff128cb11f115b"
+    },
+    {
+      "id": "agent-skills-overview",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "A direct format introduction with concrete package concepts; the catalog records limited evaluation detail and few explicit caveats.",
+      "evidence": [],
+      "catalogFingerprint": "f07ea68fe4286e212177d2e9fc83814f9888c8c412f2b6b205b05a03a5091eaa"
+    },
+    {
+      "id": "agent-skills-specification",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Required structure, frontmatter constraints, file references, and validation provide a traceable technical contract and observable checks.",
+      "evidence": [],
+      "catalogFingerprint": "55ba5ad13a443d558079027f0ad548603ea0c6d0d1357d50713040efc83627b6"
+    },
+    {
+      "id": "blader-humanizer",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "A reusable rewriting method with claim-preservation and voice boundaries; the comparison provides scoped review context rather than a measured quality benchmark.",
+      "evidence": [
+        "app/guides/writing-without-the-ai-sheen/page.tsx"
+      ],
+      "catalogFingerprint": "3d59ff62193d999c4ec9c02b4ece3747a23dd7b1438771763d356daafdbd6e80"
+    },
+    {
+      "id": "agent-plugins",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "A named packaging standard with manifest and interoperability concepts; recorded validation details and limits are less developed.",
+      "evidence": [],
+      "catalogFingerprint": "4933b1356a5a0c7eb166cf29331ac2ef587d230c756059efe0a7eeaee4e1fea0"
+    },
+    {
+      "id": "openai-build-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Focused workflow boundaries, supporting resources, dependencies, and representative tests make the recorded authoring guidance directly usable and checkable.",
+      "evidence": [],
+      "catalogFingerprint": "fc5226aa38ad2f2299d97cf6e937f637fb6d626e8afb65b891a166d6fbbd158d"
+    },
+    {
+      "id": "openai-record-replay",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "A concrete record-and-draft workflow tied to a stable Mac demonstration; the catalog does not specify a full acceptance test or wider compatibility limits.",
+      "evidence": [],
+      "catalogFingerprint": "6a11b8dfe384af56b166ae21cd241db091a01d56685d5e5134ffe14051e0553e"
+    },
+    {
+      "id": "anthropic-what-are-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "A traceable plain-language introduction; the recorded scope is conceptual rather than procedural or evaluative.",
+      "evidence": [],
+      "catalogFingerprint": "cc720d6570435c7b2db399077f31af50aab4779b2e021d9ea3ea377549054441"
+    },
+    {
+      "id": "anthropic-complete-guide-building-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "The catalog describes an end-to-end authoring, testing, and troubleshooting method; product and operational limits are less explicit in the assessed description.",
+      "evidence": [],
+      "catalogFingerprint": "4a461572684901da83e9836f3957c112702d649b1c6b2d96d81c7e6625e13d66"
+    },
+    {
+      "id": "oreilly-skills-context-window",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An attributed chapter explains package design and progressive disclosure; the recorded description provides fewer concrete tests and caveats.",
+      "evidence": [],
+      "catalogFingerprint": "bef9b8d1d3ba5f5468da6ed3d8959a26716438d9f540f3dc0c34bea627b93655"
+    },
+    {
+      "id": "openai-skills-concepts",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A clear division between procedural guidance and MCP-controlled live data/actions; the catalog supplies conceptual verification rather than a complete test method.",
+      "evidence": [],
+      "catalogFingerprint": "9f23a2359ed20a0c1aeca30594bca2ce7b529f49ff67410707872f46b899267e"
+    },
+    {
+      "id": "troubleshoot-validate-structure",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A specific validator-first diagnostic with named failure classes and a clear distinction between structural validity and runtime behavior.",
+      "evidence": [],
+      "catalogFingerprint": "de5642da6b40cd039aaf2e954632674fc4689a70f98357a2990d35a604a7a225"
+    },
+    {
+      "id": "troubleshoot-triggering",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Positive and negative trigger cases create observable checks, and specificity/breadth warnings bound the recommended edit.",
+      "evidence": [],
+      "catalogFingerprint": "f7a8a29a59232a707abcd929dd72f46a8eebde9c5baf08dc699bbe3f4b19e23d"
+    },
+    {
+      "id": "anthropic-use-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An identifiable troubleshooting checklist for enablement and selection; outcome checks and environmental limits are only partly described.",
+      "evidence": [],
+      "catalogFingerprint": "23f5cc48e17f3e87a32427ab5faf3e9b7d31cefa5597db028cf2da076bc4f550"
+    },
+    {
+      "id": "troubleshoot-loading",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Concrete enablement and package checks, valid-frontmatter requirements, and product-dependent loading paths support bounded diagnosis.",
+      "evidence": [],
+      "catalogFingerprint": "9d3f779744e18b5b5e26e0fb384e9b27386e3d3e4847b54693a01becccca305b"
+    },
+    {
+      "id": "claude-code-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A concrete scope/precedence reference for Claude Code; the catalog gives clear compatibility boundaries but limited evaluation detail.",
+      "evidence": [],
+      "catalogFingerprint": "02bd4419b2aff9bffd843c9e2d3373cc0bc6ed30da7dfb350745434ff6556db3"
+    },
+    {
+      "id": "troubleshoot-precedence",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A specific conflict-resolution procedure with explicit product and namespace scope; a full acceptance test is not recorded.",
+      "evidence": [],
+      "catalogFingerprint": "1be8b03aecdc51890fd58caaa64026a2c46ce85f32a316af9da8e7f0cec0c7d7"
+    },
+    {
+      "id": "anthropic-skill-authoring",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Concise authoring procedures, deterministic scripts, dependencies, and runtime compatibility are recorded; explicit outcome tests are less developed.",
+      "evidence": [],
+      "catalogFingerprint": "cdb3f2f60900ad15d3c87447346c8a8dda21ed129c56ec9c79ab3cc64fa07e15"
+    },
+    {
+      "id": "troubleshoot-runtime",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A usable environment/dependency/file/tool checklist with permission checks and explicit OS/host compatibility requirements.",
+      "evidence": [],
+      "catalogFingerprint": "0aaa7d123bc16471f414608e58ed84c1e1885784edd02ffc39f83d2d1b3fd28b"
+    },
+    {
+      "id": "agent-skills-course",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "A structured learning path includes creation and diagnosis; assessment methods and platform limitations are only partly specified in the catalog.",
+      "evidence": [],
+      "catalogFingerprint": "1720435e013b413e0f564fd4e6fc8e28908e8b5400292a465d1f69d279afff8a"
+    },
+    {
+      "id": "claude-cowork-record-skill",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An attributed workflow demonstration explains the idea; the recorded description lacks reusable acceptance checks or demonstrated reliability evidence.",
+      "evidence": [],
+      "catalogFingerprint": "e3f5aaec59d27893eb142b715189237dc9ccd2cc8612e086766f7407f237a56f"
+    },
+    {
+      "id": "replit-agent-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Installation, creation, and recurring project preferences are actionable; the catalog has limited verification and boundary detail.",
+      "evidence": [],
+      "catalogFingerprint": "b0541c58ce15c11448220c5e9cee76887038b29d0cc25f6218127d14b5c97871"
+    },
+    {
+      "id": "anthropic-how-we-use-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Concrete internal workflow examples emphasize observable checks; broader transfer limits are lightly specified in the assessed description.",
+      "evidence": [],
+      "catalogFingerprint": "78db8c8a9c3e0bc49201081f173242268cf0f552f58cbe347a9ef75ebb072330"
+    },
+    {
+      "id": "anthropic-verification-loops",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An explicit observe/fail/fix loop makes checks repeatable; compatibility and failure limits are less developed in the catalog record.",
+      "evidence": [],
+      "catalogFingerprint": "67515ec1fb222532f4a3415986e8a115898f4d74895aae1c494dd20f1a122bff"
+    },
+    {
+      "id": "anthropic-self-service-analytics",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A measured case study combines governed foundations, evaluation, ambiguity reduction, and adversarial review, supplying both method and constraints.",
+      "evidence": [],
+      "catalogFingerprint": "b026c8763e78c62cba679088c474db5a3f54c7b20ae5ee97690883d05728773d"
+    },
+    {
+      "id": "skillopt-project",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A defined research method with scored rollouts, bounded edits, and held-out validation; the overview is less directly operational than the reproduction repository.",
+      "evidence": [],
+      "catalogFingerprint": "c8a0d44344acfbfef356f4867c73626d10de0a032249b5764dadc00c41f113f4"
+    },
+    {
+      "id": "skillopt-github",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Named source, benchmark configurations, and reproduction guidance support implementation and checking; operational limits are lightly recorded here.",
+      "evidence": [],
+      "catalogFingerprint": "1dc814eaa7ce4d78559273201b86377b031d308d87b633dc20214a7209a613f1"
+    },
+    {
+      "id": "skillopt-third-party-snapshot",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The existing source-linked snapshot separates release/source maturity, evaluation, costs, and authority boundaries and supplies a bounded pilot method.",
+      "evidence": [
+        "app/guides/microsoft-skillopt-third-party-snapshot/page.tsx"
+      ],
+      "catalogFingerprint": "01b47d37310844317cf1dc1a04376625259db075b7542b264a01145bf4d436d0"
+    },
+    {
+      "id": "jetbrains-caveman-token-benchmark",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "A source-linked paired benchmark, accounting caveats, forced-activation limits, and representative pilot checks support a bounded interpretation.",
+      "evidence": [
+        "content/guides/jetbrains-caveman-token-benchmark.md"
+      ],
+      "catalogFingerprint": "12a363acb78b333520562360f69f9533e0753c7aa115641c6ce5257d3a0e18f4"
+    },
+    {
+      "id": "jetbrains-rtk-token-benchmark",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The guide distinguishes compression counters from billed completed work and supplies trial, compatibility, and failure checks.",
+      "evidence": [
+        "content/guides/jetbrains-rtk-token-benchmark.md"
+      ],
+      "catalogFingerprint": "0166f7ae708587c43e04ed09a358427c8247b4fc9ff56a327a77356f05ace43b"
+    },
+    {
+      "id": "headroom-context-compression",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "A clear toolkit use case with mixed completed-task evidence and provider/cache limits; the linked evidence guide supports evaluation without implying installation readiness.",
+      "evidence": [
+        "content/guides/headroom-context-compression-evidence.md"
+      ],
+      "catalogFingerprint": "dad33c9883a96ea601d7b8cffcccbc8c5cc6abff9ff3c4e7bf8a1b8cea183b5b"
+    },
+    {
+      "id": "headroom-context-compression-evidence",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Dated source comparisons, denominator/sponsorship limits, scoped security findings, and a paired workload pilot make the evidence inspectable.",
+      "evidence": [
+        "content/guides/headroom-context-compression-evidence.md"
+      ],
+      "catalogFingerprint": "f9ed1d1b60fdc2304f89859ba5346e933956607a368ccd8a353caeaf0ed7a7b3"
+    },
+    {
+      "id": "jetbrains-ponytail-code-benchmark",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Paired-task methods, activation and quality caveats, and explicit local pilot gates make the measured efficiency claim useful and bounded.",
+      "evidence": [
+        "content/guides/jetbrains-ponytail-code-benchmark.md"
+      ],
+      "catalogFingerprint": "d89207a77c1fa58faa74c59ba79b9de1e07feda20d06849239f8f283610f8e16"
+    },
+    {
+      "id": "langchain-eval-engineering",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Trace inspection, measurable abilities, and reproducible Harbor tasks provide a concrete evaluation method; transfer limits are lightly recorded.",
+      "evidence": [],
+      "catalogFingerprint": "79bc6d227181bcd0c6ec604360749f8b5b6f7fd566a574a6f2051a0343c6ea9e"
+    },
+    {
+      "id": "hamel-evals-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Named evaluation workflows include failure analysis, judge validation, RAG checks, and human review; operational boundaries are less explicit in this article's catalog record.",
+      "evidence": [],
+      "catalogFingerprint": "5189829da1c807075ea92fef96993b1688fdb66cc418cd076c2da174a961bd05"
+    },
+    {
+      "id": "aws-skill-equipped-agent-evaluation",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "A concrete trajectory/production-trace evaluation method distinguishes selection from instruction following and names its runtime/tool context.",
+      "evidence": [],
+      "catalogFingerprint": "8028b07c784858178b145d4c8c207cbc4403feb92cef3620ad34e92de1d72473"
+    },
+    {
+      "id": "skill2env-nvidia",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Public tasks, outcome tests, a skill-derived rubric, and a bounded model/training result provide checkable research claims with a defined experimental scope.",
+      "evidence": [],
+      "catalogFingerprint": "d41b3de4450fedc11dcd768760b707f96f779f823d7c3366dd7ebd1811c36e5a"
+    },
+    {
+      "id": "obra-superpowers",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Composable development procedures have a specific workflow scope; the existing guide provides review limits, while effectiveness is not established by the security review.",
+      "evidence": [
+        "app/guides/obra-superpowers-skillspector-review/page.tsx"
+      ],
+      "catalogFingerprint": "372c5a3bdf61acedd717a6c524e57bbc959b1c649113bcc926ba0307899892cc"
+    },
+    {
+      "id": "mattpocock-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Modular engineering procedures and selective-adoption boundaries are useful; scoped security review is distinct from measured productivity or correctness.",
+      "evidence": [
+        "app/guides/matt-pocock-skills-skillspector-review/page.tsx"
+      ],
+      "catalogFingerprint": "53b2aee83589b97c3c248fa2c21a4667db1c9b9594c0d525f266bd87fa2a0d18"
+    },
+    {
+      "id": "openspace",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An identifiable platform and local/cloud scope; the recorded feature list supplies neither an outcome evaluation nor detailed limitations.",
+      "evidence": [],
+      "catalogFingerprint": "ba6124476f8a9dff2ee5a0ef172cd20d7d661e96663cf84422e2de0c4a073d83"
+    },
+    {
+      "id": "vercel-skills-cli",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Concrete skill lifecycle commands and named supported agents are useful; the catalog provides limited outcome and operational-boundary detail.",
+      "evidence": [],
+      "catalogFingerprint": "0698164cfd80b84f767ca6ceb6e3056da512681c9a5449d8ce7001961e7fb4e2"
+    },
+    {
+      "id": "skills-rest",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Domain/origin/setup filters support discovery; a third-party index alone supplies limited primary-source traceability or verification support.",
+      "evidence": [],
+      "catalogFingerprint": "76204bf35fb76841325b171cd0f3a66a5362e107f43ddc2b4e54d3ead9fcb5b3"
+    },
+    {
+      "id": "aisa-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "An API-backed discovery catalog with explicit authentication/endpoint/permission caveats; the assessed description contains no concrete outcome checks.",
+      "evidence": [],
+      "catalogFingerprint": "94df5e244c6e77c1627b3f22459e11d3450da0099c7ba8924a140a7d3ef2ea20"
+    },
+    {
+      "id": "elite-ai-tools",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "Keyword discovery and repository links are useful leads; indexing public repositories does not itself evaluate their contents or outcomes.",
+      "evidence": [],
+      "catalogFingerprint": "2d0da53cf2e5942a440f23e2f7ccdd3d53930632fa560d9313eda0a21b8afd67"
+    },
+    {
+      "id": "agent-framework-python-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "An attributed release description records progressive disclosure and script/approval controls; the production-ready claim is a publisher statement, not a reproduced result.",
+      "evidence": [],
+      "catalogFingerprint": "755bce3e7a10ac0941e0610b3051d88e98c71cdd734727d004a859bcd12ad0bd"
+    },
+    {
+      "id": "nvidia-scan-agent-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "The recorded scanning method covers static/semantic checks, named risk classes, and release-gate triage; this score describes guidance, not scanner accuracy.",
+      "evidence": [],
+      "catalogFingerprint": "6973e65fd9090e1768fba1055e5177918eea92504f2e69343feeb1b714de32dd"
+    },
+    {
+      "id": "skillspector-enterprise-training",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "An explicit static/semantic review sequence, coverage interpretation, evidence outputs, and human-governed release decision are documented.",
+      "evidence": [
+        "app/guides/skillspector-enterprise-training/page.tsx"
+      ],
+      "catalogFingerprint": "12bbae27a1c00984220e50e13a2ff73e683a14b864a7f240ca515480fc46c8f9"
+    },
+    {
+      "id": "skillspector-skill-demo",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The annotated skill exposes triggers, ordered steps, verification/update requirements, and explicit authorization boundaries with named references.",
+      "evidence": [
+        "app/guides/skillspector-skill-demo/page.tsx"
+      ],
+      "catalogFingerprint": "c9e4a28b4384b8fe8d29c740fb769981e9b447c3e1d8c5eb9b96318d89d4a89f"
+    },
+    {
+      "id": "skillspector-skill-demo-v2",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Distinct registry/static/semantic evidence layers and precise completeness/authorization rules provide a traceable review procedure.",
+      "evidence": [
+        "app/guides/skillspector-skill-demo-v2/page.tsx"
+      ],
+      "catalogFingerprint": "ebe267284243187f9cc76bbdd4acf77913513e07a1f8d840f0c4752e9c38aacd"
+    },
+    {
+      "id": "vercel-skills-sh-security-check",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The guide specifies canonical identity resolution, three-provider evidence collection, coverage limits, and inspection without target installation.",
+      "evidence": [
+        "app/guides/vercel-skills-sh-security-check/page.tsx"
+      ],
+      "catalogFingerprint": "f32ad7f257503e82d3e413cd27c36bcef627b180f94f2496f14013ea88275ac2"
+    },
+    {
+      "id": "cisco-skill-scanner",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Named scanner layers and optional review support a concrete risk workflow; the catalog records human-judgment limits but no reproduced detection benchmark.",
+      "evidence": [],
+      "catalogFingerprint": "ff7e600f5ece21045722e75111316e442e52fa3557ff3e59091a6cb54ed53b19"
+    },
+    {
+      "id": "sage-agent-security",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Tool-call allow/ask/deny behavior and local/optional-check boundaries are clear; the recorded architecture supplies fewer operational steps or measured checks.",
+      "evidence": [],
+      "catalogFingerprint": "814ddfab1dbf9be3d6fd3b7c1fe0eaf74c0a7dcadfbdd2cad773e2b885c5970a"
+    },
+    {
+      "id": "clawhub",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 0.5,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "Lifecycle operations and review-before-install boundaries aid discovery; registry-level verification signals do not establish every listed bundle's provenance or runtime safety.",
+      "evidence": [],
+      "catalogFingerprint": "652ca23a19c965e11903a59ed6a1324fbe027cff7da9115e11c6e6c6b20ba997"
+    },
+    {
+      "id": "so-you-found-a-skill-checklist",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "The source-linked checklist spans full-artifact inspection, dependencies, permissions, reliability, updates, and rollback decisions.",
+      "evidence": [
+        "app/guides/so-you-found-a-skill-checklist/page.tsx"
+      ],
+      "catalogFingerprint": "79cfbee7bb4305f82a9ef38160da2efccfbe0cd2eac90e42b421f3b37fe0db45"
+    },
+    {
+      "id": "skills-in-the-agentic-performance-system",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "A source-linked system framework connects failure diagnosis, controlled evaluation, configured tools/data, and governance to explicit outcomes.",
+      "evidence": [
+        "content/drafts/skills-in-the-agentic-performance-system.md"
+      ],
+      "catalogFingerprint": "17c2f1fe52962216bb012a28384c35ac20ae596cd77b6e666a21fa223e38d895"
+    },
+    {
+      "id": "agentic-performance-source-library",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "An annotated source map distinguishes evidence types and limits; its main function is reading and investigation rather than a complete operational procedure.",
+      "evidence": [
+        "content/research/agentic-performance-source-library.md"
+      ],
+      "catalogFingerprint": "ebe97588524c95168132459fe48a9d62f83ef853995c149d7ea29ed2b95ec8f0"
+    },
+    {
+      "id": "when-not-to-use-a-skill",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Named sources, a concrete decision test, observable-verification questions, and trust-boundary constraints make adoption choices explicit.",
+      "evidence": [
+        "app/guides/when-not-to-use-a-skill/page.tsx"
+      ],
+      "catalogFingerprint": "81fbd2d2dd919ac35da3da024246cbabc8ee2e624a83d91ad3a22aaf15855718"
+    },
+    {
+      "id": "enterprise-agent-skills-presenter-readiness",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 0.5,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Detailed role-based questions, rehearsal checks, and uncertainty/governance limits aid preparation; cited further reading is mainly other library guides.",
+      "evidence": [
+        "content/guides/enterprise-agent-skills-presenter-readiness.md"
+      ],
+      "catalogFingerprint": "33133b413cbe02078cc79227581ec0b67da17bf52c3dea98555e1807ab513fe4"
+    },
+    {
+      "id": "academic-research-skills",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 1,
+        "verification": 0,
+        "boundaries": 0.5
+      },
+      "basis": "catalog-only",
+      "rationale": "An identifiable collection and review-first lead; the sparse recorded description lacks concrete research procedures or evaluation evidence, and exclusion remains unchanged.",
+      "evidence": [],
+      "catalogFingerprint": "52c67297845b02b3a1980972e45f5ab0816bbfc34ba278868edf521823c17b65"
+    },
+    {
+      "id": "superpowers-evaluation-dialogue",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 1
+      },
+      "basis": "catalog-only",
+      "rationale": "An attributed discussion frames evaluation questions and explicitly disclaims primary evidence; it does not provide a recorded validated outcome.",
+      "evidence": [],
+      "catalogFingerprint": "71a6285d35c20a0a7d8fd2834d5590fc79d8c54e54295f635044a3f38958cbcb"
+    },
+    {
+      "id": "theo-skills-code-video",
+      "criteria": {
+        "relevance": 0.5,
+        "actionability": 0,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0
+      },
+      "basis": "catalog-only",
+      "rationale": "A plausible skills/code lead with an identifiable video URL; title, transcript, and summary remain unreviewed. The draft stays hidden.",
+      "evidence": [],
+      "catalogFingerprint": "cad58f0ea165baccc3a3255ba8f9c540acf290c1ad542d396c8c4d74b2072533"
+    },
+    {
+      "id": "skills-video-long",
+      "criteria": {
+        "relevance": 0.5,
+        "actionability": 0,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0
+      },
+      "basis": "catalog-only",
+      "rationale": "A plausible skills lead and video URL only; content review and source summary are pending. The draft stays hidden.",
+      "evidence": [],
+      "catalogFingerprint": "2ff4dc8d16d398e05a2d9864c8e16399c13aad126ec10ed3c61c13c2d1ac4c6b"
+    },
+    {
+      "id": "skills-video-short",
+      "criteria": {
+        "relevance": 0.5,
+        "actionability": 0,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0
+      },
+      "basis": "catalog-only",
+      "rationale": "A plausible skills lead and video URL only; content review and source summary are pending. The draft stays hidden.",
+      "evidence": [],
+      "catalogFingerprint": "bee2e80487cb743365e55ee740eec813ac2d4923a1f28c73646a67ff6ad0e920"
+    },
+    {
+      "id": "gemini-skills-share",
+      "criteria": {
+        "relevance": 0.5,
+        "actionability": 0,
+        "traceability": 0.5,
+        "verification": 0,
+        "boundaries": 0
+      },
+      "basis": "catalog-only",
+      "rationale": "A plausible shared-conversation lead; content and primary-source summary remain unreviewed. The draft stays hidden.",
+      "evidence": [],
+      "catalogFingerprint": "d107a1151879c58a418ef084cd8e513459c46c96fa3b7fe45a463baef1d8d78c"
+    },
+    {
+      "id": "ai-evals-short-guide",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Concrete human-trace-to-evaluation steps, pinned nine-skill evidence, and explicit coverage/runtime limits support a bounded starting workflow.",
+      "evidence": [
+        "content/guides/ai-evals-short-guide.md"
+      ],
+      "catalogFingerprint": "2ea84960571a42e1140cd91639a2b245a1d344f2ce510c56bbf46a819ab9958d"
+    },
+    {
+      "id": "skillselion",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 0.5,
+        "traceability": 0.5,
+        "verification": 0.5,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "Discovery rankings have documented denominators and third-party-signal limits in the existing guide; popularity and passed-through verdicts do not establish version-level safety.",
+      "evidence": [
+        "content/guides/skill-security-over-time.md"
+      ],
+      "catalogFingerprint": "852f6b242c5270e07717530b1019d3ac09114fe270fb4b295ef6e195aa02da41"
+    },
+    {
+      "id": "skill-security-over-time",
+      "criteria": {
+        "relevance": 1,
+        "actionability": 1,
+        "traceability": 1,
+        "verification": 1,
+        "boundaries": 1
+      },
+      "basis": "catalog-and-guide",
+      "rationale": "A dated source-linked lifecycle method includes exact-version receipts, update triggers, scoped review coverage, quarantine, and rollback limits.",
+      "evidence": [
+        "content/guides/skill-security-over-time.md"
+      ],
+      "catalogFingerprint": "54e0c9d3022d5a181f94bf91be2aa16aba23ae8bce2b1d8ca8e0b61bf4b30fb7"
+    }
+  ]
+}
