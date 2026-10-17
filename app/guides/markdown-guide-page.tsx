@@ -16,6 +16,7 @@ export function MarkdownGuidePage({
   backHref = "/guides",
   backLabel = "Back to guides",
   eyebrow,
+  download,
   guide,
   path,
   trustReceipt,
@@ -24,6 +25,7 @@ export function MarkdownGuidePage({
   backHref?: string;
   backLabel?: string;
   eyebrow: string;
+  download?: { href: string; filename: string };
   guide: MarkdownGuide;
   path: string;
   trustReceipt?: GuideTrustReceipt;
@@ -48,6 +50,17 @@ export function MarkdownGuidePage({
           {deckLines?.length ? (
             <div className="prose-guide-deck">
               {deckLines.map((line) => <p key={line}>{line}</p>)}
+            </div>
+          ) : null}
+          {download ? (
+            <div className="guide-hero-actions">
+              <a
+                className="guide-hero-download"
+                href={`${basePath}${download.href}`}
+                download={download.filename}
+              >
+                Download Markdown ↓
+              </a>
             </div>
           ) : null}
         </header>

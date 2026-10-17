@@ -1,0 +1,122 @@
+# Langfuse CLI beta: security review
+
+*A scoped review of version 1.3.0-beta.2, with the evidence, privacy settings, and limits to consider before a pilot.*
+
+Reviewed 2026-10-16 (America/Denver). Exact artifact: `@langfuse/cli@1.3.0-beta.2`, SHA-256 `55eadceb86b179dcb149cfa738aea8ed5df415a791c65a0f091ab7a3c3e404a7`. This is a targeted local Codex review of the inert npm artifact, not a comprehensive audit or external independent audit. No package installation, target execution, authentication, credential reading, or external semantic transmission occurred.
+
+## Assessment
+
+No malicious behavior was identified in the reviewed CLI skill-management flows. The static scanner's high-severity leads are consistent with intended API functionality: repeated DELETE endpoint descriptions, explicit credential-file examples, and API cookie/BasicAuth construction. Its raw 100/CRITICAL result remains an unmodified preliminary scanner output, not a confirmed malware finding. Installation should remain deferred until the user decides to proceed with this exact reviewed version and a controlled trial; this report does not clear arbitrary future beta releases or skills downloaded through the CLI.
+
+The CLI includes useful content-integrity and filesystem defenses. The more consequential residual risks are configuration mistakes, publishing unintended local text, trusting the selected Langfuse project and mutable labels, and giving downloaded skill instructions authority inside an agent.
+
+## Disable AI data use for improvement
+
+**Recommended privacy setting:** go to **Settings > Org Settings > General**. In **AI Features**, disable **AI Data Use for Product/Service Improvement**. Its explanatory text is “Share data about your use of AI with Langfuse for product and service improvement.”
+
+1. Ask an organization admin or owner to open that settings path.
+2. Turn **AI Data Use for Product/Service Improvement** off.
+3. Confirm the switch remains off after reloading the settings page.
+
+![Langfuse AI Features settings showing the separate AI Data Use for Product/Service Improvement switch in the off position.](/guides/langfuse-ai-data-use-setting.png)
+
+**UI evidence:** screenshot supplied October 16, 2026; the data-use switch is shown off. The navigation path is supplied by the user. No account setting was changed during this review.
+
+**Primary source:** Langfuse documents this as a separate organization-wide control for AI-feature tracing for product and service improvement. Turning it off does not disable the AI features themselves. It applies to all users and projects in the organization. See the [AI-feature privacy documentation](https://langfuse.com/security/ai-features).
+
+This is not an offline switch for the CLI: normal API requests and skill uploads still send their intended data to the configured Langfuse host. To reverse the preference later, an admin or owner can deliberately re-enable the same switch after reviewing the current policy.
+
+## Static scan and artifact receipt
+
+**Independent finding:** NVIDIA SkillSpector **2.12.0**, updated from its verified NVIDIA origin, returned **100/CRITICAL · DO_NOT_INSTALL** in static-only mode. Local review below contextualizes those flags; it does not replace the raw result with a safety certificate.
+
+| Evidence | Result | Limit |
+| --- | --- | --- |
+| Exact npm artifact | `@langfuse/cli@1.3.0-beta.2` | Future `beta` releases were not reviewed. |
+| Static coverage | **30.8%** fully inspected; 4 full and 9 partial files | Bundled code and generated contracts hit parser limits. |
+| Scanner flags | 143 total; 128 repeated DELETE endpoint matches | API definitions are not automatic deletion calls. |
+| Semantic assessment | Local Codex review of relevant raw code | Targeted review; no external independent audit. |
+| Registry integrity | SHA-1/SHA-512 matched; two npm signatures verified | No build-provenance attestation found. |
+| Vulnerability checks | OSV lookup failed under sandbox networking | No complete dependency advisory clearance. |
+| OWASP regex triage | Seven high-signal checks; zero matches | Regex checks cannot establish absence of injection. |
+
+The package contains 13 files and 1,181,168 unpacked bytes. It declares no external runtime dependencies and no installation lifecycle hooks, but its bundle includes third-party code. AST and taint analyzers did not apply to this artifact. No CLI installation or target execution took place.
+
+**Tarball SHA-256:**
+
+```text
+55eadceb86b179dcb149cfa738aea8ed5df415a791c65a0f091ab7a3c3e404a7
+```
+
+Registry metadata identifies commit `b25734a55a90cdf767d98753279b18b4d1145b94`. The package README matched that commit byte for byte; the executable was not rebuilt to establish source-to-build equivalence. [Static-scan receipt](/data/security-reviews/langfuse-cli/2026-10-16/cli-static-summary.json).
+
+## Findings and caveats
+
+P2 marks a configuration, disclosure, or reproducibility caveat to address before use. P3 marks an operational behavior to plan for. These priorities do not claim a confirmed remote exploit.
+
+### LF-SEC-01 — P2 configuration caveat: a stale base URL can shadow the intended host
+
+`dist/cli.js:187`, `pp()` and `mx()`: an explicit `--env` file is merged over process environment values of the same key. The final host precedence is `--host` > `LANGFUSE_BASE_URL` > `LANGFUSE_HOST` > `https://cloud.langfuse.com`. Thus, an inherited `LANGFUSE_BASE_URL` can still shadow a `LANGFUSE_HOST` in the chosen env file. The CLI accepts arbitrary self-hosted URLs and does not require HTTPS or bind keys to a region/project before constructing BasicAuth. Set the exact intended HTTPS host explicitly and keep both host variables consistent; avoid passing secret keys as CLI flags because command-line arguments can be exposed in history/process listings. The CLI reads an env file only when `--env` is explicitly supplied; no automatic project-wide credential search was found.
+
+### LF-SEC-02 — P2 publishing caveat: push selects all supported text, with no secret scan or gitignore filtering
+
+`dist/cli.js:183`, `Uk()`, `Bk()`, `Hk()`, `Qk()`: push recursively reads every regular file beneath a selected skill directory, subject to a text-extension allowlist, UTF-8 validation, maximum 200 files, and 1,000,000 UTF-8 bytes in total. It rejects unsupported files rather than silently skipping them. Extensions include common documents, configs, JSON/YAML, logs, and executable-source text such as sh/py/js. There is no filename denylist, secret detector, `.gitignore`, or ignore-file evaluation in this selection flow. A token in `notes.txt`, `.settings.json`, or another allowed file can be published. `.env`/`credentials.env` have an unsupported `env` extension and would make a skill invalid, but that is not a general secret-protection mechanism. Use a staged, reviewed directory containing only intended skill files. No local credential files were opened for this review.
+
+### LF-SEC-03 — P2 trust/reproducibility caveat: the lockfile pins selection, not project identity or independently trusted content
+
+`dist/cli.js:178`, schema `kh`/`Al` and constant `ft`; `:179`, `Il()`: the actual filename is `langfuse-skills.lock.json`. Entries store only `path`, `name`, `selector`, and numeric `version`; no host, project ID, file digest, or publisher signature is stored. Bare `skills install` restores locked numeric versions; `skills update` follows saved labels while explicit numeric selectors remain pinned. Switching host or credentials can resolve the same skill name/version to another project's content. Download hashes are checked against the manifest returned by the same authenticated service; this provides useful consistency/integrity checks but does not establish publisher trust, semantic safety, or source-build provenance. Treat Git review, project/host selection, permissions to move labels, and review of each skill as part of the trust boundary. CLI code cannot prove server-side immutability, authorization enforcement, or audit-log behavior.
+
+### LF-SEC-04 — P3 operational caveat: push dry-run is authenticated and networked
+
+`dist/cli.js:183`, `sp()` → `Xk()` → `bl()`; `:178`, `Fe()`: `skills push ... --dry-run` reads and hashes local skill files, then performs authenticated GETs for the current `latest` manifest so it can compare changes. In the reviewed branches, it does not POST content, PATCH labels, or write the lockfile. It is a useful publishing preview, not an offline command. It still contacts the configured host and reveals requested skill names to that host.
+
+### LF-SEC-05 — P3 operational caveat: force replacement and bulk operations are consequential
+
+`dist/cli.js:179`, `jl()`; `:183`, `Zh()`/`Mh()` and `sp()`: installation/update compares local files with the requested snapshot and, for label updates, the previous locked version. Divergent local files are rejected unless `--force` is supplied. Replacement stages a new directory, renames the old one to a temporary backup, renames the staging directory into place, then removes the backup. `--force` can therefore discard extra/edited local files in the target directory. Multi-skill installs and pushes are sequential rather than a transaction; earlier successful writes/publications remain when a later operation fails. Push creates a complete new snapshot; files omitted from that snapshot become removed in that new version. Do not use force or bulk publication until the exact file set and labels have been reviewed.
+
+## Verified defenses in the reviewed code
+
+- **Downloaded contents are verified.** `dist/cli.js:183`, `jh()`: checks UTF-8 byte length and SHA-256 (canonical base64) against each manifest entry before writing. `_l()` at `:178` rejects unexpected, duplicated, or missing content hashes. Staging is rechecked by `ir()` before replacing the destination.
+- **Destination defaults and protections.** `Sl()` at `:178` defaults to `.agents/skills`; new named skills are placed under that directory. `ur()`/`Pl()` at `:179` resolve real paths, require locked installations to remain within the project, and reject overlapping installation directories. Explicit `--no-lockfile` opts out of lockfile/project-directory restrictions and allows an outside-project destination.
+- **Manifest paths are validated.** `Th()`/`Ml()` at `:183` require a root `SKILL.md`, reject duplicated normalized paths, backslashes, NUL, empty/dot/dotdot segments, and resolved paths outside the intended root. Fresh staging uses random names and exclusive `wx` file creation; installed files are chmod 0644. This writes files without executing their contents. Case/conflict problems are detected by rechecking the staged snapshot.
+- **Push rejects symlinks and nonregular files.** `ep()`, `Qf()`, `Uk()`, `Bk()` at `:183` use lstat/realpath containment checks, reject symlink directories/files, and open files with `O_NOFOLLOW`. `Kk()` requires valid root skill frontmatter and disables YAML aliases (`maxAliasCount:0`). Concurrent local filesystem mutation was not dynamically tested; checks should not be treated as a race-proof sandbox.
+- **Skill API redirects are rejected.** `Fe()` at `:178` sends BasicAuth only to the configured skills endpoint and sets `redirect:"error"`, plus a request timeout. The separate general API client and health/get-skill requests use fetch's default redirect behavior.
+- **No hidden telemetry or subprocess launch was identified.** Four fetch callsites exist: the configured general API (`:139`), configured skills API (`:178`), configured health endpoint (`:187`), and public GitHub raw `get-skill` download (`:187`). No child_process/shell execution imports were found. `--curl` formats a command for output; it does not run it, and authorization is redacted unless `--show-secrets` is explicitly selected. Bundled Zod has a Function constructor used for generated validation code; no skill-content-to-shell execution path was identified.
+- **Separate get-skill trust caveat.** `get-skill` downloads the mutable public GitHub main-branch Langfuse SKILL.md and prints it; it neither authenticates to Langfuse nor installs it. It has no digest pin or semantic scan. Review that raw instruction artifact before loading it into an agent.
+
+## Static finding adjudication
+
+- 128 TM1 high matches are DELETE operation paths across seven bundled API contracts, not automatic deletion calls. Actual API commands require explicit user command selection.
+- Two PE3 high matches are documented explicit `--env .env` usage, not evidence of credential hunting.
+- YR1 at `dist/cli.js:139` matches generic API cookie parameter serialization adjacent to BasicAuth creation. It does not access browser cookie stores in the reviewed function.
+- RP1 treats a README unpinned `npx @langfuse/cli` command as an MCP-server reference; it is a CLI example. Pinning the exact beta version is still appropriate for reproducibility.
+- E1 is an API documentation URL; AS3 is the public Langfuse skill path used by get-skill. Neither establishes covert exfiltration.
+- Eight SC1 findings concern development dependency version ranges. The installed artifact declares no external runtime dependencies, but includes bundled third-party code. The failed OSV lookup means current vulnerability coverage is incomplete.
+
+## Review coverage and exclusions
+
+Read the executable entrypoint, package manifest, README, all security-relevant skill/API/network/config/file-operation functions in the bundled CLI, and statically enumerated bundled contract operations, import surfaces, URL strings, and fetch callsites. The reviewed artifact has 13 files and 1,181,168 unpacked bytes. Third-party bundled YAML/Zod internals were inspected selectively; they were not audited in full or rebuilt from source. No runtime tests, sandbox adversarial filesystem tests, server-side Langfuse implementation/authorization tests, source-to-tarball build reconciliation, complete dependency SBOM/vulnerability scan, or review of future remotely installed skills occurred. No claim of a comprehensive audit is warranted.
+
+For a later trial, prefer an exact version pin, an explicit verified HTTPS host, a disposable local project, a single reviewed skill at a numeric version, and review of lockfile/content changes before agent loading. The installation decision and any use of credentials are separate authorized actions and were not performed here.
+
+## Verification and next actions
+
+Before any pilot, confirm the exact CLI version, intended HTTPS host, narrowest usable project credentials, reviewed upload inventory, and separate staging directory. Review each downloaded skill before placing it where an agent automatically loads instructions. See the [pre-install confidence checklist](/guides/so-you-found-a-skill-checklist) and [skill security over time](/guides/skill-security-over-time).
+
+Preserve local work before replacement and review every label movement. If a trial fails, stop further bulk operations, inspect any operations that already succeeded, and restore only the affected files from your reviewed checkpoint. A label can be moved back only by an authorized editor; the local lockfile alone does not undo a remote promotion.
+
+**Privacy review:** the complete detailed Markdown was checked for personal identifiers, credentials, account IDs, private endpoints, and identifying paths. No redactions were necessary, so no redacted duplicate was created. The detailed-review subpage shows the unchanged publication copy and offers a separate Markdown download. The settings image was also checked visually; it contains no account or personal identifiers.
+
+- [Read the detailed review](/guides/langfuse-cli-beta-security-review/detailed-review) — original findings and exact bundled-code locations.
+- [Static-scan receipt](/data/security-reviews/langfuse-cli/2026-10-16/cli-static-summary.json) — scope, flags, coverage, and limitations.
+- [Privacy review receipt](/data/security-reviews/langfuse-cli/2026-10-16/privacy-review.json) — source identity and sanitization outcome.
+
+## Primary references
+
+- [Pinned CLI README](https://github.com/langfuse/langfuse-cli/blob/b25734a55a90cdf767d98753279b18b4d1145b94/README.md) — beta commands and configuration.
+- [Pinned npm artifact](https://registry.npmjs.org/@langfuse/cli/-/cli-1.3.0-beta.2.tgz) — the reviewed published package.
+- [Langfuse CLI documentation](https://langfuse.com/docs/api-and-data-platform/features/cli) — authentication and API access.
+- [Skill Management API](https://api.reference.langfuse.com/#tag/unstableskills) — unstable version and file operations.
+- [API key permissions](https://langfuse.com/docs/administration/rbac) — project credential scope.
+- [AI-feature privacy documentation](https://langfuse.com/security/ai-features) — the separate organization data-use control.
+- [OWASP injection guidance](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html) — defense context; no scanner proves a skill safe.

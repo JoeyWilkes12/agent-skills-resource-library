@@ -3,6 +3,14 @@ import { dirname, resolve } from "node:path";
 
 const markdownGuides = [
   {
+    source: "public/data/security-reviews/langfuse-cli/2026-10-16/cli-security-review.md",
+    target: "app/guides/generated/langfuse-cli-beta-detailed-review.ts",
+  },
+  {
+    source: "content/guides/langfuse-cli-beta-security-review.md",
+    target: "app/guides/generated/langfuse-cli-beta-security-review.ts",
+  },
+  {
     source: "content/guides/skill-security-over-time.md",
     target: "app/guides/generated/skill-security-over-time.ts",
   },
