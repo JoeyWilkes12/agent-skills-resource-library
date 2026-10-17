@@ -1,0 +1,20 @@
+{
+  "reviewed": "2026-10-16",
+  "artifact": "cli-security-review.md",
+  "sourceSha256": "8604933f7a43646521d862500e77d20f61d45f14b048fcaf4ef2a6bac439a2b2",
+  "outcome": "no-redactions-necessary",
+  "redactions": 0,
+  "redactedDuplicateCreated": false,
+  "sourcePreserved": true,
+  "publicCopyMatchesSource": true,
+  "categoriesChecked": [
+    "personal identifiers",
+    "credentials and recoverable fragments",
+    "account and device identifiers",
+    "private endpoints and hostnames",
+    "identifying absolute paths",
+    "contextual attack disclosures"
+  ],
+  "settingsImageReview": "No personal or account identifiers visible.",
+  "limitations": "Privacy review is not a comprehensive security audit. No credential files or account settings were accessed."
+}

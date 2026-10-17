@@ -1,0 +1,80 @@
+{
+  "checked_local_date": "2026-10-16",
+  "package": "@langfuse/cli",
+  "version": "1.3.0-beta.2",
+  "registry_git_head": "b25734a55a90cdf767d98753279b18b4d1145b94",
+  "tarball_sha256": "55eadceb86b179dcb149cfa738aea8ed5df415a791c65a0f091ab7a3c3e404a7",
+  "scanner_version": "2.12.0",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL",
+    "max_issue_severity": "HIGH"
+  },
+  "mode": "static-only",
+  "llm_requested": false,
+  "llm_available": false,
+  "meta_analysis_applied": false,
+  "coverage": {
+    "total_components": 13,
+    "scanned_components": 4,
+    "coverage_percent": 30.8,
+    "is_complete": false,
+    "status": "partial",
+    "fully_inspected_files": 4,
+    "partially_inspected_files": 9,
+    "entirely_uninspected_files": 0
+  },
+  "issue_count": 143,
+  "issue_groups": [
+    {
+      "id": "PE3",
+      "severity": "HIGH",
+      "count": 2
+    },
+    {
+      "id": "YR1",
+      "severity": "HIGH",
+      "count": 1
+    },
+    {
+      "id": "TM1",
+      "severity": "HIGH",
+      "count": 128
+    },
+    {
+      "id": "RP1",
+      "severity": "MEDIUM",
+      "count": 1
+    },
+    {
+      "id": "E1",
+      "severity": "MEDIUM",
+      "count": 1
+    },
+    {
+      "id": "AS3",
+      "severity": "MEDIUM",
+      "count": 1
+    },
+    {
+      "id": "SC4",
+      "severity": "LOW",
+      "count": 1
+    },
+    {
+      "id": "SC1",
+      "severity": "LOW",
+      "count": 8
+    }
+  ],
+  "limits": [
+    "Bundled JavaScript and generated contracts hit parser limits.",
+    "AST and taint analyzers not applicable.",
+    "OSV DNS request failed; no complete advisory clearance.",
+    "No target code executed. No credentials inspected.",
+    "Registry signatures and hashes verified separately; no build attestation found in retrieved metadata."
+  ],
+  "owasp_high_signal_regex_matches": 0,
+  "interpretation": "Preliminary block, not a malware verdict. Most flags are generated API DELETE endpoint strings. See local code-review report for contextual triage."
+}

@@ -216,7 +216,8 @@ test("server-renders the Guides index and its published entries", async () => {
     /Search titles, summaries, and selected headings and topics from every/,
   );
   assert.match(html, /Article body text is not indexed/);
-  assert.match(html, /25 guides/);
+  assert.match(html, /26 guides/);
+  assert.match(html, /href="\/guides\/langfuse-cli-beta-security-review"/);
   assert.match(html, /href="\/guides\/headroom-context-compression-evidence"/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);
@@ -250,6 +251,34 @@ test("server-renders the Guides index and its published entries", async () => {
     listedGuideHrefs.at(-1),
     "/guides/anthropics-complete-guide-for-building-skills-for-claude",
   );
+});
+
+test("keeps the Langfuse pilot decision tied to its scoped evidence and limits", async () => {
+  const response = await renderPath("/guides/langfuse-cli-beta-security-review");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Langfuse CLI beta: security review/);
+  const receipt = html.match(/<section\b[^>]*aria-label="Guide trust receipt"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(receipt, "readers must see the review's trust receipt before evaluating findings");
+  assert.match(receipt, /October 16, 2026/);
+  assert.match(receipt, /Review and change settings/);
+  assert.match(receipt, /Organization opt-out affects all users and projects/);
+  assert.match(receipt, /writes files and contacts Langfuse/);
+
+  for (const finding of ["LF-SEC-01", "LF-SEC-02", "LF-SEC-03", "LF-SEC-04", "LF-SEC-05"]) {
+    assert.ok(html.includes(finding), `${finding} must remain available to the adoption decision`);
+  }
+  assert.match(html, /AI Data Use for Product\/Service Improvement/);
+  assert.match(html, /Org Settings/);
+  assert.match(html, /General/);
+  assert.match(html, /src="\/guides\/langfuse-ai-data-use-setting\.png"/);
+  assert.match(html, /30\.8%/);
+  assert.match(html, /OSV/);
+  assert.match(html, /(?:not a comprehensive|non-comprehensive)/i);
+  assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/cli-security-review\.md"/);
+  assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/cli-static-summary\.json"/);
+  assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/privacy-review\.json"/);
 });
 
 test("server-renders the downloadable SkillSpector Review v2 guide", async () => {

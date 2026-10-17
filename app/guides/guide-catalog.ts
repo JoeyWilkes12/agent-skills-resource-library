@@ -19,6 +19,25 @@ export type GuideCatalogEntry = {
 export const guideCatalog: readonly GuideCatalogEntry[] = [
   {
     contentTopics: [
+      "Langfuse Skill Management",
+      "Langfuse CLI beta",
+      "Local Codex security review",
+      "Credential handling and host precedence",
+      "Skill upload selection",
+      "Organization AI data-use opt-out",
+      "AI Data Use for Product/Service Improvement",
+      "Immutable versions and mutable labels",
+      "langfuse-skills.lock.json",
+      "SkillSpector static coverage",
+      "Scoped pilot and recovery",
+    ],
+    href: "/guides/langfuse-cli-beta-security-review",
+    title: "Langfuse CLI beta: security review",
+    summary:
+      "Review the Langfuse CLI beta’s file, credential, and update controls, with scoped findings, scanner limitations, and evidence for a constrained pilot.",
+  },
+  {
+    contentTopics: [
       "Skillselion", "MCP skill loading", "Unverified skills", "Prompt injection",
       "Skill security lifecycle", "Impeccable", "skills.sh audits",
       "Gen Agent Trust Hub", "Socket warning", "Snyk", "Commit pinning",
