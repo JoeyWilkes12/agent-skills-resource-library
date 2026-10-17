@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "2a9a92480757ec518978a516cc3755b08a55afb3",
+  "generatedFrom": "fe1545a31d544b731bdf0b785d3ef141e9a9884c",
   "releases": [
+    {
+      "date": "2026-10-17",
+      "sections": [
+        {
+          "type": "Changed",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Let readers view the detailed Langfuse review before downloading.",
+              "commit": "fe1545a31d544b731bdf0b785d3ef141e9a9884c"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-16",
       "sections": [
