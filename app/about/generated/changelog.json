@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "fa1ad5df166d75880b8f15e50146b5eeea70047e",
+  "generatedFrom": "2a9a92480757ec518978a516cc3755b08a55afb3",
   "releases": [
+    {
+      "date": "2026-10-16",
+      "sections": [
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Added Langfuse CLI beta security review and privacy settings.",
+              "commit": "2a9a92480757ec518978a516cc3755b08a55afb3"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-10",
       "sections": [
@@ -12,24 +27,14 @@
               "text": "“Skillselion” resource.",
               "href": "https://skillselion.com/",
               "resourceId": "skillselion",
-              "commit": "21046842ca62566768e0db673741b51eb25d4855"
+              "commit": "02bd1ffe5a06024f89789a4886132f945efb7011"
             },
             {
               "kind": "resource",
               "text": "“Skill security over time” resource.",
               "href": "/guides/skill-security-over-time",
               "resourceId": "skill-security-over-time",
-              "commit": "21046842ca62566768e0db673741b51eb25d4855"
-            }
-          ]
-        },
-        {
-          "type": "Security",
-          "items": [
-            {
-              "kind": "project",
-              "text": "Keep the skill security guide readable on phones.",
-              "commit": "fa1ad5df166d75880b8f15e50146b5eeea70047e"
+              "commit": "02bd1ffe5a06024f89789a4886132f945efb7011"
             }
           ]
         }
