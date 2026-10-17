@@ -276,9 +276,38 @@ test("keeps the Langfuse pilot decision tied to its scoped evidence and limits",
   assert.match(html, /30\.8%/);
   assert.match(html, /OSV/);
   assert.match(html, /(?:not a comprehensive|non-comprehensive)/i);
-  assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/cli-security-review\.md"/);
+  assert.match(html, /href="\/guides\/langfuse-cli-beta-security-review\/detailed-review"/);
+  assert.doesNotMatch(html, /href="\/[^"]*\.md(?:[?#][^"]*)?"/, "reading links must open an HTML page instead of the raw Markdown source");
   assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/cli-static-summary\.json"/);
   assert.match(html, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/privacy-review\.json"/);
+});
+
+test("offers the complete Langfuse review as HTML with a separate Markdown download", async () => {
+  const response = await renderPath("/guides/langfuse-cli-beta-security-review/detailed-review");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Langfuse CLI beta: local manual security review/);
+  for (const finding of ["LF-SEC-01", "LF-SEC-02", "LF-SEC-03", "LF-SEC-04", "LF-SEC-05"]) {
+    assert.ok(html.includes(finding), `${finding} must remain readable in the detailed HTML review`);
+  }
+  assert.match(html, /a stale base URL can shadow the intended host/);
+  assert.match(html, /no secret scan or gitignore filtering/);
+  assert.match(html, /not project identity or independently trusted content/);
+  assert.match(html, /push dry-run is authenticated and networked/);
+  assert.match(html, /force replacement and bulk operations are consequential/);
+  assert.match(html, /Verified defenses in the reviewed code/);
+  assert.match(html, /Static finding adjudication/);
+  assert.match(html, /Review coverage and exclusions/);
+  assert.match(html, /OSV/);
+  assert.match(html, /No claim of a comprehensive audit is warranted/);
+  assert.match(html, /No runtime tests, sandbox adversarial filesystem tests/);
+
+  const download = html.match(/<a\b[^>]*\bdownload="cli-security-review\.md"[^>]*>[\s\S]*?<\/a>/)?.[0];
+  assert.ok(download, "the HTML review must offer an explicit Markdown download");
+  assert.match(download, /href="\/data\/security-reviews\/langfuse-cli\/2026-10-16\/cli-security-review\.md"/);
+  assert.match(download, /Download Markdown/);
+  assert.match(html, /<a\b[^>]*href="\/guides\/langfuse-cli-beta-security-review"[^>]*>[\s\S]*?Back to the security review<\/a>/);
 });
 
 test("server-renders the downloadable SkillSpector Review v2 guide", async () => {

@@ -105,9 +105,9 @@ Before any pilot, confirm the exact CLI version, intended HTTPS host, narrowest 
 
 Preserve local work before replacement and review every label movement. If a trial fails, stop further bulk operations, inspect any operations that already succeeded, and restore only the affected files from your reviewed checkpoint. A label can be moved back only by an authorized editor; the local lockfile alone does not undo a remote promotion.
 
-**Privacy review:** the complete detailed Markdown was checked for personal identifiers, credentials, account IDs, private endpoints, and identifying paths. No redactions were necessary, so no redacted duplicate was created. The downloadable source below is an unchanged publication copy. The settings image was also checked visually; it contains no account or personal identifiers.
+**Privacy review:** the complete detailed Markdown was checked for personal identifiers, credentials, account IDs, private endpoints, and identifying paths. No redactions were necessary, so no redacted duplicate was created. The detailed-review subpage shows the unchanged publication copy and offers a separate Markdown download. The settings image was also checked visually; it contains no account or personal identifiers.
 
-- [Detailed review source](/data/security-reviews/langfuse-cli/2026-10-16/cli-security-review.md) — original findings and exact bundled-code locations.
+- [Read the detailed review](/guides/langfuse-cli-beta-security-review/detailed-review) — original findings and exact bundled-code locations.
 - [Static-scan receipt](/data/security-reviews/langfuse-cli/2026-10-16/cli-static-summary.json) — scope, flags, coverage, and limitations.
 - [Privacy review receipt](/data/security-reviews/langfuse-cli/2026-10-16/privacy-review.json) — source identity and sanitization outcome.
 

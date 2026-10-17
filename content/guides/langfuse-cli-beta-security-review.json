@@ -19,7 +19,7 @@
     "contacts-third-party"
   ],
   "sourceClass": "mixed",
-  "status": "editorial-review",
+  "status": "approved",
   "lastVerified": "2026-10-16",
   "owner": "AI Agent Skills Resource Library",
   "relatedGuides": [
@@ -284,12 +284,12 @@
         },
         {
           "type": "paragraph",
-          "text": "**Privacy review:** the complete detailed Markdown was checked for personal identifiers, credentials, account IDs, private endpoints, and identifying paths. No redactions were necessary, so no redacted duplicate was created. The downloadable source below is an unchanged publication copy. The settings image was also checked visually; it contains no account or personal identifiers."
+          "text": "**Privacy review:** the complete detailed Markdown was checked for personal identifiers, credentials, account IDs, private endpoints, and identifying paths. No redactions were necessary, so no redacted duplicate was created. The detailed-review subpage shows the unchanged publication copy and offers a separate Markdown download. The settings image was also checked visually; it contains no account or personal identifiers."
         },
         {
           "type": "list",
           "items": [
-            "[Detailed review source](/data/security-reviews/langfuse-cli/2026-10-16/cli-security-review.md) — original findings and exact bundled-code locations.",
+            "[Read the detailed review](/guides/langfuse-cli-beta-security-review/detailed-review) — original findings and exact bundled-code locations.",
             "[Static-scan receipt](/data/security-reviews/langfuse-cli/2026-10-16/cli-static-summary.json) — scope, flags, coverage, and limitations.",
             "[Privacy review receipt](/data/security-reviews/langfuse-cli/2026-10-16/privacy-review.json) — source identity and sanitization outcome."
           ]
