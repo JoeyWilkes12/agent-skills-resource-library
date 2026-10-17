@@ -46,6 +46,8 @@ test("server-renders the resource library shell", async () => {
     /href="#library">Links<\/a><a[^>]+href="\/guides">Guides<\/a><a[^>]+href="\/about">About<\/a>/,
   );
   assert.match(html, /href="\/data\/resources\.csv"/);
+  assert.match(html, /href="\/guides\/resource-ratings"/);
+  assert.doesNotMatch(html, /href="\/data\/resource-ratings\.md"/);
   assert.match(html, /Download all resources \(CSV\)/);
   assert.match(html, /aria-label="Filter resources"/);
   assert.match(html, /troubleshoot/i);
@@ -65,6 +67,34 @@ test("server-renders the About page and its QR code", async () => {
   assert.match(html, /Every resource added to the CSV gets its own entry/);
   assert.match(html, /“Aura skills” resource/);
   assert.match(html, /Keep a Changelog 1\.1\.0/);
+});
+
+test("renders rating methodology as a guide with the complete assessment ledger", async () => {
+  const response = await renderPath("/guides/resource-ratings");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type"), /^text\/html\b/i);
+  const html = await response.text();
+  assert.match(html, /<h1>Resource library rating methodology<\/h1>/);
+  assert.match(html, /class="guide-trust-receipt"/);
+  assert.match(html, /October 10, 2026/);
+  assert.match(html, /Understand the five rating criteria/);
+  assert.match(html, /href="\/data\/resource-ratings\.json"/);
+  assert.doesNotMatch(html, /href="resource-ratings\.json"/);
+  for (const id of [
+    "what-the-number-means",
+    "five-equally-weighted-criteria",
+    "how-to-interpret-and-change-a-rating",
+    "per-resource-assessment-ledger",
+  ]) {
+    assert.match(html, new RegExp(`id="${id}"`));
+    assert.match(html, new RegExp(`href="/guides/resource-ratings#${id}"`));
+  }
+  const tables = [...html.matchAll(/<table class="spectrum-table">([\s\S]*?)<\/table>/g)];
+  assert.equal(tables.length, 2);
+  const ledger = tables[1][1];
+  assert.equal([...ledger.matchAll(/<th scope="col">/g)].length, 9);
+  assert.equal([...ledger.matchAll(/<tbody>([\s\S]*?)<\/tbody>/g)][0][1].match(/<tr>/g).length, 71);
+  assert.match(html, /aria-label="Data table beginning with Resource ID"/);
 });
 
 test("server-renders the internal when-not-to-use-a-skill guide", async () => {
@@ -216,8 +246,9 @@ test("server-renders the Guides index and its published entries", async () => {
     /Search titles, summaries, and selected headings and topics from every/,
   );
   assert.match(html, /Article body text is not indexed/);
-  assert.match(html, /26 guides/);
+  assert.match(html, /27 guides/);
   assert.match(html, /href="\/guides\/langfuse-cli-beta-security-review"/);
+  assert.match(html, /href="\/guides\/resource-ratings"/);
   assert.match(html, /href="\/guides\/headroom-context-compression-evidence"/);
   assert.match(html, /href="\/guides\/spectrum-of-skill-sophistication"/);
   assert.match(html, /Spectrum of skill sophistication/);

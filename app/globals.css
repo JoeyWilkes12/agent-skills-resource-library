@@ -60,6 +60,17 @@ a {
   color: inherit;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .site-header {
   position: relative;
   z-index: 20;
@@ -908,6 +919,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   min-height: 42px;
   margin-bottom: 16px;
   padding-bottom: 14px;
@@ -925,6 +938,92 @@ a {
 .results-meta span {
   color: #68727c;
   font-size: 0.77rem;
+}
+
+.resource-sorting {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.sort-option > span {
+  margin-right: 6px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.resource-sorting button {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.resource-sorting button:hover {
+  background: var(--mint);
+}
+
+.resource-sorting button[aria-pressed="true"] {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.resource-sorting .curated-sort {
+  padding: 8px 12px;
+  font-size: 0.77rem;
+  font-weight: 800;
+}
+
+.sort-option svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.rating-criteria-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--link-evidence);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.rating-criteria-link:hover {
+  color: var(--link-evidence-hover);
+}
+
+.rating-criteria-link:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.results-meta .ratings-note {
+  flex-basis: 100%;
+  color: #52606c;
+  font-size: 0.77rem;
+  line-height: 1.5;
 }
 
 .resource-grid {
@@ -1143,6 +1242,25 @@ summary:focus-visible {
   display: block;
   overflow: visible;
   -webkit-line-clamp: unset;
+}
+
+.card-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0 0 20px;
+  font-size: 0.71rem;
+  line-height: 1.5;
+}
+
+.card-dates dt {
+  color: #52606c;
+  font-weight: 700;
+}
+
+.card-dates dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .card-footer {
@@ -3753,6 +3871,34 @@ footer p:first-child {
   color: #f2cb71;
 }
 
+:root[data-theme="dark"] .resource-sorting button {
+  color: var(--theme-text);
+  background: var(--theme-surface);
+}
+
+:root[data-theme="dark"] .resource-sorting button:hover {
+  background: var(--theme-surface-soft);
+  border-color: var(--theme-mint-text);
+}
+
+:root[data-theme="dark"] .resource-sorting button[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+:root[data-theme="dark"] .sort-option > span {
+  color: var(--theme-text);
+}
+
+:root[data-theme="dark"] .card-dates dt {
+  color: var(--theme-muted);
+}
+
+:root[data-theme="dark"] .results-meta .ratings-note {
+  color: var(--theme-muted);
+}
+
 :root[data-theme="dark"] .guide-page {
   background:
     linear-gradient(90deg, transparent 0 7.5%, rgba(211, 226, 237, 0.06) 7.5% 7.6%, transparent 7.6%),
@@ -4064,7 +4210,7 @@ footer p:first-child {
   .results-meta {
     align-items: flex-start;
     flex-direction: column;
-    gap: 5px;
+    gap: 12px;
   }
 
   footer {

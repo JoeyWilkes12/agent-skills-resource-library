@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "generated_from": "02bd1ffe5a06024f89789a4886132f945efb7011",
+  "date_basis": "First stable-ID introduction in reachable Git history; committer date in its recorded offset.",
+  "history_paths": [
+    "public/data/resources.csv"
+  ],
+  "resources": {
+    "academic-research-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "academic-research-skills"
+    },
+    "agent-framework-python-skills": {
+      "added_on": "2026-07-29",
+      "commit": "9e418e730054177cac6634f2fc6b72700b78522e",
+      "committed_at": "2026-07-29T03:29:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agent-framework-python-skills"
+    },
+    "agent-plugins": {
+      "added_on": "2026-08-17",
+      "commit": "3a167d4521ea241f3dfc3ac078737281dcdbed4f",
+      "committed_at": "2026-08-17T08:56:33-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agent-plugins"
+    },
+    "agent-skills-course": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agent-skills-course"
+    },
+    "agent-skills-overview": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agent-skills-overview"
+    },
+    "agent-skills-specification": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agent-skills-specification"
+    },
+    "agentic-performance-source-library": {
+      "added_on": "2026-08-20",
+      "commit": "69ccdc760a32241ce755d697a033cc141acb6715",
+      "committed_at": "2026-08-20T10:21:05-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "agentic-performance-source-library"
+    },
+    "ai-evals-short-guide": {
+      "added_on": "2026-09-30",
+      "commit": "9c004708b7e4112033a9540ee488605c116434fd",
+      "committed_at": "2026-09-30T18:53:16-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "ai-evals-short-guide"
+    },
+    "aisa-skills": {
+      "added_on": "2026-08-20",
+      "commit": "3f4a3eb590881bf037d017b0d81e873c8da1aedb",
+      "committed_at": "2026-08-20T09:26:06-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "aisa-skills"
+    },
+    "anthropic-complete-guide-building-skills": {
+      "added_on": "2026-08-20",
+      "commit": "e37e3d8f4c097747cf563c1f662716aa267ee4fc",
+      "committed_at": "2026-08-20T11:05:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-complete-guide-building-skills",
+      "independent_introduction_commits": [
+        "e37e3d8f4c097747cf563c1f662716aa267ee4fc",
+        "59f60ab17fad30c9171a24d44027ba5cb7b82447"
+      ]
+    },
+    "anthropic-how-we-use-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-how-we-use-skills"
+    },
+    "anthropic-self-service-analytics": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-self-service-analytics"
+    },
+    "anthropic-skill-authoring": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-skill-authoring"
+    },
+    "anthropic-use-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-use-skills"
+    },
+    "anthropic-verification-loops": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-verification-loops"
+    },
+    "anthropic-what-are-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "anthropic-what-are-skills"
+    },
+    "aura-skills": {
+      "added_on": "2026-08-23",
+      "commit": "3887e98930fc2aab9f4001878011666a4eccfd77",
+      "committed_at": "2026-08-23T11:30:08-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "aura-skills"
+    },
+    "avoid-ai-writing": {
+      "added_on": "2026-08-19",
+      "commit": "bafa1bbdf85084211a5e3517e30968b8740cdc5f",
+      "committed_at": "2026-08-19T22:23:29-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "avoid-ai-writing"
+    },
+    "aws-skill-equipped-agent-evaluation": {
+      "added_on": "2026-09-23",
+      "commit": "9db25b09249baceafae07afb05c51d3ce5f4b2c3",
+      "committed_at": "2026-09-23T10:39:52-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "aws-skill-equipped-agent-evaluation"
+    },
+    "blader-humanizer": {
+      "added_on": "2026-08-19",
+      "commit": "bafa1bbdf85084211a5e3517e30968b8740cdc5f",
+      "committed_at": "2026-08-19T22:23:29-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "blader-humanizer"
+    },
+    "cisco-skill-scanner": {
+      "added_on": "2026-07-28",
+      "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5",
+      "committed_at": "2026-07-28T15:34:56-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "cisco-skill-scanner"
+    },
+    "claude-code-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "claude-code-skills"
+    },
+    "claude-cowork-record-skill": {
+      "added_on": "2026-07-28",
+      "commit": "97b9c3fcf6bae52b6dbc3b95b3942ef1010af940",
+      "committed_at": "2026-07-28T14:35:12-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "claude-cowork-record-skill"
+    },
+    "clawhub": {
+      "added_on": "2026-07-29",
+      "commit": "f26d50b084b62f943b2263868913a871cf50935e",
+      "committed_at": "2026-07-29T19:46:00-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "clawhub"
+    },
+    "elite-ai-tools": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "elite-ai-tools"
+    },
+    "enterprise-agent-skills-presenter-readiness": {
+      "added_on": "2026-08-26",
+      "commit": "b1dd7595abf3dd8674f1644f46095dc3c1828074",
+      "committed_at": "2026-08-26T18:10:14-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "enterprise-agent-skills-presenter-readiness"
+    },
+    "gemini-skills-share": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "gemini-skills-share"
+    },
+    "hamel-evals-skills": {
+      "added_on": "2026-07-29",
+      "commit": "9e418e730054177cac6634f2fc6b72700b78522e",
+      "committed_at": "2026-07-29T03:29:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "hamel-evals-skills"
+    },
+    "headroom-context-compression": {
+      "added_on": "2026-09-25",
+      "commit": "a70a26fdca195e760fc082d84ea9b6dd15292a6c",
+      "committed_at": "2026-09-25T14:28:19-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "headroom-context-compression"
+    },
+    "headroom-context-compression-evidence": {
+      "added_on": "2026-09-25",
+      "commit": "3574ddb25e5a8aa269d8db04a93307d6f22661e1",
+      "committed_at": "2026-09-25T14:42:49-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "headroom-context-compression-evidence"
+    },
+    "image-to-editable-ppt": {
+      "added_on": "2026-09-30",
+      "commit": "35ebd8563c0070c9c637e502ab65bc770f87986e",
+      "committed_at": "2026-09-30T09:44:45-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "image-to-editable-ppt"
+    },
+    "jetbrains-caveman-token-benchmark": {
+      "added_on": "2026-09-01",
+      "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406",
+      "committed_at": "2026-09-01T09:56:28-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "jetbrains-caveman-token-benchmark"
+    },
+    "jetbrains-ponytail-code-benchmark": {
+      "added_on": "2026-09-01",
+      "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406",
+      "committed_at": "2026-09-01T09:56:28-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "jetbrains-ponytail-code-benchmark"
+    },
+    "jetbrains-rtk-token-benchmark": {
+      "added_on": "2026-09-01",
+      "commit": "f34e5ec339267596d37fbcb318bac8a1aecd5406",
+      "committed_at": "2026-09-01T09:56:28-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "jetbrains-rtk-token-benchmark"
+    },
+    "langchain-eval-engineering": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "langchain-eval-engineering"
+    },
+    "ling-ui-design": {
+      "added_on": "2026-09-30",
+      "commit": "35ebd8563c0070c9c637e502ab65bc770f87986e",
+      "committed_at": "2026-09-30T09:44:45-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "ling-ui-design"
+    },
+    "mattpocock-skills": {
+      "added_on": "2026-09-01",
+      "commit": "b402fece634957953adbbd0c0bc2333acf894b45",
+      "committed_at": "2026-09-01T10:17:38-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "mattpocock-skills"
+    },
+    "ming-design-layer-and-editable-design": {
+      "added_on": "2026-09-30",
+      "commit": "35ebd8563c0070c9c637e502ab65bc770f87986e",
+      "committed_at": "2026-09-30T09:44:45-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "ming-design-layer-and-editable-design"
+    },
+    "nvidia-scan-agent-skills": {
+      "added_on": "2026-07-28",
+      "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5",
+      "committed_at": "2026-07-28T15:34:56-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "nvidia-scan-agent-skills"
+    },
+    "obra-superpowers": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "obra-superpowers"
+    },
+    "openai-build-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "openai-build-skills"
+    },
+    "openai-record-replay": {
+      "added_on": "2026-07-28",
+      "commit": "97b9c3fcf6bae52b6dbc3b95b3942ef1010af940",
+      "committed_at": "2026-07-28T14:35:12-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "openai-record-replay"
+    },
+    "openai-skills-concepts": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "openai-skills-concepts"
+    },
+    "openspace": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "openspace"
+    },
+    "oreilly-skills-context-window": {
+      "added_on": "2026-08-20",
+      "commit": "66012930888d18ff9b3585e09ed5e2906db46353",
+      "committed_at": "2026-08-20T11:35:23-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "oreilly-skills-context-window"
+    },
+    "replit-agent-skills": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "replit-agent-skills"
+    },
+    "sage-agent-security": {
+      "added_on": "2026-07-29",
+      "commit": "9e418e730054177cac6634f2fc6b72700b78522e",
+      "committed_at": "2026-07-29T03:29:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "sage-agent-security"
+    },
+    "skill-security-over-time": {
+      "added_on": "2026-10-10",
+      "commit": "21046842ca62566768e0db673741b51eb25d4855",
+      "committed_at": "2026-10-10T09:06:24-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skill-security-over-time"
+    },
+    "skill2env-nvidia": {
+      "added_on": "2026-09-24",
+      "commit": "bc50a0dab98cd1abfea13df3a25b437a063afeda",
+      "committed_at": "2026-09-24T19:58:35-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skill2env-nvidia"
+    },
+    "skillopt-github": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillopt-github"
+    },
+    "skillopt-project": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillopt-project"
+    },
+    "skillopt-third-party-snapshot": {
+      "added_on": "2026-08-14",
+      "commit": "f468a6fc1c029679d65633402eb876f63eb79e72",
+      "committed_at": "2026-08-14T16:09:32-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillopt-third-party-snapshot"
+    },
+    "skills-in-the-agentic-performance-system": {
+      "added_on": "2026-08-20",
+      "commit": "69ccdc760a32241ce755d697a033cc141acb6715",
+      "committed_at": "2026-08-20T10:21:05-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skills-in-the-agentic-performance-system"
+    },
+    "skills-rest": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skills-rest"
+    },
+    "skills-video-long": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skills-video-long"
+    },
+    "skills-video-short": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skills-video-short"
+    },
+    "skillselion": {
+      "added_on": "2026-10-10",
+      "commit": "21046842ca62566768e0db673741b51eb25d4855",
+      "committed_at": "2026-10-10T09:06:24-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillselion"
+    },
+    "skillspector-enterprise-training": {
+      "added_on": "2026-08-11",
+      "commit": "003212440c01bd7f46c1896307019b84effdff51",
+      "committed_at": "2026-08-11T13:31:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillspector-enterprise-training"
+    },
+    "skillspector-skill-demo": {
+      "added_on": "2026-08-11",
+      "commit": "003212440c01bd7f46c1896307019b84effdff51",
+      "committed_at": "2026-08-11T13:31:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillspector-skill-demo"
+    },
+    "skillspector-skill-demo-v2": {
+      "added_on": "2026-09-15",
+      "commit": "9c30ab71a0c69f3be5a71df86dd5d99ec906d246",
+      "committed_at": "2026-09-15T15:19:51-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "skillspector-skill-demo-v2"
+    },
+    "so-you-found-a-skill-checklist": {
+      "added_on": "2026-07-29",
+      "commit": "f26d50b084b62f943b2263868913a871cf50935e",
+      "committed_at": "2026-07-29T19:46:00-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "so-you-found-a-skill-checklist"
+    },
+    "superpowers-evaluation-dialogue": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "superpowers-evaluation-dialogue"
+    },
+    "theo-skills-code-video": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "theo-skills-code-video"
+    },
+    "troubleshoot-loading": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "troubleshoot-loading"
+    },
+    "troubleshoot-precedence": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "troubleshoot-precedence"
+    },
+    "troubleshoot-runtime": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "troubleshoot-runtime"
+    },
+    "troubleshoot-triggering": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "troubleshoot-triggering"
+    },
+    "troubleshoot-validate-structure": {
+      "added_on": "2026-07-28",
+      "commit": "98114be89804fab359cfd999c7c910ed98e3a8d3",
+      "committed_at": "2026-07-28T14:16:42-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "troubleshoot-validate-structure"
+    },
+    "vercel-skills-cli": {
+      "added_on": "2026-07-29",
+      "commit": "9e418e730054177cac6634f2fc6b72700b78522e",
+      "committed_at": "2026-07-29T03:29:07-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "vercel-skills-cli"
+    },
+    "vercel-skills-sh-security-check": {
+      "added_on": "2026-09-15",
+      "commit": "c744fb83bd354618a673282833340d1c7551673b",
+      "committed_at": "2026-09-15T09:45:14-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "vercel-skills-sh-security-check"
+    },
+    "when-not-to-use-a-skill": {
+      "added_on": "2026-07-28",
+      "commit": "ac4342a8ea953659c8197b06f3df7305f45b7db5",
+      "committed_at": "2026-07-28T15:34:56-06:00",
+      "path": "public/data/resources.csv",
+      "matched_id": "when-not-to-use-a-skill"
+    }
+  }
+}

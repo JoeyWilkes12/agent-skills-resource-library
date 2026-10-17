@@ -124,11 +124,14 @@ for (const resource of resources) {
       // The URL validation above reports malformed values.
     }
   }
-  if (resource.rating) {
-    const rating = Number(resource.rating);
-    if (!Number.isFinite(rating) || rating < 0 || rating > 5) {
-      errors.push(`${resource.id}: rating must be between 0.0 and 5.0.`);
-    }
+  const rating = Number(resource.rating);
+  if (!resource.rating.trim() || !Number.isFinite(rating) || rating < 0 || rating > 5 || !Number.isInteger(rating * 2)) {
+    errors.push(`${resource.id}: rating is required and must be between 0.0 and 5.0 in half-point steps.`);
+  }
+  const addedOn = resource.added_on ?? "";
+  const parsedDate = new Date(`${addedOn}T00:00:00Z`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(addedOn) || !Number.isFinite(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== addedOn) {
+    errors.push(`${resource.id}: added_on is required and must be a valid YYYY-MM-DD date.`);
   }
 }
 
@@ -172,13 +175,6 @@ const securityTrustIds = new Set(
 for (const requiredId of requiredSecurityTrustIds) {
   if (!securityTrustIds.has(requiredId)) {
     errors.push(`Security & Trust must contain "${requiredId}".`);
-  }
-}
-for (const resource of securityTrustResources.filter((resource) =>
-  requiredSecurityTrustIds.includes(resource.id),
-)) {
-  if (resource.rating !== "5.0") {
-    errors.push(`${resource.id}: core security scanner rating must be 5.0.`);
   }
 }
 
