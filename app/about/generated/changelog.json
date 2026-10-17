@@ -1,5 +1,5 @@
 {
-  "generatedFrom": "fe1545a31d544b731bdf0b785d3ef141e9a9884c",
+  "generatedFrom": "91423b10e1b7d99c2c4ed368e9b428a65279152b",
   "releases": [
     {
       "date": "2026-10-17",
@@ -11,6 +11,11 @@
               "kind": "project",
               "text": "Let readers view the detailed Langfuse review before downloading.",
               "commit": "fe1545a31d544b731bdf0b785d3ef141e9a9884c"
+            },
+            {
+              "kind": "project",
+              "text": "Made guide downloads visible to keyboard users.",
+              "commit": "91423b10e1b7d99c2c4ed368e9b428a65279152b"
             }
           ]
         }
