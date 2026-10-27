@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "a42f05294529c48d6f85aa78970ae4d4745d0860",
+  "generatedFrom": "d1b50fedd81fe33df97d72348c2d3092e07eaab5",
   "releases": [
+    {
+      "date": "2026-10-26",
+      "sections": [
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Update website dependencies to resolve security vulnerabilities.",
+              "commit": "d1b50fedd81fe33df97d72348c2d3092e07eaab5"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-17",
       "sections": [
@@ -25,7 +40,7 @@
             {
               "kind": "project",
               "text": "Added documented ratings and sorting by rating or date added.",
-              "commit": "a1b1a3f611d2248253130c3250f9c3cc217c48ea"
+              "commit": "33815267143feafe1b63329eaf8823f293fbe511"
             }
           ]
         },
@@ -35,7 +50,7 @@
             {
               "kind": "project",
               "text": "Open rating criteria as a formatted library guide.",
-              "commit": "a42f05294529c48d6f85aa78970ae4d4745d0860"
+              "commit": "21d883fca30c962c6a4816c06526c1c1559e2799"
             }
           ]
         }
