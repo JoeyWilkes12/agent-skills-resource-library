@@ -1,6 +1,21 @@
 {
-  "generatedFrom": "c8423d8e85fe59fda5f9a0ee315f5360df46af08",
+  "generatedFrom": "d1b50fedd81fe33df97d72348c2d3092e07eaab5",
   "releases": [
+    {
+      "date": "2026-10-26",
+      "sections": [
+        {
+          "type": "Security",
+          "items": [
+            {
+              "kind": "project",
+              "text": "Update website dependencies to resolve security vulnerabilities.",
+              "commit": "d1b50fedd81fe33df97d72348c2d3092e07eaab5"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-17",
       "sections": [
